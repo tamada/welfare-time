@@ -75,8 +75,7 @@ def parse_pdf_to_json(input_path, output_path=None):
                             specific_match = re.search(r"(\d{1,2}[:：]\d{2})\s*[|]\s*(\d{1,2}[:：]\d{2})", cell_val.replace("：", ":"))
                             start, end = (specific_match.group(1), specific_match.group(2)) if specific_match else (default_start, default_end)
                             
-                            note = cell_val.replace("○", "").replace(start, "").replace(end, "").replace("|", "").replace("
-", " ").strip()
+                            note = cell_val.replace("○", "").replace(start, "").replace(end, "").replace("|", "").replace("\\n", " ").strip()
                             note = re.sub(r"\d{1,2}[:：]\d{2}", "", note).strip()
                             
                             results.append({
