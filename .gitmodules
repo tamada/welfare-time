@@ -1,0 +1,3 @@
+[submodule "kyosan-eats-backend"]
+	path = kyosan-eats-backend
+	url = git@github.com:tamadalab/kyosan-eats-backend.git

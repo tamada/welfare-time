@@ -1,0 +1,100 @@
+{
+  "cafeterias": [
+    {
+      "id": "101",
+      "name": "やさい食堂 イチマルイチ",
+      "location": "10号館1F",
+      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/yasai.html"
+    },
+    {
+      "id": "fujikatsu",
+      "name": "ふじカツ",
+      "location": "並楽館1F",
+      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/fujikatu.html"
+    },
+    {
+      "id": "ichibariki",
+      "name": "らーめん壱馬力",
+      "location": "並楽館1F",
+      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/ichibariki.html"
+    },
+    {
+      "id": "cosmic-bakery-cafe",
+      "name": "cosmic bakery cafe",
+      "location": "並楽館2F",
+      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/bakery.html"
+    },
+    {
+      "id": "miyako",
+      "name": "MIYAKO製麺",
+      "location": "並楽館2F",
+      "url": "https://www.kyoto-su.ac.jp/campus/welfare/miyako/"
+    },
+    {
+      "id": "libre",
+      "name": "LIBRE（リブレ）",
+      "location": "並楽館3F",
+      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/libre.html"
+    },
+    {
+      "id": "sukiya",
+      "name": "すき家",
+      "location": "真理館1F",
+      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/sukiya.html"
+    },
+    {
+      "id": "kitchen-sun",
+      "name": "キッチンサン",
+      "location": "真理館1F",
+      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/kitchinsun.html"
+    },
+    {
+      "id": "kamukura",
+      "name": "どうとんぼり神座",
+      "location": "真理館1F",
+      "url": "https://www.kyoto-su.ac.jp/campus/welfare/kamukura/kamukura.html"
+    },
+    {
+      "id": "musubi",
+      "name": "むすびキッチン",
+      "location": "雄飛館2F",
+      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/nagomi.html"
+    },
+    {
+      "id": "ascella",
+      "name": "ブックセンター Ascella（アスケラ）",
+      "location": "雄飛館1F"
+    },
+    {
+      "id": "family-mart1",
+      "name": "ファミリーマート（並楽館）",
+      "location": "並楽館1F"
+    },
+    {
+      "id": "family-mart2",
+      "name": "ファミリーマート（天地館）",
+      "location": "天地館1F"
+    },
+    {
+      "id": "maruzen",
+      "name": "丸善 パソコンプロショップ",
+      "location": "天地館1F"
+    },
+    {
+      "id": "nasic",
+      "name": "学生情報センター（ナジック）",
+      "location": "天地館1F"
+    },
+    {
+      "id": "family-mart3",
+      "name": "ファミリーマート（本山寮）",
+      "location": "本山寮"
+    },
+    {
+      "id": "ksuksu",
+      "name": "CAFE KSUKSU",
+      "location": "むすびわざ館1F"
+    }
+  ],
+  "kitchen_cars": []
+}

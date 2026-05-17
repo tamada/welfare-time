@@ -1,0 +1,34 @@
+{
+  "cafeterias": [
+    {
+      "id": "cosmos",
+      "name": "Cafe & Restaurant Cosmos",
+      "location": "8号館1F",
+      "url": "https://www.kyoto-su.ac.jp/campus/welfare/8gokan.html",
+      "google_map": "https://maps.app.goo.gl/sample1",
+      "image_url": "https://www.kyoto-su.ac.jp/campus/welfare/images/8gokan_01.jpg"
+    },
+    {
+      "id": "luxury",
+      "name": "第1食堂 Luxury",
+      "location": "並木道奥",
+      "url": "https://www.kyoto-su.ac.jp/campus/welfare/dai1.html",
+      "google_map": "https://maps.app.goo.gl/sample2",
+      "image_url": "https://www.kyoto-su.ac.jp/campus/welfare/images/dai1_01.jpg"
+    }
+  ],
+  "kitchen_cars": [
+    {
+      "id": "mellow-shop-001",
+      "name": "本格派カレー屋",
+      "url": "https://schedule.mellow.jp/ss_web/markets/KqTl8N/shops/1",
+      "image_url": "https://images.mellow.jp/shops/1/main.jpg"
+    },
+    {
+      "id": "mellow-shop-002",
+      "name": "窯焼きピッツァ",
+      "url": "https://schedule.mellow.jp/ss_web/markets/KqTl8N/shops/2",
+      "image_url": "https://images.mellow.jp/shops/2/main.jpg"
+    }
+  ]
+}
