@@ -1,4 +1,4 @@
-# Project Documentation: Harapeco
+# Project Documentation: shikaku (シカク)
 
 This project automates the collection and hosting of university cafeteria and kitchen car schedules.
 
