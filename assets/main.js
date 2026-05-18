@@ -217,6 +217,8 @@ const savedTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-bs-theme', savedTheme);
 updateThemeIcon(savedTheme);
 
+document.getElementById('page-load-time').textContent = new Date().toLocaleTimeString('ja-JP');
+
 themeBtn.onclick = () => {
     const currentTheme = document.documentElement.getAttribute('data-bs-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
