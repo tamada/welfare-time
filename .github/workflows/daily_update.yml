@@ -1,0 +1,59 @@
+name: 毎朝のデータ更新（食堂＆キッチンカー）
+
+on:
+  schedule:
+    - cron: '0 22 * * *'  # 毎日UTC 22:00（JST 07:00 相当）
+  workflow_dispatch: {}
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Python をセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 依存パッケージをインストール
+        run: pip install -r requirements.txt
+
+      - name: 食堂データの更新
+        run: |
+          python scripts/fetch_cafeteria_pdf.py
+          # public/daily/ 配下のすべてのPDFを対象にパースを実行
+          # (parse_cafeteria_pdf.py はPDFの更新日時を比較し、変更がない場合は自動的にスキップします)
+          for pdf in public/daily/*.pdf; do
+            if [ -f "$pdf" ]; then
+              target_json="tmp/parsed_$(basename "$pdf" .pdf).json"
+              python scripts/parse_cafeteria_pdf.py "$pdf" -o "$target_json"
+            fi
+          done
+
+      - name: キッチンカーデータの更新
+        run: |
+          python scripts/fetch_kitchen_cars.py -o tmp/kitchen_cars_raw.html
+          python scripts/scrape_kitchen_cars.py tmp/kitchen_cars_raw.html tmp/scraped_kitchen_cars.json
+
+      - name: サイト生成とデプロイ
+        run: |
+          python scripts/generator.py \
+            --cafeteria-dir tmp \
+            --kitchen-cars tmp/scraped_kitchen_cars.json \
+            --master scripts/master.json \
+            --output-dir public
+          # gh-pagesへのコミットとプッシュ（worktreeの設定に基づく）
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cd public
+          git add .
+          git commit -m "Update site data: $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push origin gh-pages

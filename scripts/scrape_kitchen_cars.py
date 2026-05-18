@@ -80,5 +80,9 @@ def scrape_kitchen_cars(input_path, output_path):
     print(f"Parsed {len(unique_results)} entries. Saved to {output_path}")
 
 if __name__ == "__main__":
-    # 入力ファイルパスが決め打ちにならないよう、必要に応じて引数化できますが、今は現状に合わせて実行
-    scrape_kitchen_cars("tmp/kitchen_cars_raw.html", "tmp/scraped_kitchen_cars.json")
+    parser = argparse.ArgumentParser(description="Scrape kitchen car schedule HTML")
+    parser.add_argument("input", help="Input HTML path")
+    parser.add_argument("output", help="Output JSON path")
+    args = parser.parse_args()
+    
+    scrape_kitchen_cars(args.input, args.output)
