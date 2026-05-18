@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>はらぺコ KSU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --ksu-blue: #004098;
+            --status-open: #28a745;
+            --status-closed: #6c757d;
+        }
+        body {
+            background-color: #f0f2f5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar { background-color: var(--ksu-blue); padding: 0.5rem 1rem; }
+        .date-nav {
+            background: white;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 20px;
+            position: sticky;
+            top: 56px;
+            z-index: 100;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 15px;
+        }
+        .shop-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+        .status-badge {
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .status-open { background-color: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+        .status-closed { background-color: #f5f5f5; color: #757575; border: 1px solid #e0e0e0; }
+        
+        .location-text { font-size: 0.75rem; color: #666; }
+        .time-text { font-size: 0.8rem; font-weight: 500; color: #444; }
+        .note-box {
+            font-size: 0.75rem;
+            color: #d32f2f;
+            background: #fff5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+        .shop-category-tag {
+            font-size: 0.65rem;
+            color: #004098;
+            background: #e3f2fd;
+            padding: 1px 5px;
+            border-radius: 3px;
+            margin-bottom: 5px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        #datepicker-input {
+            position: absolute;
+            visibility: hidden;
+            width: 0; height: 0;
+        }
+        .date-display-wrapper {
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: 6px;
+            transition: background 0.2s;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+        }
+        .date-display-wrapper:hover {
+            background: #e9ecef;
+        }
+        footer {
+            margin-top: auto;
+            background-color: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+            padding: 20px 0;
+            color: #6c757d;
+            font-size: 0.8rem;
+        }
+        .footer-link {
+            color: #004098;
+            text-decoration: none;
+        }
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        #loading-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(240,242,245,0.8);
+            display: flex; justify-content: center; align-items: center; z-index: 1000;
+        }
+        .x-small { font-size: 0.7rem; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark sticky-top">
+    <div class="container d-flex justify-content-center flex-column align-items-center">
+        <a class="navbar-brand fw-bold py-0" href="index.html">はらぺこ KSU</a>
+        <div id="header-data-range" class="text-light x-small opacity-75 mt-1"></div>
+    </div>
+</nav>
+
+<div class="date-nav">
+    <div class="container d-flex justify-content-between align-items-center">
+        <button id="prev-day" class="btn btn-light btn-sm px-3">前日</button>
+        
+        <div class="d-flex align-items-center gap-2">
+            <div id="date-selector" class="date-display-wrapper d-flex align-items-center">
+                <i class="bi bi-calendar3 text-primary me-2"></i>
+                <span id="current-date-display" class="fw-bold">----年--月--日</span>
+            </div>
+            <button id="today-btn" class="btn btn-light btn-sm px-3 fw-bold text-primary">今日</button>
+            <input type="date" id="datepicker-input">
+        </div>
+
+        <button id="next-day" class="btn btn-light btn-sm px-3">翌日</button>
+    </div>
+</div>
+
+<div class="container">
+    <div id="loading-overlay"><div class="spinner-border spinner-border-sm text-primary"></div></div>
+    <div class="row g-2" id="shop-grid"></div>
+</div>
+
+<footer>
+    <div class="container text-center">
+        <div id="status-info" class="mb-2"></div>
+        <div id="source-links" class="small"></div>
+        <div class="mt-3 x-small">
+            &copy; 2026 はらぺこ KSU / 
+            <a href="https://github.com/tamada/harapeco" class="footer-link" target="_blank">GitHub</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const API_BASE = 'api/schedule';
+    const STATUS_API = 'api/status/index.json';
+
+    function getTargetDateStr() {
+        const urlParams = new URLSearchParams(window.location.search);
+        let dateStr = urlParams.get('date');
+        if (!dateStr || dateStr === 'today') {
+            dateStr = new Date().toLocaleDateString('sv-SE'); // YYYY-MM-DD
+        }
+        return dateStr;
+    }
+
+    function getShopStatus(startTime, endTime, targetDateStr) {
+        if (!startTime || !endTime || startTime === '00:00') return { label: '休業', class: 'status-closed' };
+        
+        const now = new Date();
+        const todayStr = now.toLocaleDateString('sv-SE');
+        
+        if (targetDateStr < todayStr) return { label: '営業終了', class: 'status-closed' };
+        if (targetDateStr > todayStr) return { label: '準備中', class: 'status-closed' };
+
+        const nowTotal = now.getHours() * 60 + now.getMinutes();
+        const [sh, sm] = startTime.split(':').map(Number);
+        const [eh, em] = endTime.split(':').map(Number);
+        const startTotal = sh * 60 + sm;
+        const endTotal = eh * 60 + em;
+
+        if (nowTotal < startTotal) return { label: '準備中', class: 'status-closed' };
+        if (nowTotal >= startTotal && nowTotal < endTotal) return { label: '営業中', class: 'status-open' };
+        return { label: '営業終了', class: 'status-closed' };
+    }
+
+    async function fetchData() {
+        const targetDateStr = getTargetDateStr();
+        document.getElementById('current-date-display').textContent = targetDateStr;
+        document.getElementById('datepicker-input').value = targetDateStr;
+        
+        const current = new Date(targetDateStr);
+        const prev = new Date(current); prev.setDate(prev.getDate() - 1);
+        const next = new Date(current); next.setDate(next.getDate() + 1);
+        
+        document.getElementById('prev-day').onclick = () => window.location.search = `date=${prev.toLocaleDateString('sv-SE')}`;
+        document.getElementById('next-day').onclick = () => window.location.search = `date=${next.toLocaleDateString('sv-SE')}`;
+        
+        const todayBtn = document.getElementById('today-btn');
+        const todayStr = new Date().toLocaleDateString('sv-SE');
+        todayBtn.onclick = () => window.location.search = '';
+        todayBtn.disabled = (targetDateStr === todayStr);
+
+        try {
+            const [scheduleRes, statusRes] = await Promise.all([
+                fetch(`${API_BASE}/${targetDateStr}/index.json`),
+                fetch(STATUS_API)
+            ]);
+            
+            if (scheduleRes.ok) {
+                const data = await scheduleRes.json();
+                render(data);
+                renderProvenance(data.sources);
+            } else {
+                document.getElementById('shop-grid').innerHTML = '<div class="col-12 text-center text-muted py-5">営業予定が見つかりませんでした</div>';
+            }
+
+            if (statusRes.ok) {
+                const status = await statusRes.json();
+                const updatedDate = new Date(status.last_updated).toLocaleString('ja-JP');
+                document.getElementById('status-info').innerHTML = `最終更新: ${updatedDate}`;
+                document.getElementById('header-data-range').innerHTML = `提供範囲: ${status.data_range.start} ～ ${status.data_range.end}`;
+            }
+        } catch (e) {
+            document.getElementById('shop-grid').innerHTML = '<div class="col-12 text-center text-muted py-5">エラーが発生しました</div>';
+        } finally {
+            document.getElementById('loading-overlay').style.display = 'none';
+        }
+    }
+
+    function renderProvenance(sources) {
+        const sourceLinks = document.getElementById('source-links');
+        if (sources && sources.length > 0) {
+            const links = sources.map(s => `<a href="${s.url}" class="footer-link mx-2" target="_blank"><i class="bi bi-file-pdf"></i> ${s.name}</a>`).join('');
+            sourceLinks.innerHTML = `情報元PDF: ${links}`;
+        } else {
+            sourceLinks.innerHTML = '';
+        }
+    }
+
+    function render(data) {
+        const grid = document.getElementById('shop-grid');
+        grid.innerHTML = '';
+
+        const datePicker = document.getElementById('datepicker-input');
+        document.getElementById('date-selector').onclick = () => datePicker.showPicker();
+        datePicker.onchange = (e) => {
+            if (e.target.value) window.location.search = `date=${e.target.value}`;
+        };
+
+        const allShops = [
+            ...data.cafeterias,
+            ...data.kitchen_cars
+        ];
+
+        const targetDateStr = getTargetDateStr();
+        allShops.sort((a, b) => {
+            const aStatus = getShopStatus(a.start_time, a.end_time, targetDateStr);
+            const bStatus = getShopStatus(b.start_time, b.end_time, targetDateStr);
+            if (aStatus.label === '営業中' && bStatus.label !== '営業中') return -1;
+            if (aStatus.label !== '営業中' && bStatus.label === '営業中') return 1;
+            return 0;
+        });
+
+        allShops.forEach(shop => {
+            const status = getShopStatus(shop.start_time, shop.end_time, targetDateStr);
+            const card = `
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 p-2">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="shop-category-tag">${shop.category || '店舗'}</span>
+                            <span class="status-badge ${status.class}">
+                                ${status.label}
+                            </span>
+                        </div>
+                        <div class="shop-name text-truncate" title="${shop.name}">${shop.name}</div>
+                        <div class="location-text text-truncate mb-1"><i class="bi bi-geo-alt"></i> ${shop.location}</div>
+                        <div class="time-text"><i class="bi bi-clock"></i> ${shop.start_time}～${shop.end_time}</div>
+                        ${shop.note ? `<div class="note-box">${shop.note}</div>` : ''}
+                        ${shop.url ? `<a href="${shop.url}" target="_blank" class="stretched-link"></a>` : ''}
+                    </div>
+                </div>
+            `;
+            grid.insertAdjacentHTML('beforeend', card);
+        });
+    }
+    fetchData();
+</script>
+</body>
+</html>
