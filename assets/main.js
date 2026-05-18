@@ -18,7 +18,7 @@ function getShopStatus(startTime, endTime, targetDateStr) {
     if (!startTime || !endTime || startTime === '00:00') return { label: '休業', class: 'status-closed' };
     const now = new Date();
     const todayStr = now.toLocaleDateString('sv-SE');
-    if (targetDateStr < todayStr) return { label: '終了', class: 'status-closed' };
+    if (targetDateStr < todayStr) return { label: '営業終了', class: 'status-closed' };
     if (targetDateStr > todayStr) return { label: '準備中', class: 'status-closed' };
 
     const nowTotal = now.getHours() * 60 + now.getMinutes();
@@ -26,7 +26,7 @@ function getShopStatus(startTime, endTime, targetDateStr) {
     const [eh, em] = endTime.split(':').map(Number);
     if (nowTotal < (sh*60+sm)) return { label: '準備中', class: 'status-closed' };
     if (nowTotal >= (sh*60+sm) && nowTotal < (eh*60+em)) return { label: '営業中', class: 'status-open' };
-    return { label: '終了', class: 'status-closed' };
+    return { label: '営業終了', class: 'status-closed' };
 }
 
 async function fetchData() {
