@@ -1,0 +1,14 @@
+{
+  "last_updated": "2026-05-18T10:35:46.458082",
+  "data_range": {
+    "start": "2026-05-01",
+    "end": "2026-06-30"
+  },
+  "shop_count": 42,
+  "sources": [
+    {
+      "name": "2026_05.pdf",
+      "url": "daily/2026_05.pdf"
+    }
+  ]
+}

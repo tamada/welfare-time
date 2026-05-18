@@ -1,0 +1,109 @@
+{
+  "id": "ksuksu",
+  "name": "CAFE KSUKSU",
+  "location": "むすびわざ館1F",
+  "category": "食堂",
+  "url": "",
+  "google_map": "",
+  "image_url": "",
+  "schedules": [
+    {
+      "date": "2026-05-01",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-07",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-08",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-11",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-12",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-13",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-15",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-18",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": "パンのみ"
+    },
+    {
+      "date": "2026-05-19",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": "パンのみ"
+    },
+    {
+      "date": "2026-05-25",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-26",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-27",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-28",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-29",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ヘルプ - はらぺこ KSU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="apple-touch-icon" href="../assets/icon.svg">
+    <link rel="stylesheet" href="../assets/style.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="はらぺこ KSU">
+</head>
+<body>
+
+<nav class="navbar navbar-dark sticky-top">
+    <div class="container d-flex justify-content-center">
+        <a class="navbar-brand fw-bold py-0" href="../index.html">はらぺこ KSU</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="help-container">
+        <div class="d-flex align-items-center mb-4">
+            <a href="../index.html" class="btn btn-outline-primary btn-sm me-3">
+                <i class="bi bi-arrow-left"></i> 戻る
+            </a>
+            <h1 class="h3 mb-0">ヘルプ・使い方</h1>
+        </div>
+
+        <section>
+            <h2>はらぺこ KSU とは</h2>
+            <p>
+                「はらぺこ KSU」は、京都産業大学内の食堂、コンビニ、ショップ、および日替わりで出店するキッチンカーの営業情報を一目で確認できるサービスです。
+            </p>
+        </section>
+
+        <section>
+            <h2>使いかた</h2>
+            <h3>1. 今日の情報を確認する</h3>
+            <p>トップページを開くと、自動的に「今日」の営業情報が表示されます。現在時刻に合わせて「営業中」「準備中」「営業終了」が判定されます。</p>
+            
+            <h3>2. 日付を切り替える</h3>
+            <p>画面上部の「前日」「翌日」ボタン、またはカレンダーアイコンをクリックして日付を選択することで、特定の日付の予定を確認できます。「今日」ボタンを押すといつでも当日に戻れます。</p>
+            
+            <h3>3. 詳細情報を確認する</h3>
+            <p>各カードをクリック（または詳細ボタンを押す）すると、その店舗の公式Webサイトや詳細ページに移動できます。</p>
+        </section>
+
+        <section>
+            <h2>ステータス表示について</h2>
+            <div class="mb-3">
+                <div class="d-flex align-items-center mb-2">
+                    <span class="status-example status-open">営業中</span>
+                    <span>現在、営業している時間内です。</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="status-example status-closed">準備中</span>
+                    <span>本日の営業開始前、または翌日以降の予定です。</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="status-example status-closed">営業終了</span>
+                    <span>本日の営業が終了したか、過去の日付です。</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <span class="status-example status-closed">休業</span>
+                    <span>その日は営業予定がありません。</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>データについて</h2>
+            <p>
+                当サイトのデータは以下のソースから自動的に収集（スクレイピング）しています。
+            </p>
+            <ul>
+                <li><a href="https://www.kyoto-su.ac.jp/campus/welfare/" target="_blank">大学公式Webサイト</a>（福利厚生・食堂案内PDF）</li>
+                <li><a href="https://schedule.mellow.jp/ss_web/markets/KqTl8N" target="_blank">キッチンカー出店情報（Mellow）</a></li>
+            </ul>
+            <p class="text-danger small">
+                <i class="bi bi-exclamation-triangle-fill"></i> 注意：自動収集のため、急な営業時間の変更や臨時休業が反映されていない場合があります。正確な情報は必ず公式の掲示板等でご確認ください。
+            </p>
+        </section>
+
+        <section>
+            <h2>その他</h2>
+            <ul>
+                <li><a href="install.html">スマートフォンでのアプリ化</a></li>
+                <li><a href="api.html">API 利用ガイド</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>お問い合わせ</h2>
+            <p>
+                不具合の報告や改善の提案は、GitHubのリポジトリまでお寄せください。
+            </p>
+            <a href="https://github.com/tamada/harapeco" target="_blank" class="footer-link">
+                <i class="bi bi-github"></i> tamada/harapeco
+            </a>
+        </section>
+    </div>
+</div>
+
+<footer>
+    <div class="container text-center">
+        <div class="mt-2">
+            &copy; 2026 はらぺこ KSU / 
+            <a href="https://github.com/tamada/harapeco" class="footer-link" target="_blank">GitHub</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
