@@ -30,6 +30,9 @@
 
         <div class="collapse navbar-collapse" id="navbarActions">
             <div class="navbar-nav ms-auto gap-1">
+                <button id="btn-theme" class="nav-icon-btn">
+                    <i class="bi bi-moon-fill"></i>
+                </button>
                 <a href="https://github.com/tamada/harapeco" target="_blank" class="nav-icon-btn">
                     <i class="bi bi-github"></i>
                     <span class="d-lg-none">GitHubリポジトリ</span>
@@ -42,6 +45,22 @@
         </div>
     </div>
 </nav>
+
+<script>
+    // Theme logic
+    const themeBtn = document.getElementById('btn-theme');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    themeBtn.querySelector('i').className = savedTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+
+    themeBtn.onclick = () => {
+        const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-bs-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeBtn.querySelector('i').className = newTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+    };
+</script>
 
 <div class="container">
     <div class="help-container">
