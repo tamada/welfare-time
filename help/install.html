@@ -17,9 +17,31 @@
 </head>
 <body>
 
-<nav class="navbar navbar-dark sticky-top">
-    <div class="container d-flex justify-content-center">
-        <a class="navbar-brand fw-bold py-0" href="../index.html">はらぺこ KSU</a>
+<nav class="navbar navbar-dark navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold py-0 d-flex align-items-center" href="../index.html">
+            <img src="../assets/icon_bg.svg" alt="Icon" width="40" height="40" class="me-2">
+            <div class="d-flex flex-column align-items-start">
+                <span>はらぺこ KSU</span>
+            </div>
+        </a>
+        
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarActions">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarActions">
+            <div class="navbar-nav ms-auto gap-1">
+                <a href="https://github.com/tamada/harapeco" target="_blank" class="nav-icon-btn">
+                    <i class="bi bi-github"></i>
+                    <span class="d-lg-none">GitHubリポジトリ</span>
+                </a>
+                <a href="index.html" class="nav-icon-btn">
+                    <i class="bi bi-question-circle"></i>
+                    <span class="d-lg-none">ヘルプ・使い方</span>
+                </a>
+            </div>
+        </div>
     </div>
 </nav>
 
