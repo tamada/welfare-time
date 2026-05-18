@@ -126,7 +126,6 @@
             <input type="date" id="datepicker-input">
         </div>
         <div class="mt-1 text-muted x-small">
-            読み込み: <span id="page-load-time"></span>
         </div>
 
         <button id="next-day" class="btn btn-light btn-sm px-3">翌日</button>
@@ -134,6 +133,9 @@
 </div>
 
 <div class="container">
+    <div class="d-flex justify-content-end mt-2 mb-2">
+        <div class="text-muted x-small">読み込み: <span id="page-load-time"></span></div>
+    </div>
     <div id="loading-overlay"><div class="spinner-border spinner-border-sm text-primary"></div></div>
     <div class="row g-2" id="shop-grid"></div>
 </div>
