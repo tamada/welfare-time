@@ -114,18 +114,16 @@
 </div>
 
 <div class="date-nav">
-    <div class="container d-flex justify-content-between align-items-center">
+    <div class="container d-grid" style="grid-template-columns: auto 1fr auto; align-items: center;">
         <button id="prev-day" class="btn btn-light btn-sm px-3">前日</button>
         
-        <div class="d-flex align-items-center gap-2">
+        <div class="d-flex justify-content-center align-items-center gap-2">
             <div id="date-selector" class="date-display-wrapper d-flex align-items-center">
                 <i class="bi bi-calendar3 text-primary me-2"></i>
                 <span id="current-date-display" class="fw-bold">----年--月--日</span>
             </div>
             <button id="today-btn" class="btn btn-light btn-sm px-3 fw-bold text-primary">今日</button>
             <input type="date" id="datepicker-input">
-        </div>
-        <div class="mt-1 text-muted x-small">
         </div>
 
         <button id="next-day" class="btn btn-light btn-sm px-3">翌日</button>
