@@ -48,6 +48,9 @@
                     <i class="bi bi-arrow-clockwise"></i>
                     <span class="d-lg-none">最新に更新</span>
                 </div>
+                <div class="nav-icon-btn" id="btn-status" data-bs-toggle="modal" data-bs-target="#statusModal" title="更新状況">
+                    <i class="bi bi-info-circle"></i>
+                </div>
                 <div class="nav-icon-btn" id="btn-theme" title="テーマ切り替え">
                     <i class="bi bi-moon-fill"></i>
                 </div>
@@ -134,14 +137,27 @@
 
 <footer>
     <div class="container text-center">
-        <div id="status-info" class="mb-2"></div>
-        <div id="source-links" class="small"></div>
         <div class="mt-2">
             &copy; 2026 はらぺこ KSU / 
             <a href="https://github.com/tamada/harapeco" class="footer-link" target="_blank">GitHub</a>
         </div>
     </div>
 </footer>
+
+<div class="modal fade" id="statusModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">データ更新状況</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="status-info" class="mb-2"></div>
+                <div id="source-links" class="small"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="assets/main.js"></script>
 </body>

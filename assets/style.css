@@ -35,13 +35,14 @@ body {
     line-height: 1.2;
 }
 .status-badge {
-    font-size: 0.7rem;
-    padding: 2px 8px;
-    border-radius: 4px;
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 6px;
     font-weight: 600;
 }
 .status-open { background-color: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
-.status-closed { background-color: #f5f5f5; color: #757575; border: 1px solid #e0e0e0; }
+.status-closed { background-color: #f5f5f5; color: #666; border: 1px solid #e0e0e0; }
+.status-icon-btn { cursor: pointer; color: #666; font-size: 1.2rem; }
 
 .location-text { font-size: 0.75rem; color: #666; }
 .time-text { font-size: 0.8rem; font-weight: 500; color: #444; }
