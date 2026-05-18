@@ -31,7 +31,9 @@ function getShopStatus(startTime, endTime, targetDateStr) {
 
 async function fetchData() {
     const targetDateStr = getTargetDateStr();
-    document.getElementById('current-date-display').textContent = targetDateStr;
+    const dateObj = new Date(targetDateStr);
+    const dayOfWeek = ['日', '月', '火', '水', '木', '金', '土'][dateObj.getDay()];
+    document.getElementById('current-date-display').textContent = `${targetDateStr} (${dayOfWeek})`;
     document.getElementById('datepicker-input').value = targetDateStr;
     document.getElementById('loading-overlay').style.display = 'flex';
     
