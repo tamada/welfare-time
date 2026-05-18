@@ -1,0 +1,32 @@
+{
+  "date": "2026-06-15",
+  "last_updated": "2026-05-18T10:35:46.458082",
+  "cafeterias": [],
+  "kitchen_cars": [
+    {
+      "id": "dqSeq3",
+      "name": "旨夢路本舗",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
+      "image_url": "",
+      "location": "大学内指定場所",
+      "category": "キッチンカー",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "business_hours": "11:00〜17:00",
+      "note": "旨夢路式☆創作塩からあげ"
+    },
+    {
+      "id": "dqSe1b",
+      "name": "メロンパンみのり",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
+      "image_url": "",
+      "location": "大学内指定場所",
+      "category": "キッチンカー",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "business_hours": "11:00〜17:00",
+      "note": "メロンパンみのり"
+    }
+  ],
+  "sources": []
+}

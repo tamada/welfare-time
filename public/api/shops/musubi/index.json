@@ -1,0 +1,137 @@
+{
+  "id": "musubi",
+  "name": "むすびキッチン",
+  "location": "雄飛館2F",
+  "category": "食堂",
+  "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/nagomi.html",
+  "google_map": "",
+  "image_url": "",
+  "schedules": [
+    {
+      "date": "2026-05-01",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-07",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-08",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-11",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-12",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-13",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-14",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-15",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-18",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-19",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-20",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-21",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-22",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-25",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-26",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-27",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-28",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-29",
+      "location": "雄飛館2F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "id": "sukiya",
+  "name": "すき家",
+  "location": "真理館1F",
+  "category": "食堂",
+  "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/sukiya.html",
+  "google_map": "",
+  "image_url": "",
+  "schedules": [
+    {
+      "date": "2026-05-01",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-02",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-07",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-08",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-09",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-11",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-12",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-13",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-14",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-15",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-16",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-18",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-19",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-20",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-21",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-22",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-23",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-25",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-26",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-27",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-28",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-29",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-30",
+      "location": "真理館1F",
+      "start_time": "10:00",
+      "end_time": "19:00",
+      "note": ""
+    }
+  ]
+}

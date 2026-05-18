@@ -114,11 +114,49 @@
 <body>
 
 <nav class="navbar navbar-dark sticky-top">
-    <div class="container d-flex justify-content-center flex-column align-items-center">
-        <a class="navbar-brand fw-bold py-0" href="index.html">はらぺこ KSU</a>
-        <div id="header-data-range" class="text-light x-small opacity-75 mt-1"></div>
+    <div class="container d-flex justify-content-between align-items-center">
+        <div style="width: 80px;"></div> <!-- Spacer for symmetry -->
+        <div class="d-flex flex-column align-items-center">
+            <a class="navbar-brand fw-bold py-0 me-0" href="index.html">はらぺこ KSU</a>
+            <div id="header-data-range" class="text-light x-small opacity-75 mt-1"></div>
+        </div>
+        <div class="d-flex gap-3">
+            <a href="https://github.com/tamada/harapeco" target="_blank" class="text-light fs-5" title="GitHub">
+                <i class="bi bi-github"></i>
+            </a>
+            <a href="#" class="text-light fs-5" title="ヘルプ" data-bs-toggle="modal" data-bs-target="#helpModal">
+                <i class="bi bi-question-circle"></i>
+            </a>
+        </div>
     </div>
 </nav>
+
+<!-- Help Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">はらぺこ KSU について</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>京都産業大学内の食堂やショップ、キッチンカーの営業時間を一覧できるサービスです。</p>
+                <h6 class="fw-bold">ステータスについて</h6>
+                <ul>
+                    <li><span class="badge status-open">営業中</span> : 現在営業している時間内です。</li>
+                    <li><span class="badge status-closed text-dark">準備中</span> : 本日の営業開始前、または翌日以降の予定です。</li>
+                    <li><span class="badge status-closed text-dark">営業終了</span> : 本日の営業時間が終了した、または過去の日付です。</li>
+                    <li><span class="badge status-closed text-dark">休業</span> : 営業予定がありません。</li>
+                </ul>
+                <h6 class="fw-bold">免責事項</h6>
+                <p class="small text-muted">本サービスは公式PDFおよびWebサイトの情報を元にしていますが、実際の営業状況と異なる場合があります。正確な情報は各店舗や掲示板でご確認ください。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-modal="modal" data-bs-dismiss="modal">閉じる</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="date-nav">
     <div class="container d-flex justify-content-between align-items-center">

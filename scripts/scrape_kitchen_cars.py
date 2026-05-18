@@ -15,7 +15,6 @@ def squash_field(x):
     x = unicodedata.normalize("NFKC", x)
     x = re.sub(r"\s+", "", x)
     x = x.replace("(", "（").replace(")", "）")
-    # 時間の tilde を全角 ～ に統一
     x = x.replace("~", "～")
     return x
 
@@ -25,22 +24,33 @@ def scrape_kitchen_cars(input_path, output_path):
 
     results = []
     
+    # ページ内の各出店情報を特定する要素を取得
     items = soup.find_all("a", class_="a-link text-body text-decoration-none d-block")
 
     for item in items:
+        # 日付: badgeクラス
         date_el = item.find("span", class_="badge")
         date_text = date_el.get_text(strip=True) if date_el else ""
         date_match = re.search(r"(\d{4})/(\d{2})/(\d{2})", date_text)
         if not date_match: continue
         
+        # 店舗名: card-title
         name_el = item.find("div", class_="card-title")
         name = name_el.get_text(strip=True) if name_el else "不明"
         
+        # テキスト要素リスト
         text_elements = item.find_all("div", class_="card-text")
+        
+        # メニュー: 1番目の card-text
         menu = text_elements[0].get_text(strip=True) if len(text_elements) > 0 else ""
+        
+        # 時間: 2番目の card-text
         time_text = text_elements[1].get_text(strip=True) if len(text_elements) > 1 else "00:00~00:00"
         
-        url = "https://schedule.mellow.jp" + item.get("href", "")
+        # URL (href 属性)
+        url = item.get("href", "")
+        if url and not url.startswith("http"):
+            url = "https://schedule.mellow.jp" + url
         
         time_match = re.search(r"(\d{1,2}:\d{2})\s*[〜~～]\s*(\d{1,2}:\d{2})", time_text)
         start, end = time_match.groups() if time_match else ("00:00", "00:00")
@@ -51,10 +61,12 @@ def scrape_kitchen_cars(input_path, output_path):
             "date": f"{date_match.group(1)}-{date_match.group(2)}-{date_match.group(3)}",
             "start_time": squash_field(start),
             "end_time": squash_field(end),
-            "business_hours": squash_field(f"{start}～{end}"),
-            "note": squash_name(menu)
+            "business_hours": squash_field(time_text),
+            "note": squash_name(menu),
+            "url": url
         })
 
+    # 重複排除
     unique_results = []
     seen = set()
     for res in results:
@@ -68,4 +80,5 @@ def scrape_kitchen_cars(input_path, output_path):
     print(f"Parsed {len(unique_results)} entries. Saved to {output_path}")
 
 if __name__ == "__main__":
+    # 入力ファイルパスが決め打ちにならないよう、必要に応じて引数化できますが、今は現状に合わせて実行
     scrape_kitchen_cars("tmp/kitchen_cars_raw.html", "tmp/scraped_kitchen_cars.json")
