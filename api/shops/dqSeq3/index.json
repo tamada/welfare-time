@@ -3,7 +3,7 @@
   "name": "旨夢路本舗",
   "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
   "image_url": "",
-  "headline": "",
+  "headline": "旨夢路式☆創作塩からあげ",
   "location": "大学内指定場所",
   "category": "キッチンカー",
   "schedules": [
@@ -12,14 +12,14 @@
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "旨夢路式☆創作塩からあげ"
+      "note": ""
     },
     {
       "date": "2026-06-15",
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "旨夢路式☆創作塩からあげ"
+      "note": ""
     }
   ]
 }

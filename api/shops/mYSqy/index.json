@@ -3,7 +3,7 @@
   "name": "ヨギチョギ",
   "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
   "image_url": "",
-  "headline": "",
+  "headline": "やみつきバーガー",
   "location": "大学内指定場所",
   "category": "キッチンカー",
   "schedules": [
@@ -12,42 +12,42 @@
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "やみつきバーガー"
+      "note": ""
     },
     {
       "date": "2026-05-26",
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "やみつきバーガー"
+      "note": ""
     },
     {
       "date": "2026-06-03",
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "やみつきバーガー"
+      "note": ""
     },
     {
       "date": "2026-06-10",
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "やみつきバーガー"
+      "note": ""
     },
     {
       "date": "2026-06-17",
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "やみつきバーガー"
+      "note": ""
     },
     {
       "date": "2026-06-24",
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "やみつきバーガー"
+      "note": ""
     }
   ]
 }

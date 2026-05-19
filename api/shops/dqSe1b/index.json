@@ -3,7 +3,7 @@
   "name": "メロンパンみのり",
   "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
   "image_url": "",
-  "headline": "",
+  "headline": "メロンパンみのり",
   "location": "大学内指定場所",
   "category": "キッチンカー",
   "schedules": [
@@ -12,42 +12,42 @@
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "メロンパンみのり"
+      "note": ""
     },
     {
       "date": "2026-05-29",
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "メロンパンみのり"
+      "note": ""
     },
     {
       "date": "2026-06-01",
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "メロンパンみのり"
+      "note": ""
     },
     {
       "date": "2026-06-08",
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "メロンパンみのり"
+      "note": ""
     },
     {
       "date": "2026-06-15",
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "メロンパンみのり"
+      "note": ""
     },
     {
       "date": "2026-06-29",
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "メロンパンみのり"
+      "note": ""
     }
   ]
 }

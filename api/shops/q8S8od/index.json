@@ -3,7 +3,7 @@
   "name": "NICEキッチンカー",
   "url": "https://schedule.mellow.jp/ss_web/shops/q8S8od",
   "image_url": "",
-  "headline": "",
+  "headline": "豚丼",
   "location": "大学内指定場所",
   "category": "キッチンカー",
   "schedules": [
@@ -12,7 +12,7 @@
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "豚丼"
+      "note": ""
     }
   ]
 }

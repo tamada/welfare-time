@@ -3,7 +3,7 @@
   "name": "BOULANGERIE le RASE",
   "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
   "image_url": "",
-  "headline": "",
+  "headline": "フランクドック",
   "location": "大学内指定場所",
   "category": "キッチンカー",
   "schedules": [
@@ -12,21 +12,21 @@
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "フランクドック"
+      "note": ""
     },
     {
       "date": "2026-06-10",
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "フランクドック"
+      "note": ""
     },
     {
       "date": "2026-06-17",
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "フランクドック"
+      "note": ""
     }
   ]
 }

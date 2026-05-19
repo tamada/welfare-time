@@ -3,7 +3,7 @@
   "name": "喜珈琲",
   "url": "https://schedule.mellow.jp/ss_web/shops/5gSVjO",
   "image_url": "",
-  "headline": "",
+  "headline": "レタスホットドッグ",
   "location": "大学内指定場所",
   "category": "キッチンカー",
   "schedules": [
@@ -12,7 +12,7 @@
       "location": "大学内指定場所",
       "start_time": "11:00",
       "end_time": "17:00",
-      "note": "レタスホットドッグ"
+      "note": ""
     }
   ]
 }

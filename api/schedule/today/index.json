@@ -1,6 +1,6 @@
 {
   "date": "2026-05-19",
-  "last_updated": "2026-05-19T10:28:17.542992",
+  "last_updated": "2026-05-19T17:31:53.660046",
   "cafeterias": [
     {
       "id": "101",
@@ -261,26 +261,26 @@
       "name": "ヨギチョギ",
       "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
       "image_url": "",
-      "headline": "",
+      "headline": "やみつきバーガー",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
       "end_time": "17:00",
       "business_hours": "11:00〜17:00",
-      "note": "やみつきバーガー"
+      "note": ""
     },
     {
       "id": "dqSeq3",
       "name": "旨夢路本舗",
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
       "image_url": "",
-      "headline": "",
+      "headline": "旨夢路式☆創作塩からあげ",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
       "end_time": "17:00",
       "business_hours": "11:00〜17:00",
-      "note": "旨夢路式☆創作塩からあげ"
+      "note": ""
     }
   ],
   "sources": [

@@ -1,6 +1,6 @@
 {
   "date": "2026-05-22",
-  "last_updated": "2026-05-19T10:28:17.542992",
+  "last_updated": "2026-05-19T17:31:53.660046",
   "cafeterias": [
     {
       "id": "101",
@@ -247,26 +247,26 @@
       "name": "SKY KITCHEN",
       "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
       "image_url": "",
-      "headline": "",
+      "headline": "照り焼きチキン",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
       "end_time": "17:00",
       "business_hours": "11:00〜17:00",
-      "note": "照り焼きチキン"
+      "note": ""
     },
     {
       "id": "dqSe1b",
       "name": "メロンパンみのり",
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
       "image_url": "",
-      "headline": "",
+      "headline": "メロンパンみのり",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
       "end_time": "17:00",
       "business_hours": "11:00〜17:00",
-      "note": "メロンパンみのり"
+      "note": ""
     }
   ],
   "sources": [
