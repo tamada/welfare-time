@@ -1,6 +1,6 @@
 {
   "date": "2026-06-08",
-  "last_updated": "2026-05-18T10:35:46.458082",
+  "last_updated": "2026-05-19T10:28:17.542992",
   "cafeterias": [],
   "kitchen_cars": [
     {
@@ -8,6 +8,7 @@
       "name": "SKY KITCHEN",
       "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
       "image_url": "",
+      "headline": "",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -20,6 +21,7 @@
       "name": "メロンパンみのり",
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
       "image_url": "",
+      "headline": "",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",

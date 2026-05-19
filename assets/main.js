@@ -163,6 +163,7 @@ function render() {
                         <span class="status-badge ${status.class}">${status.label}</span>
                     </div>
                     <div class="shop-name text-truncate" title="${shop.name}">${shop.name}</div>
+                    ${shop.headline ? `<div class="headline-text text-truncate mb-1" title="${shop.headline}">${shop.headline}</div>` : ''}
                     <div class="location-text text-truncate mb-1"><i class="bi bi-geo-alt"></i> ${shop.location}</div>
                     <div class="time-text"><i class="bi bi-clock"></i> ${shop.start_time}～${shop.end_time}</div>
                     ${shop.note ? `<div class="note-box">${shop.note}</div>` : ''}
@@ -178,6 +179,7 @@ function render() {
                             <span class="shop-category-tag mb-0">${category}</span>
                             <div class="shop-name">${shop.name}</div>
                         </div>
+                        ${shop.headline ? `<div class="headline-text text-truncate mb-1" title="${shop.headline}">${shop.headline}</div>` : ''}
                         <div class="d-flex gap-3">
                             <div class="location-text text-truncate"><i class="bi bi-geo-alt"></i> ${shop.location}</div>
                             <div class="time-text"><i class="bi bi-clock"></i> ${shop.start_time}～${shop.end_time}</div>

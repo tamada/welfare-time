@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-05-18T10:35:46.458082",
+  "last_updated": "2026-05-19T10:28:17.542992",
   "data_range": {
     "start": "2026-05-01",
     "end": "2026-06-30"
   },
-  "shop_count": 42,
+  "shop_count": 41,
   "sources": [
     {
       "name": "2026_05.pdf",

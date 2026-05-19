@@ -2,11 +2,11 @@
   "week_index": 2,
   "start_date": "2026-06-01",
   "end_date": "2026-06-07",
-  "last_updated": "2026-05-18T10:35:46.458082",
+  "last_updated": "2026-05-19T10:28:17.542992",
   "daily_schedules": [
     {
       "date": "2026-06-01",
-      "last_updated": "2026-05-18T10:35:46.458082",
+      "last_updated": "2026-05-19T10:28:17.542992",
       "cafeterias": [],
       "kitchen_cars": [
         {
@@ -14,31 +14,20 @@
           "name": "メロンパンみのり",
           "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
           "image_url": "",
+          "headline": "",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
           "end_time": "17:00",
           "business_hours": "11:00〜17:00",
           "note": "メロンパンみのり"
-        },
-        {
-          "id": "7ASDmX",
-          "name": "ANGELKITCHEN",
-          "url": "https://schedule.mellow.jp/ss_web/shops/7ASDmX",
-          "image_url": "",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": "イチゴバナナチョコホイップ"
         }
       ],
       "sources": []
     },
     {
       "date": "2026-06-02",
-      "last_updated": "2026-05-18T10:35:46.458082",
+      "last_updated": "2026-05-19T10:28:17.542992",
       "cafeterias": [],
       "kitchen_cars": [
         {
@@ -46,6 +35,7 @@
           "name": "もんきち",
           "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
           "image_url": "",
+          "headline": "",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -58,6 +48,7 @@
           "name": "TeraCinquecento",
           "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
           "image_url": "",
+          "headline": "",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -70,7 +61,7 @@
     },
     {
       "date": "2026-06-03",
-      "last_updated": "2026-05-18T10:35:46.458082",
+      "last_updated": "2026-05-19T10:28:17.542992",
       "cafeterias": [],
       "kitchen_cars": [
         {
@@ -78,6 +69,7 @@
           "name": "ヨギチョギ",
           "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
           "image_url": "",
+          "headline": "",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -90,6 +82,7 @@
           "name": "ホットドッグcafe defi",
           "url": "https://schedule.mellow.jp/ss_web/shops/wwS21",
           "image_url": "",
+          "headline": "",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -102,7 +95,7 @@
     },
     {
       "date": "2026-06-04",
-      "last_updated": "2026-05-18T10:35:46.458082",
+      "last_updated": "2026-05-19T10:28:17.542992",
       "cafeterias": [],
       "kitchen_cars": [
         {
@@ -110,6 +103,7 @@
           "name": "Lo Splendore",
           "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
           "image_url": "",
+          "headline": "",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -122,6 +116,7 @@
           "name": "inosen cafe",
           "url": "https://schedule.mellow.jp/ss_web/shops/JmS6yB",
           "image_url": "",
+          "headline": "",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -134,7 +129,7 @@
     },
     {
       "date": "2026-06-05",
-      "last_updated": "2026-05-18T10:35:46.458082",
+      "last_updated": "2026-05-19T10:28:17.542992",
       "cafeterias": [],
       "kitchen_cars": [
         {
@@ -142,6 +137,7 @@
           "name": "Panda Kitchen",
           "url": "https://schedule.mellow.jp/ss_web/shops/vmSb9R",
           "image_url": "",
+          "headline": "",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -154,6 +150,7 @@
           "name": "BOULANGERIE le RASE",
           "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
           "image_url": "",
+          "headline": "",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",

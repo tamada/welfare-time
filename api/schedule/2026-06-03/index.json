@@ -1,6 +1,6 @@
 {
   "date": "2026-06-03",
-  "last_updated": "2026-05-18T10:35:46.458082",
+  "last_updated": "2026-05-19T10:28:17.542992",
   "cafeterias": [],
   "kitchen_cars": [
     {
@@ -8,6 +8,7 @@
       "name": "ヨギチョギ",
       "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
       "image_url": "",
+      "headline": "",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -20,6 +21,7 @@
       "name": "ホットドッグcafe defi",
       "url": "https://schedule.mellow.jp/ss_web/shops/wwS21",
       "image_url": "",
+      "headline": "",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",

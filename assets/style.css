@@ -34,6 +34,12 @@ body {
     margin-bottom: 4px;
     line-height: 1.2;
 }
+.headline-text {
+    font-size: 0.7rem;
+    color: #888;
+    font-style: italic;
+    cursor: help;
+}
 .status-badge {
     font-size: 0.75rem;
     padding: 3px 10px;
