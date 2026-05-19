@@ -63,7 +63,7 @@ def scrape_kitchen_cars(input_path, output_path):
             "start_time": squash_field(start),
             "end_time": squash_field(end),
             "business_hours": squash_field(time_text),
-            "note": squash_name(menu),
+            "headline": squash_name(menu),
             "url": url
         })
 

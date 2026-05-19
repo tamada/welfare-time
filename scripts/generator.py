@@ -138,13 +138,13 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
             "name": s["id"],
             "url": target_url,
             "image_url": m_info.get("image_url", "") if m_info else "",
-            "headline": m_info.get("headline", "") if m_info else "",
-            "location": s["location"] or "大学内指定場所",
+            "headline": s.get("headline", "") or (m_info.get("headline", "") if m_info else ""),
+            "location": s.get("location") or "大学内指定場所",
             "category": "キッチンカー",
             "start_time": s["start_time"],
             "end_time": s["end_time"],
             "business_hours": s["business_hours"],
-            "note": s["note"]
+            "note": ""
         })
 
     # 5. Generate Daily API Files
