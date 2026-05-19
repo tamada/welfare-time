@@ -31,6 +31,7 @@ jobs:
           python scripts/fetch_cafeteria_pdf.py
           # public/daily/ 配下のすべてのPDFを対象にパースを実行
           # (parse_cafeteria_pdf.py はPDFの更新日時を比較し、変更がない場合は自動的にスキップします)
+          mkdir -p tmp
           for pdf in public/daily/*.pdf; do
             if [ -f "$pdf" ]; then
               target_json="tmp/parsed_$(basename "$pdf" .pdf).json"
