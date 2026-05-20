@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>キャンパスマップ | シカク</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        #map-wrapper { position: relative; }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-dark navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold py-0 d-flex align-items-center" href="index.html">
+            <img src="assets/icon.svg" alt="Icon" width="40" height="40" class="me-2">
+            <span>シカク</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarActions">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarActions">
+            <div class="navbar-nav ms-auto gap-1">
+                <a href="map.html" class="nav-icon-btn active-view" title="キャンパスマップ"><i class="bi bi-map"></i></a>
+                <a href="index.html" class="nav-icon-btn" title="カード表示"><i class="bi bi-grid-fill"></i></a>
+                <a href="list.html" class="nav-icon-btn" title="リスト表示"><i class="bi bi-list-ul"></i></a>
+                <div class="nav-icon-btn" id="btn-filter" data-bs-toggle="modal" data-bs-target="#filterModal"><i class="bi bi-filter"></i></div>
+                <div class="nav-icon-btn" id="btn-sort" data-bs-toggle="modal" data-bs-target="#sortModal"><i class="bi bi-sort-down"></i></div>
+                <div class="nav-icon-btn" id="btn-reload"><i class="bi bi-arrow-clockwise"></i></div>
+                <div class="nav-icon-btn" id="btn-status" data-bs-toggle="modal" data-bs-target="#statusModal" title="更新状況"><i class="bi bi-info-circle"></i></div>
+                <div class="nav-icon-btn" id="btn-theme" title="テーマ切り替え"><i class="bi bi-moon-fill"></i></div>
+                <a href="https://github.com/tamada/harapeco" target="_blank" class="nav-icon-btn"><i class="bi bi-github"></i></a>
+                <a href="help/index.html" class="nav-icon-btn"><i class="bi bi-question-circle"></i></a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="date-nav">
+    <div class="container d-grid" style="grid-template-columns: auto 1fr auto; align-items: center;">
+        <button id="prev-day" class="btn btn-light btn-sm px-3">前日</button>
+        <div class="d-flex justify-content-center align-items-center gap-2">
+            <div id="date-selector" class="date-display-wrapper d-flex align-items-center">
+                <i class="bi bi-calendar3 text-primary me-2"></i>
+                <span id="current-date-display" class="fw-bold">----年--月--日</span>
+            </div>
+            <button id="today-btn" class="btn btn-light btn-sm px-3 fw-bold text-primary">今日</button>
+        </div>
+        <button id="next-day" class="btn btn-light btn-sm px-3">翌日</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
+        <div id="header-data-range" class="text-muted x-small"></div>
+        <div class="text-muted x-small">読み込み: <span id="page-load-time"></span></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div id="map-wrapper" class="mb-4">
+                <img src="assets/campus_map.jpg" alt="Map" class="img-fluid">
+                <div id="overlay" class="map-layer"></div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <h3 class="mb-3">店舗一覧</h3>
+            <div id="shop-grid" class="d-flex flex-column gap-2 w-100"></div>
+        </div>
+    </div>
+    <div id="tooltip"></div>
+</div>
+
+<footer class="mt-5">
+    <div class="container text-center py-4">
+        &copy; 2026 シカク / <a href="https://github.com/tamada/harapeco" class="footer-link" target="_blank">GitHub</a>
+    </div>
+</footer>
+
+<div class="modal fade" id="filterModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">表示フィルタ</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="filter-options-body" class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" id="reset-filter" class="btn btn-outline-secondary btn-sm me-auto">リセット</button>
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">閉じる</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="sortModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">並び替え</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-check mb-3">
+                    <input class="form-check-input sort-radio" type="radio" name="sortOption" id="sort-status" value="status">
+                    <label class="form-check-label w-100" for="sort-status">営業状況順（営業中を優先）</label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input sort-radio" type="radio" name="sortOption" id="sort-name" value="name">
+                    <label class="form-check-label w-100" for="sort-name">名称順</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input sort-radio" type="radio" name="sortOption" id="sort-location" value="location">
+                    <label class="form-check-label w-100" for="sort-location">場所順</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">閉じる</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="statusModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">データ更新状況</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="status-info" class="mb-2"></div>
+                <div id="source-links" class="small"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/main.js"></script>
+<script>
+    const master = {
+        "cafeterias": [
+            { "id": "101", "name": "やさい食堂 イチマルイチ", "location": "10号館1F" },
+            { "id": "fujikatsu", "name": "ふじカツ", "location": "並楽館1F" },
+            { "id": "ichibariki", "name": "らーめん壱馬力", "location": "並楽館1F" },
+            { "id": "cosmic-bakery-cafe", "name": "cosmic bakery cafe", "location": "並楽館2F" },
+            { "id": "libre", "name": "LIBRE（リブレ）", "location": "並楽館3F" },
+            { "id": "sukiya", "name": "すき家", "location": "真理館1F" },
+            { "id": "kitchen-sun", "name": "キッチンサン", "location": "真理館1F" },
+            { "id": "kamukura", "name": "どうとんぼり神座", "location": "真理館1F" },
+            { "id": "musubi", "name": "むすびキッチン", "location": "雄飛館2F" },
+            { "id": "ascella", "name": "ブックセンター Ascella", "location": "雄飛館1F" },
+            { "id": "family-mart-heiraku", "name": "ファミリーマート（並楽館）", "location": "並楽館1F" },
+            { "id": "family-mart-tenchi", "name": "ファミリーマート（天地館）", "location": "天地館1F" },
+            { "id": "family-mart-motoyama", "name": "ファミリーマート（本山寮）", "location": "本山寮" },
+            { "id": "maruzen-ms", "name": "丸善 M's style", "location": "天地館1F" },
+            { "id": "maruzen-pc", "name": "丸善 パソコンプロショップ", "location": "天地館1F" },
+            { "id": "nasic", "name": "学生情報センター", "location": "天地館1F" },
+            { "id": "ksuksu", "name": "CAFE KSUKSU", "location": "むすびわざ館1F" },
+            { "id": "kitchen-car-spot", "name": "キッチンカー", "location": "ピロティ" }
+        ],
+        "buildings": {
+            "heirakukan": { "name": "並楽館", "area": { "x1": 538, "y1": 346, "x2": 618, "y2": 405 }, "shops": ["fujikatsu", "ichibariki", "cosmic-bakery-cafe", "libre", "family-mart-heiraku"] },
+            "tenchikan": { "name": "天地館", "area": { "x1": 198, "y1": 105, "x2": 270, "y2": 190 }, "shops": ["family-mart-tenchi", "maruzen-ms", "maruzen-pc", "nasic"] },
+            "10goukan": { "name": "10号館", "area": { "x1": 330, "y1": 88, "x2": 392, "y2": 200 }, "shops": ["101"] },
+            "shinrikan": { "name": "真理館", "area": { "x1": 602, "y1": 32, "x2": 647, "y2": 212 }, "shops": ["sukiya", "kitchen-sun", "kamukura"] },
+            "yuhikan": { "name": "雄飛館", "area": { "x1": 540, "y1": 38, "x2": 600, "y2": 128 }, "shops": ["musubi", "ascella"] },
+            "pilotis": { "name": "ピロティ", "area": { "x1": 558, "y1": 136, "x2": 610, "y2": 211 }, "shops": ["mellow-shop-001", "mellow-shop-002"] }
+        }
+    };
+    const IMAGE_WIDTH = 1019, IMAGE_HEIGHT = 747;
+    function updateOverlay() {
+        const img = document.querySelector('#map-wrapper img');
+        if (!img || img.naturalWidth === 0) return;
+        
+        const scaleX = img.clientWidth / 1019;
+        const scaleY = img.clientHeight / 747;
+
+        Object.entries(master.buildings).forEach(([id, b]) => {
+            const div = document.getElementById('area-' + id);
+            if (!div) return;
+            div.style.left = (b.area.x1 * scaleX) + 'px';
+            div.style.top = (b.area.y1 * scaleY) + 'px';
+            div.style.width = ((b.area.x2 - b.area.x1) * scaleX) + 'px';
+            div.style.height = ((b.area.y2 - b.area.y1) * scaleY) + 'px';
+            console.log(`Building: ${id}, Left: ${div.style.left}, Top: ${div.style.top}, Width: ${div.style.width}, Height: ${div.style.height}`);
+        });
+    }
+    window.addEventListener('resize', updateOverlay);
+    document.querySelector('#map-wrapper img').addEventListener('load', updateOverlay);
+
+        // Initialize Map and UI
+    document.addEventListener('DOMContentLoaded', async () => {
+        const overlay = document.getElementById('overlay');
+        const tooltip = document.getElementById('tooltip');
+        const shopGrid = document.getElementById('shop-grid');
+
+        // Expose a custom renderer for map mode
+        const mapRenderer = (data) => {
+            render('col-12');
+            
+            const overlay = document.getElementById('overlay');
+            const tooltip = document.getElementById('tooltip');
+            overlay.innerHTML = '';
+            
+            Object.entries(master.buildings).forEach(([id, b]) => {
+                const div = document.createElement('div');
+                div.className = 'building-area';
+                div.id = 'area-' + id;
+                overlay.appendChild(div);
+                div.addEventListener('mouseenter', () => {
+                    tooltip.style.display = 'block';
+                    const allShops = [...data.cafeterias, ...data.kitchen_cars];
+                    const matchedShops = allShops.filter(s => (id === 'pilotis' && s.location === '大学内指定場所') || b.shops.includes(s.id));
+                    tooltip.innerHTML = `<strong>${b.name}</strong><br>` + matchedShops.map(shopInfo => {
+                        const dateStr = getTargetDateStr();
+                        const status = getShopStatus(shopInfo.start_time, shopInfo.end_time, dateStr);
+                        return `<div class="shop-info">${shopInfo.name}<br><small>場所: ${shopInfo.location}</small><br><span class="${status.class}">${status.label === '営業中' ? '● ' : '○ '}${status.label}</span></div>`;
+                    }).join('') || '<div class="shop-info">営業中の店舗なし</div>';
+                });
+                div.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+            });
+            updateOverlay();
+        };
+
+        await fetchData(mapRenderer);
+
+        // Hook into filter/sort logic to refresh map overlay
+        const originalApplyFilters = applyFilters;
+        applyFilters = () => {
+            originalApplyFilters();
+            render('col-12');
+            updateOverlay();
+        };
+    });
+</script>
+</body>
+</html>
+EOF
