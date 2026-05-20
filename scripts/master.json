@@ -129,5 +129,90 @@
       "category": "食堂"
     }
   ],
-  "kitchen_cars": []
+  "kitchen_cars": [],
+  "buildings": {
+    "heirakukan": {
+      "name": "並楽館",
+      "area": {
+        "x1": 538,
+        "y1": 346,
+        "x2": 618,
+        "y2": 405
+      },
+      "shops": [
+        "fujikatsu",
+        "ichibariki",
+        "cosmic-bakery-cafe",
+        "libre",
+        "family-mart-heiraku"
+      ]
+    },
+    "tenchikan": {
+      "name": "天地館",
+      "area": {
+        "x1": 198,
+        "y1": 105,
+        "x2": 270,
+        "y2": 190
+      },
+      "shops": [
+        "family-mart-tenchi",
+        "maruzen-ms",
+        "maruzen-pc",
+        "nasic"
+      ]
+    },
+    "10goukan": {
+      "name": "10号館",
+      "area": {
+        "x1": 330,
+        "y1": 88,
+        "x2": 392,
+        "y2": 200
+      },
+      "shops": [
+        "101"
+      ]
+    },
+    "shinrikan": {
+      "name": "真理館",
+      "area": {
+        "x1": 602,
+        "y1": 32,
+        "x2": 647,
+        "y2": 212
+      },
+      "shops": [
+        "sukiya",
+        "kitchen-sun",
+        "kamukura"
+      ]
+    },
+    "yuhikan": {
+      "name": "雄飛館",
+      "area": {
+        "x1": 540,
+        "y1": 38,
+        "x2": 600,
+        "y2": 128
+      },
+      "shops": [
+        "musubi",
+        "ascella"
+      ]
+    },
+    "pilotis": {
+      "name": "ピロティ",
+      "area": {
+        "x1": 558,
+        "y1": 136,
+        "x2": 610,
+        "y2": 211
+      },
+      "shops": [
+        "mellow-shop-001",
+        "mellow-shop-002"
+      ]
+    }
+  }
 }
