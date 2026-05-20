@@ -251,18 +251,6 @@ if (resetFilter) {
     };
 }
 
-const btnReload = document.getElementById('btn-reload');
-if (btnReload) {
-    btnReload.onclick = () => {
-        if (window.location.pathname.endsWith('map.html')) {
-            renderShopList(); 
-            initMap();
-        } else {
-            // fetchData();
-        }
-    };
-}
-
 // Set active nav link
 const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('nav a').forEach(a => {
