@@ -46,26 +46,24 @@ jobs:
           python scripts/fetch_kitchen_cars.py -o tmp/kitchen_cars_raw.html
           python scripts/scrape_kitchen_cars.py tmp/kitchen_cars_raw.html tmp/scraped_kitchen_cars.json
 
-      - name: 状態調査用 tmate
-        uses: mxschmitt/action-tmate@v3
-
       - name: サイト生成とデプロイ
         run: |
+          mkdir -p dist
           python scripts/generator.py \
             --cafeteria-dir tmp \
             --kitchen-cars tmp/scraped_kitchen_cars.json \
             --master scripts/master.json \
-            --output-dir public
+            --output-dir dist
           
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           # gh-pagesブランチをworktreeとして追加
           git fetch origin gh-pages
-          rm -rf public
-          git worktree add public gh-pages
+          rm -rf dist
+          git worktree add dist gh-pages
           
-          cd public
+          cd dist
           git add .
           git commit -m "Update site data: $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push origin gh-pages
