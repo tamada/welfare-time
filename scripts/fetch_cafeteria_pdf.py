@@ -9,8 +9,8 @@ import unicodedata
 from datetime import datetime
 from pathlib import Path
 
-# Updated storage location to be inside public for direct access
-DAILY_DIR = "public/daily"
+# Updated storage location to be inside data for source storage
+DAILY_DIR = "data/daily"
 METADATA_FILE = os.path.join(DAILY_DIR, ".metadata.json")
 
 def load_metadata():

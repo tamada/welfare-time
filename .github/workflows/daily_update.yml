@@ -30,11 +30,11 @@ jobs:
 
       - name: 食堂データの更新
         run: |
+          mkdir -p data/daily
           python scripts/fetch_cafeteria_pdf.py
-          # public/daily/ 配下のすべてのPDFを対象にパースを実行
-          # (parse_cafeteria_pdf.py はPDFの更新日時を比較し、変更がない場合は自動的にスキップします)
+          # data/daily/ 配下のPDFを対象にパース
           mkdir -p tmp
-          for pdf in public/daily/*.pdf; do
+          for pdf in data/daily/*.pdf; do
             if [ -f "$pdf" ]; then
               target_json="tmp/parsed_$(basename "$pdf" .pdf).json"
               python scripts/parse_cafeteria_pdf.py "$pdf" -o "$target_json"
@@ -50,21 +50,21 @@ jobs:
         run: |
           mkdir -p dist
           python scripts/generator.py \
-            --cafeteria-dir public/daily \
+            --cafeteria-dir tmp \
             --kitchen-cars tmp/scraped_kitchen_cars.json \
             --master scripts/master.json \
             --output-dir dist
-          
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
+
           # gh-pagesブランチをpublicディレクトリにworktreeとして追加
           git fetch origin gh-pages
           git worktree add public gh-pages
-          
+
           # distの内容をpublicにコピー（.gitディレクトリを除外）
           rsync -av --delete --exclude='.git' dist/ public/
-          
+
           cd public
           git add .
           git commit -m "Update site data: $(date +'%Y-%m-%d')" || echo "No changes to commit"
