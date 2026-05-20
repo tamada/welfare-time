@@ -28,6 +28,7 @@ Consistency in data normalization is critical. We use two primary normalization 
 
 ## Workflow Rules
 
+- **Safety Mandate:** Absolutely NO destructive file system operations. `rm` (and its variants) and `git rm` are strictly prohibited. Never delete project files or directories without explicit user approval.
 - **Input paths:** Do not hardcode input paths in scripts. Use CLI arguments (e.g., `argparse`).
 - **Output paths:** Scripts should default to `stdout`. Use `-o` or `--output` for file output when necessary.
 - **Normalization:** Always apply `squash_name` or `squash_field` as defined above.

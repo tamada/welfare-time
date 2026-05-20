@@ -48,7 +48,12 @@ def get_month_from_pdf(pdf_path):
 def main():
     parser = argparse.ArgumentParser(description="Fetch cafeteria schedule PDFs")
     parser.add_argument("-u", "--url", default="https://www.kyoto-su.ac.jp/campus/welfare/", help="Base URL")
+    parser.add_argument("-o", "--output", default="data/daily", help="Output directory")
     args = parser.parse_args()
+
+    global DAILY_DIR, METADATA_FILE
+    DAILY_DIR = args.output
+    METADATA_FILE = os.path.join(DAILY_DIR, ".metadata.json")
 
     response = requests.get(args.url)
     soup = BeautifulSoup(response.text, "html.parser")

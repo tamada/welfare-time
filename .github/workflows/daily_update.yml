@@ -31,7 +31,7 @@ jobs:
       - name: 食堂データの更新
         run: |
           mkdir -p data/daily
-          python scripts/fetch_cafeteria_pdf.py
+          python scripts/fetch_cafeteria_pdf.py -o data/daily
           # data/daily/ 配下のPDFを対象にパース
           mkdir -p tmp
           for pdf in data/daily/*.pdf; do
@@ -65,6 +65,7 @@ jobs:
           # distの内容をpublicにコピー（.gitディレクトリを除外）
           rsync -av --exclude='.git' dist/ public/
 
-          cd public          git add .
+          cd public
+          git add .
           git commit -m "Update site data: $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push origin gh-pages
