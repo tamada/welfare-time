@@ -1,6 +1,6 @@
 {
   "date": "2026-05-20",
-  "last_updated": "2026-05-20T07:02:13.685069",
+  "last_updated": "2026-05-20T23:08:13.842537",
   "cafeterias": [
     {
       "id": "101",
@@ -227,34 +227,7 @@
       "note": ""
     }
   ],
-  "kitchen_cars": [
-    {
-      "id": "DlSmRP",
-      "name": "TeraCinquecento",
-      "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
-      "image_url": "",
-      "headline": "ビビンバ",
-      "location": "大学内指定場所",
-      "category": "キッチンカー",
-      "start_time": "11:00",
-      "end_time": "17:00",
-      "business_hours": "11:00〜17:00",
-      "note": ""
-    },
-    {
-      "id": "4DSW5",
-      "name": "ARAPSUN",
-      "url": "https://schedule.mellow.jp/ss_web/shops/4DSW5",
-      "image_url": "",
-      "headline": "ケバブサンド",
-      "location": "大学内指定場所",
-      "category": "キッチンカー",
-      "start_time": "11:00",
-      "end_time": "17:00",
-      "business_hours": "11:00〜17:00",
-      "note": ""
-    }
-  ],
+  "kitchen_cars": [],
   "sources": [
     {
       "name": "2026_05.pdf",
