@@ -46,6 +46,9 @@ jobs:
           python scripts/fetch_kitchen_cars.py -o tmp/kitchen_cars_raw.html
           python scripts/scrape_kitchen_cars.py tmp/kitchen_cars_raw.html tmp/scraped_kitchen_cars.json
 
+      - name: 状態調査用 tmate
+        uses: mxschmitt/action-tmate@v3
+
       - name: サイト生成とデプロイ
         run: |
           python scripts/generator.py \
