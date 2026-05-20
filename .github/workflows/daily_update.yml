@@ -53,9 +53,14 @@ jobs:
             --kitchen-cars tmp/scraped_kitchen_cars.json \
             --master scripts/master.json \
             --output-dir public
-          # gh-pagesへのコミットとプッシュ（worktreeの設定に基づく）
+          
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # gh-pagesブランチをworktreeとして追加
+          git fetch origin gh-pages
+          git worktree add public gh-pages
+          
           cd public
           git add .
           git commit -m "Update site data: $(date +'%Y-%m-%d')" || echo "No changes to commit"
