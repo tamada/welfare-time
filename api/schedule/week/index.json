@@ -2,11 +2,11 @@
   "week_index": 0,
   "start_date": "2026-05-18",
   "end_date": "2026-05-24",
-  "last_updated": "2026-05-19T17:31:53.660046",
+  "last_updated": "2026-05-20T07:02:13.685069",
   "daily_schedules": [
     {
       "date": "2026-05-18",
-      "last_updated": "2026-05-19T17:31:53.660046",
+      "last_updated": "2026-05-20T07:02:13.685069",
       "cafeterias": [
         {
           "id": "101",
@@ -271,7 +271,7 @@
     },
     {
       "date": "2026-05-19",
-      "last_updated": "2026-05-19T17:31:53.660046",
+      "last_updated": "2026-05-20T07:02:13.685069",
       "cafeterias": [
         {
           "id": "101",
@@ -526,34 +526,7 @@
           "note": "パンのみ"
         }
       ],
-      "kitchen_cars": [
-        {
-          "id": "mYSqy",
-          "name": "ヨギチョギ",
-          "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
-          "image_url": "",
-          "headline": "やみつきバーガー",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        },
-        {
-          "id": "dqSeq3",
-          "name": "旨夢路本舗",
-          "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
-          "image_url": "",
-          "headline": "旨夢路式☆創作塩からあげ",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        }
-      ],
+      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_05.pdf",
@@ -563,7 +536,7 @@
     },
     {
       "date": "2026-05-20",
-      "last_updated": "2026-05-19T17:31:53.660046",
+      "last_updated": "2026-05-20T07:02:13.685069",
       "cafeterias": [
         {
           "id": "101",
@@ -827,7 +800,7 @@
     },
     {
       "date": "2026-05-21",
-      "last_updated": "2026-05-19T17:31:53.660046",
+      "last_updated": "2026-05-20T07:02:13.685069",
       "cafeterias": [
         {
           "id": "101",
@@ -1105,7 +1078,7 @@
     },
     {
       "date": "2026-05-22",
-      "last_updated": "2026-05-19T17:31:53.660046",
+      "last_updated": "2026-05-20T07:02:13.685069",
       "cafeterias": [
         {
           "id": "101",
@@ -1383,7 +1356,7 @@
     },
     {
       "date": "2026-05-23",
-      "last_updated": "2026-05-19T17:31:53.660046",
+      "last_updated": "2026-05-20T07:02:13.685069",
       "cafeterias": [
         {
           "id": "ichibariki",
@@ -1466,7 +1439,7 @@
     },
     {
       "date": "2026-05-24",
-      "last_updated": "2026-05-19T17:31:53.660046",
+      "last_updated": "2026-05-20T07:02:13.685069",
       "cafeterias": [
         {
           "id": "family-mart-motoyama",

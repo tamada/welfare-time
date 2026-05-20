@@ -1,6 +1,6 @@
 {
-  "date": "2026-05-19",
-  "last_updated": "2026-05-19T17:31:53.660046",
+  "date": "2026-05-20",
+  "last_updated": "2026-05-20T07:02:13.685069",
   "cafeterias": [
     {
       "id": "101",
@@ -42,20 +42,6 @@
       "start_time": "11:00",
       "end_time": "17:00",
       "business_hours": "平日 11:00~19:00 土 11:00~14:00",
-      "note": ""
-    },
-    {
-      "id": "cosmic-bakery-cafe",
-      "name": "cosmic bakery cafe",
-      "location": "並楽館2F",
-      "category": "食堂",
-      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/bakery.html",
-      "google_map": "",
-      "image_url": "",
-      "headline": "テイクアウト弁当をメインにホットスナックなどを販売",
-      "start_time": "11:30",
-      "end_time": "13:30",
-      "business_hours": "平日 11:30~13:30",
       "note": ""
     },
     {
@@ -239,29 +225,15 @@
       "end_time": "22:00",
       "business_hours": "日~月 6:00~22:00",
       "note": ""
-    },
-    {
-      "id": "ksuksu",
-      "name": "CAFE KSUKSU",
-      "location": "むすびわざ館1F",
-      "category": "食堂",
-      "url": "",
-      "google_map": "",
-      "image_url": "",
-      "headline": "",
-      "start_time": "12:00",
-      "end_time": "13:00",
-      "business_hours": "平日 12:00~13:00",
-      "note": "パンのみ"
     }
   ],
   "kitchen_cars": [
     {
-      "id": "mYSqy",
-      "name": "ヨギチョギ",
-      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
+      "id": "DlSmRP",
+      "name": "TeraCinquecento",
+      "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
       "image_url": "",
-      "headline": "やみつきバーガー",
+      "headline": "ビビンバ",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -270,11 +242,11 @@
       "note": ""
     },
     {
-      "id": "dqSeq3",
-      "name": "旨夢路本舗",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
+      "id": "4DSW5",
+      "name": "ARAPSUN",
+      "url": "https://schedule.mellow.jp/ss_web/shops/4DSW5",
       "image_url": "",
-      "headline": "旨夢路式☆創作塩からあげ",
+      "headline": "ケバブサンド",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
