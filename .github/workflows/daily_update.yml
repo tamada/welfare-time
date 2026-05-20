@@ -59,6 +59,7 @@ jobs:
           
           # gh-pagesブランチをworktreeとして追加
           git fetch origin gh-pages
+          rm -rf public
           git worktree add public gh-pages
           
           cd public
