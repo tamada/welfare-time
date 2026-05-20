@@ -50,7 +50,7 @@ jobs:
         run: |
           mkdir -p dist
           python scripts/generator.py \
-            --cafeteria-dir tmp \
+            --cafeteria-dir public/daily \
             --kitchen-cars tmp/scraped_kitchen_cars.json \
             --master scripts/master.json \
             --output-dir dist
@@ -58,12 +58,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # gh-pagesブランチをworktreeとして追加
+          # gh-pagesブランチをpublicディレクトリにworktreeとして追加
           git fetch origin gh-pages
-          rm -rf dist
-          git worktree add dist gh-pages
+          git worktree add public gh-pages
           
-          cd dist
+          # distの内容をpublicにコピー（.gitディレクトリを除外）
+          rsync -av --delete --exclude='.git' dist/ public/
+          
+          cd public
           git add .
           git commit -m "Update site data: $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push origin gh-pages
