@@ -63,9 +63,8 @@ jobs:
           git worktree add public gh-pages
 
           # distの内容をpublicにコピー（.gitディレクトリを除外）
-          rsync -av --delete --exclude='.git' dist/ public/
+          rsync -av --exclude='.git' dist/ public/
 
-          cd public
-          git add .
+          cd public          git add .
           git commit -m "Update site data: $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push origin gh-pages
