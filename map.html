@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>キャンパスマップ | シカク</title>
+    <title>シカク | マップ</title>
     <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
     <style>
-        #map-wrapper { position: relative; }
+        #map-wrapper { 
+            position: sticky; 
+            top: 110px; /* navbar (approx 56px) + date-nav (approx 50px) */
+            z-index: 10;
+        }
     </style>
 </head>
 <body>
@@ -24,9 +30,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarActions">
             <div class="navbar-nav ms-auto gap-1">
-                <a href="map.html" class="nav-icon-btn active-view" title="キャンパスマップ"><i class="bi bi-map"></i></a>
                 <a href="index.html" class="nav-icon-btn" title="カード表示"><i class="bi bi-grid-fill"></i></a>
                 <a href="list.html" class="nav-icon-btn" title="リスト表示"><i class="bi bi-list-ul"></i></a>
+                <a href="map.html" class="nav-icon-btn active-view" title="キャンパスマップ"><i class="bi bi-map"></i></a>
                 <div class="nav-icon-btn" id="btn-filter" data-bs-toggle="modal" data-bs-target="#filterModal"><i class="bi bi-filter"></i></div>
                 <div class="nav-icon-btn" id="btn-sort" data-bs-toggle="modal" data-bs-target="#sortModal"><i class="bi bi-sort-down"></i></div>
                 <div class="nav-icon-btn" id="btn-reload"><i class="bi bi-arrow-clockwise"></i></div>
@@ -60,13 +66,15 @@
     </div>
     <div class="row">
         <div class="col-lg-8">
-            <div id="map-wrapper" class="mb-4">
+            <div id="map-wrapper" class="mb-2">
                 <img src="assets/campus_map.jpg" alt="Map" class="img-fluid">
                 <div id="overlay" class="map-layer"></div>
             </div>
+            <div class="text-end mb-4">
+                <a href="https://www.kyoto-su.ac.jp/campus/cam_map/" target="_blank" class="footer-link small"><i class="bi bi-link-45deg"></i> 京都産業大学 キャンパスマップ</a>
+            </div>
         </div>
         <div class="col-lg-4">
-            <h3 class="mb-3">店舗一覧</h3>
             <div id="shop-grid" class="d-flex flex-column gap-2 w-100"></div>
         </div>
     </div>
@@ -135,31 +143,12 @@
         </div>
     </div>
 </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+<script src="assets/main.js"></script>
 <script>
     const master = {
-        "cafeterias": [
-            { "id": "101", "name": "やさい食堂 イチマルイチ", "location": "10号館1F" },
-            { "id": "fujikatsu", "name": "ふじカツ", "location": "並楽館1F" },
-            { "id": "ichibariki", "name": "らーめん壱馬力", "location": "並楽館1F" },
-            { "id": "cosmic-bakery-cafe", "name": "cosmic bakery cafe", "location": "並楽館2F" },
-            { "id": "libre", "name": "LIBRE（リブレ）", "location": "並楽館3F" },
-            { "id": "sukiya", "name": "すき家", "location": "真理館1F" },
-            { "id": "kitchen-sun", "name": "キッチンサン", "location": "真理館1F" },
-            { "id": "kamukura", "name": "どうとんぼり神座", "location": "真理館1F" },
-            { "id": "musubi", "name": "むすびキッチン", "location": "雄飛館2F" },
-            { "id": "ascella", "name": "ブックセンター Ascella", "location": "雄飛館1F" },
-            { "id": "family-mart-heiraku", "name": "ファミリーマート（並楽館）", "location": "並楽館1F" },
-            { "id": "family-mart-tenchi", "name": "ファミリーマート（天地館）", "location": "天地館1F" },
-            { "id": "family-mart-motoyama", "name": "ファミリーマート（本山寮）", "location": "本山寮" },
-            { "id": "maruzen-ms", "name": "丸善 M's style", "location": "天地館1F" },
-            { "id": "maruzen-pc", "name": "丸善 パソコンプロショップ", "location": "天地館1F" },
-            { "id": "nasic", "name": "学生情報センター", "location": "天地館1F" },
-            { "id": "ksuksu", "name": "CAFE KSUKSU", "location": "むすびわざ館1F" },
-            { "id": "kitchen-car-spot", "name": "キッチンカー", "location": "ピロティ" }
-        ],
         "buildings": {
             "heirakukan": { "name": "並楽館", "area": { "x1": 538, "y1": 346, "x2": 618, "y2": 405 }, "shops": ["fujikatsu", "ichibariki", "cosmic-bakery-cafe", "libre", "family-mart-heiraku"] },
             "tenchikan": { "name": "天地館", "area": { "x1": 198, "y1": 105, "x2": 270, "y2": 190 }, "shops": ["family-mart-tenchi", "maruzen-ms", "maruzen-pc", "nasic"] },
@@ -169,72 +158,105 @@
             "pilotis": { "name": "ピロティ", "area": { "x1": 558, "y1": 136, "x2": 610, "y2": 211 }, "shops": ["mellow-shop-001", "mellow-shop-002"] }
         }
     };
+    
     const IMAGE_WIDTH = 1019, IMAGE_HEIGHT = 747;
+
     function updateOverlay() {
         const img = document.querySelector('#map-wrapper img');
         if (!img || img.naturalWidth === 0) return;
-        
-        const scaleX = img.clientWidth / 1019;
-        const scaleY = img.clientHeight / 747;
-
+        const scaleX = img.clientWidth / IMAGE_WIDTH, scaleY = img.clientHeight / IMAGE_HEIGHT;
         Object.entries(master.buildings).forEach(([id, b]) => {
             const div = document.getElementById('area-' + id);
-            if (!div) return;
-            div.style.left = (b.area.x1 * scaleX) + 'px';
-            div.style.top = (b.area.y1 * scaleY) + 'px';
-            div.style.width = ((b.area.x2 - b.area.x1) * scaleX) + 'px';
-            div.style.height = ((b.area.y2 - b.area.y1) * scaleY) + 'px';
-            console.log(`Building: ${id}, Left: ${div.style.left}, Top: ${div.style.top}, Width: ${div.style.width}, Height: ${div.style.height}`);
+            if (div) {
+                div.style.left = (b.area.x1 * scaleX) + 'px';
+                div.style.top = (b.area.y1 * scaleY) + 'px';
+                div.style.width = ((b.area.x2 - b.area.x1) * scaleX) + 'px';
+                div.style.height = ((b.area.y2 - b.area.y1) * scaleY) + 'px';
+            }
         });
     }
+
     window.addEventListener('resize', updateOverlay);
     document.querySelector('#map-wrapper img').addEventListener('load', updateOverlay);
 
-        // Initialize Map and UI
     document.addEventListener('DOMContentLoaded', async () => {
         const overlay = document.getElementById('overlay');
         const tooltip = document.getElementById('tooltip');
         const shopGrid = document.getElementById('shop-grid');
 
-        // Expose a custom renderer for map mode
-        const mapRenderer = (data) => {
-            render('col-12');
-            
-            const overlay = document.getElementById('overlay');
-            const tooltip = document.getElementById('tooltip');
+        // Register hook to handle map-specific rendering and bidirectional hover
+        renderHooks.push((displayedShops) => {
+            // 1. Refresh building areas on map
             overlay.innerHTML = '';
-            
             Object.entries(master.buildings).forEach(([id, b]) => {
                 const div = document.createElement('div');
                 div.className = 'building-area';
                 div.id = 'area-' + id;
                 overlay.appendChild(div);
-                div.addEventListener('mouseenter', () => {
+
+                // Map to List interaction
+                div.onmouseenter = () => {
                     tooltip.style.display = 'block';
-                    const allShops = [...data.cafeterias, ...data.kitchen_cars];
-                    const matchedShops = allShops.filter(s => (id === 'pilotis' && s.location === '大学内指定場所') || b.shops.includes(s.id));
-                    tooltip.innerHTML = `<strong>${b.name}</strong><br>` + matchedShops.map(shopInfo => {
-                        const dateStr = getTargetDateStr();
-                        const status = getShopStatus(shopInfo.start_time, shopInfo.end_time, dateStr);
-                        return `<div class="shop-info">${shopInfo.name}<br><small>場所: ${shopInfo.location}</small><br><span class="${status.class}">${status.label === '営業中' ? '● ' : '○ '}${status.label}</span></div>`;
-                    }).join('') || '<div class="shop-info">営業中の店舗なし</div>';
-                });
-                div.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+                    const matchedShops = displayedShops.filter(s => (id === 'pilotis' && s.location === '大学内指定場所') || b.shops.includes(s.id));
+                    const matchedIds = matchedShops.map(s => `card-${s.id}`);
+                    
+                    // Highlight list items, grey out others, and move matched to top
+                    const items = Array.from(shopGrid.querySelectorAll('.list-view-item'));
+                    items.forEach(card => {
+                        const isMatch = matchedIds.includes(card.id);
+                        card.style.opacity = isMatch ? '1' : '0.2';
+                        if (isMatch) {
+                            card.classList.add('border-primary');
+                            shopGrid.prepend(card); // Move matching card to the top
+                        }
+                    });
+
+                    const dateStr = getTargetDateStr();
+                    tooltip.innerHTML = `<strong>${b.name}</strong><br>` + (matchedShops.length > 0 
+                        ? matchedShops.map(s => {
+                            const status = getShopStatus(s.start_time, s.end_time, dateStr);
+                            return `<div class="shop-info">${s.name}<br><span class="${status.class}">${status.label}</span></div>`;
+                        }).join('')
+                        : '<div class="shop-info text-muted">該当する店舗なし</div>');
+                };
+
+                div.onmouseleave = () => {
+                    tooltip.style.display = 'none';
+                    // Reset opacity and trigger render to restore original sort order
+                    render(); 
+                };
             });
-            updateOverlay();
-        };
 
-        await fetchData(mapRenderer);
+            // 2. Attach List to Map interaction to newly rendered shop cards
+            shopGrid.querySelectorAll('.list-view-item').forEach(card => {
+                card.onmouseenter = () => {
+                    const shopId = card.id.replace('card-', '');
+                    let bId = Object.keys(master.buildings).find(k => master.buildings[k].shops.includes(shopId));
+                    if (!bId && card.dataset.location === '大学内指定場所') bId = 'pilotis';
+                    
+                    if (bId) {
+                        const area = document.getElementById('area-' + bId);
+                        if (area) area.classList.add('highlighted');
+                    }
+                    
+                    // Grey out other cards in list
+                    shopGrid.querySelectorAll('.list-view-item').forEach(c => {
+                        if (c !== card) c.style.opacity = '0.3';
+                    });
+                };
 
-        // Hook into filter/sort logic to refresh map overlay
-        const originalApplyFilters = applyFilters;
-        applyFilters = () => {
-            originalApplyFilters();
-            render('col-12');
+                card.onmouseleave = () => {
+                    overlay.querySelectorAll('.building-area').forEach(area => area.classList.remove('highlighted'));
+                    shopGrid.querySelectorAll('.list-view-item').forEach(c => c.style.opacity = '1');
+                };
+            });
+
             updateOverlay();
-        };
+        });
+
+        // Use custom renderer for initial load
+        await fetchData(() => render('col-12'));
     });
 </script>
 </body>
 </html>
-EOF

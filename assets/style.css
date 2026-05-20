@@ -86,6 +86,7 @@ body {
 .date-display-wrapper:hover {
     background: #e9ecef;
 }
+
 .list-view-item {
     display: flex;
     align-items: center;
@@ -95,10 +96,23 @@ body {
     margin-bottom: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     position: relative;
+    width: 100%;
+    z-index: 1;
 }
-.list-view-item .shop-info-main { flex: 1; min-width: 0; }
-.list-view-item .shop-status-side { width: 80px; text-align: right; }
+.list-view-item .shop-info-main { 
+    flex: 1; 
+    min-width: 0; 
+    position: relative;
+    z-index: 2;
+}
+.list-view-item .shop-status-side { 
+    width: 80px; 
+    text-align: right; 
+    position: relative;
+    z-index: 2;
+}
 .list-view-item .shop-name { margin-bottom: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.list-view-item .stretched-link { z-index: 0; }
 
 footer {
     margin-top: auto;
@@ -169,7 +183,8 @@ footer {
 [data-bs-theme="dark"] .navbar { background-color: #002558; }
 [data-bs-theme="dark"] .date-nav { background-color: #1e1e1e; border-bottom: 1px solid #333; }
 [data-bs-theme="dark"] .card { background-color: #1e1e1e; color: #e0e0e0; }
-[data-bs-theme="dark"] .list-view-item .shop-name { color: #fff; }
+[data-bs-theme="dark"] .shop-name { color: #fff; }
+[data-bs-theme="dark"] .list-view-item { background-color: #1e1e1e; border: 1px solid #333; }
 [data-bs-theme="dark"] .location-text, [data-bs-theme="dark"] .time-text { color: #aaa; }
 [data-bs-theme="dark"] .date-display-wrapper { background: #333; border-color: #444; }
 [data-bs-theme="dark"] .btn-light { background-color: #333; color: white; border: none; }
@@ -177,8 +192,19 @@ footer {
 [data-bs-theme="dark"] footer { background-color: #1a1a1a; border-top: 1px solid #333; }
 [data-bs-theme="dark"] .footer-link { color: #66b3ff; }
 .map-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
-.building-area { position: absolute; z-index: 6; cursor: pointer; transition: 0.2s; pointer-events: auto; }
-.building-area:hover { background: rgba(255, 255, 0, 0.3); }
+.building-area { 
+    position: absolute; 
+    z-index: 6; 
+    cursor: pointer; 
+    transition: 0.2s; 
+    pointer-events: auto; 
+    border: 3px solid transparent;
+    border-radius: 4px;
+}
+.building-area:hover, .building-area.highlighted { 
+    background: rgba(255, 255, 0, 0.3); 
+    border-color: var(--ksu-blue);
+}
 #tooltip { position: fixed; background: white; border: 1px solid #ccc; padding: 15px; pointer-events: none; display: none; z-index: 100; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px; width: 250px; }
 .shop-card { border: 1px solid #ddd; padding: 10px; margin: 5px; cursor: pointer; border-radius: 4px; display: block; }
 .shop-card:hover { background: #f0f8ff; border-color: #007bff; }

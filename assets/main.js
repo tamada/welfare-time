@@ -1,9 +1,11 @@
 const API_BASE = 'api/schedule';
 const STATUS_API = 'api/status/index.json';
 let currentData = null;
-const currentView = window.location.pathname.endsWith('list.html') ? 'list' : (localStorage.getItem('ksu-harapeco-view') || 'grid');
+const isListMode = window.location.pathname.endsWith('list.html') || window.location.pathname.endsWith('map.html');
+const currentView = isListMode ? 'list' : (localStorage.getItem('ksu-harapeco-view') || 'grid');
 let activeFilters = JSON.parse(localStorage.getItem('ksu-harapeco-filters') || '[]');
 let currentSort = localStorage.getItem('ksu-harapeco-sort') || 'status';
+const renderHooks = [];
 
 function getTargetDateStr() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -50,7 +52,6 @@ async function fetchData(renderCallback) {
     const dayOfWeek = ['日', '月', '火', '水', '木', '金', '土'][dateObj.getDay()];
     
     updateElementText('current-date-display', `${targetDateStr} (${dayOfWeek})`);
-    setElementValue('datepicker-input', targetDateStr);
     setElementDisplay('loading-overlay', 'flex');
     
     const current = new Date(targetDateStr);
@@ -146,8 +147,12 @@ function renderProvenance(sources) {
     }
 }
 
-function render(gridClass = 'col-6 col-md-4 col-lg-3') {
+function render(gridClass) {
     if (!currentData) return;
+    const isMap = window.location.pathname.endsWith('map.html');
+    if (!gridClass) {
+        gridClass = isMap ? 'col-12' : 'col-6 col-md-4 col-lg-3';
+    }
     const grid = document.getElementById('shop-grid');
     if (!grid) return;
     grid.innerHTML = '';
@@ -223,6 +228,9 @@ function render(gridClass = 'col-6 col-md-4 col-lg-3') {
         }
         grid.insertAdjacentHTML('beforeend', html);
     });
+
+    // Execute post-render hooks
+    renderHooks.forEach(hook => hook(allShops));
 }
 
 document.querySelectorAll('.sort-radio').forEach(radio => {
@@ -295,10 +303,16 @@ function updateThemeIcon(theme) {
 
 updateElementText('page-load-time', new Date().toLocaleTimeString('ja-JP'));
 
-const datePicker = document.getElementById('datepicker-input');
-if (datePicker) datePicker.onchange = (e) => { if (e.target.value) window.location.search = `date=${e.target.value}`; };
-
 const dateSelector = document.getElementById('date-selector');
-if (dateSelector) dateSelector.onclick = () => { const dp = document.getElementById('datepicker-input'); if (dp) dp.showPicker(); };
+if (dateSelector && typeof flatpickr === 'function') {
+    flatpickr(dateSelector, {
+        locale: 'ja',
+        dateFormat: 'Y-m-d',
+        defaultDate: getTargetDateStr(),
+        onChange: (selectedDates, dateStr) => {
+            if (dateStr) window.location.search = `date=${dateStr}`;
+        }
+    });
+}
 
 // fetchData();
