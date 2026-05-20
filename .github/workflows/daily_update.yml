@@ -26,7 +26,7 @@ jobs:
       - name: 依存パッケージをインストール
         run: |
           pip install -r requirements.txt
-          playwright install --with-deps chromium
+          playwright install chromium
 
       - name: 食堂データの更新
         run: |
