@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="row">
+    <div class="col-lg-8">
+        <div id="map-wrapper" class="mb-2">
+            <img src="{{ "assets/campus_map.jpg" | relURL }}" alt="Map" class="img-fluid">
+            <div id="overlay" class="map-layer"></div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div id="shop-grid" class="d-flex flex-column gap-2 w-100"></div>
+    </div>
+</div>
+<div id="tooltip"></div>
+{{ end }}

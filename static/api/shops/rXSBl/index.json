@@ -1,0 +1,18 @@
+{
+  "id": "rXSBl",
+  "name": "京都 咲たこ",
+  "url": "https://schedule.mellow.jp/ss_web/shops/rXSBl",
+  "image_url": "",
+  "headline": "ロングチュロス",
+  "location": "大学内指定場所",
+  "category": "キッチンカー",
+  "schedules": [
+    {
+      "date": "2026-05-27",
+      "location": "大学内指定場所",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "note": ""
+    }
+  ]
+}

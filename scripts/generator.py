@@ -173,8 +173,10 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
             "last_updated": last_updated,
             "daily_schedules": daily_schedules
         }
-        save_json(week_data, os.path.join(api_schedule_dir, f"weeks/{w}/index.json"))
-        if w == 0: save_json(week_data, os.path.join(api_schedule_dir, "week/index.json"))
+        # Save as weeks/0, weeks/1, etc.
+        os.makedirs(os.path.join(api_schedule_dir, "weeks"), exist_ok=True)
+        save_json(week_data, os.path.join(api_schedule_dir, f"weeks/{w}"))
+        if w == 0: save_json(week_data, os.path.join(api_schedule_dir, "week"))
 
     # 7. Shops API
     all_shops = {}

@@ -1,0 +1,43 @@
+    <nav class="navbar navbar-dark navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ "/" | relURL }}">シカク</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarActions">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarActions">
+                <div class="navbar-nav ms-auto gap-1">
+                    <div class="nav-link" id="btn-filter" data-bs-toggle="modal" data-bs-target="#filterModal" style="cursor: pointer;">
+                        <i class="bi bi-filter"></i>
+                    </div>
+                    <div class="nav-link" id="btn-sort" data-bs-toggle="modal" data-bs-target="#sortModal" style="cursor: pointer;">
+                        <i class="bi bi-sort-down"></i>
+                    </div>
+                    <div class="nav-link" id="btn-status" data-bs-toggle="modal" data-bs-target="#statusModal" title="情報">
+                        <i class="bi bi-info-circle"></i>
+                    </div>
+                    {{ range .Site.Menus.main }}
+                        <a class="nav-link {{ if eq $.RelPermalink .URL }}active{{ end }}" href="{{ .URL | relURL }}">
+                            <i class="bi {{ .Params.icon }}"></i>
+                            <span class="d-none d-lg-inline">{{ .Name }}</span>
+                        </a>
+                    {{ end }}
+                    <div class="nav-link" id="btn-theme" title="テーマ切り替え" style="cursor: pointer;">
+                        <i class="bi bi-moon-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="modal fade" id="statusModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">情報</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="source-links"></div>
+                </div>
+            </div>
+        </div>
+    </div>

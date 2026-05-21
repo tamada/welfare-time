@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シカク | {{ .Title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="{{ "assets/style.css" | relURL }}">
+</head>
+<body>
+{{ partial "navbar.html" . }}
+
+    <div class="date-nav">
+        <div class="container position-relative py-2">
+            <!-- 情報エリア: 右上に配置 -->
+            <div class="position-absolute end-0 top-0 mt-2 me-2 x-small text-muted text-end">
+                <div id="header-data-range" class="x-small"></div>
+                <div id="status-info" class="x-small"></div>
+            </div>
+            
+            <!-- ナビゲーションエリア: 中央に配置 -->
+            <div class="d-flex flex-column align-items-center">
+                <div id="date-selector" class="date-display-wrapper d-flex align-items-center mb-2" style="cursor: pointer;">
+                    <i class="bi bi-calendar3 text-primary me-2"></i>
+                    <span id="current-date-display" class="fw-bold">----年--月--日</span>
+                    <input type="text" id="datepicker-input" style="position: absolute; opacity: 0; pointer-events: none;">
+                </div>
+                <div class="d-flex gap-2">
+                    <button id="prev-day" class="btn btn-light btn-sm px-3">前日</button>
+                    <button id="today-btn" class="btn btn-light btn-sm px-3 fw-bold text-primary">今日</button>
+                    <button id="next-day" class="btn btn-light btn-sm px-3">翌日</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-2">
+        {{ block "main" . }}{{ end }}
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="filterModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">表示フィルタ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="filter-options-body" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" id="reset-filter" class="btn btn-outline-secondary btn-sm me-auto">リセット</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">閉じる</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="sortModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">並び替え</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input sort-radio" type="radio" name="sortOption" id="sort-status" value="status">
+                        <label class="form-check-label w-100" for="sort-status">営業状況順（営業中を優先）</label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input sort-radio" type="radio" name="sortOption" id="sort-name" value="name">
+                        <label class="form-check-label w-100" for="sort-name">名称順</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input sort-radio" type="radio" name="sortOption" id="sort-location" value="location">
+                        <label class="form-check-label w-100" for="sort-location">場所順</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">閉じる</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="mt-5 text-center">
+        &copy; 2026 シカク
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ "assets/main.js" | relURL }}"></script>
+    </body>
+
+</html>
