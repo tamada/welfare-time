@@ -1,0 +1,46 @@
+{
+  "id": "pMSXgz",
+  "name": "SKY KITCHEN",
+  "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
+  "image_url": "",
+  "headline": "照り焼きチキン",
+  "location": "大学内指定場所",
+  "category": "キッチンカー",
+  "schedules": [
+    {
+      "date": "2026-05-22",
+      "location": "大学内指定場所",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-29",
+      "location": "大学内指定場所",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-08",
+      "location": "大学内指定場所",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-22",
+      "location": "大学内指定場所",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-29",
+      "location": "大学内指定場所",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "note": ""
+    }
+  ]
+}

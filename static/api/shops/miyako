@@ -1,0 +1,138 @@
+{
+  "id": "miyako",
+  "name": "MIYAKO製麺",
+  "location": "並楽館2F",
+  "category": "食堂",
+  "url": "https://www.kyoto-su.ac.jp/campus/welfare/miyako/",
+  "google_map": "",
+  "image_url": "",
+  "headline": "店内で製麺する本格的なうどん専門店",
+  "schedules": [
+    {
+      "date": "2026-05-01",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-07",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-08",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-11",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-12",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-13",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-14",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-15",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-18",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-19",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-20",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-21",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-22",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-25",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-26",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-27",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-28",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-29",
+      "location": "並楽館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    }
+  ]
+}

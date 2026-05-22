@@ -127,9 +127,38 @@
       "name": "CAFE KSUKSU",
       "location": "むすびわざ館1F",
       "category": "食堂"
+    },
+    {
+      "id": "chushin-atm",
+      "name": "京都中央信用金庫ATM",
+      "location": "並楽館陸橋下",
+      "category": "ATM",
+      "static-hours": {
+        "ordinary": "08:45-19:00",
+        "saturday": "08:45-17:00"
+      }
+    },
+    {
+      "id": "yucho-atm",
+      "name": "ゆうちょ銀行ATM",
+      "location": "並楽館陸橋下",
+      "category": "ATM",
+      "static-hours": {
+        "ordinary": "08:45-19:00",
+        "saturday": "08:45-17:00"
+      }
+    },
+    {
+      "id": "smbc-atm",
+      "name": "三井住友銀行ATM",
+      "location": "並楽館1F",
+      "category": "ATM",
+      "static-hours": {
+        "ordinary": "08:45-19:00",
+        "saturday": "08:45-17:00"
+      }
     }
   ],
-  "kitchen_cars": [],
   "buildings": {
     "heirakukan": {
       "name": "並楽館",
@@ -144,8 +173,11 @@
         "ichibariki",
         "cosmic-bakery-cafe",
         "libre",
+        "family-mart-heiraku",
         "miyako",
-        "family-mart-heiraku"
+        "chushin-atm",
+        "yucho-atm",
+        "smbc-atm"
       ]
     },
     "tenchikan": {
@@ -210,8 +242,7 @@
         "x2": 610,
         "y2": 211
       },
-      "shops": [
-      ]
+      "shops": []
     }
   }
 }

@@ -1,43 +1,42 @@
-    <nav class="navbar navbar-dark navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="{{ "/" | relURL }}">シカク</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarActions">
-                <span class="navbar-toggler-icon"></span>
+<nav class="bg-ksu-blue text-white px-4 py-2 shadow-md dark:bg-black">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a class="flex items-center gap-2 text-xl font-bold tracking-wider" href="{{ "/" | relURL }}">
+            {{ with .Site.Params.brand_icon }}
+            <img src="{{ . | relURL }}" alt="Logo" class="w-8 h-8">
+            {{ end }}
+            <span>{{ .Site.Title }}</span>
+        </a>
+        
+        <!-- Desktop/Tablet Menu -->
+        <div class="flex items-center gap-1 overflow-x-auto no-scrollbar">
+            <!-- Filter/Sort icons -->
+            <button onclick="openModal('filterModal')" class="p-2 hover:bg-white/10 rounded transition-colors" title="表示フィルタ">
+                <i class="bi bi-filter text-lg"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarActions">
-                <div class="navbar-nav ms-auto gap-1">
-                    <div class="nav-link" id="btn-filter" data-bs-toggle="modal" data-bs-target="#filterModal" style="cursor: pointer;">
-                        <i class="bi bi-filter"></i>
-                    </div>
-                    <div class="nav-link" id="btn-sort" data-bs-toggle="modal" data-bs-target="#sortModal" style="cursor: pointer;">
-                        <i class="bi bi-sort-down"></i>
-                    </div>
-                    <div class="nav-link" id="btn-status" data-bs-toggle="modal" data-bs-target="#statusModal" title="情報">
-                        <i class="bi bi-info-circle"></i>
-                    </div>
-                    {{ range .Site.Menus.main }}
-                        <a class="nav-link {{ if eq $.RelPermalink .URL }}active{{ end }}" href="{{ .URL | relURL }}">
-                            <i class="bi {{ .Params.icon }}"></i>
-                            <span class="d-none d-lg-inline">{{ .Name }}</span>
-                        </a>
-                    {{ end }}
-                    <div class="nav-link" id="btn-theme" title="テーマ切り替え" style="cursor: pointer;">
-                        <i class="bi bi-moon-fill"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <div class="modal fade" id="statusModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold">情報</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="source-links"></div>
-                </div>
-            </div>
+            <button onclick="openModal('sortModal')" class="p-2 hover:bg-white/10 rounded transition-colors" title="並び替え">
+                <i class="bi bi-sort-down text-lg"></i>
+            </button>
+            <button onclick="openModal('statusModal')" class="p-2 hover:bg-white/10 rounded transition-colors" title="情報">
+                <i class="bi bi-info-circle text-lg"></i>
+            </button>
+            
+            <div class="h-6 w-[1px] bg-white/20 mx-1"></div>
+
+            {{ range .Site.Menus.main }}
+            <a class="flex items-center gap-2 px-3 py-1.5 hover:bg-white/10 rounded transition-colors whitespace-nowrap {{ if eq $.RelPermalink .URL }}bg-white/20{{ end }}" href="{{ .URL | relURL }}">
+                <i class="bi {{ .Params.icon }}"></i>
+                <span class="hidden md:inline text-xs font-medium">{{ .Name }}</span>
+            </a>
+            {{ end }}
+
+            <button id="btn-theme" class="p-2 hover:bg-white/10 rounded transition-colors" title="テーマ切り替え">
+                <i class="bi bi-moon-fill text-lg"></i>
+            </button>
         </div>
     </div>
+</nav>
+
+<style>
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>

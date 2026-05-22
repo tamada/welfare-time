@@ -1,0 +1,24 @@
+<!-- Date Navigation -->
+<div class="bg-white border-b border-gray-200 px-4 py-2 shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <div class="max-w-7xl mx-auto relative">
+        <!-- Info Area (Top Right) -->
+        <div class="absolute right-0 top-0 text-right text-[10px] text-gray-500 leading-tight">
+            <div id="header-data-range" class="x-small"></div>
+            <div id="status-info" class="x-small"></div>
+        </div>
+
+        <!-- Main Controls (Centered) -->
+        <div class="flex flex-col items-center">
+            <div id="date-selector" class="flex items-center cursor-pointer px-3 py-1 bg-gray-50 border border-gray-200 rounded-md hover:bg-gray-100 transition-colors mb-2 dark:bg-gray-700 dark:border-gray-600">
+                <i class="bi bi-calendar3 text-blue-600 mr-2"></i>
+                <span id="current-date-display" class="font-bold">----年--月--日</span>
+                <input type="text" id="datepicker-input" class="absolute opacity-0 pointer-events-none">
+            </div>
+            <div class="flex gap-2">
+                <button id="prev-day" class="px-4 py-1 bg-white border border-gray-300 rounded text-xs hover:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-600">前日</button>
+                <button id="today-btn" class="px-4 py-1 bg-white border border-blue-600 rounded text-xs font-bold text-blue-600 hover:bg-blue-50 dark:bg-gray-700 dark:border-blue-500 dark:hover:bg-gray-600">今日</button>
+                <button id="next-day" class="px-4 py-1 bg-white border border-gray-300 rounded text-xs hover:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-600">翌日</button>
+            </div>
+        </div>
+    </div>
+</div>

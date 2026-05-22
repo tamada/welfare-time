@@ -3,6 +3,9 @@ locale = 'ja'
 title = 'シカク'
 publishDir = 'public2'
 
+[params]
+  brand_icon = "assets/icon.svg"
+
 [markup.goldmark.renderer]
 unsafe = true
 
@@ -10,19 +13,19 @@ unsafe = true
   name = "カード"
   url = "/"
   params = { icon = "bi-grid-fill" }
-  weight = 1
+  weight = 10
 [[menus.main]]
   name = "マップ"
   url = "/map/"
   params = { icon = "bi-map" }
-  weight = 3
+  weight = 30
 [[menus.main]]
   name = "GitHub"
   url = "https://github.com/tamada/harapeco"
   params = { icon = "bi-github" }
-  weight = 10
+  weight = 40
 [[menus.main]]
   name = "ヘルプ"
   url = "/help/"
   params = { icon = "bi-question-circle" }
-  weight = 20
+  weight = 50

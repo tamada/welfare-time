@@ -1,0 +1,50 @@
+{
+  "week_index": 1,
+  "start_date": "2026-05-25",
+  "end_date": "2026-05-31",
+  "last_updated": "2026-05-21T12:45:42.286891",
+  "daily_schedules": [
+    {
+      "date": "2026-05-25",
+      "cafeterias": [],
+      "kitchen_cars": [],
+      "sources": []
+    },
+    {
+      "date": "2026-05-26",
+      "cafeterias": [],
+      "kitchen_cars": [],
+      "sources": []
+    },
+    {
+      "date": "2026-05-27",
+      "cafeterias": [],
+      "kitchen_cars": [],
+      "sources": []
+    },
+    {
+      "date": "2026-05-28",
+      "cafeterias": [],
+      "kitchen_cars": [],
+      "sources": []
+    },
+    {
+      "date": "2026-05-29",
+      "cafeterias": [],
+      "kitchen_cars": [],
+      "sources": []
+    },
+    {
+      "date": "2026-05-30",
+      "cafeterias": [],
+      "kitchen_cars": [],
+      "sources": []
+    },
+    {
+      "date": "2026-05-31",
+      "cafeterias": [],
+      "kitchen_cars": [],
+      "sources": []
+    }
+  ]
+}

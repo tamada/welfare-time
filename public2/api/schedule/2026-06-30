@@ -1,0 +1,71 @@
+{
+  "date": "2026-06-30",
+  "last_updated": "2026-05-22T11:22:49.880586",
+  "cafeterias": [
+    {
+      "id": "chushin-atm",
+      "name": "京都中央信用金庫ATM",
+      "url": "",
+      "location": "並楽館陸橋下",
+      "category": "ATM",
+      "headline": "",
+      "start_time": "08:45",
+      "end_time": "19:00",
+      "business_hours": "08:45-19:00",
+      "note": ""
+    },
+    {
+      "id": "yucho-atm",
+      "name": "ゆうちょ銀行ATM",
+      "url": "",
+      "location": "並楽館陸橋下",
+      "category": "ATM",
+      "headline": "",
+      "start_time": "08:45",
+      "end_time": "19:00",
+      "business_hours": "08:45-19:00",
+      "note": ""
+    },
+    {
+      "id": "smbc-atm",
+      "name": "三井住友銀行ATM",
+      "url": "",
+      "location": "並楽館1F",
+      "category": "ATM",
+      "headline": "",
+      "start_time": "08:45",
+      "end_time": "19:00",
+      "business_hours": "08:45-19:00",
+      "note": ""
+    }
+  ],
+  "kitchen_cars": [
+    {
+      "id": "Z7S1R",
+      "name": "もんきち",
+      "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
+      "image_url": "",
+      "headline": "ロコモコ丼",
+      "location": "大学内指定場所",
+      "category": "キッチンカー",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "business_hours": "11:00〜17:00",
+      "note": ""
+    },
+    {
+      "id": "DlSmRP",
+      "name": "TeraCinquecento",
+      "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
+      "image_url": "",
+      "headline": "ビビンバ",
+      "location": "大学内指定場所",
+      "category": "キッチンカー",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "business_hours": "11:00〜17:00",
+      "note": ""
+    }
+  ],
+  "sources": []
+}
