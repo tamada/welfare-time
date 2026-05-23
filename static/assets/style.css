@@ -59,8 +59,10 @@
 /* Map wrapper sticky behavior */
 #map-wrapper {
     position: sticky;
-    top: 140px;
+    top: 140px; /* Adjust based on header height, approx 96px */
     transition: opacity 0.3s ease-in-out;
+    /* Ensure the container doesn't clip the sticky element */
+    will-change: transform;
 }
 
 @media (max-width: 767px) {

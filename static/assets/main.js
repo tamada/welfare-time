@@ -368,16 +368,39 @@ async function initMapInteractions(displayedShops) {
             // Check in master buildings
             let bId = Object.keys(master.buildings).find(k => master.buildings[k].shops.includes(shopId));
             if (!bId && card.dataset.location === '大学内指定場所') bId = 'pilotis';
+            
+            const feedbackOverlay = document.getElementById('map-feedback-overlay');
+            const mapImg = document.querySelector('#map-wrapper img');
+
             if (bId) {
                 const area = document.getElementById('area-' + bId);
                 if (area) area.classList.add('highlighted');
+                if (feedbackOverlay) feedbackOverlay.classList.add('hidden');
+                if (mapImg) mapImg.style.opacity = '1';
+            } else {
+                // Show feedback overlay for off-map shops
+                if (feedbackOverlay) {
+                    feedbackOverlay.classList.remove('hidden');
+                    feedbackOverlay.classList.add('flex');
+                }
+                if (mapImg) mapImg.style.opacity = '0.5';
             }
+            
             shopGrid.querySelectorAll('[id^="card-"]').forEach(c => { 
                 if (c !== card) c.style.opacity = '0.3'; 
             });
         };
         card.onmouseleave = () => {
             overlay.querySelectorAll('.building-area').forEach(area => area.classList.remove('highlighted'));
+            
+            const feedbackOverlay = document.getElementById('map-feedback-overlay');
+            const mapImg = document.querySelector('#map-wrapper img');
+            if (feedbackOverlay) {
+                feedbackOverlay.classList.add('hidden');
+                feedbackOverlay.classList.remove('flex');
+            }
+            if (mapImg) mapImg.style.opacity = '1';
+
             shopGrid.querySelectorAll('[id^="card-"]').forEach(c => { 
                 c.style.opacity = '1'; 
             });
