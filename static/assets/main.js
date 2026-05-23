@@ -1,8 +1,14 @@
 const API_BASE = '/shikaku/api/schedule';
 const STATUS_API = '/shikaku/api/status/index.json';
 let currentData = null;
-const isListMode = window.location.pathname.endsWith('list.html') || window.location.pathname.endsWith('map.html');
-const currentView = isListMode ? 'list' : (localStorage.getItem('ksu-harapeco-view') || 'grid');
+
+// More robust path detection
+const currentPath = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
+const isMapPage = currentPath.endsWith('/map') || currentPath.endsWith('/map/index.html') || currentPath.endsWith('/map.html');
+const isListPage = currentPath.endsWith('/list') || currentPath.endsWith('/list/index.html') || currentPath.endsWith('/list.html');
+
+// Force list view for Map/List pages, otherwise use saved preference or default to grid
+const currentView = (isMapPage || isListPage) ? 'list' : (localStorage.getItem('ksu-harapeco-view') || 'grid');
 let activeFilters = JSON.parse(localStorage.getItem('ksu-harapeco-filters') || '[]');
 let currentSort = localStorage.getItem('ksu-harapeco-sort') || 'status';
 
@@ -16,18 +22,19 @@ function getTargetDateStr() {
 }
 
 function getShopStatus(startTime, endTime, targetDateStr) {
-    if (!startTime || !endTime || startTime === '00:00') return { label: '休業', class: 'status-closed' };
+    const closedStatus = { label: '休業', class: 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400' };
+    if (!startTime || !endTime || startTime === '00:00') return closedStatus;
     const now = new Date();
     const todayStr = now.toLocaleDateString('sv-SE');
-    if (targetDateStr < todayStr) return { label: '営業終了', class: 'status-closed' };
-    if (targetDateStr > todayStr) return { label: '準備中', class: 'status-closed' };
+    if (targetDateStr < todayStr) return { label: '営業終了', class: 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400' };
+    if (targetDateStr > todayStr) return { label: '準備中', class: 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400' };
 
     const nowTotal = now.getHours() * 60 + now.getMinutes();
     const [sh, sm] = startTime.split(':').map(Number);
     const [eh, em] = endTime.split(':').map(Number);
-    if (nowTotal < (sh*60+sm)) return { label: '準備中', class: 'status-closed' };
-    if (nowTotal >= (sh*60+sm) && nowTotal < (eh*60+em)) return { label: '営業中', class: 'status-open' };
-    return { label: '営業終了', class: 'status-closed' };
+    if (nowTotal < (sh*60+sm)) return { label: '準備中', class: 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400' };
+    if (nowTotal >= (sh*60+sm) && nowTotal < (eh*60+em)) return { label: '営業中', class: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400' };
+    return { label: '営業終了', class: 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400' };
 }
 
 function updateElementText(id, text) {
@@ -37,7 +44,13 @@ function updateElementText(id, text) {
 
 function setElementDisplay(id, display) {
     const el = document.getElementById(id);
-    if (el) el.style.display = display;
+    if (el) {
+        if (display === 'none') el.classList.add('hidden');
+        else {
+            el.classList.remove('hidden');
+            if (display === 'flex') el.classList.add('flex');
+        }
+    }
 }
 
 async function fetchData(renderCallback) {
@@ -81,7 +94,7 @@ async function fetchData(renderCallback) {
             
             renderProvenance(currentData.sources);
         } else if (shopGrid) {
-            shopGrid.innerHTML = '<div class="col-12 text-center text-muted py-5">営業予定が見つかりませんでした</div>';
+            shopGrid.innerHTML = '<div class="col-span-full text-center text-slate-400 py-12">営業予定が見つかりませんでした</div>';
         }
 
         if (statusRes.ok) {
@@ -91,7 +104,7 @@ async function fetchData(renderCallback) {
         }
     } catch (e) {
         const shopGrid = document.getElementById('shop-grid');
-        if (shopGrid) shopGrid.innerHTML = '<div class="col-12 text-center text-muted py-5">エラーが発生しました</div>';
+        if (shopGrid) shopGrid.innerHTML = '<div class="col-span-full text-center text-red-400 py-12">エラーが発生しました</div>';
     } finally {
         setElementDisplay('loading-overlay', 'none');
     }
@@ -104,16 +117,22 @@ function setupFilters() {
     body.innerHTML = '';
     const sortedCats = Array.from(categories).sort();
     const isOpenOnly = activeFilters.includes('open-only');
+    
     const divOpen = document.createElement('div');
-    divOpen.className = 'form-check mb-3 border-bottom pb-2';
-    divOpen.innerHTML = '<input class="form-check-input filter-checkbox" type="checkbox" value="open-only" id="filter-open" ' + (isOpenOnly ? 'checked' : '') + '><label class="form-check-label w-100 fw-bold" for="filter-open">営業中のみ表示</label>';
+    divOpen.className = 'flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors border-b border-slate-100 dark:border-slate-700 mb-2';
+    divOpen.innerHTML = `
+        <input class="w-4 h-4 text-ksu border-slate-300 rounded focus:ring-ksu dark:border-slate-600 dark:bg-slate-700 filter-checkbox" type="checkbox" value="open-only" id="filter-open" ${isOpenOnly ? 'checked' : ''}>
+        <label class="text-sm font-bold text-slate-700 dark:text-slate-200 cursor-pointer flex-1" for="filter-open">営業中のみ表示</label>`;
     body.appendChild(divOpen);
     divOpen.querySelector('input').addEventListener('change', applyFilters);
+
     sortedCats.forEach(cat => {
         const isChecked = activeFilters.includes(cat);
         const div = document.createElement('div');
-        div.className = 'form-check mb-2';
-        div.innerHTML = '<input class="form-check-input filter-checkbox" type="checkbox" value="' + cat + '" id="filter-' + cat + '" ' + (isChecked ? 'checked' : '') + '><label class="form-check-label w-100" for="filter-' + cat + '">' + cat + '</label>';
+        div.className = 'flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors';
+        div.innerHTML = `
+            <input class="w-4 h-4 text-ksu border-slate-300 rounded focus:ring-ksu dark:border-slate-600 dark:bg-slate-700 filter-checkbox" type="checkbox" value="${cat}" id="filter-${cat}" ${isChecked ? 'checked' : ''}>
+            <label class="text-sm text-slate-600 dark:text-slate-300 cursor-pointer flex-1" for="filter-${cat}">${cat}</label>`;
         body.appendChild(div);
         div.querySelector('input').addEventListener('change', applyFilters);
     });
@@ -126,20 +145,24 @@ function applyFilters() {
     localStorage.setItem('ksu-harapeco-filters', JSON.stringify(activeFilters));
     
     const isMap = window.location.pathname.includes('/map/');
-    render(isMap ? 'col-12' : undefined, isMap ? initMapInteractions : undefined);
+    render(undefined, isMap ? initMapInteractions : undefined);
 }
 
 function renderProvenance(sources) {
     const sourceLinks = document.getElementById('source-links');
     if (sourceLinks && sources && sources.length > 0) {
-        sourceLinks.innerHTML = '情報元PDF: ' + sources.map(s => '<a href="' + s.url + '" class="footer-link mx-2" target="_blank"><i class="bi bi-file-pdf"></i> ' + s.name + '</a>').join('');
+        sourceLinks.innerHTML = sources.map(s => `
+            <a href="${s.url}" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm text-slate-600 dark:text-slate-300 transition-colors" target="_blank">
+                <i class="bi bi-file-pdf text-red-500"></i>
+                <span class="flex-1 text-truncate">${s.name}</span>
+                <i class="bi bi-box-arrow-up-right text-[10px]"></i>
+            </a>
+        `).join('');
     }
 }
 
 function render(gridClass, callback) {
     if (!currentData) return;
-    if (!gridClass) gridClass = window.location.pathname.includes('/map/') ? 'col-12' : 'col-6 col-md-4 col-lg-3';
-    
     const grid = document.getElementById('shop-grid');
     if (!grid) return;
     grid.innerHTML = '';
@@ -167,7 +190,7 @@ function render(gridClass, callback) {
     });
 
     if (allShops.length === 0) {
-        grid.innerHTML = '<div class="col-12 text-center text-muted py-5">条件に一致する店舗がありません</div>';
+        grid.innerHTML = '<div class="col-span-full text-center text-slate-400 py-12 font-medium bg-white dark:bg-slate-800 rounded-xl border border-dashed border-slate-200 dark:border-slate-700">条件に一致する店舗がありません</div>';
         return;
     }
 
@@ -177,89 +200,139 @@ function render(gridClass, callback) {
         const category = shop.category || '店舗';
         if (currentView === 'grid') {
             html = `
-            <div class="${gridClass}" id="card-${shop.id}" data-location="${shop.location}">
-                <div class="card h-100 p-2">
-                    <div class="d-flex justify-content-between align-items-center mb-1">
-                        <span class="shop-category-tag">${category}</span>
-                        <span class="status-badge ${status.class}">${status.label}</span>
-                    </div>
-                    <div class="shop-name text-truncate" title="${shop.name}">${shop.name}</div>
-                    ${shop.headline ? `<div class="headline-text text-truncate mb-1" title="${shop.headline}">${shop.headline}</div>` : ''}
-                    <div class="location-text text-truncate mb-1"><i class="bi bi-geo-alt"></i> ${shop.location}</div>
-                    <div class="time-text"><i class="bi bi-clock"></i> ${shop.start_time}～${shop.end_time}</div>
-                    ${shop.note ? `<div class="note-box">${shop.note}</div>` : ''}
-                    ${shop.url ? `<a href="${shop.url}" target="_blank" class="stretched-link"></a>` : ''}
+            <div id="card-${shop.id}" data-location="${shop.location}" class="group relative flex flex-col bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-3 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="flex justify-between items-start mb-2 gap-2">
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 uppercase tracking-wider shrink-0">${category}</span>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-black tracking-tight shrink-0 ${status.class}">${status.label}</span>
                 </div>
+                <h3 class="font-black text-slate-900 dark:text-white mb-1 leading-tight line-clamp-2" title="${shop.name}">${shop.name}</h3>
+                ${shop.headline ? `<p class="text-[10px] text-ksu dark:text-blue-400 font-bold line-clamp-1 mb-2">${shop.headline}</p>` : ''}
+                <div class="space-y-1 mt-auto">
+                    <div class="flex items-center gap-1.5 text-[11px] text-slate-500 dark:text-slate-400">
+                        <i class="bi bi-geo-alt shrink-0"></i>
+                        <span class="truncate">${shop.location}</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-[11px] font-bold text-slate-700 dark:text-slate-300">
+                        <i class="bi bi-clock shrink-0 text-ksu dark:text-blue-400"></i>
+                        <span>${shop.start_time}～${shop.end_time}</span>
+                    </div>
+                </div>
+                ${shop.note ? `<div class="mt-2 p-1.5 bg-slate-50 dark:bg-slate-900/50 rounded text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed border border-slate-100 dark:border-slate-800">${shop.note}</div>` : ''}
+                ${shop.url ? `<a href="${shop.url}" target="_blank" class="absolute inset-0 z-10" aria-label="${shop.name}の情報を開く"></a>` : ''}
             </div>`;
         } else {
             html = `
-            <div class="list-view-item" id="card-${shop.id}" data-location="${shop.location}">
-                <div class="shop-info-main">
-                    <div class="d-flex align-items-center gap-2 mb-1">
-                        <span class="shop-category-tag mb-0">${category}</span>
-                        <div class="shop-name">${shop.name}</div>
+            <div id="card-${shop.id}" data-location="${shop.location}" class="group relative flex items-center gap-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm hover:shadow-md transition-all duration-200">
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 mb-1.5">
+                        <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 uppercase tracking-wider">${category}</span>
+                        <h3 class="font-black text-slate-900 dark:text-white truncate" title="${shop.name}">${shop.name}</h3>
                     </div>
-                    ${shop.headline ? `<div class="headline-text text-truncate mb-1" title="${shop.headline}">${shop.headline}</div>` : ''}
-                    <div class="d-flex gap-3">
-                        <div class="location-text text-truncate"><i class="bi bi-geo-alt"></i> ${shop.location}</div>
-                        <div class="time-text"><i class="bi bi-clock"></i> ${shop.start_time}～${shop.end_time}</div>
+                    ${shop.headline ? `<p class="text-[10px] text-ksu dark:text-blue-400 font-bold mb-2 truncate">${shop.headline}</p>` : ''}
+                    <div class="flex flex-wrap gap-x-4 gap-y-1">
+                        <div class="flex items-center gap-1.5 text-[11px] text-slate-500 dark:text-slate-400">
+                            <i class="bi bi-geo-alt shrink-0"></i>
+                            <span>${shop.location}</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 text-[11px] font-bold text-slate-700 dark:text-slate-300">
+                            <i class="bi bi-clock shrink-0 text-ksu dark:text-blue-400"></i>
+                            <span>${shop.start_time}～${shop.end_time}</span>
+                        </div>
                     </div>
-                    ${shop.note ? `<div class="note-box mt-1 py-1">${shop.note}</div>` : ''}
+                    ${shop.note ? `<div class="mt-2 text-[10px] text-slate-400 dark:text-slate-500 line-clamp-1 italic">${shop.note}</div>` : ''}
                 </div>
-                <div class="shop-status-side">
-                    <span class="status-badge ${status.class}">${status.label}</span>
+                <div class="shrink-0 flex flex-col items-end gap-2">
+                    <span class="px-3 py-1 rounded-full text-xs font-black tracking-tight ${status.class}">${status.label}</span>
                 </div>
-                ${shop.url ? `<a href="${shop.url}" target="_blank" class="stretched-link"></a>` : ''}
+                ${shop.url ? `<a href="${shop.url}" target="_blank" class="absolute inset-0 z-10" aria-label="${shop.name}の情報を開く"></a>` : ''}
             </div>`;
         }
         grid.insertAdjacentHTML('beforeend', html);
     });
 
-    if (typeof initMapInteractions === 'function') {
-        initMapInteractions(allShops);
+    if (typeof callback === 'function') {
+        callback(allShops);
     }
 }
 
+// --- Theme Switcher ---
+const themeBtn = document.getElementById('btn-theme');
+if (themeBtn) {
+    const applyTheme = (theme) => {
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        const icon = themeBtn.querySelector('i');
+        if (icon) icon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+        localStorage.setItem('theme', theme);
+    };
+
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    applyTheme(savedTheme);
+
+    themeBtn.onclick = () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        applyTheme(isDark ? 'light' : 'dark');
+    };
+}
 // --- Map Logic ---
 let master = null;
 async function initMapInteractions(displayedShops) {
     if (!master) {
-        try { const response = await fetch('/shikaku/assets/master.json'); master = await response.json(); } catch(e) { console.error(e); return; }
+        try { 
+            const response = await fetch('/shikaku/assets/master.json'); 
+            master = await response.json(); 
+        } catch(e) { 
+            console.error(e); 
+            return; 
+        }
     }
     const overlay = document.getElementById('overlay');
-    const tooltip = document.getElementById('tooltip');
     const shopGrid = document.getElementById('shop-grid');
     if (!overlay || !shopGrid) return;
     overlay.innerHTML = '';
+    
     Object.entries(master.buildings).forEach(([id, b]) => {
         const div = document.createElement('div');
-        div.className = 'building-area'; div.id = 'area-' + id;
+        div.className = 'building-area'; 
+        div.id = 'area-' + id;
         overlay.appendChild(div);
+        
         div.onmouseenter = () => {
-            tooltip.style.display = 'block';
             const matchedShops = displayedShops.filter(s => (id === 'pilotis' && s.location === '大学内指定場所') || b.shops.includes(s.id));
             const matchedIds = matchedShops.map(s => 'card-' + s.id);
-            shopGrid.querySelectorAll('.list-view-item, .card').forEach(card => {
+            shopGrid.querySelectorAll('[id^="card-"]').forEach(card => {
                 const isMatch = matchedIds.includes(card.id);
                 card.style.opacity = isMatch ? '1' : '0.2';
-                if (isMatch) { card.classList.add('border-primary'); shopGrid.prepend(card); }
+                if (isMatch) { 
+                    card.classList.add('ring-2', 'ring-ksu', 'dark:ring-blue-500'); 
+                    shopGrid.prepend(card); 
+                }
             });
-            const dateStr = getTargetDateStr();
-            tooltip.innerHTML = '<strong>' + b.name + '</strong><br>' + (matchedShops.length > 0 ? matchedShops.map(s => '<div class="shop-info">' + s.name + '<br><span class="' + getShopStatus(s.start_time, s.end_time, dateStr).class + '">' + getShopStatus(s.start_time, s.end_time, dateStr).label + '</span></div>').join('') : '<div class="shop-info text-muted">該当する店舗なし</div>');
         };
-        div.onmouseleave = () => { tooltip.style.display = 'none'; render(); };
+        div.onmouseleave = () => { render(); };
     });
-    shopGrid.querySelectorAll('.list-view-item, .card').forEach(card => {
+
+    shopGrid.querySelectorAll('[id^="card-"]').forEach(card => {
         card.onmouseenter = () => {
             const shopId = card.id.replace('card-', '');
             let bId = Object.keys(master.buildings).find(k => master.buildings[k].shops.includes(shopId));
             if (!bId && card.dataset.location === '大学内指定場所') bId = 'pilotis';
-            if (bId) document.getElementById('area-' + bId)?.classList.add('highlighted');
-            shopGrid.querySelectorAll('.list-view-item, .card').forEach(c => { if (c !== card) c.style.opacity = '0.3'; });
+            if (bId) {
+                const area = document.getElementById('area-' + bId);
+                if (area) area.classList.add('highlighted');
+            }
+            shopGrid.querySelectorAll('[id^="card-"]').forEach(c => { 
+                if (c !== card) c.style.opacity = '0.3'; 
+            });
         };
         card.onmouseleave = () => {
             overlay.querySelectorAll('.building-area').forEach(area => area.classList.remove('highlighted'));
-            shopGrid.querySelectorAll('.list-view-item, .card').forEach(c => { if (c !== card) c.style.opacity = '1'; });
+            shopGrid.querySelectorAll('[id^="card-"]').forEach(c => { 
+                c.style.opacity = '1'; 
+            });
         };
     });
     updateOverlay();
@@ -281,9 +354,11 @@ function updateOverlay() {
         }
     });
 }
+
 window.addEventListener('resize', updateOverlay);
 document.querySelector('#map-wrapper img')?.addEventListener('load', updateOverlay);
 
+// --- Global Event Listeners ---
 document.querySelectorAll('.sort-radio').forEach(radio => {
     if (radio.value === currentSort) radio.checked = true;
     radio.addEventListener('change', (e) => {
@@ -292,48 +367,48 @@ document.querySelectorAll('.sort-radio').forEach(radio => {
         render();
     });
 });
+
 const resetFilter = document.getElementById('reset-filter');
 if (resetFilter) {
     resetFilter.onclick = () => {
         document.querySelectorAll('.filter-checkbox').forEach(cb => cb.checked = true);
-        document.getElementById('filter-open').checked = false;
+        const openOnly = document.getElementById('filter-open');
+        if (openOnly) openOnly.checked = false;
         applyFilters();
     };
 }
-document.querySelectorAll('nav a').forEach(a => {
-    const href = a.getAttribute('href');
-    if (href === (window.location.pathname.split('/').pop() || 'index.html')) a.classList.add('active-view');
-});
+
 const targetDateStr = getTargetDateStr();
 document.querySelectorAll('nav a').forEach(a => {
     const url = new URL(a.href, window.location.origin);
     url.searchParams.set('date', targetDateStr);
     a.href = url.toString();
+    
+    const href = a.getAttribute('href').replace(/\/$/, '');
+    const isHome = href === '' || href === '/shikaku';
+    const isMatch = (isHome && !isMapPage && !isListPage) || 
+                    (href.endsWith('/map') && isMapPage) || 
+                    (href.endsWith('/list') && isListPage);
+
+    if (isMatch) {
+        a.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-ksu', 'dark:text-blue-400');
+    }
 });
-const themeBtn = document.getElementById('btn-theme');
-if (themeBtn) {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-bs-theme', savedTheme);
-    const icon = themeBtn.querySelector('i');
-    if (icon) icon.className = savedTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-    themeBtn.onclick = () => {
-        const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-bs-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        if (icon) icon.className = newTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-    };
-}
+
 const dateSelector = document.getElementById('date-selector');
 if (dateSelector && typeof flatpickr === 'function') {
     flatpickr(dateSelector, {
         locale: 'ja',
         dateFormat: 'Y-m-d',
         defaultDate: targetDateStr,
-        onChange: (selectedDates, dateStr) => { if (dateStr) window.location.search = "date=" + dateStr; }
+        onChange: (selectedDates, dateStr) => { 
+            if (dateStr) window.location.search = "date=" + dateStr; 
+        }
     });
 }
+
 document.addEventListener('DOMContentLoaded', () => {
-    const isDataPage = ['index.html', 'list.html', 'map.html', ''].some(page => window.location.pathname.endsWith(page));
+    const isDataPage = ['index.html', 'list.html', 'map.html', '', '/'].some(page => window.location.pathname.endsWith(page));
     if (isDataPage) fetchData();
 });
+

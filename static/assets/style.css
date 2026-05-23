@@ -3,10 +3,6 @@
  * Complementing Tailwind CSS
  */
 
-:root {
-    --ksu-blue: #00387D;
-}
-
 /* Map Interactions */
 .building-area {
     position: absolute;
@@ -25,13 +21,6 @@
     z-index: 50;
 }
 
-/* Date Navigator Sticky adjustment */
-.date-nav-sticky {
-    position: sticky;
-    top: 56px;
-    z-index: 100;
-}
-
 /* Custom Scrollbar for Horizontal Navbar on Mobile */
 .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -41,38 +30,68 @@
     scrollbar-width: none;
 }
 
-/* Dark mode adjustments for flatpickr */
+/* Flatpickr dark mode overrides */
 .dark .flatpickr-calendar {
-    background: #1f2937;
-    border-color: #374151;
+    background: #1e293b;
+    border-color: #334155;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-    color: #f3f4f6;
+    color: #f1f5f9;
 }
 .dark .flatpickr-day {
-    color: #f3f4f6;
+    color: #f1f5f9;
 }
 .dark .flatpickr-day:hover {
-    background: #374151;
+    background: #334155;
+}
+.dark .flatpickr-day.selected {
+    background: #00387D;
+    border-color: #00387D;
 }
 .dark .flatpickr-current-month, 
 .dark .flatpickr-month {
-    color: #f3f4f6;
-    fill: #f3f4f6;
+    color: #f1f5f9;
+    fill: #f1f5f9;
 }
-
-/* Smooth transitions */
-.shop-card {
-    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s, border-color 0.2s;
+.dark .flatpickr-weekday {
+    color: #94a3b8;
 }
 
 /* Map wrapper sticky behavior */
 #map-wrapper {
     position: sticky;
-    top: 130px; /* Reduced from 156px */
+    top: 140px;
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Loading Overlay */
-#loading-overlay {
-    backdrop-filter: blur(4px);
+@media (max-width: 767px) {
+    #map-wrapper {
+        position: relative;
+        top: 0;
+    }
+}
+
+/* Text truncate utilities if not handled by tailwind line-clamp */
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Animations for Modals */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes zoom-in {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.animate-in {
+    animation-fill-mode: both;
+}
+.fade-in {
+    animation-name: fade-in;
+}
+.zoom-in {
+    animation-name: zoom-in;
 }
