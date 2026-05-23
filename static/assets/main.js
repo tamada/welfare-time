@@ -87,7 +87,8 @@ async function fetchData(renderCallback) {
         const shopGrid = document.getElementById('shop-grid');
         if (scheduleRes.ok) {
             currentData = await scheduleRes.json();
-            setupFilters();
+            // AWAIT setupFilters here to ensure categories are ready
+            await setupFilters();
             
             const isMap = window.location.pathname.includes('/map/');
             render(undefined, isMap ? initMapInteractions : undefined);
@@ -105,19 +106,37 @@ async function fetchData(renderCallback) {
     } catch (e) {
         const shopGrid = document.getElementById('shop-grid');
         if (shopGrid) shopGrid.innerHTML = '<div class="col-span-full text-center text-red-400 py-12">エラーが発生しました</div>';
+        console.error(e);
     } finally {
         setElementDisplay('loading-overlay', 'none');
     }
 }
 
-function setupFilters() {
-    const categories = new Set();
-    [...currentData.cafeterias, ...currentData.kitchen_cars].forEach(s => categories.add(s.category || '店舗'));
+async function setupFilters() {
+    if (!master) {
+        try { 
+            const response = await fetch('/shikaku/assets/master.json'); 
+            master = await response.json(); 
+        } catch(e) { 
+            console.error('Failed to load master.json', e); 
+            return; 
+        }
+    }
+
+    const categories = master.categories || [];
     const body = document.getElementById('filter-options-body');
+    if (!body) return;
     body.innerHTML = '';
-    const sortedCats = Array.from(categories).sort();
+    
+    const savedFiltersStr = localStorage.getItem('ksu-harapeco-filters');
+    const hasSavedFilters = savedFiltersStr !== null;
+    if (hasSavedFilters) {
+        activeFilters = JSON.parse(savedFiltersStr);
+    }
+    
     const isOpenOnly = activeFilters.includes('open-only');
     
+    // 1. Open Only Filter
     const divOpen = document.createElement('div');
     divOpen.className = 'flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors border-b border-slate-100 dark:border-slate-700 mb-2';
     divOpen.innerHTML = `
@@ -126,8 +145,23 @@ function setupFilters() {
     body.appendChild(divOpen);
     divOpen.querySelector('input').addEventListener('change', applyFilters);
 
-    sortedCats.forEach(cat => {
-        const isChecked = activeFilters.includes(cat);
+    // 2. Category Filters
+    categories.forEach(cat => {
+        // If no saved filters, everything should be checked.
+        // If saved, use what's in activeFilters.
+        let isChecked = !hasSavedFilters || activeFilters.includes(cat);
+        
+        // If it's a new category not in saved filters, we also check it by default.
+        if (hasSavedFilters && !activeFilters.includes(cat) && !JSON.parse(savedFiltersStr).includes(cat)) {
+            // Check if this category exists in the system but was missing from the user's saved list
+            // For now, let's just default to checked for "キッチンカー" if it's the first time it appears
+            if (cat === 'キッチンカー') isChecked = true;
+        }
+
+        if (isChecked && !activeFilters.includes(cat)) {
+            activeFilters.push(cat);
+        }
+
         const div = document.createElement('div');
         div.className = 'flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors';
         div.innerHTML = `
@@ -136,6 +170,8 @@ function setupFilters() {
         body.appendChild(div);
         div.querySelector('input').addEventListener('change', applyFilters);
     });
+
+    localStorage.setItem('ksu-harapeco-filters', JSON.stringify(activeFilters));
 }
 
 function applyFilters() {
@@ -183,9 +219,14 @@ function render(gridClass, callback) {
         if (currentSort === 'status') {
             const aOpen = getShopStatus(a.start_time, a.end_time, targetDateStr).label === '営業中';
             const bOpen = getShopStatus(b.start_time, b.end_time, targetDateStr).label === '営業中';
-            if (aOpen !== bOpen) return bOpen - aOpen;
-        } else if (currentSort === 'name') return a.name.localeCompare(b.name, 'ja');
-        else if (currentSort === 'location') return a.location.localeCompare(b.location, 'ja');
+            if (aOpen !== bOpen) return aOpen ? -1 : 1; // Open first
+            // If both same status, sub-sort by name
+            return a.name.localeCompare(b.name, 'ja');
+        } else if (currentSort === 'name') {
+            return a.name.localeCompare(b.name, 'ja');
+        } else if (currentSort === 'location') {
+            return a.location.localeCompare(b.location, 'ja') || a.name.localeCompare(b.name, 'ja');
+        }
         return 0;
     });
 
@@ -207,43 +248,49 @@ function render(gridClass, callback) {
                 </div>
                 <h3 class="font-black text-slate-900 dark:text-white mb-1 leading-tight line-clamp-2" title="${shop.name}">${shop.name}</h3>
                 ${shop.headline ? `<p class="text-[10px] text-ksu dark:text-blue-400 font-bold line-clamp-1 mb-2">${shop.headline}</p>` : ''}
-                <div class="space-y-1 mt-auto">
-                    <div class="flex items-center gap-1.5 text-[11px] text-slate-500 dark:text-slate-400">
-                        <i class="bi bi-geo-alt shrink-0"></i>
-                        <span class="truncate">${shop.location}</span>
-                    </div>
-                    <div class="flex items-center gap-1.5 text-[11px] font-bold text-slate-700 dark:text-slate-300">
-                        <i class="bi bi-clock shrink-0 text-ksu dark:text-blue-400"></i>
-                        <span>${shop.start_time}～${shop.end_time}</span>
-                    </div>
-                </div>
-                ${shop.note ? `<div class="mt-2 p-1.5 bg-slate-50 dark:bg-slate-900/50 rounded text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed border border-slate-100 dark:border-slate-800">${shop.note}</div>` : ''}
-                ${shop.url ? `<a href="${shop.url}" target="_blank" class="absolute inset-0 z-10" aria-label="${shop.name}の情報を開く"></a>` : ''}
-            </div>`;
-        } else {
-            html = `
-            <div id="card-${shop.id}" data-location="${shop.location}" class="group relative flex items-center gap-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm hover:shadow-md transition-all duration-200">
-                <div class="flex-1 min-w-0">
-                    <div class="flex items-center gap-2 mb-1.5">
-                        <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 uppercase tracking-wider">${category}</span>
-                        <h3 class="font-black text-slate-900 dark:text-white truncate" title="${shop.name}">${shop.name}</h3>
-                    </div>
-                    ${shop.headline ? `<p class="text-[10px] text-ksu dark:text-blue-400 font-bold mb-2 truncate">${shop.headline}</p>` : ''}
-                    <div class="flex flex-wrap gap-x-4 gap-y-1">
-                        <div class="flex items-center gap-1.5 text-[11px] text-slate-500 dark:text-slate-400">
+                
+                <div class="mt-auto pt-2 border-t border-slate-50 dark:border-slate-700/50">
+                    <div class="flex items-center justify-between gap-2 text-[10px] sm:text-[11px]">
+                        <div class="flex items-center gap-1 text-slate-500 dark:text-slate-400 min-w-0">
                             <i class="bi bi-geo-alt shrink-0"></i>
-                            <span>${shop.location}</span>
+                            <span class="truncate">${shop.location}</span>
                         </div>
-                        <div class="flex items-center gap-1.5 text-[11px] font-bold text-slate-700 dark:text-slate-300">
+                        <div class="flex items-center gap-1 font-bold text-slate-700 dark:text-slate-300 shrink-0">
                             <i class="bi bi-clock shrink-0 text-ksu dark:text-blue-400"></i>
                             <span>${shop.start_time}～${shop.end_time}</span>
                         </div>
                     </div>
-                    ${shop.note ? `<div class="mt-2 text-[10px] text-slate-400 dark:text-slate-500 line-clamp-1 italic">${shop.note}</div>` : ''}
                 </div>
-                <div class="shrink-0 flex flex-col items-end gap-2">
-                    <span class="px-3 py-1 rounded-full text-xs font-black tracking-tight ${status.class}">${status.label}</span>
+                
+                ${shop.note ? `<div class="mt-2 p-1.5 bg-slate-50 dark:bg-slate-900/50 rounded text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed border border-slate-100 dark:border-slate-800">${shop.note}</div>` : ''}
+                ${shop.url ? `<a href="${shop.url}" target="_blank" class="absolute inset-0 z-10" aria-label="${shop.name}の情報を開く"></a>` : ''}
+            </div>`;
+        } else {
+            // Map/List view: Refined list card
+            html = `
+            <div id="card-${shop.id}" data-location="${shop.location}" class="group relative flex flex-col bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm hover:shadow-md transition-all duration-200">
+                <div class="flex justify-between items-start mb-2 gap-2">
+                    <div class="flex items-center gap-2 min-w-0">
+                        <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 uppercase tracking-wider shrink-0">${category}</span>
+                        <h3 class="font-black text-slate-900 dark:text-white truncate" title="${shop.name}">${shop.name}</h3>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-black tracking-tight shrink-0 ${status.class}">${status.label}</span>
                 </div>
+                
+                ${shop.headline ? `<p class="text-[10px] text-ksu dark:text-blue-400 font-bold mb-2 truncate">${shop.headline}</p>` : ''}
+                
+                <div class="flex items-center justify-between gap-4 text-[11px] mt-auto">
+                    <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 min-w-0">
+                        <i class="bi bi-geo-alt shrink-0"></i>
+                        <span class="truncate">${shop.location}</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 font-bold text-slate-700 dark:text-slate-300 shrink-0">
+                        <i class="bi bi-clock shrink-0 text-ksu dark:text-blue-400"></i>
+                        <span>${shop.start_time}～${shop.end_time}</span>
+                    </div>
+                </div>
+                
+                ${shop.note ? `<div class="mt-2 text-[10px] text-slate-400 dark:text-slate-500 line-clamp-1 italic">${shop.note}</div>` : ''}
                 ${shop.url ? `<a href="${shop.url}" target="_blank" class="absolute inset-0 z-10" aria-label="${shop.name}の情報を開く"></a>` : ''}
             </div>`;
         }
@@ -318,6 +365,7 @@ async function initMapInteractions(displayedShops) {
     shopGrid.querySelectorAll('[id^="card-"]').forEach(card => {
         card.onmouseenter = () => {
             const shopId = card.id.replace('card-', '');
+            // Check in master buildings
             let bId = Object.keys(master.buildings).find(k => master.buildings[k].shops.includes(shopId));
             if (!bId && card.dataset.location === '大学内指定場所') bId = 'pilotis';
             if (bId) {

@@ -1,5 +1,5 @@
 {
-  "cafeterias": [
+  "facilities": [
     {
       "id": "101",
       "name": "やさい食堂 イチマルイチ",
@@ -158,6 +158,14 @@
         "saturday": "08:45-17:00"
       }
     }
+  ],
+  "categories": [
+    "食堂",
+    "ショップ",
+    "コンビニ",
+    "サービス",
+    "ATM",
+    "キッチンカー"
   ],
   "buildings": {
     "heirakukan": {
