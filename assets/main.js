@@ -303,4 +303,9 @@ if (dateSelector && typeof flatpickr === 'function') {
     });
 }
 
-// fetchData();
+document.addEventListener('DOMContentLoaded', () => {
+    const isDataPage = ['index.html', 'list.html', 'map.html', ''].some(page => window.location.pathname.endsWith(page));
+    if (isDataPage) {
+        fetchData();
+    }
+});
