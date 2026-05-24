@@ -1,5 +1,9 @@
 const API_BASE = '/shikaku/api/schedule';
 const STATUS_API = '/shikaku/api/status/index.json';
+const LABE_NOW_OPEN = '🟢 営業中';
+const LABE_PREPARING = '🟠 準備中';
+const LABE_CLOSED = '🔴 営業終了';
+
 let currentData = null;
 
 // More robust path detection
@@ -26,15 +30,15 @@ function getShopStatus(startTime, endTime, targetDateStr) {
     if (!startTime || !endTime || startTime === '00:00') return closedStatus;
     const now = new Date();
     const todayStr = now.toLocaleDateString('sv-SE');
-    if (targetDateStr < todayStr) return { label: '営業終了', class: 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400' };
-    if (targetDateStr > todayStr) return { label: '準備中', class: 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400' };
+    if (targetDateStr < todayStr) return { label: LABE_CLOSED, class: 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400' };
+    if (targetDateStr > todayStr) return { label: LABE_PREPARING, class: 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400' };
 
     const nowTotal = now.getHours() * 60 + now.getMinutes();
     const [sh, sm] = startTime.split(':').map(Number);
     const [eh, em] = endTime.split(':').map(Number);
-    if (nowTotal < (sh*60+sm)) return { label: '準備中', class: 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400' };
-    if (nowTotal >= (sh*60+sm) && nowTotal < (eh*60+em)) return { label: '営業中', class: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400' };
-    return { label: '営業終了', class: 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400' };
+    if (nowTotal < (sh*60+sm)) return { label: LABE_PREPARING, class: 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400' };
+    if (nowTotal >= (sh*60+sm) && nowTotal < (eh*60+em)) return { label: LABE_NOW_OPEN, class: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400' };
+    return { label: LABE_CLOSED, class: 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400' };
 }
 
 function updateElementText(id, text) {
@@ -154,7 +158,7 @@ async function setupFilters() {
         // If it's a new category not in saved filters, we also check it by default.
         if (hasSavedFilters && !activeFilters.includes(cat) && !JSON.parse(savedFiltersStr).includes(cat)) {
             // Check if this category exists in the system but was missing from the user's saved list
-            // For now, let's just default to checked for "キッチンカー" if it's the first time it appears
+            // For now, let's just default to checked for "🚚 キッチンカー" if it's the first time it appears
             if (cat === 'キッチンカー') isChecked = true;
         }
 
@@ -211,14 +215,14 @@ function render(gridClass, callback) {
         const categoryMatch = activeFilters.length === 0 || activeFilters.includes(s.category || '店舗');
         if (isOpenOnly) {
             const status = getShopStatus(s.start_time, s.end_time, targetDateStr);
-            return categoryMatch && status.label === '営業中';
+            return categoryMatch && status.label === LABE_NOW_OPEN;
         }
         return categoryMatch;
     });
     allShops.sort((a, b) => {
         if (currentSort === 'status') {
-            const aOpen = getShopStatus(a.start_time, a.end_time, targetDateStr).label === '営業中';
-            const bOpen = getShopStatus(b.start_time, b.end_time, targetDateStr).label === '営業中';
+            const aOpen = getShopStatus(a.start_time, a.end_time, targetDateStr).label === LABE_NOW_OPEN;
+            const bOpen = getShopStatus(b.start_time, b.end_time, targetDateStr).label === LABE_NOW_OPEN;
             if (aOpen !== bOpen) return aOpen ? -1 : 1; // Open first
             // If both same status, sub-sort by name
             return a.name.localeCompare(b.name, 'ja');
