@@ -1,5 +1,5 @@
 const API_BASE = '/shikaku/api/schedule';
-const STATUS_API = '/shikaku/api/status/index.json';
+const STATUS_API = '/shikaku/api/status';
 const LABE_NOW_OPEN = '🟢 営業中';
 const LABE_PREPARING = '🟠 準備中';
 const LABE_CLOSED = '🔴 営業終了';

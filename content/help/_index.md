@@ -1,5 +1,6 @@
 ---
 title: "ヘルプ・使い方"
+type: "help"
 ---
 
 ## 🍽️ Welfare-Time とは
@@ -40,11 +41,11 @@ title: "ヘルプ・使い方"
 
 ## その他
 
-- [📱 スマートフォンでのアプリ化](/help/install/)
-- [💻 API 利用ガイド](/help/api/)
+- [📱 スマートフォンでのアプリ化](install)
+- [💻 API 利用ガイド](api)
 
 ## お問い合わせ
 
 不具合の報告や改善の提案は、GitHubのリポジトリまでお寄せください。
 
-- [tamada/harapeco](https://github.com/tamada/harapeco)
+- [tamada/welfare-time](https://github.com/tamada/welfare-time)

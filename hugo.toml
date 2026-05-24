@@ -1,7 +1,6 @@
 baseURL = 'https://tamada.github.io/shikaku/'
 locale = 'ja'
 title = 'Welfare-Time'
-publishDir = 'public2'
 
 [params]
   brand_icon = "assets/icon.svg"
