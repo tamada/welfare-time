@@ -80,8 +80,20 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
             seen_kc.add(key)
     kitchen_car_schedules = unique_kc
 
-    # 3. Load Cafeteria Schedules and Track Sources
+    # 3. Initialize Schedule Map with a range of dates
     schedule_map = {}
+    
+    # Initialize from 7 days ago to 30 days ahead to ensure static shops appear
+    start_init = now - timedelta(days=7)
+    for i in range(40):
+        d_str = (start_init + timedelta(days=i)).strftime("%Y-%m-%d")
+        schedule_map[d_str] = {
+            "date": d_str, 
+            "last_updated": last_updated, 
+            "cafeterias": [], 
+            "kitchen_cars": [],
+            "sources": []
+        }
     
     def get_or_create_date(date_str):
         if date_str not in schedule_map:
@@ -141,16 +153,47 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
             "headline": s.get("headline", "") or (m_info.get("headline", "") if m_info else ""),
             "location": s.get("location") or "大学内指定場所",
             "category": "キッチンカー",
-            "start_time": s["start_time"],
-            "end_time": s["end_time"],
-            "business_hours": s["business_hours"],
+            "start_time": s.get("start_time", "00:00"),
+            "end_time": s.get("end_time", "00:00"),
+            "business_hours": s.get("business_hours", ""),
             "note": ""
         })
 
-    # 5. Generate Daily API Files
+    # 5. Inject Static Schedules (e.g. ATMs)
+    for date_str, day_data in schedule_map.items():
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
+        weekday = dt.weekday() # 0=Mon, 5=Sat, 6=Sun
+
+        for m_shop in master_raw.get("cafeterias", []):
+            if "static-hours" in m_shop:
+                hours_str = ""
+                if weekday < 5: # Mon-Fri
+                    hours_str = m_shop["static-hours"].get("ordinary", "")
+                elif weekday == 5: # Sat
+                    hours_str = m_shop["static-hours"].get("saturday", "")
+
+                if hours_str and hours_str != "closed":
+                    start_time, end_time = "00:00", "00:00"
+                    if "-" in hours_str:
+                        start_time, end_time = hours_str.split("-")
+
+                    day_data["cafeterias"].append({
+                        "id": m_shop["id"],
+                        "name": m_shop["name"],
+                        "url": m_shop.get("url", ""),
+                        "location": m_shop["location"],
+                        "category": m_shop.get("category", "サービス"),
+                        "headline": m_shop.get("headline", ""),
+                        "start_time": start_time,
+                        "end_time": end_time,
+                        "business_hours": hours_str,
+                        "note": ""
+                    })
+
+    # 6. Generate Daily API Files
     api_schedule_dir = os.path.join(output_dir, "api/schedule")
     for date_str, data in schedule_map.items():
-        save_json(data, os.path.join(api_schedule_dir, f"{date_str}/index.json"))
+        save_json(data, os.path.join(api_schedule_dir, f"{date_str}"))
     
     shortcuts = {
         "today": today_str,
@@ -159,7 +202,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
     }
     for label, d_str in shortcuts.items():
         if d_str in schedule_map:
-            save_json(schedule_map[d_str], os.path.join(api_schedule_dir, f"{label}/index.json"))
+            save_json(schedule_map[d_str], os.path.join(api_schedule_dir, f"{label}"))
 
     # 6. Weekly API
     current_monday = now - timedelta(days=now.weekday())
@@ -173,8 +216,10 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
             "last_updated": last_updated,
             "daily_schedules": daily_schedules
         }
-        save_json(week_data, os.path.join(api_schedule_dir, f"weeks/{w}/index.json"))
-        if w == 0: save_json(week_data, os.path.join(api_schedule_dir, "week/index.json"))
+        # Save as weeks/0, weeks/1, etc.
+        os.makedirs(os.path.join(api_schedule_dir, "weeks"), exist_ok=True)
+        save_json(week_data, os.path.join(api_schedule_dir, f"weeks/{w}"))
+        if w == 0: save_json(week_data, os.path.join(api_schedule_dir, "week"))
 
     # 7. Shops API
     all_shops = {}
@@ -193,9 +238,9 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
     api_shops_dir = os.path.join(output_dir, "api/shops")
     shops_index = {"shops": []}
     for sid, sdata in all_shops.items():
-        save_json(sdata, os.path.join(api_shops_dir, f"{sid}/index.json"))
+        save_json(sdata, os.path.join(api_shops_dir, f"{sid}"))
         shops_index["shops"].append({k: v for k, v in sdata.items() if k != "schedules"})
-    save_json(shops_index, os.path.join(api_shops_dir, "index.json"))
+    save_json(shops_index, os.path.join(api_shops_dir, "index"))
 
     # 8. Status API
     dates = sorted(schedule_map.keys())
@@ -209,7 +254,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
         "data_range": {"start": dates[0] if dates else "", "end": dates[-1] if dates else ""},
         "shop_count": len(all_shops),
         "sources": global_sources
-    }, os.path.join(output_dir, "api/status/index.json"))
+    }, os.path.join(output_dir, "api/status/index"))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

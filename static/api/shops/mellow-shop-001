@@ -1,0 +1,25 @@
+{
+  "id": "mellow-shop-001",
+  "name": "mellow-shop-001",
+  "url": "",
+  "image_url": "",
+  "headline": "",
+  "location": "並木道",
+  "category": "キッチンカー",
+  "schedules": [
+    {
+      "date": "2026-05-16",
+      "location": "並木道",
+      "start_time": "11:30",
+      "end_time": "15:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-18",
+      "location": "並木道",
+      "start_time": "11:30",
+      "end_time": "15:00",
+      "note": ""
+    }
+  ]
+}

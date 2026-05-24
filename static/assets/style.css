@@ -1,0 +1,99 @@
+/**
+ * Custom styles for Shikaku (シカク)
+ * Complementing Tailwind CSS
+ */
+
+/* Map Interactions */
+.building-area {
+    position: absolute;
+    cursor: pointer;
+    pointer-events: auto;
+    border: 2px solid transparent;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;
+}
+
+.building-area:hover, 
+.building-area.highlighted {
+    background-color: rgba(59, 130, 246, 0.25);
+    border-color: #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+    z-index: 50;
+}
+
+/* Custom Scrollbar for Horizontal Navbar on Mobile */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Flatpickr dark mode overrides */
+.dark .flatpickr-calendar {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    color: #f1f5f9;
+}
+.dark .flatpickr-day {
+    color: #f1f5f9;
+}
+.dark .flatpickr-day:hover {
+    background: #334155;
+}
+.dark .flatpickr-day.selected {
+    background: #00387D;
+    border-color: #00387D;
+}
+.dark .flatpickr-current-month, 
+.dark .flatpickr-month {
+    color: #f1f5f9;
+    fill: #f1f5f9;
+}
+.dark .flatpickr-weekday {
+    color: #94a3b8;
+}
+
+/* Map wrapper sticky behavior */
+#map-wrapper {
+    position: sticky;
+    top: 140px; /* Adjust based on header height, approx 96px */
+    transition: opacity 0.3s ease-in-out;
+    /* Ensure the container doesn't clip the sticky element */
+    will-change: transform;
+}
+
+@media (max-width: 767px) {
+    #map-wrapper {
+        position: relative;
+        top: 0;
+    }
+}
+
+/* Text truncate utilities if not handled by tailwind line-clamp */
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Animations for Modals */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes zoom-in {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.animate-in {
+    animation-fill-mode: both;
+}
+.fade-in {
+    animation-name: fade-in;
+}
+.zoom-in {
+    animation-name: zoom-in;
+}

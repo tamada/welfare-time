@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welfare-Time | {{ .Title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        ksu: '#00387D',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="{{ "assets/style.css" | relURL }}">
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 min-h-screen transition-colors duration-200">
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        {{ partial "navbar.html" . }}
+        {{ block "subnav" .}}{{ end }}
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    <!-- Modals -->
+    <div id="modal-backdrop" class="fixed inset-0 z-[60] hidden bg-slate-900/50 backdrop-blur-sm items-center justify-center p-4">
+        <!-- Filter Modal -->
+        <div id="filterModal" class="hidden w-full max-w-md bg-white dark:bg-slate-800 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+            <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
+                <h5 class="text-lg font-bold">表示フィルタ</h5>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                    <i class="bi bi-x-lg text-xl"></i>
+                </button>
+            </div>
+            <div id="filter-options-body" class="px-6 py-4 max-h-[60vh] overflow-y-auto"></div>
+            <div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-700 flex gap-3">
+                <button id="reset-filter" class="flex-1 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors">リセット</button>
+                <button onclick="closeModal()" class="flex-1 px-4 py-2 text-sm font-medium bg-ksu text-white hover:bg-ksu/90 rounded-lg transition-colors">閉じる</button>
+            </div>
+        </div>
+
+        <!-- Sort Modal -->
+        <div id="sortModal" class="hidden w-full max-w-md bg-white dark:bg-slate-800 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+            <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
+                <h5 class="text-lg font-bold">並び替え</h5>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                    <i class="bi bi-x-lg text-xl"></i>
+                </button>
+            </div>
+            <div class="px-6 py-4 space-y-3">
+                <label class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors group">
+                    <input type="radio" name="sortOption" value="status" class="sort-radio w-4 h-4 text-ksu border-slate-300 focus:ring-ksu dark:border-slate-600 dark:bg-slate-700">
+                    <span class="text-slate-700 dark:text-slate-200 group-hover:text-ksu dark:group-hover:text-white transition-colors">営業状況順（営業中を優先）</span>
+                </label>
+                <label class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors group">
+                    <input type="radio" name="sortOption" value="name" class="sort-radio w-4 h-4 text-ksu border-slate-300 focus:ring-ksu dark:border-slate-600 dark:bg-slate-700">
+                    <span class="text-slate-700 dark:text-slate-200 group-hover:text-ksu dark:group-hover:text-white transition-colors">名称順</span>
+                </label>
+                <label class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors group">
+                    <input type="radio" name="sortOption" value="location" class="sort-radio w-4 h-4 text-ksu border-slate-300 focus:ring-ksu dark:border-slate-600 dark:bg-slate-700">
+                    <span class="text-slate-700 dark:text-slate-200 group-hover:text-ksu dark:group-hover:text-white transition-colors">場所順</span>
+                </label>
+            </div>
+            <div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-700">
+                <button onclick="closeModal()" class="w-full px-4 py-2 text-sm font-medium bg-ksu text-white hover:bg-ksu/90 rounded-lg transition-colors">閉じる</button>
+            </div>
+        </div>
+
+        <!-- Status Modal -->
+        <div id="statusModal" class="hidden w-full max-w-md bg-white dark:bg-slate-800 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+            <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
+                <h5 class="text-lg font-bold">情報元</h5>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                    <i class="bi bi-x-lg text-xl"></i>
+                </button>
+            </div>
+            <div class="px-6 py-4">
+                <div id="source-links" class="space-y-2"></div>
+            </div>
+            <div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-700">
+                <button onclick="closeModal()" class="w-full px-4 py-2 text-sm font-medium bg-ksu text-white hover:bg-ksu/90 rounded-lg transition-colors">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 z-[100] hidden bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm items-center justify-center">
+        <div class="flex flex-col items-center gap-4">
+            <div class="w-12 h-12 border-4 border-ksu border-t-transparent rounded-full animate-spin"></div>
+            <p class="text-sm font-medium text-slate-600 dark:text-slate-400">読み込み中...</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+    <script src="{{ "assets/main.js" | relURL }}"></script>
+    <script>
+        function openModal(id) {
+            const backdrop = document.getElementById('modal-backdrop');
+            const modal = document.getElementById(id);
+            backdrop.classList.remove('hidden');
+            backdrop.classList.add('flex');
+            modal.classList.remove('hidden');
+        }
+        function closeModal() {
+            const backdrop = document.getElementById('modal-backdrop');
+            backdrop.classList.add('hidden');
+            backdrop.classList.remove('flex');
+            const modals = ['filterModal', 'sortModal', 'statusModal'];
+            modals.forEach(m => document.getElementById(m).classList.add('hidden'));
+        }
+        // Close modal on backdrop click
+        document.getElementById('modal-backdrop').onclick = function(e) {
+            if (e.target === this) closeModal();
+        };
+    </script>
+</body>
+</html>
