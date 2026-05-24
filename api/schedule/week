@@ -2,11 +2,11 @@
   "week_index": 0,
   "start_date": "2026-05-18",
   "end_date": "2026-05-24",
-  "last_updated": "2026-05-22T11:22:49.880586",
+  "last_updated": "2026-05-24T22:52:30.985504",
   "daily_schedules": [
     {
       "date": "2026-05-18",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "last_updated": "2026-05-24T22:52:30.985504",
       "cafeterias": [
         {
           "id": "101",
@@ -307,7 +307,7 @@
     },
     {
       "date": "2026-05-19",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "last_updated": "2026-05-24T22:52:30.985504",
       "cafeterias": [
         {
           "id": "101",
@@ -608,7 +608,7 @@
     },
     {
       "date": "2026-05-20",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "last_updated": "2026-05-24T22:52:30.985504",
       "cafeterias": [
         {
           "id": "101",
@@ -881,7 +881,7 @@
     },
     {
       "date": "2026-05-21",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "last_updated": "2026-05-24T22:52:30.985504",
       "cafeterias": [
         {
           "id": "101",
@@ -1168,7 +1168,7 @@
     },
     {
       "date": "2026-05-22",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "last_updated": "2026-05-24T22:52:30.985504",
       "cafeterias": [
         {
           "id": "101",
@@ -1445,34 +1445,7 @@
           "note": ""
         }
       ],
-      "kitchen_cars": [
-        {
-          "id": "pMSXgz",
-          "name": "SKY KITCHEN",
-          "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
-          "image_url": "",
-          "headline": "照り焼きチキン",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        },
-        {
-          "id": "dqSe1b",
-          "name": "メロンパンみのり",
-          "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
-          "image_url": "",
-          "headline": "メロンパンみのり",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        }
-      ],
+      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_05.pdf",
@@ -1482,7 +1455,7 @@
     },
     {
       "date": "2026-05-23",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "last_updated": "2026-05-24T22:52:30.985504",
       "cafeterias": [
         {
           "id": "ichibariki",
@@ -1601,7 +1574,7 @@
     },
     {
       "date": "2026-05-24",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "last_updated": "2026-05-24T22:52:30.985504",
       "cafeterias": [
         {
           "id": "family-mart-motoyama",

@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-11",
+  "date": "2026-07-09",
   "last_updated": "2026-05-24T22:52:30.985504",
   "cafeterias": [
     {
@@ -54,11 +54,11 @@
       "note": ""
     },
     {
-      "id": "Z7SXr3",
-      "name": "Charubo",
-      "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
+      "id": "5gSVA6",
+      "name": "銀座六丁目、フライの家。京都店",
+      "url": "https://schedule.mellow.jp/ss_web/shops/5gSVA6",
       "image_url": "",
-      "headline": "アサイーボウル ミニ",
+      "headline": "チキンチーズカツライスバーガー",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",

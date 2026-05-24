@@ -205,24 +205,6 @@
       "headline": ""
     },
     {
-      "id": "pMSXgz",
-      "name": "SKY KITCHEN",
-      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
-      "image_url": "",
-      "headline": "照り焼きチキン",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "dqSe1b",
-      "name": "メロンパンみのり",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
-      "image_url": "",
-      "headline": "メロンパンみのり",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "V2Sbq5",
       "name": "kaka男cafe",
       "url": "https://schedule.mellow.jp/ss_web/shops/V2Sbq5",
@@ -295,6 +277,24 @@
       "category": "キッチンカー"
     },
     {
+      "id": "pMSXgz",
+      "name": "SKY KITCHEN",
+      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
+      "image_url": "",
+      "headline": "照り焼きチキン",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "dqSe1b",
+      "name": "メロンパンみのり",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
+      "image_url": "",
+      "headline": "メロンパンみのり",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "Z7S1R",
       "name": "もんきち",
       "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
@@ -349,6 +349,15 @@
       "category": "キッチンカー"
     },
     {
+      "id": "Z7SXr3",
+      "name": "Charubo",
+      "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
+      "image_url": "",
+      "headline": "アサイーボウル ミニ",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "BdSYoz",
       "name": "MAHALO",
       "url": "https://schedule.mellow.jp/ss_web/shops/BdSYoz",
@@ -399,6 +408,24 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
       "image_url": "",
       "headline": "カルツォーネ（包み焼きピザ）",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "XESDOr",
+      "name": "雨ノチ晴レ",
+      "url": "https://schedule.mellow.jp/ss_web/shops/XESDOr",
+      "image_url": "",
+      "headline": "チキンオーバーライス",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "PVSjPy",
+      "name": "こちとら",
+      "url": "https://schedule.mellow.jp/ss_web/shops/PVSjPy",
+      "image_url": "",
+      "headline": "漬け卵黄",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     }

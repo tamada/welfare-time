@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-11",
+  "date": "2026-07-13",
   "last_updated": "2026-05-24T22:52:30.985504",
   "cafeterias": [
     {
@@ -41,11 +41,11 @@
   ],
   "kitchen_cars": [
     {
-      "id": "EpSrJN",
-      "name": "Lo Splendore",
-      "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
+      "id": "dqSeq3",
+      "name": "旨夢路本舗",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
       "image_url": "",
-      "headline": "生パスタ ペペロンチーノ",
+      "headline": "旨夢路式☆創作塩からあげ",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -54,11 +54,11 @@
       "note": ""
     },
     {
-      "id": "Z7SXr3",
-      "name": "Charubo",
-      "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
+      "id": "PVSjPy",
+      "name": "こちとら",
+      "url": "https://schedule.mellow.jp/ss_web/shops/PVSjPy",
       "image_url": "",
-      "headline": "アサイーボウル ミニ",
+      "headline": "漬け卵黄",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
