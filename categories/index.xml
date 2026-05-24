@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Welfare-Time</title>
-    <link>https://tamada.github.io/shikaku/categories/</link>
+    <link>https://tamada.github.io/welfare-time/categories/</link>
     <description>Recent content in Categories on Welfare-Time</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="https://tamada.github.io/shikaku/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tamada.github.io/welfare-time/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
