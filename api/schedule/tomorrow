@@ -1,6 +1,6 @@
 {
-  "date": "2026-05-25",
-  "last_updated": "2026-05-24T22:52:30.985504",
+  "date": "2026-05-26",
+  "last_updated": "2026-05-25T22:55:03.937102",
   "cafeterias": [
     {
       "id": "101",
@@ -293,11 +293,11 @@
   ],
   "kitchen_cars": [
     {
-      "id": "V2Sbq5",
-      "name": "kaka男cafe",
-      "url": "https://schedule.mellow.jp/ss_web/shops/V2Sbq5",
+      "id": "mYSqy",
+      "name": "ヨギチョギ",
+      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
       "image_url": "",
-      "headline": "クレープ各種",
+      "headline": "やみつきバーガー",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -306,11 +306,11 @@
       "note": ""
     },
     {
-      "id": "dqSeXG",
-      "name": "京タコス",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeXG",
+      "id": "5gSVA6",
+      "name": "銀座六丁目、フライの家。京都店",
+      "url": "https://schedule.mellow.jp/ss_web/shops/5gSVA6",
       "image_url": "",
-      "headline": "本日のブリトー",
+      "headline": "チキンチーズカツライスバーガー",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",

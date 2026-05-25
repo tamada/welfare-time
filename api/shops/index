@@ -205,24 +205,6 @@
       "headline": ""
     },
     {
-      "id": "V2Sbq5",
-      "name": "kaka男cafe",
-      "url": "https://schedule.mellow.jp/ss_web/shops/V2Sbq5",
-      "image_url": "",
-      "headline": "クレープ各種",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "dqSeXG",
-      "name": "京タコス",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeXG",
-      "image_url": "",
-      "headline": "本日のブリトー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "mYSqy",
       "name": "ヨギチョギ",
       "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
@@ -426,6 +408,15 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/PVSjPy",
       "image_url": "",
       "headline": "漬け卵黄",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "dqSeXG",
+      "name": "京タコス",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeXG",
+      "image_url": "",
+      "headline": "本日のブリトー",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     }

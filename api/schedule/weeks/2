@@ -1,12 +1,12 @@
 {
   "week_index": 2,
-  "start_date": "2026-06-01",
-  "end_date": "2026-06-07",
-  "last_updated": "2026-05-22T11:22:49.880586",
+  "start_date": "2026-06-08",
+  "end_date": "2026-06-14",
+  "last_updated": "2026-05-25T22:55:03.937102",
   "daily_schedules": [
     {
-      "date": "2026-06-01",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "date": "2026-06-08",
+      "last_updated": "2026-05-25T22:55:03.937102",
       "cafeterias": [
         {
           "id": "chushin-atm",
@@ -47,6 +47,19 @@
       ],
       "kitchen_cars": [
         {
+          "id": "pMSXgz",
+          "name": "SKY KITCHEN",
+          "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
+          "image_url": "",
+          "headline": "照り焼きチキン",
+          "location": "大学内指定場所",
+          "category": "キッチンカー",
+          "start_time": "11:00",
+          "end_time": "17:00",
+          "business_hours": "11:00〜17:00",
+          "note": ""
+        },
+        {
           "id": "dqSe1b",
           "name": "メロンパンみのり",
           "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
@@ -63,8 +76,8 @@
       "sources": []
     },
     {
-      "date": "2026-06-02",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "date": "2026-06-09",
+      "last_updated": "2026-05-25T22:55:03.937102",
       "cafeterias": [
         {
           "id": "chushin-atm",
@@ -134,8 +147,8 @@
       "sources": []
     },
     {
-      "date": "2026-06-03",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "date": "2026-06-10",
+      "last_updated": "2026-05-25T22:55:03.937102",
       "cafeterias": [
         {
           "id": "chushin-atm",
@@ -189,11 +202,11 @@
           "note": ""
         },
         {
-          "id": "wwS21",
-          "name": "ホットドッグcafe defi",
-          "url": "https://schedule.mellow.jp/ss_web/shops/wwS21",
+          "id": "ldS6DO",
+          "name": "BOULANGERIE le RASE",
+          "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
           "image_url": "",
-          "headline": "ホットドッグ4種類（カレーキャベツ、オニオンピクルス、チーズサルサ、ソーセージドッグ）",
+          "headline": "フランクドック",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -205,8 +218,8 @@
       "sources": []
     },
     {
-      "date": "2026-06-04",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "date": "2026-06-11",
+      "last_updated": "2026-05-25T22:55:03.937102",
       "cafeterias": [
         {
           "id": "chushin-atm",
@@ -260,11 +273,11 @@
           "note": ""
         },
         {
-          "id": "JmS6yB",
-          "name": "inosen cafe",
-          "url": "https://schedule.mellow.jp/ss_web/shops/JmS6yB",
+          "id": "Z7SXr3",
+          "name": "Charubo",
+          "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
           "image_url": "",
-          "headline": "マルゲリータ",
+          "headline": "アサイーボウル ミニ",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -276,8 +289,8 @@
       "sources": []
     },
     {
-      "date": "2026-06-05",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "date": "2026-06-12",
+      "last_updated": "2026-05-25T22:55:03.937102",
       "cafeterias": [
         {
           "id": "chushin-atm",
@@ -318,6 +331,19 @@
       ],
       "kitchen_cars": [
         {
+          "id": "BdSYoz",
+          "name": "MAHALO",
+          "url": "https://schedule.mellow.jp/ss_web/shops/BdSYoz",
+          "image_url": "",
+          "headline": "特製ロコモコ丼",
+          "location": "大学内指定場所",
+          "category": "キッチンカー",
+          "start_time": "11:00",
+          "end_time": "17:00",
+          "business_hours": "11:00〜17:00",
+          "note": ""
+        },
+        {
           "id": "vmSb9R",
           "name": "Panda Kitchen",
           "url": "https://schedule.mellow.jp/ss_web/shops/vmSb9R",
@@ -329,26 +355,13 @@
           "end_time": "17:00",
           "business_hours": "11:00〜17:00",
           "note": ""
-        },
-        {
-          "id": "ldS6DO",
-          "name": "BOULANGERIE le RASE",
-          "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
-          "image_url": "",
-          "headline": "フランクドック",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
         }
       ],
       "sources": []
     },
     {
-      "date": "2026-06-06",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "date": "2026-06-13",
+      "last_updated": "2026-05-25T22:55:03.937102",
       "cafeterias": [
         {
           "id": "chushin-atm",
@@ -391,8 +404,8 @@
       "sources": []
     },
     {
-      "date": "2026-06-07",
-      "last_updated": "2026-05-22T11:22:49.880586",
+      "date": "2026-06-14",
+      "last_updated": "2026-05-25T22:55:03.937102",
       "cafeterias": [],
       "kitchen_cars": [],
       "sources": []
