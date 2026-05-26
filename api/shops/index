@@ -205,33 +205,6 @@
       "headline": ""
     },
     {
-      "id": "mYSqy",
-      "name": "ヨギチョギ",
-      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
-      "image_url": "",
-      "headline": "やみつきバーガー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "5gSVA6",
-      "name": "銀座六丁目、フライの家。京都店",
-      "url": "https://schedule.mellow.jp/ss_web/shops/5gSVA6",
-      "image_url": "",
-      "headline": "チキンチーズカツライスバーガー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "q8S8od",
-      "name": "NICEキッチンカー",
-      "url": "https://schedule.mellow.jp/ss_web/shops/q8S8od",
-      "image_url": "",
-      "headline": "豚丼",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "rXSBl",
       "name": "京都 咲たこ",
       "url": "https://schedule.mellow.jp/ss_web/shops/rXSBl",
@@ -291,6 +264,15 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
       "image_url": "",
       "headline": "ビビンバ",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "mYSqy",
+      "name": "ヨギチョギ",
+      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
+      "image_url": "",
+      "headline": "やみつきバーガー",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -399,6 +381,15 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/XESDOr",
       "image_url": "",
       "headline": "チキンオーバーライス",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "5gSVA6",
+      "name": "銀座六丁目、フライの家。京都店",
+      "url": "https://schedule.mellow.jp/ss_web/shops/5gSVA6",
+      "image_url": "",
+      "headline": "チキンチーズカツライスバーガー",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
