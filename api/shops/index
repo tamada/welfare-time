@@ -205,15 +205,6 @@
       "headline": ""
     },
     {
-      "id": "rXSBl",
-      "name": "京都 咲たこ",
-      "url": "https://schedule.mellow.jp/ss_web/shops/rXSBl",
-      "image_url": "",
-      "headline": "ロングチュロス",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "EpSrJN",
       "name": "Lo Splendore",
       "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
@@ -367,20 +358,20 @@
       "category": "キッチンカー"
     },
     {
-      "id": "dqSe3a",
-      "name": "COLORSkitchen",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
-      "image_url": "",
-      "headline": "カルツォーネ（包み焼きピザ）",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "XESDOr",
       "name": "雨ノチ晴レ",
       "url": "https://schedule.mellow.jp/ss_web/shops/XESDOr",
       "image_url": "",
       "headline": "チキンオーバーライス",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "dqSe3a",
+      "name": "COLORSkitchen",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
+      "image_url": "",
+      "headline": "カルツォーネ（包み焼きピザ）",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
