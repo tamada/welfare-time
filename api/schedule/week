@@ -2,11 +2,11 @@
   "week_index": 0,
   "start_date": "2026-05-25",
   "end_date": "2026-05-31",
-  "last_updated": "2026-05-27T23:12:41.212489",
+  "last_updated": "2026-05-28T23:09:57.511580",
   "daily_schedules": [
     {
       "date": "2026-05-25",
-      "last_updated": "2026-05-27T23:12:41.212489",
+      "last_updated": "2026-05-28T23:09:57.511580",
       "cafeterias": [
         {
           "id": "101",
@@ -307,7 +307,7 @@
     },
     {
       "date": "2026-05-26",
-      "last_updated": "2026-05-27T23:12:41.212489",
+      "last_updated": "2026-05-28T23:09:57.511580",
       "cafeterias": [
         {
           "id": "101",
@@ -608,7 +608,7 @@
     },
     {
       "date": "2026-05-27",
-      "last_updated": "2026-05-27T23:12:41.212489",
+      "last_updated": "2026-05-28T23:09:57.511580",
       "cafeterias": [
         {
           "id": "101",
@@ -895,7 +895,7 @@
     },
     {
       "date": "2026-05-28",
-      "last_updated": "2026-05-27T23:12:41.212489",
+      "last_updated": "2026-05-28T23:09:57.511580",
       "cafeterias": [
         {
           "id": "101",
@@ -1186,34 +1186,7 @@
           "note": ""
         }
       ],
-      "kitchen_cars": [
-        {
-          "id": "EpSrJN",
-          "name": "Lo Splendore",
-          "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
-          "image_url": "",
-          "headline": "生パスタ ペペロンチーノ",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        },
-        {
-          "id": "5gSVjO",
-          "name": "喜珈琲",
-          "url": "https://schedule.mellow.jp/ss_web/shops/5gSVjO",
-          "image_url": "",
-          "headline": "レタスホットドッグ",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        }
-      ],
+      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_05.pdf",
@@ -1223,7 +1196,7 @@
     },
     {
       "date": "2026-05-29",
-      "last_updated": "2026-05-27T23:12:41.212489",
+      "last_updated": "2026-05-28T23:09:57.511580",
       "cafeterias": [
         {
           "id": "101",
@@ -1551,7 +1524,7 @@
     },
     {
       "date": "2026-05-30",
-      "last_updated": "2026-05-27T23:12:41.212489",
+      "last_updated": "2026-05-28T23:09:57.511580",
       "cafeterias": [
         {
           "id": "ichibariki",
@@ -1670,7 +1643,7 @@
     },
     {
       "date": "2026-05-31",
-      "last_updated": "2026-05-27T23:12:41.212489",
+      "last_updated": "2026-05-28T23:09:57.511580",
       "cafeterias": [
         {
           "id": "family-mart-motoyama",
