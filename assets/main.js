@@ -2,8 +2,8 @@ const BASE_PATH = '/welfare-time';
 const API_BASE = `${BASE_PATH}/api/schedule`;
 const STATUS_API = `${BASE_PATH}/api/status`;
 const LABE_NOW_OPEN = '🟢 営業中';
-const LABE_PREPARING = '🟠 準備中';
-const LABE_CLOSED = '🔴 営業終了';
+const LABE_PREPARING = '🟡 準備中';
+const LABE_CLOSED = '🔵 営業終了';
 
 let currentData = null;
 
