@@ -205,11 +205,11 @@
       "headline": ""
     },
     {
-      "id": "EpSrJN",
-      "name": "Lo Splendore",
-      "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
+      "id": "dqSe1b",
+      "name": "メロンパンみのり",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
       "image_url": "",
-      "headline": "生パスタ ペペロンチーノ",
+      "headline": "メロンパンみのり",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -223,29 +223,11 @@
       "category": "キッチンカー"
     },
     {
-      "id": "pMSXgz",
-      "name": "SKY KITCHEN",
-      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
-      "image_url": "",
-      "headline": "照り焼きチキン",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "dqSe1b",
-      "name": "メロンパンみのり",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
-      "image_url": "",
-      "headline": "メロンパンみのり",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "Z7S1R",
       "name": "もんきち",
       "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
       "image_url": "",
-      "headline": "ロコモコ丼",
+      "headline": "デミグラスオムライス",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -277,6 +259,15 @@
       "category": "キッチンカー"
     },
     {
+      "id": "EpSrJN",
+      "name": "Lo Splendore",
+      "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
+      "image_url": "",
+      "headline": "生パスタ ペペロンチーノ",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "JmS6yB",
       "name": "inosen cafe",
       "url": "https://schedule.mellow.jp/ss_web/shops/JmS6yB",
@@ -300,6 +291,15 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
       "image_url": "",
       "headline": "フランクドック",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "pMSXgz",
+      "name": "SKY KITCHEN",
+      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
+      "image_url": "",
+      "headline": "照り焼きチキン",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },

@@ -2,11 +2,11 @@
   "week_index": 2,
   "start_date": "2026-06-08",
   "end_date": "2026-06-14",
-  "last_updated": "2026-05-25T22:55:03.937102",
+  "last_updated": "2026-05-29T23:08:10.425311",
   "daily_schedules": [
     {
       "date": "2026-06-08",
-      "last_updated": "2026-05-25T22:55:03.937102",
+      "last_updated": "2026-05-29T23:08:10.425311",
       "cafeterias": [
         {
           "id": "chushin-atm",
@@ -77,7 +77,7 @@
     },
     {
       "date": "2026-06-09",
-      "last_updated": "2026-05-25T22:55:03.937102",
+      "last_updated": "2026-05-29T23:08:10.425311",
       "cafeterias": [
         {
           "id": "chushin-atm",
@@ -122,7 +122,7 @@
           "name": "もんきち",
           "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
           "image_url": "",
-          "headline": "ロコモコ丼",
+          "headline": "デミグラスオムライス",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -148,7 +148,7 @@
     },
     {
       "date": "2026-06-10",
-      "last_updated": "2026-05-25T22:55:03.937102",
+      "last_updated": "2026-05-29T23:08:10.425311",
       "cafeterias": [
         {
           "id": "chushin-atm",
@@ -219,7 +219,7 @@
     },
     {
       "date": "2026-06-11",
-      "last_updated": "2026-05-25T22:55:03.937102",
+      "last_updated": "2026-05-29T23:08:10.425311",
       "cafeterias": [
         {
           "id": "chushin-atm",
@@ -290,7 +290,7 @@
     },
     {
       "date": "2026-06-12",
-      "last_updated": "2026-05-25T22:55:03.937102",
+      "last_updated": "2026-05-29T23:08:10.425311",
       "cafeterias": [
         {
           "id": "chushin-atm",
@@ -361,7 +361,7 @@
     },
     {
       "date": "2026-06-13",
-      "last_updated": "2026-05-25T22:55:03.937102",
+      "last_updated": "2026-05-29T23:08:10.425311",
       "cafeterias": [
         {
           "id": "chushin-atm",
@@ -405,7 +405,7 @@
     },
     {
       "date": "2026-06-14",
-      "last_updated": "2026-05-25T22:55:03.937102",
+      "last_updated": "2026-05-29T23:08:10.425311",
       "cafeterias": [],
       "kitchen_cars": [],
       "sources": []
