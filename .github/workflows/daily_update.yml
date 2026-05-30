@@ -50,9 +50,6 @@ jobs:
 
       - name: gh-pagesブランチにデプロイ
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
           # gh-pagesブランチをpublicディレクトリにworktreeとして追加
           git fetch origin gh-pages
           git worktree add public gh-pages
@@ -60,6 +57,11 @@ jobs:
           cp -r data/pdfs static/daily
           cp -r data/api static/api
           hugo --minify
+
+      - name: commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
           cd public
           git add .
