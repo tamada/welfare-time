@@ -240,21 +240,21 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
     for sid, sdata in all_shops.items():
         save_json(sdata, os.path.join(api_shops_dir, f"{sid}"))
         shops_index["shops"].append({k: v for k, v in sdata.items() if k != "schedules"})
-    save_json(shops_index, os.path.join(api_shops_dir, "index"))
+    save_json(shops_index, os.path.join(api_shops_dir, "index.json"))
 
     # 8. Status API
     dates = sorted(schedule_map.keys())
     global_sources = []
     if isinstance(metadata, dict):
         for filename, info in metadata.items():
-            global_sources.append({"name": filename, "url": f"daily/{filename}"})
+            global_sources.append({"name": filename, "url": f"/pdfs/{filename}"})
 
     save_json({
         "last_updated": last_updated,
         "data_range": {"start": dates[0] if dates else "", "end": dates[-1] if dates else ""},
         "shop_count": len(all_shops),
         "sources": global_sources
-    }, os.path.join(output_dir, "api/status/index"))
+    }, os.path.join(output_dir, "api/status"))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
