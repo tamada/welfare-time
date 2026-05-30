@@ -69,7 +69,34 @@ def parse_pdf_to_json(input_path, output_path=None):
                         cell_val = str(schedule_cells[idx] or "")
                         
                         if cell_val and cell_val != "×":
-                            h_match = re.search(r"(\d{1,2}[:：]\d{2})\s*[～~]\s*(\d{1,2}[:：]\d{2})", pdf_hours.replace("：", ":"))
+                            # Extract potential weekday-specific hours from pdf_hours
+                            # Example: "平日 11:00~19:00 土 11:00~14:00" or "平日 8:00~19:00 水 8:00~18:00 土 8:00~17:00"
+                            weekday_hours = pdf_hours.replace("：", ":")
+                            
+                            current_hours = ""
+                            day_of_week = date_val.weekday() # 0=Mon, 2=Wed, 5=Sat
+                            
+                            if day_of_week == 5: # Saturday
+                                sat_match = re.search(r"土\s*(\d{1,2}:\d{2})\s*[～~]\s*(\d{1,2}:\d{2})", weekday_hours)
+                                if sat_match:
+                                    current_hours = f"{sat_match.group(1)}~{sat_match.group(2)}"
+                            elif day_of_week == 2: # Wednesday
+                                wed_match = re.search(r"水\s*(\d{1,2}:\d{2})\s*[～~]\s*(\d{1,2}:\d{2})", weekday_hours)
+                                if wed_match:
+                                    current_hours = f"{wed_match.group(1)}~{wed_match.group(2)}"
+                            
+                            if not current_hours:
+                                # Default to "平日" (Weekday) or the first available time range
+                                weekday_match = re.search(r"(?:平日|月～金)\s*(\d{1,2}:\d{2})\s*[～~]\s*(\d{1,2}:\d{2})", weekday_hours)
+                                if weekday_match:
+                                    current_hours = f"{weekday_match.group(1)}~{weekday_match.group(2)}"
+                                else:
+                                    # Just find the first range if no "平日" label
+                                    first_match = re.search(r"(\d{1,2}:\d{2})\s*[～~]\s*(\d{1,2}:\d{2})", weekday_hours)
+                                    if first_match:
+                                        current_hours = f"{first_match.group(1)}~{first_match.group(2)}"
+                            
+                            h_match = re.search(r"(\d{1,2}:\d{2})\s*[～~]\s*(\d{1,2}:\d{2})", current_hours)
                             default_start, default_end = h_match.groups() if h_match else ("00:00", "00:00")
                             
                             specific_match = re.search(r"(\d{1,2}[:：]\d{2})\s*[|]\s*(\d{1,2}[:：]\d{2})", cell_val.replace("：", ":"))
