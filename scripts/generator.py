@@ -247,7 +247,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
     global_sources = []
     if isinstance(metadata, dict):
         for filename, info in metadata.items():
-            global_sources.append({"name": filename, "url": f"/pdfs/{filename}"})
+            global_sources.append({"name": filename, "url": f"daily/{filename}"})
 
     save_json({
         "last_updated": last_updated,
