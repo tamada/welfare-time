@@ -12,7 +12,7 @@ jobs:
       contents: write
     steps:
       - name: リポジトリをチェックアウト
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: true
           fetch-depth: 0
@@ -23,6 +23,12 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.119.0'
+          extended: true
+
       - name: 依存パッケージをインストール
         run: |
           pip install -r requirements.txt
@@ -30,40 +36,30 @@ jobs:
 
       - name: 食堂データの更新
         run: |
-          mkdir -p data/daily
-          python scripts/fetch_cafeteria_pdf.py -o data/daily
-          # data/daily/ 配下のPDFを対象にパース
-          mkdir -p tmp
-          for pdf in data/daily/*.pdf; do
-            if [ -f "$pdf" ]; then
-              target_json="tmp/parsed_$(basename "$pdf" .pdf).json"
-              python scripts/parse_cafeteria_pdf.py "$pdf" -o "$target_json"
-            fi
-          done
+          make fetch_cafeteria
+          make parse_pdf
 
       - name: キッチンカーデータの更新
         run: |
-          python scripts/fetch_kitchen_cars.py -o tmp/kitchen_cars_raw.html
-          python scripts/scrape_kitchen_cars.py tmp/kitchen_cars_raw.html tmp/scraped_kitchen_cars.json
+          make fetch_kitchencar
+          make parse_kitchencar
 
-      - name: サイト生成とデプロイ
+      - name: APIデータの生成
         run: |
-          mkdir -p dist
-          python scripts/generator.py \
-            --cafeteria-dir tmp \
-            --kitchen-cars tmp/scraped_kitchen_cars.json \
-            --master scripts/master.json \
-            --output-dir dist
+          make generate
 
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
+      - name: gh-pagesブランチにデプロイ
+        run: |
           # gh-pagesブランチをpublicディレクトリにworktreeとして追加
           git fetch origin gh-pages
           git worktree add public gh-pages
 
-          # distの内容をpublicにコピー（.gitディレクトリを除外）
-          rsync -av --exclude='.git' dist/ public/
+          hugo --minify
+
+      - name: commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
           cd public
           git add .

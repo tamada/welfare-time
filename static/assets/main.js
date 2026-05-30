@@ -1,8 +1,9 @@
-const API_BASE = '/shikaku/api/schedule';
-const STATUS_API = '/shikaku/api/status';
+const BASE_PATH = '/welfare-time';
+const API_BASE = `${BASE_PATH}/api/schedule`;
+const STATUS_API = `${BASE_PATH}/api/status`;
 const LABE_NOW_OPEN = '🟢 営業中';
-const LABE_PREPARING = '🟠 準備中';
-const LABE_CLOSED = '🔴 営業終了';
+const LABE_PREPARING = '🟡 準備中';
+const LABE_CLOSED = '🔵 営業終了';
 
 let currentData = null;
 
@@ -119,7 +120,7 @@ async function fetchData(renderCallback) {
 async function setupFilters() {
     if (!master) {
         try { 
-            const response = await fetch('/shikaku/assets/master.json'); 
+            const response = await fetch(`${BASE_PATH}/assets/master.json`); 
             master = await response.json(); 
         } catch(e) { 
             console.error('Failed to load master.json', e); 
@@ -333,7 +334,7 @@ let master = null;
 async function initMapInteractions(displayedShops) {
     if (!master) {
         try { 
-            const response = await fetch('/shikaku/assets/master.json'); 
+            const response = await fetch(`${BASE_PATH}/assets/master.json`); 
             master = await response.json(); 
         } catch(e) { 
             console.error(e); 
@@ -460,7 +461,7 @@ document.querySelectorAll('nav a').forEach(a => {
     a.href = url.toString();
     
     const href = a.getAttribute('href').replace(/\/$/, '');
-    const isHome = href === '' || href === '/shikaku';
+    const isHome = href === '' || href === `${BASE_PATH}`;
     const isMatch = (isHome && !isMapPage && !isListPage) || 
                     (href.endsWith('/map') && isMapPage) || 
                     (href.endsWith('/list') && isListPage);

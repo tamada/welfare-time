@@ -1,4 +1,4 @@
-# Shikaku (シカク) 仕様書
+# welfare-time 仕様書
 
 ## 1. プロジェクト概要
 

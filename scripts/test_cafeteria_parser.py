@@ -7,7 +7,7 @@ def test_cafeteria_parser():
     output_json = "tmp/test_result.json"
     
     # スクリプトの実行
-    subprocess.run(["venv/bin/python", "scripts/parse_cafeteria_pdf.py", input_pdf, "-o", output_json], check=True)
+    subprocess.run(["python3", "scripts/parse_cafeteria_pdf.py", input_pdf, "-o", output_json], check=True)
     
     with open(output_json, "r", encoding="utf-8") as f:
         data = json.load(f)

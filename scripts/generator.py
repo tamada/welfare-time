@@ -106,9 +106,9 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
             }
         return schedule_map[date_str]
 
-    for p in Path(cafeteria_dir).glob("parsed_*.json"):
-        # Match parsed_{YYYY_MM}.json to daily/{YYYY_MM}.pdf
-        source_filename = p.name.replace("parsed_", "").replace(".json", ".pdf")
+    for p in Path(cafeteria_dir).glob("*.json"):
+        # Match {YYYY_MM}.json to daily/{YYYY_MM}.pdf
+        source_filename = p.name.replace(".json", ".pdf")
         
         entries = load_json(str(p))
         if isinstance(entries, list):
@@ -240,7 +240,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
     for sid, sdata in all_shops.items():
         save_json(sdata, os.path.join(api_shops_dir, f"{sid}"))
         shops_index["shops"].append({k: v for k, v in sdata.items() if k != "schedules"})
-    save_json(shops_index, os.path.join(api_shops_dir, "index"))
+    save_json(shops_index, os.path.join(api_shops_dir, "index.json"))
 
     # 8. Status API
     dates = sorted(schedule_map.keys())
@@ -254,7 +254,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
         "data_range": {"start": dates[0] if dates else "", "end": dates[-1] if dates else ""},
         "shop_count": len(all_shops),
         "sources": global_sources
-    }, os.path.join(output_dir, "api/status/index"))
+    }, os.path.join(output_dir, "api/status"))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

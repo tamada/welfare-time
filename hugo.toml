@@ -1,9 +1,10 @@
-baseURL = 'https://tamada.github.io/shikaku/'
+baseURL = 'https://tamada.github.io/welfare-time/'
 locale = 'ja'
 title = 'Welfare-Time'
 
 [params]
   brand_icon = "assets/icon.svg"
+  googleAnalytics4 = "G-16KW5F4YZC"
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -20,7 +21,7 @@ unsafe = true
   weight = 30
 [[menus.main]]
   name = "GitHub"
-  url = "https://github.com/tamada/harapeco"
+  url = "https://github.com/tamada/welfare-time"
   params = { icon = "bi-github" }
   weight = 40
 [[menus.main]]
