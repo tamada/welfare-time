@@ -36,31 +36,17 @@ jobs:
 
       - name: 食堂データの更新
         run: |
-          mkdir -p static/pdfs
-          python scripts/fetch_cafeteria_pdf.py -o static/pdfs
-          # static/pdfs/ 配下のPDFを対象にパース
-          mkdir -p tmp
-          for pdf in static/pdfs/*.pdf; do
-            if [ -f "$pdf" ]; then
-              target_json="static/cafeterias/$(basename "$pdf" .pdf).json"
-              python scripts/parse_cafeteria_pdf.py "$pdf" -o "$target_json"
-            fi
-          done
+          make fetch_cafeteria
+          make parse_pdf
 
       - name: キッチンカーデータの更新
         run: |
-          mkdir -p data/kitchencars
-          python scripts/fetch_kitchen_cars.py -o data/kitchencars/raw.html
-          python scripts/scrape_kitchen_cars.py data/kitchencars/raw.html data/kitchencars/scraped.json
+          make fetch_kitchencar
+          make parse_kitchencar
 
       - name: APIデータの生成
         run: |
-          mkdir -p static/api
-          python scripts/generator.py \
-            --cafeteria-dir data/cafeterias \
-            --kitchen-cars data/kitchencars/scraped.json \
-            --master scripts/master.json \
-            --output-dir static
+          make generate
 
       - name: gh-pagesブランチにデプロイ
         run: |
@@ -71,6 +57,8 @@ jobs:
           git fetch origin gh-pages
           git worktree add public gh-pages
 
+          cp -r data/pdfs static/daily
+          cp -r data/api static/api
           hugo --minify
 
           cd public

@@ -36,16 +36,18 @@ fetch_pdf:
 	@mkdir -p $(PDF_SRC_DIR)
 	$(PYTHON) $(SCRIPTS_DIR)/fetch_cafeteria_pdf.py -o $(PDF_SRC_DIR)
 
+fetch_cafeteria: fetch_pdf
+
+fetch_kitchencar:
+	@mkdir -p $(KITCHEN_CARS_SRC)
+	$(PYTHON) $(SCRIPTS_DIR)/fetch_kitchen_cars.py -o $(KITCHEN_CARS_RAW)
+
 # 2. Parsing
 parse_pdf: $(PARSED_JSONS)
 
 $(DATA_DIR)/cafeterias/%.json: $(PDF_SRC_DIR)/%.pdf
 	@mkdir -p $(DATA_DIR)/cafeterias
 	$(PYTHON) $(SCRIPTS_DIR)/parse_cafeteria_pdf.py $< -o $@
-
-fetch_kitchencar:
-	@mkdir -p $(KITCHEN_CARS_SRC)
-	$(PYTHON) $(SCRIPTS_DIR)/fetch_kitchen_cars.py -o $(KITCHEN_CARS_RAW)
 
 parse_kitchencar: $(KITCHEN_CARS_JSON)
 
@@ -62,7 +64,7 @@ generate: parse_pdf parse_kitchencar
 		--cafeteria-dir $(DATA_DIR)/cafeterias \
 		--kitchen-cars $(KITCHEN_CARS_JSON) \
 		--master $(MASTER_JSON) \
-		-o $(DATA_DIR)
+		-o $(DEST_DIR)
 
 serve:
 	$(PYTHON) -m http.server 8000 -d $(PUBLIC_DIR)

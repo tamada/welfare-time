@@ -106,9 +106,9 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
             }
         return schedule_map[date_str]
 
-    for p in Path(cafeteria_dir).glob("parsed_*.json"):
-        # Match parsed_{YYYY_MM}.json to daily/{YYYY_MM}.pdf
-        source_filename = p.name.replace("parsed_", "").replace(".json", ".pdf")
+    for p in Path(cafeteria_dir).glob("*.json"):
+        # Match {YYYY_MM}.json to daily/{YYYY_MM}.pdf
+        source_filename = p.name.replace(".json", ".pdf")
         
         entries = load_json(str(p))
         if isinstance(entries, list):
