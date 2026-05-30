@@ -1,4 +1,4 @@
-# harapeco spec
+# welfare-time spec
 
 学内のWebサイト、キッチンカー情報から情報を取得し、GitHub Pages を利用して公開するプロジェクトの仕様書です。
 
@@ -253,20 +253,20 @@ GitHub Pages を利用し、以下のエンドポイントで JSON データを�
 
 #### スケジュール（日付・期間ベース）
 
-- **本日:** `https://<user>.github.io/harapeco/api/schedule/today`
-- **昨日:** `https://<user>.github.io/harapeco/api/schedule/yesterday`
-- **明日:** `https://<user>.github.io/harapeco/api/schedule/tomorrow`
-- **特定の日付:** `https://<user>.github.io/harapeco/api/schedule/YYYY-MM-DD`
-- **週間スケジュール:** `https://<user>.github.io/harapeco/api/schedule/week` (今週) または `api/schedule/weeks/{n}` (n=0: 今週, 1: 来週...)
+- **本日:** `https://tamadalab.github.io/welfare-time/api/schedule/today`
+- **昨日:** `https://tamadalab.github.io/welfare-time/api/schedule/yesterday`
+- **明日:** `https://tamadalab.github.io/welfare-time/api/schedule/tomorrow`
+- **特定の日付:** `https://tamadalab.github.io/welfare-time/api/schedule/YYYY-MM-DD`
+- **週間スケジュール:** `https://tamadalab.github.io/welfare-time/api/schedule/week` (今週) または `api/schedule/weeks/{n}` (n=0: 今週, 1: 来週...)
 
 #### 店舗情報（店舗ベース）
 
-- **店舗一覧（マスタ）:** `https://<user>.github.io/harapeco/api/shops`
-- **店舗詳細と予定:** `https://<user>.github.io/harapeco/api/shops/{id}`
+- **店舗一覧（マスタ）:** `https://tamadalab.github.io/welfare-time/api/shops`
+- **店舗詳細と予定:** `https://tamadalab.github.io/welfare-time/api/shops/{id}`
 
 #### その他
 
-- **API ステータス:** `https://<user>.github.io/harapeco/api/status`
+- **API ステータス:** `https://tamadalab.github.io/welfare-time/api/status`
 
 ### 実装上の注意
 
