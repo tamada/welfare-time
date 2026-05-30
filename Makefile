@@ -67,7 +67,8 @@ generate: parse_pdf parse_kitchencar
 		-o $(DEST_DIR)
 
 serve:
-	$(PYTHON) -m http.server 8000 -d $(PUBLIC_DIR)
+# 	$(PYTHON) -m http.server 8000 -d $(PUBLIC_DIR)
+	hugo server
 
 # Utilities
 clean:
