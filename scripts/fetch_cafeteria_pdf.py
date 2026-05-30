@@ -49,19 +49,34 @@ def main():
     parser = argparse.ArgumentParser(description="Fetch cafeteria schedule PDFs")
     parser.add_argument("-u", "--url", default="https://www.kyoto-su.ac.jp/campus/welfare/", help="Base URL")
     parser.add_argument("-o", "--output", default="data/daily", help="Output directory")
+    parser.add_argument("-H", "--html", help="Local HTML file to parse instead of fetching from URL")
+    parser.add_argument("--save-html", help="Save the fetched/read HTML to this file")
     args = parser.parse_args()
 
     global DAILY_DIR, METADATA_FILE
     DAILY_DIR = args.output
     METADATA_FILE = os.path.join(DAILY_DIR, ".metadata.json")
 
-    response = requests.get(args.url)
-    soup = BeautifulSoup(response.text, "html.parser")
+    html_content = ""
+    base_url = args.url
+    if args.html:
+        with open(args.html, "r") as f:
+            html_content = f.read()
+    else:
+        response = requests.get(args.url)
+        html_content = response.text
+
+    if args.save_html:
+        with open(args.save_html, "w") as f:
+            f.write(html_content)
+
+    soup = BeautifulSoup(html_content, "html.parser")
     
     pdf_links = []
     for a in soup.find_all("a", href=True):
-        if a["href"].lower().endswith(".pdf"):
-            pdf_links.append(requests.compat.urljoin(args.url, a["href"]))
+        href = a["href"].strip()
+        if href.lower().endswith(".pdf"):
+            pdf_links.append(requests.compat.urljoin(base_url, href))
             
     if not pdf_links:
         print("No PDF links found")
