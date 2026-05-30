@@ -1,6 +1,6 @@
 {
   "date": "2026-05-27",
-  "last_updated": "2026-05-27T23:12:41.212489",
+  "last_updated": "2026-05-30T22:53:39.467291",
   "cafeterias": [
     {
       "id": "101",
@@ -152,7 +152,7 @@
       "image_url": "",
       "headline": "",
       "start_time": "8:00",
-      "end_time": "19:00",
+      "end_time": "18:00",
       "business_hours": "平日 8:00~19:00 水 8:00~18:00 土 8:00~17:00",
       "note": ""
     },
@@ -208,7 +208,7 @@
       "image_url": "",
       "headline": "",
       "start_time": "8:00",
-      "end_time": "19:00",
+      "end_time": "18:00",
       "business_hours": "平日 8:00~19:00 水 8:00~18:00 土 8:00~17:00",
       "note": ""
     },

@@ -205,83 +205,11 @@
       "headline": ""
     },
     {
-      "id": "pMSXgz",
-      "name": "SKY KITCHEN",
-      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
-      "image_url": "",
-      "headline": "照り焼きチキン",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "dqSe1b",
       "name": "メロンパンみのり",
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
       "image_url": "",
       "headline": "メロンパンみのり",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "V2Sbq5",
-      "name": "kaka男cafe",
-      "url": "https://schedule.mellow.jp/ss_web/shops/V2Sbq5",
-      "image_url": "",
-      "headline": "クレープ各種",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "dqSeXG",
-      "name": "京タコス",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeXG",
-      "image_url": "",
-      "headline": "本日のブリトー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "mYSqy",
-      "name": "ヨギチョギ",
-      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
-      "image_url": "",
-      "headline": "やみつきバーガー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "5gSVA6",
-      "name": "銀座六丁目、フライの家。京都店",
-      "url": "https://schedule.mellow.jp/ss_web/shops/5gSVA6",
-      "image_url": "",
-      "headline": "チキンチーズカツライスバーガー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "q8S8od",
-      "name": "NICEキッチンカー",
-      "url": "https://schedule.mellow.jp/ss_web/shops/q8S8od",
-      "image_url": "",
-      "headline": "豚丼",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "rXSBl",
-      "name": "京都 咲たこ",
-      "url": "https://schedule.mellow.jp/ss_web/shops/rXSBl",
-      "image_url": "",
-      "headline": "ロングチュロス",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "EpSrJN",
-      "name": "Lo Splendore",
-      "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
-      "image_url": "",
-      "headline": "生パスタ ペペロンチーノ",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -299,7 +227,7 @@
       "name": "もんきち",
       "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
       "image_url": "",
-      "headline": "ロコモコ丼",
+      "headline": "デミグラスオムライス",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -313,11 +241,29 @@
       "category": "キッチンカー"
     },
     {
+      "id": "mYSqy",
+      "name": "ヨギチョギ",
+      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
+      "image_url": "",
+      "headline": "やみつきバーガー",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "wwS21",
       "name": "ホットドッグcafe defi",
       "url": "https://schedule.mellow.jp/ss_web/shops/wwS21",
       "image_url": "",
       "headline": "ホットドッグ4種類（カレーキャベツ、オニオンピクルス、チーズサルサ、ソーセージドッグ）",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "EpSrJN",
+      "name": "Lo Splendore",
+      "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
+      "image_url": "",
+      "headline": "生パスタ ペペロンチーノ",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -345,6 +291,24 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
       "image_url": "",
       "headline": "フランクドック",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "pMSXgz",
+      "name": "SKY KITCHEN",
+      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
+      "image_url": "",
+      "headline": "照り焼きチキン",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "Z7SXr3",
+      "name": "Charubo",
+      "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
+      "image_url": "",
+      "headline": "アサイーボウル ミニ",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -394,11 +358,47 @@
       "category": "キッチンカー"
     },
     {
+      "id": "XESDOr",
+      "name": "雨ノチ晴レ",
+      "url": "https://schedule.mellow.jp/ss_web/shops/XESDOr",
+      "image_url": "",
+      "headline": "チキンオーバーライス",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "dqSe3a",
       "name": "COLORSkitchen",
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
       "image_url": "",
       "headline": "カルツォーネ（包み焼きピザ）",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "5gSVA6",
+      "name": "銀座六丁目、フライの家。京都店",
+      "url": "https://schedule.mellow.jp/ss_web/shops/5gSVA6",
+      "image_url": "",
+      "headline": "チキンチーズカツライスバーガー",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "PVSjPy",
+      "name": "こちとら",
+      "url": "https://schedule.mellow.jp/ss_web/shops/PVSjPy",
+      "image_url": "",
+      "headline": "漬け卵黄",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "dqSeXG",
+      "name": "京タコス",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeXG",
+      "image_url": "",
+      "headline": "本日のブリトー",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     }
