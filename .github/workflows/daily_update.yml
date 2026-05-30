@@ -54,8 +54,6 @@ jobs:
           git fetch origin gh-pages
           git worktree add public gh-pages
 
-          cp -r data/pdfs static/daily
-          cp -r data/api static/api
           hugo --minify
 
       - name: commit and push changes
