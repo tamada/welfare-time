@@ -1,4 +1,4 @@
 ---
-title: "カード表示"
+title: "カード"
 type: "index"
 ---
