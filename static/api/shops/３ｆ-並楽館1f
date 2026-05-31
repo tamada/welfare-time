@@ -1,0 +1,138 @@
+{
+  "id": "３ｆ-並楽館1f",
+  "name": "３Ｆ",
+  "location": "並楽館1F",
+  "category": "食堂",
+  "url": "",
+  "google_map": "",
+  "image_url": "",
+  "headline": "",
+  "schedules": [
+    {
+      "date": "2026-05-01",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-07",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-08",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-11",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-12",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-13",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-14",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-15",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-18",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-19",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-20",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-21",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-22",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-25",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-26",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-27",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-28",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-05-29",
+      "location": "並楽館1F",
+      "start_time": "11:30",
+      "end_time": "14:00",
+      "note": ""
+    }
+  ]
+}

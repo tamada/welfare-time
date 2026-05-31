@@ -1,0 +1,23 @@
+[
+  {
+    "id": "mellow-shop-001",
+    "date": "2026-05-16",
+    "location": "並木道",
+    "start_time": "11:30",
+    "end_time": "15:00"
+  },
+  {
+    "id": "mellow-shop-002",
+    "date": "2026-05-16",
+    "location": "中央広場",
+    "start_time": "11:00",
+    "end_time": "14:30"
+  },
+  {
+    "id": "mellow-shop-001",
+    "date": "2026-05-18",
+    "location": "並木道",
+    "start_time": "11:30",
+    "end_time": "15:00"
+  }
+]

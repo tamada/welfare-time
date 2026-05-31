@@ -6,24 +6,23 @@ from bs4 import BeautifulSoup
 import pdfplumber
 import re
 import unicodedata
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-# Updated storage location to be inside data for source storage
-DAILY_DIR = "data/daily"
-METADATA_FILE = os.path.join(DAILY_DIR, ".metadata.json")
+# Define timezones
+JST = timezone(timedelta(hours=9), "JST")
 
-def load_metadata():
-    if os.path.exists(METADATA_FILE):
-        with open(METADATA_FILE, "r") as f:
+def load_metadata(metadata_file):
+    if os.path.exists(metadata_file):
+        with open(metadata_file, "r") as f:
             try:
                 return json.load(f)
             except json.JSONDecodeError:
                 return {}
     return {}
 
-def save_metadata(metadata):
-    with open(METADATA_FILE, "w") as f:
+def save_metadata(metadata, metadata_file):
+    with open(metadata_file, "w") as f:
         json.dump(metadata, f, indent=2)
 
 def get_month_from_pdf(pdf_path):
@@ -43,19 +42,18 @@ def get_month_from_pdf(pdf_path):
         if m in name:
             return str(i + 1).zfill(2)
     
-    return datetime.now().strftime("%m")
+    return datetime.now(JST).strftime("%m")
 
 def main():
     parser = argparse.ArgumentParser(description="Fetch cafeteria schedule PDFs")
     parser.add_argument("-u", "--url", default="https://www.kyoto-su.ac.jp/campus/welfare/", help="Base URL")
-    parser.add_argument("-o", "--output", default="data/daily", help="Output directory")
+    parser.add_argument("-o", "--output", required=True, help="Output directory")
     parser.add_argument("-H", "--html", help="Local HTML file to parse instead of fetching from URL")
     parser.add_argument("--save-html", help="Save the fetched/read HTML to this file")
     args = parser.parse_args()
 
-    global DAILY_DIR, METADATA_FILE
-    DAILY_DIR = args.output
-    METADATA_FILE = os.path.join(DAILY_DIR, ".metadata.json")
+    daily_dir = args.output
+    metadata_file = os.path.join(daily_dir, ".metadata.json")
 
     html_content = ""
     base_url = args.url
@@ -82,8 +80,8 @@ def main():
         print("No PDF links found")
         return
 
-    os.makedirs(DAILY_DIR, exist_ok=True)
-    metadata = load_metadata()
+    os.makedirs(daily_dir, exist_ok=True)
+    metadata = load_metadata(metadata_file)
     
     for pdf_url in pdf_links:
         head = requests.head(pdf_url)
@@ -91,19 +89,20 @@ def main():
         etag = head.headers.get("ETag")
         
         res = requests.get(pdf_url)
-        temp_path = os.path.join(DAILY_DIR, "temp.pdf")
+        temp_path = os.path.join(daily_dir, "temp.pdf")
         with open(temp_path, "wb") as f:
             f.write(res.content)
             
         month = get_month_from_pdf(temp_path)
-        year = datetime.now().year
-        curr_month = datetime.now().month
+        now_jst = datetime.now(JST)
+        year = now_jst.year
+        curr_month = now_jst.month
         target_month = int(month)
         if (target_month == 1 or target_month == 2) and curr_month == 12:
             year += 1
             
         final_filename = f"{year}_{month}.pdf"
-        final_path = os.path.join(DAILY_DIR, final_filename)
+        final_path = os.path.join(daily_dir, final_filename)
         
         if os.path.exists(final_path):
             stored_info = metadata.get(final_filename)
@@ -118,11 +117,11 @@ def main():
             "last-modified": last_modified,
             "etag": etag,
             "url": pdf_url,
-            "fetched_at": datetime.now().isoformat()
+            "fetched_at": datetime.now(JST).isoformat()
         }
         print(f"Saved: {final_path}")
         
-    save_metadata(metadata)
+    save_metadata(metadata, metadata_file)
 
 if __name__ == "__main__":
     main()

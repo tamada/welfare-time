@@ -10,19 +10,27 @@ def squash(x):
     if not isinstance(x, str): return ""
     return re.sub(r"\s+", "", x).strip()
 
-def analyze_missing(input_path):
-    master_path = "scripts/master.json"
+def analyze_missing(input_pdf, extracted_json, master_path):
     with open(master_path, "r", encoding="utf-8") as f:
         master_data = json.load(f)
 
-    with open("tmp/final_cafeteria_data.json", "r", encoding="utf-8") as f:
+    with open(extracted_json, "r", encoding="utf-8") as f:
         extracted_data = json.load(f)
 
     # 抽出されたデータをセットに変換 (id + date)
     extracted_set = set(f"{e['id']}_{e['date']}" for e in extracted_data)
 
     print("--- Missing Entries Check ---")
-    with pdfplumber.open(input_path) as pdf:
+    
+    # Extract year/month from PDF filename (YYYY_MM.pdf)
+    match = re.search(r"(\d{4})_(\d{2})", os.path.basename(input_pdf))
+    if not match:
+        print("Warning: Could not extract year/month from filename. Defaulting to 2026/05.")
+        year, month = 2026, 5
+    else:
+        year, month = int(match.group(1)), int(match.group(2))
+
+    with pdfplumber.open(input_pdf) as pdf:
         for page in pdf.pages:
             table = page.extract_table()
             if not table: continue
@@ -40,8 +48,6 @@ def analyze_missing(input_path):
                 
                 if matched_cafeteria:
                     schedule_icons = row[4:]
-                    # PDF上の該当日付を再計算
-                    year, month = 2026, 5 # 固定
                     
                     for idx, icon in enumerate(schedule_icons):
                         if "○" in str(icon):
@@ -52,4 +58,9 @@ def analyze_missing(input_path):
                                 print(f"MISSING: Shop={matched_cafeteria['name']}, Date={date_str}")
 
 if __name__ == "__main__":
-    analyze_missing("daily/2026_05.pdf")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("pdf", help="Path to input PDF")
+    parser.add_argument("json", help="Path to extracted JSON")
+    parser.add_argument("--master", default="scripts/master.json", help="Path to master.json")
+    args = parser.parse_args()
+    analyze_missing(args.pdf, args.json, args.master)
