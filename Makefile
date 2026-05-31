@@ -63,6 +63,7 @@ generate: parse_pdf parse_kitchencar
 	$(PYTHON) $(SCRIPTS_DIR)/generator.py \
 		--cafeteria-dir $(DATA_DIR)/cafeterias \
 		--kitchen-cars $(KITCHEN_CARS_JSON) \
+		--kitchen-cars-archive $(DATA_DIR)/kitchen_cars_past.json \
 		--master $(MASTER_JSON) \
 		-o $(DEST_DIR)
 

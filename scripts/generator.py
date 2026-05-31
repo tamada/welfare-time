@@ -33,7 +33,7 @@ def get_id_from_url(url, fallback_name):
             return match.group(1)
     return slugify(fallback_name)
 
-def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
+def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen_cars_archive):
     # Use JST for date-based logic
     now_jst = datetime.now(JST)
     today_str = now_jst.strftime("%Y-%m-%d")
@@ -64,8 +64,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
     if isinstance(all_scraped_kitchen_cars, dict):
         all_scraped_kitchen_cars = []
     
-    past_archive_path = "data/kitchen_cars_past.json"
-    past_archive = load_json(past_archive_path)
+    past_archive = load_json(kitchen_cars_archive)
     if isinstance(past_archive, dict):
         past_archive = []
     
@@ -74,7 +73,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
         if d["date"] < today_str and (d["id"], d["date"]) not in seen_past:
             past_archive.append(d)
             seen_past.add((d["id"], d["date"]))
-    save_json(past_archive, past_archive_path)
+    save_json(past_archive, kitchen_cars_archive)
     
     kitchen_car_schedules = past_archive + [d for d in all_scraped_kitchen_cars if d["date"] >= today_str]
     unique_kc = []
@@ -270,7 +269,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--cafeteria-dir", required=True)
     parser.add_argument("--kitchen-cars", required=True)
+    parser.add_argument("--kitchen-cars-archive", required=True)
     parser.add_argument("--master", required=True)
     parser.add_argument("-o", "--output-dir", required=True)
     args = parser.parse_args()
-    generator(args.cafeteria_dir, args.kitchen_cars, args.master, args.output_dir)
+    generator(args.cafeteria_dir, args.kitchen_cars, args.master, args.output_dir, args.kitchen_cars_archive)
