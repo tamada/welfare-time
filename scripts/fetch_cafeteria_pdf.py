@@ -117,7 +117,7 @@ def main():
             "last-modified": last_modified,
             "etag": etag,
             "url": pdf_url,
-            "fetched_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+            "fetched_at": datetime.now(JST).isoformat()
         }
         print(f"Saved: {final_path}")
         

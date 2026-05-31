@@ -34,12 +34,10 @@ def get_id_from_url(url, fallback_name):
     return slugify(fallback_name)
 
 def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen_cars_archive):
-    # Use JST for date-based logic
+    # Use JST for all time-based logic and timestamps
     now_jst = datetime.now(JST)
     today_str = now_jst.strftime("%Y-%m-%d")
-    
-    # Use UTC with Z for the timestamp
-    last_updated = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+    last_updated = now_jst.isoformat()
     
     # 1. Load Master Data
     master_raw = load_json(master_path)
@@ -259,7 +257,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
 
     save_json({
         "last_updated": last_updated,
-        "timezone": "UTC",
+        "timezone": "JST",
         "data_range": {"start": dates[0] if dates else "", "end": dates[-1] if dates else ""},
         "shop_count": len(all_shops),
         "sources": global_sources
