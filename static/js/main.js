@@ -212,7 +212,25 @@ function renderProvenance(sources) {
 
     let html = '';
     
-    // 1. Cafeteria PDF Source
+    // 1. General Welfare Info Source
+    html += `
+        <a href="https://www.kyoto-su.ac.jp/campus/welfare/" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm text-slate-600 dark:text-slate-300 transition-colors" target="_blank">
+            <i class="bi bi-info-circle text-ksu dark:text-blue-400"></i>
+            <span class="flex-1 text-truncate">学食・施設情報（京都産業大学）</span>
+            <i class="bi bi-box-arrow-up-right text-[10px]"></i>
+        </a>
+    `;
+
+    // 2. Kitchen Car Official Source
+    html += `
+        <a href="https://schedule.mellow.jp/ss_web/markets/KqTl8N" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm text-slate-600 dark:text-slate-300 transition-colors" target="_blank">
+            <i class="bi bi-truck text-ksu dark:text-blue-400"></i>
+            <span class="flex-1 text-truncate">キッチンカー営業情報（Mellow）</span>
+            <i class="bi bi-box-arrow-up-right text-[10px]"></i>
+        </a>
+    `;
+
+    // 3. Cafeteria PDF Sources
     if (sources && sources.length > 0) {
         html += sources.map(s => `
             <a href="${s.url}" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm text-slate-600 dark:text-slate-300 transition-colors" target="_blank">
@@ -222,15 +240,6 @@ function renderProvenance(sources) {
             </a>
         `).join('');
     }
-
-    // 2. Kitchen Car Official Source
-    html += `
-        <a href="https://www.kyoto-su.ac.jp/campus/welfare/" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm text-slate-600 dark:text-slate-300 transition-colors" target="_blank">
-            <i class="bi bi-truck text-ksu dark:text-blue-400"></i>
-            <span class="flex-1 text-truncate">キッチンカー情報（大学公式）</span>
-            <i class="bi bi-box-arrow-up-right text-[10px]"></i>
-        </a>
-    `;
 
     sourceLinks.innerHTML = html;
 }
