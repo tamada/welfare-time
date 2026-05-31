@@ -1,12 +1,14 @@
 {
   "week_index": 2,
-  "start_date": "2026-06-08",
-  "end_date": "2026-06-14",
-  "last_updated": "2026-05-30T22:53:39.467291",
+  "start_date": "2026-06-15",
+  "end_date": "2026-06-21",
+  "last_updated": "2026-06-01T07:55:21.044878+09:00",
+  "timezone": "JST",
   "daily_schedules": [
     {
-      "date": "2026-06-08",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-15",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
         {
           "id": "101",
@@ -299,11 +301,11 @@
       ],
       "kitchen_cars": [
         {
-          "id": "pMSXgz",
-          "name": "SKY KITCHEN",
-          "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
+          "id": "dqSeq3",
+          "name": "旨夢路本舗",
+          "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
           "image_url": "",
-          "headline": "照り焼きチキン",
+          "headline": "旨夢路式☆創作塩からあげ",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -333,8 +335,9 @@
       ]
     },
     {
-      "date": "2026-06-09",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-16",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
         {
           "id": "101",
@@ -661,8 +664,9 @@
       ]
     },
     {
-      "date": "2026-06-10",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-17",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
         {
           "id": "101",
@@ -975,8 +979,9 @@
       ]
     },
     {
-      "date": "2026-06-11",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-18",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
         {
           "id": "101",
@@ -1282,11 +1287,11 @@
           "note": ""
         },
         {
-          "id": "Z7SXr3",
-          "name": "Charubo",
-          "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
+          "id": "q8Sk2",
+          "name": "喫茶フラノン",
+          "url": "https://schedule.mellow.jp/ss_web/shops/q8Sk2",
           "image_url": "",
-          "headline": "アサイーボウル ミニ",
+          "headline": "フルーツ飴",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -1303,8 +1308,9 @@
       ]
     },
     {
-      "date": "2026-06-12",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-19",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
         {
           "id": "101",
@@ -1631,8 +1637,9 @@
       ]
     },
     {
-      "date": "2026-06-13",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-20",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
         {
           "id": "ichibariki",
@@ -1750,8 +1757,9 @@
       ]
     },
     {
-      "date": "2026-06-14",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-21",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
         {
           "id": "family-mart-motoyama",

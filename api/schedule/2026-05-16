@@ -1,6 +1,7 @@
 {
   "date": "2026-05-16",
-  "last_updated": "2026-05-30T22:53:39.467291",
+  "last_updated": "2026-06-01T07:55:21.044878+09:00",
+  "timezone": "JST",
   "cafeterias": [
     {
       "id": "ichibariki",
@@ -109,7 +110,34 @@
       "note": ""
     }
   ],
-  "kitchen_cars": [],
+  "kitchen_cars": [
+    {
+      "id": "mellow-shop-001",
+      "name": "mellow-shop-001",
+      "url": "",
+      "image_url": "",
+      "headline": "",
+      "location": "並木道",
+      "category": "キッチンカー",
+      "start_time": "11:30",
+      "end_time": "15:00",
+      "business_hours": "",
+      "note": ""
+    },
+    {
+      "id": "mellow-shop-002",
+      "name": "mellow-shop-002",
+      "url": "",
+      "image_url": "",
+      "headline": "",
+      "location": "中央広場",
+      "category": "キッチンカー",
+      "start_time": "11:00",
+      "end_time": "14:30",
+      "business_hours": "",
+      "note": ""
+    }
+  ],
   "sources": [
     {
       "name": "2026_05.pdf",

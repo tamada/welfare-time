@@ -1,0 +1,222 @@
+{
+  "id": "ファミリーマート-本山寮",
+  "name": "ファミリーマート",
+  "location": "本山寮",
+  "category": "食堂",
+  "url": "",
+  "google_map": "",
+  "image_url": "",
+  "headline": "",
+  "schedules": [
+    {
+      "date": "2026-06-01",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-02",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-03",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-04",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-05",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-06",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-07",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-08",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-09",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-10",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-11",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-12",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-13",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-14",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-15",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-16",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-17",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-18",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-19",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-20",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-21",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-22",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-23",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-24",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-25",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-26",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-27",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-28",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-29",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    },
+    {
+      "date": "2026-06-30",
+      "location": "本山寮",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "note": ""
+    }
+  ]
+}

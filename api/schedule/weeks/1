@@ -1,12 +1,14 @@
 {
   "week_index": 1,
-  "start_date": "2026-06-01",
-  "end_date": "2026-06-07",
-  "last_updated": "2026-05-30T22:53:39.467291",
+  "start_date": "2026-06-08",
+  "end_date": "2026-06-14",
+  "last_updated": "2026-06-01T07:55:21.044878+09:00",
+  "timezone": "JST",
   "daily_schedules": [
     {
-      "date": "2026-06-01",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-08",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
         {
           "id": "101",
@@ -299,11 +301,11 @@
       ],
       "kitchen_cars": [
         {
-          "id": "dqSe1b",
-          "name": "メロンパンみのり",
-          "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
+          "id": "pMSXgz",
+          "name": "SKY KITCHEN",
+          "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
           "image_url": "",
-          "headline": "メロンパンみのり",
+          "headline": "照り焼きチキン",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -312,11 +314,11 @@
           "note": ""
         },
         {
-          "id": "5gSVjO",
-          "name": "喜珈琲",
-          "url": "https://schedule.mellow.jp/ss_web/shops/5gSVjO",
+          "id": "dqSe1b",
+          "name": "メロンパンみのり",
+          "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
           "image_url": "",
-          "headline": "レタスホットドッグ",
+          "headline": "メロンパンみのり",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -333,8 +335,9 @@
       ]
     },
     {
-      "date": "2026-06-02",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-09",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
         {
           "id": "101",
@@ -584,7 +587,7 @@
           "image_url": "",
           "headline": "",
           "start_time": "12:00",
-          "end_time": "13:10",
+          "end_time": "13:00",
           "business_hours": "平日 12:00~13:00",
           "note": ""
         },
@@ -661,8 +664,9 @@
       ]
     },
     {
-      "date": "2026-06-03",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-10",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
         {
           "id": "101",
@@ -954,11 +958,11 @@
           "note": ""
         },
         {
-          "id": "wwS21",
-          "name": "ホットドッグcafe defi",
-          "url": "https://schedule.mellow.jp/ss_web/shops/wwS21",
+          "id": "ldS6DO",
+          "name": "BOULANGERIE le RASE",
+          "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
           "image_url": "",
-          "headline": "ホットドッグ4種類（カレーキャベツ、オニオンピクルス、チーズサルサ、ソーセージドッグ）",
+          "headline": "フランクドック",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -975,8 +979,9 @@
       ]
     },
     {
-      "date": "2026-06-04",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-11",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
         {
           "id": "101",
@@ -1282,11 +1287,11 @@
           "note": ""
         },
         {
-          "id": "JmS6yB",
-          "name": "inosen cafe",
-          "url": "https://schedule.mellow.jp/ss_web/shops/JmS6yB",
+          "id": "Z7SXr3",
+          "name": "Charubo",
+          "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
           "image_url": "",
-          "headline": "マルゲリータ",
+          "headline": "アサイーボウル ミニ",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -1303,8 +1308,9 @@
       ]
     },
     {
-      "date": "2026-06-05",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-12",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
         {
           "id": "101",
@@ -1597,11 +1603,11 @@
       ],
       "kitchen_cars": [
         {
-          "id": "vmSb9R",
-          "name": "Panda Kitchen",
-          "url": "https://schedule.mellow.jp/ss_web/shops/vmSb9R",
+          "id": "BdSYoz",
+          "name": "MAHALO",
+          "url": "https://schedule.mellow.jp/ss_web/shops/BdSYoz",
           "image_url": "",
-          "headline": "クロッフル",
+          "headline": "特製ロコモコ丼",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -1610,11 +1616,11 @@
           "note": ""
         },
         {
-          "id": "ldS6DO",
-          "name": "BOULANGERIE le RASE",
-          "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
+          "id": "vmSb9R",
+          "name": "Panda Kitchen",
+          "url": "https://schedule.mellow.jp/ss_web/shops/vmSb9R",
           "image_url": "",
-          "headline": "フランクドック",
+          "headline": "クロッフル",
           "location": "大学内指定場所",
           "category": "キッチンカー",
           "start_time": "11:00",
@@ -1631,8 +1637,9 @@
       ]
     },
     {
-      "date": "2026-06-06",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-13",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
         {
           "id": "ichibariki",
@@ -1750,135 +1757,10 @@
       ]
     },
     {
-      "date": "2026-06-07",
-      "last_updated": "2026-05-30T22:53:39.467291",
+      "date": "2026-06-14",
+      "last_updated": "2026-06-01T07:55:21.044878+09:00",
+      "timezone": "JST",
       "cafeterias": [
-        {
-          "id": "fujikatsu",
-          "name": "ふじカツ",
-          "location": "並楽館1F",
-          "category": "食堂",
-          "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/fujikatu.html",
-          "google_map": "",
-          "image_url": "",
-          "headline": "ボリューム満点！あげたてカツの専門店",
-          "start_time": "11:00",
-          "end_time": "14:30",
-          "business_hours": "平日 11:30~14:00",
-          "note": ""
-        },
-        {
-          "id": "ichibariki",
-          "name": "らーめん壱馬力",
-          "location": "並楽館1F",
-          "category": "食堂",
-          "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/ichibariki.html",
-          "google_map": "",
-          "image_url": "",
-          "headline": "京都の有名ラーメン店「麺屋しゃかりき」の2号店",
-          "start_time": "11:00",
-          "end_time": "15:00",
-          "business_hours": "平日 11:00~19:00 土 11:00~14:00",
-          "note": ""
-        },
-        {
-          "id": "miyako",
-          "name": "MIYAKO製麺",
-          "location": "並楽館2F",
-          "category": "食堂",
-          "url": "https://www.kyoto-su.ac.jp/campus/welfare/miyako/",
-          "google_map": "",
-          "image_url": "",
-          "headline": "店内で製麺する本格的なうどん専門店",
-          "start_time": "11:00",
-          "end_time": "14:30",
-          "business_hours": "平日 11:00~14:00",
-          "note": ""
-        },
-        {
-          "id": "libre",
-          "name": "LIBRE（リブレ）",
-          "location": "並楽館3F",
-          "category": "食堂",
-          "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/libre.html",
-          "google_map": "",
-          "image_url": "",
-          "headline": "なんでも揃う学内最大のカフェテリアレストラン",
-          "start_time": "11:00",
-          "end_time": "14:30",
-          "business_hours": "平日 11:30~14:00",
-          "note": ""
-        },
-        {
-          "id": "musubi",
-          "name": "むすびキッチン",
-          "location": "雄飛館2F",
-          "category": "食堂",
-          "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/nagomi.html",
-          "google_map": "",
-          "image_url": "",
-          "headline": "ラーニングコモンズ内に誕生した新たな洋食レストラン",
-          "start_time": "11:00",
-          "end_time": "14:00",
-          "business_hours": "平日 11:30~14:00",
-          "note": ""
-        },
-        {
-          "id": "family-mart-heiraku",
-          "name": "ファミリーマート",
-          "location": "並楽館1F",
-          "category": "コンビニ",
-          "url": "",
-          "google_map": "",
-          "image_url": "",
-          "headline": "",
-          "start_time": "8:00",
-          "end_time": "15:00",
-          "business_hours": "平日 8:00~19:00 水 8:00~18:00 土 8:00~17:00",
-          "note": ""
-        },
-        {
-          "id": "maruzen-ms",
-          "name": "丸善 M's style",
-          "location": "天地館1F",
-          "category": "ショップ",
-          "url": "",
-          "google_map": "",
-          "image_url": "",
-          "headline": "",
-          "start_time": "10:00",
-          "end_time": "15:00",
-          "business_hours": "平日 10:00~17:00",
-          "note": ""
-        },
-        {
-          "id": "nasic",
-          "name": "学生情報センター （ナジック）",
-          "location": "天地館1F",
-          "category": "サービス",
-          "url": "",
-          "google_map": "",
-          "image_url": "",
-          "headline": "",
-          "start_time": "10:00",
-          "end_time": "17:00",
-          "business_hours": "月~土 10:00~17:00",
-          "note": ""
-        },
-        {
-          "id": "family-mart-tenchi",
-          "name": "ファミリーマート",
-          "location": "天地館1F",
-          "category": "コンビニ",
-          "url": "",
-          "google_map": "",
-          "image_url": "",
-          "headline": "",
-          "start_time": "8:00",
-          "end_time": "15:00",
-          "business_hours": "平日 8:00~19:00 水 8:00~18:00 土 8:00~17:00",
-          "note": ""
-        },
         {
           "id": "family-mart-motoyama",
           "name": "ファミリーマート",

@@ -205,6 +205,24 @@
       "headline": ""
     },
     {
+      "id": "mellow-shop-001",
+      "name": "mellow-shop-001",
+      "url": "",
+      "image_url": "",
+      "headline": "",
+      "location": "並木道",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "mellow-shop-002",
+      "name": "mellow-shop-002",
+      "url": "",
+      "image_url": "",
+      "headline": "",
+      "location": "中央広場",
+      "category": "キッチンカー"
+    },
+    {
       "id": "dqSe1b",
       "name": "メロンパンみのり",
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
