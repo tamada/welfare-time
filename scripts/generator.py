@@ -3,8 +3,11 @@ import os
 import argparse
 import re
 import unicodedata
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+
+# Define timezones
+JST = timezone(timedelta(hours=9), "JST")
 
 def load_json(path):
     if not os.path.exists(path):
@@ -31,9 +34,12 @@ def get_id_from_url(url, fallback_name):
     return slugify(fallback_name)
 
 def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
-    now = datetime.now()
-    today_str = now.strftime("%Y-%m-%d")
-    last_updated = now.isoformat()
+    # Use JST for date-based logic
+    now_jst = datetime.now(JST)
+    today_str = now_jst.strftime("%Y-%m-%d")
+    
+    # Use UTC with Z for the timestamp
+    last_updated = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
     
     # 1. Load Master Data
     master_raw = load_json(master_path)
@@ -84,12 +90,13 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
     schedule_map = {}
     
     # Initialize from 7 days ago to 30 days ahead to ensure static shops appear
-    start_init = now - timedelta(days=7)
+    start_init = now_jst - timedelta(days=7)
     for i in range(40):
         d_str = (start_init + timedelta(days=i)).strftime("%Y-%m-%d")
         schedule_map[d_str] = {
             "date": d_str, 
             "last_updated": last_updated, 
+            "timezone": "JST",
             "cafeterias": [], 
             "kitchen_cars": [],
             "sources": []
@@ -100,6 +107,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
             schedule_map[date_str] = {
                 "date": date_str, 
                 "last_updated": last_updated, 
+                "timezone": "JST",
                 "cafeterias": [], 
                 "kitchen_cars": [],
                 "sources": []
@@ -197,15 +205,15 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
     
     shortcuts = {
         "today": today_str,
-        "yesterday": (now - timedelta(days=1)).strftime("%Y-%m-%d"),
-        "tomorrow": (now + timedelta(days=1)).strftime("%Y-%m-%d")
+        "yesterday": (now_jst - timedelta(days=1)).strftime("%Y-%m-%d"),
+        "tomorrow": (now_jst + timedelta(days=1)).strftime("%Y-%m-%d")
     }
     for label, d_str in shortcuts.items():
         if d_str in schedule_map:
             save_json(schedule_map[d_str], os.path.join(api_schedule_dir, f"{label}"))
 
     # 6. Weekly API
-    current_monday = now - timedelta(days=now.weekday())
+    current_monday = now_jst - timedelta(days=now_jst.weekday())
     for w in range(3):
         week_start = current_monday + timedelta(weeks=w)
         daily_schedules = [schedule_map.get((week_start + timedelta(days=i)).strftime("%Y-%m-%d"), {"date": (week_start + timedelta(days=i)).strftime("%Y-%m-%d"), "cafeterias": [], "kitchen_cars": [], "sources": []}) for i in range(7)]
@@ -214,6 +222,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
             "start_date": week_start.strftime("%Y-%m-%d"),
             "end_date": (week_start + timedelta(days=6)).strftime("%Y-%m-%d"),
             "last_updated": last_updated,
+            "timezone": "JST",
             "daily_schedules": daily_schedules
         }
         # Save as weeks/0, weeks/1, etc.
@@ -251,6 +260,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir):
 
     save_json({
         "last_updated": last_updated,
+        "timezone": "UTC",
         "data_range": {"start": dates[0] if dates else "", "end": dates[-1] if dates else ""},
         "shop_count": len(all_shops),
         "sources": global_sources

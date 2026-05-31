@@ -6,8 +6,11 @@ from bs4 import BeautifulSoup
 import pdfplumber
 import re
 import unicodedata
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+
+# Define timezones
+JST = timezone(timedelta(hours=9), "JST")
 
 # Updated storage location to be inside data for source storage
 DAILY_DIR = "data/daily"
@@ -43,7 +46,7 @@ def get_month_from_pdf(pdf_path):
         if m in name:
             return str(i + 1).zfill(2)
     
-    return datetime.now().strftime("%m")
+    return datetime.now(JST).strftime("%m")
 
 def main():
     parser = argparse.ArgumentParser(description="Fetch cafeteria schedule PDFs")
@@ -96,8 +99,9 @@ def main():
             f.write(res.content)
             
         month = get_month_from_pdf(temp_path)
-        year = datetime.now().year
-        curr_month = datetime.now().month
+        now_jst = datetime.now(JST)
+        year = now_jst.year
+        curr_month = now_jst.month
         target_month = int(month)
         if (target_month == 1 or target_month == 2) and curr_month == 12:
             year += 1
@@ -118,7 +122,7 @@ def main():
             "last-modified": last_modified,
             "etag": etag,
             "url": pdf_url,
-            "fetched_at": datetime.now().isoformat()
+            "fetched_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
         }
         print(f"Saved: {final_path}")
         
