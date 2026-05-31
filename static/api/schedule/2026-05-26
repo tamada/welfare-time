@@ -1,6 +1,7 @@
 {
   "date": "2026-05-26",
-  "last_updated": "2026-05-22T11:22:49.880586",
+  "last_updated": "2026-05-31T13:29:24.225659+09:00",
+  "timezone": "JST",
   "cafeterias": [
     {
       "id": "101",
@@ -291,34 +292,7 @@
       "note": ""
     }
   ],
-  "kitchen_cars": [
-    {
-      "id": "mYSqy",
-      "name": "ヨギチョギ",
-      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
-      "image_url": "",
-      "headline": "やみつきバーガー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー",
-      "start_time": "11:00",
-      "end_time": "17:00",
-      "business_hours": "11:00〜17:00",
-      "note": ""
-    },
-    {
-      "id": "5gSVA6",
-      "name": "銀座六丁目、フライの家。京都店",
-      "url": "https://schedule.mellow.jp/ss_web/shops/5gSVA6",
-      "image_url": "",
-      "headline": "チキンチーズカツライスバーガー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー",
-      "start_time": "11:00",
-      "end_time": "17:00",
-      "business_hours": "11:00〜17:00",
-      "note": ""
-    }
-  ],
+  "kitchen_cars": [],
   "sources": [
     {
       "name": "2026_05.pdf",

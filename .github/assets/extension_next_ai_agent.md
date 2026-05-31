@@ -18,7 +18,7 @@
 
 ## 3. クリーンアップの優先事項
 
-- **JavaScript の整理**: `main.js` にすべてを集約すること。`layouts/` 配下の HTML ファイルに `<script>` タグやインライン JS を残さない。
+- **JavaScript の整理**: ロジックは `static/js/` 配下にモジュール化して配置する（`filter.js`, `sort.js`, `main.js`）。`layouts/` 配下の HTML ファイルに `<script>` タグやインライン JS を残さない（ただし、`baseof.html` でのモジュール読み込みは除く）。
 - **残骸の削除**: 過去の試行錯誤で作成された `<div id="tooltip">` や不要な `partial` ファイルがあれば、即座に削除すること。
 - **名前空間の汚染**: `master.json` やデータパスの整合性を維持し、RESTful かつ拡張子のない API パス(`/api/schedule/YYYY-MM-DD`) を使用すること。
 
