@@ -208,8 +208,20 @@ function render() {
 
 function renderProvenance(sources) {
     const sourceLinks = document.getElementById('source-links');
-    if (sourceLinks && sources && sources.length > 0) {
-        sourceLinks.innerHTML = sources.map(s => `
+    if (!sourceLinks) return;
+
+    let html = '';
+    // Add kitchen car source if available
+    html += `
+        <a href="https://www.kyoto-su.ac.jp/campus/welfare/" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm text-slate-600 dark:text-slate-300 transition-colors" target="_blank">
+            <i class="bi bi-truck text-ksu dark:text-blue-400"></i>
+            <span class="flex-1 text-truncate">キッチンカー情報（京都産業大学）</span>
+            <i class="bi bi-box-arrow-up-right text-[10px]"></i>
+        </a>
+    `;
+
+    if (sources && sources.length > 0) {
+        html += sources.map(s => `
             <a href="${s.url}" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm text-slate-600 dark:text-slate-300 transition-colors" target="_blank">
                 <i class="bi bi-file-pdf text-red-500"></i>
                 <span class="flex-1 text-truncate">${s.name}</span>
@@ -217,6 +229,7 @@ function renderProvenance(sources) {
             </a>
         `).join('');
     }
+    sourceLinks.innerHTML = html;
 }
 
 // --- Theme Switcher ---
