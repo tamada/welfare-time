@@ -16,12 +16,13 @@ KITCHEN_CARS_JSON = $(KITCHEN_CARS_SRC)/scraped.json
 PDF_FILES = $(wildcard $(PDF_SRC_DIR)/*.pdf)
 PARSED_JSONS = $(patsubst $(PDF_SRC_DIR)/%.pdf, $(DATA_DIR)/cafeterias/%.json, $(PDF_FILES))
 
-.PHONY: all fetch_pdf fetch_kitchencar parse_pdf parse_kitchencar generate serve clean test help
+.PHONY: all fetch_pdf fetch_kitchencar parse_pdf parse_kitchencar generate serve clean test help css
 
-all: generate
+all: css generate
 
 help:
 	@echo "Usage:"
+	@echo "  make css               Build Tailwind CSS"
 	@echo "  make fetch_pdf         Fetch latest cafeteria PDFs from university website"
 	@echo "  make fetch_kitchencar  Fetch latest kitchen car HTML"
 	@echo "  make parse_pdf         Parse all PDFs in $(PDF_SRC_DIR) to JSON"
@@ -66,6 +67,12 @@ generate: parse_pdf parse_kitchencar
 		--kitchen-cars-archive $(DATA_DIR)/kitchen_cars_past.json \
 		--master $(MASTER_JSON) \
 		-o $(DEST_DIR)
+
+css:
+	npx @tailwindcss/cli -i assets/css/main.css -o static/css/compiled.css --minify
+
+build_html: css
+	hugo --minify
 
 serve:
 # 	$(PYTHON) -m http.server 8000 -d $(PUBLIC_DIR)

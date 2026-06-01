@@ -30,6 +30,11 @@ Welfare-Time のデータを活用するためのAPIエンドポイントです�
 }
 ```
 
+### その他
+
+- `/api/schedule/YYYY-MM-DD` の GET リクエストにより当該日時の営業店舗の情報を取得できます。
+- `/api/schedule/tomorrow`, `/api/schedule/yesterday` で翌日、昨日の営業店舗の情報を取得できます。
+
 ## 2. 店舗一覧 (`/api/shops`)
 
 登録されている全店舗のマスター情報および営業スケジュール履歴です。
@@ -47,6 +52,10 @@ Welfare-Time のデータを活用するためのAPIエンドポイントです�
   ]
 }
 ```
+
+### 当該店舗の営業日時
+
+`/api/shops/{shop-id}` で、その店舗の営業日時の一覧を取得できます。
 
 ## 3. ステータス情報 (`/api/status`)
 

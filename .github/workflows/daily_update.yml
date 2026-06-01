@@ -54,7 +54,7 @@ jobs:
           git fetch origin gh-pages
           git worktree add public gh-pages
 
-          hugo --minify
+          make build_html
 
       - name: commit and push changes
         run: |
