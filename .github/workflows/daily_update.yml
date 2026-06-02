@@ -11,13 +11,13 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: リポジトリをチェックアウト
+      - name: リポジトリをチェックアウトする
         uses: actions/checkout@v6
         with:
           submodules: true
           fetch-depth: 0
 
-      - name: Python をセットアップ
+      - name: Python をセットアップする
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -34,26 +34,30 @@ jobs:
         with:
           node-version: '26'
 
-      - name: 依存パッケージをインストール
+      - name: 依存パッケージをインストールする
         run: |
           pip install -r requirements.txt
           playwright install chromium
 
-      - name: 食堂データの更新
+      - name: 食堂データを更新する
         run: |
           make fetch_cafeteria
           make parse_pdf
 
-      - name: キッチンカーデータの更新
+      - name: キッチンカーデータを更新する
         run: |
           make fetch_kitchencar
           make parse_kitchencar
 
-      - name: APIデータの生成
-        run: |
+      - name: APIデータを生成する
+        run:
           make generate
 
-      - name: gh-pagesブランチにデプロイ
+      - name: NPMパッケージをインストールする
+        run:
+          npm ci
+
+      - name: gh-pagesブランチにデプロイする
         run: |
           # gh-pagesブランチをpublicディレクトリにworktreeとして追加
           git fetch origin gh-pages
