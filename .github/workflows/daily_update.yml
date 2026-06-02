@@ -29,6 +29,11 @@ jobs:
           hugo-version: '0.119.0'
           extended: true
 
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '26'
+
       - name: 依存パッケージをインストール
         run: |
           pip install -r requirements.txt
