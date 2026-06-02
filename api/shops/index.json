@@ -223,24 +223,6 @@
       "category": "キッチンカー"
     },
     {
-      "id": "dqSe1b",
-      "name": "メロンパンみのり",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
-      "image_url": "",
-      "headline": "メロンパンみのり",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "5gSVjO",
-      "name": "喜珈琲",
-      "url": "https://schedule.mellow.jp/ss_web/shops/5gSVjO",
-      "image_url": "",
-      "headline": "レタスホットドッグ",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "Z7S1R",
       "name": "もんきち",
       "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
@@ -318,6 +300,15 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
       "image_url": "",
       "headline": "照り焼きチキン",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "dqSe1b",
+      "name": "メロンパンみのり",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
+      "image_url": "",
+      "headline": "メロンパンみのり",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },

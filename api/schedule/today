@@ -1,6 +1,6 @@
 {
-  "date": "2026-06-01",
-  "last_updated": "2026-06-01T07:55:21.044878+09:00",
+  "date": "2026-06-02",
+  "last_updated": "2026-06-02T09:26:00.574175+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -251,7 +251,7 @@
       "image_url": "",
       "headline": "",
       "start_time": "12:00",
-      "end_time": "13:00",
+      "end_time": "13:10",
       "business_hours": "平日 12:00~13:00",
       "note": ""
     },
@@ -294,11 +294,11 @@
   ],
   "kitchen_cars": [
     {
-      "id": "dqSe1b",
-      "name": "メロンパンみのり",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
+      "id": "Z7S1R",
+      "name": "もんきち",
+      "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
       "image_url": "",
-      "headline": "メロンパンみのり",
+      "headline": "デミグラスオムライス",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -307,11 +307,11 @@
       "note": ""
     },
     {
-      "id": "5gSVjO",
-      "name": "喜珈琲",
-      "url": "https://schedule.mellow.jp/ss_web/shops/5gSVjO",
+      "id": "DlSmRP",
+      "name": "TeraCinquecento",
+      "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
       "image_url": "",
-      "headline": "レタスホットドッグ",
+      "headline": "ビビンバ",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
