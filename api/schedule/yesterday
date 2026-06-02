@@ -1,6 +1,6 @@
 {
-  "date": "2026-06-01",
-  "last_updated": "2026-06-02T09:26:00.574175+09:00",
+  "date": "2026-06-02",
+  "last_updated": "2026-06-03T08:30:08.844365+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -251,7 +251,7 @@
       "image_url": "",
       "headline": "",
       "start_time": "12:00",
-      "end_time": "13:00",
+      "end_time": "13:10",
       "business_hours": "平日 12:00~13:00",
       "note": ""
     },

@@ -223,24 +223,6 @@
       "category": "キッチンカー"
     },
     {
-      "id": "Z7S1R",
-      "name": "もんきち",
-      "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
-      "image_url": "",
-      "headline": "デミグラスオムライス",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "DlSmRP",
-      "name": "TeraCinquecento",
-      "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
-      "image_url": "",
-      "headline": "ビビンバ",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "mYSqy",
       "name": "ヨギチョギ",
       "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
@@ -309,6 +291,24 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
       "image_url": "",
       "headline": "メロンパンみのり",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "Z7S1R",
+      "name": "もんきち",
+      "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
+      "image_url": "",
+      "headline": "デミグラスオムライス",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "DlSmRP",
+      "name": "TeraCinquecento",
+      "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
+      "image_url": "",
+      "headline": "ビビンバ",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
