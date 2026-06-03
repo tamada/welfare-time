@@ -223,24 +223,6 @@
       "category": "キッチンカー"
     },
     {
-      "id": "mYSqy",
-      "name": "ヨギチョギ",
-      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
-      "image_url": "",
-      "headline": "やみつきバーガー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "wwS21",
-      "name": "ホットドッグcafe defi",
-      "url": "https://schedule.mellow.jp/ss_web/shops/wwS21",
-      "image_url": "",
-      "headline": "ホットドッグ4種類（カレーキャベツ、オニオンピクルス、チーズサルサ、ソーセージドッグ）",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "EpSrJN",
       "name": "Lo Splendore",
       "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
@@ -313,6 +295,15 @@
       "category": "キッチンカー"
     },
     {
+      "id": "mYSqy",
+      "name": "ヨギチョギ",
+      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
+      "image_url": "",
+      "headline": "やみつきバーガー",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "Z7SXr3",
       "name": "Charubo",
       "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
@@ -372,6 +363,15 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/XESDOr",
       "image_url": "",
       "headline": "チキンオーバーライス",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "wwS21",
+      "name": "ホットドッグcafe defi",
+      "url": "https://schedule.mellow.jp/ss_web/shops/wwS21",
+      "image_url": "",
+      "headline": "ホットドッグ4種類（カレーキャベツ、オニオンピクルス、チーズサルサ、ソーセージドッグ）",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
