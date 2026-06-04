@@ -223,24 +223,6 @@
       "category": "キッチンカー"
     },
     {
-      "id": "EpSrJN",
-      "name": "Lo Splendore",
-      "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
-      "image_url": "",
-      "headline": "生パスタ ペペロンチーノ",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "JmS6yB",
-      "name": "inosen cafe",
-      "url": "https://schedule.mellow.jp/ss_web/shops/JmS6yB",
-      "image_url": "",
-      "headline": "マルゲリータ",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "vmSb9R",
       "name": "Panda Kitchen",
       "url": "https://schedule.mellow.jp/ss_web/shops/vmSb9R",
@@ -304,6 +286,15 @@
       "category": "キッチンカー"
     },
     {
+      "id": "EpSrJN",
+      "name": "Lo Splendore",
+      "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
+      "image_url": "",
+      "headline": "生パスタ ペペロンチーノ",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "Z7SXr3",
       "name": "Charubo",
       "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
@@ -336,6 +327,15 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/q8Sk2",
       "image_url": "",
       "headline": "フルーツ飴",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "JmS6yB",
+      "name": "inosen cafe",
+      "url": "https://schedule.mellow.jp/ss_web/shops/JmS6yB",
+      "image_url": "",
+      "headline": "マルゲリータ",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
