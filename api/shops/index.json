@@ -223,24 +223,6 @@
       "category": "キッチンカー"
     },
     {
-      "id": "vmSb9R",
-      "name": "Panda Kitchen",
-      "url": "https://schedule.mellow.jp/ss_web/shops/vmSb9R",
-      "image_url": "",
-      "headline": "クロッフル",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "ldS6DO",
-      "name": "BOULANGERIE le RASE",
-      "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
-      "image_url": "",
-      "headline": "フランクドック",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "pMSXgz",
       "name": "SKY KITCHEN",
       "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
@@ -286,6 +268,15 @@
       "category": "キッチンカー"
     },
     {
+      "id": "ldS6DO",
+      "name": "BOULANGERIE le RASE",
+      "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
+      "image_url": "",
+      "headline": "フランクドック",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "EpSrJN",
       "name": "Lo Splendore",
       "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
@@ -309,6 +300,15 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/BdSYoz",
       "image_url": "",
       "headline": "特製ロコモコ丼",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "vmSb9R",
+      "name": "Panda Kitchen",
+      "url": "https://schedule.mellow.jp/ss_web/shops/vmSb9R",
+      "image_url": "",
+      "headline": "クロッフル",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
