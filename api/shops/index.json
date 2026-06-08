@@ -223,24 +223,6 @@
       "category": "キッチンカー"
     },
     {
-      "id": "pMSXgz",
-      "name": "SKY KITCHEN",
-      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
-      "image_url": "",
-      "headline": "照り焼きチキン",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "dqSe1b",
-      "name": "メロンパンみのり",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
-      "image_url": "",
-      "headline": "メロンパンみのり",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "Z7S1R",
       "name": "もんきち",
       "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
@@ -322,11 +304,29 @@
       "category": "キッチンカー"
     },
     {
+      "id": "dqSe1b",
+      "name": "メロンパンみのり",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
+      "image_url": "",
+      "headline": "メロンパンみのり",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "q8Sk2",
       "name": "喫茶フラノン",
       "url": "https://schedule.mellow.jp/ss_web/shops/q8Sk2",
       "image_url": "",
       "headline": "フルーツ飴",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "pMSXgz",
+      "name": "SKY KITCHEN",
+      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
+      "image_url": "",
+      "headline": "照り焼きチキン",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
