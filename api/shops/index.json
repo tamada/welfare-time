@@ -223,24 +223,6 @@
       "category": "キッチンカー"
     },
     {
-      "id": "Z7S1R",
-      "name": "もんきち",
-      "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
-      "image_url": "",
-      "headline": "デミグラスオムライス",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "DlSmRP",
-      "name": "TeraCinquecento",
-      "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
-      "image_url": "",
-      "headline": "ビビンバ",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "mYSqy",
       "name": "ヨギチョギ",
       "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
@@ -313,6 +295,24 @@
       "category": "キッチンカー"
     },
     {
+      "id": "Z7S1R",
+      "name": "もんきち",
+      "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
+      "image_url": "",
+      "headline": "デミグラスオムライス",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "DlSmRP",
+      "name": "TeraCinquecento",
+      "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
+      "image_url": "",
+      "headline": "ビビンバ",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "q8Sk2",
       "name": "喫茶フラノン",
       "url": "https://schedule.mellow.jp/ss_web/shops/q8Sk2",
@@ -358,20 +358,20 @@
       "category": "キッチンカー"
     },
     {
-      "id": "XESDOr",
-      "name": "雨ノチ晴レ",
-      "url": "https://schedule.mellow.jp/ss_web/shops/XESDOr",
-      "image_url": "",
-      "headline": "チキンオーバーライス",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "wwS21",
       "name": "ホットドッグcafe defi",
       "url": "https://schedule.mellow.jp/ss_web/shops/wwS21",
       "image_url": "",
       "headline": "ホットドッグ4種類（カレーキャベツ、オニオンピクルス、チーズサルサ、ソーセージドッグ）",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "XESDOr",
+      "name": "雨ノチ晴レ",
+      "url": "https://schedule.mellow.jp/ss_web/shops/XESDOr",
+      "image_url": "",
+      "headline": "チキンオーバーライス",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
