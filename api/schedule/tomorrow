@@ -1,6 +1,6 @@
 {
-  "date": "2026-06-11",
-  "last_updated": "2026-06-10T08:15:11.436596+09:00",
+  "date": "2026-06-12",
+  "last_updated": "2026-06-11T08:21:33.520929+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -294,11 +294,11 @@
   ],
   "kitchen_cars": [
     {
-      "id": "EpSrJN",
-      "name": "Lo Splendore",
-      "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
+      "id": "BdSYoz",
+      "name": "MAHALO",
+      "url": "https://schedule.mellow.jp/ss_web/shops/BdSYoz",
       "image_url": "",
-      "headline": "生パスタ ペペロンチーノ",
+      "headline": "特製ロコモコ丼",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -307,11 +307,11 @@
       "note": ""
     },
     {
-      "id": "Z7SXr3",
-      "name": "Charubo",
-      "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
+      "id": "vmSb9R",
+      "name": "Panda Kitchen",
+      "url": "https://schedule.mellow.jp/ss_web/shops/vmSb9R",
       "image_url": "",
-      "headline": "アサイーボウル ミニ",
+      "headline": "クロッフル",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",

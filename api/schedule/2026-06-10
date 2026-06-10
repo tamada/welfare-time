@@ -1,6 +1,6 @@
 {
   "date": "2026-06-10",
-  "last_updated": "2026-06-10T08:15:11.436596+09:00",
+  "last_updated": "2026-06-11T08:21:33.520929+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -278,34 +278,7 @@
       "note": ""
     }
   ],
-  "kitchen_cars": [
-    {
-      "id": "mYSqy",
-      "name": "ヨギチョギ",
-      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
-      "image_url": "",
-      "headline": "やみつきバーガー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー",
-      "start_time": "11:00",
-      "end_time": "17:00",
-      "business_hours": "11:00〜17:00",
-      "note": ""
-    },
-    {
-      "id": "ldS6DO",
-      "name": "BOULANGERIE le RASE",
-      "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
-      "image_url": "",
-      "headline": "フランクドック",
-      "location": "大学内指定場所",
-      "category": "キッチンカー",
-      "start_time": "11:00",
-      "end_time": "17:00",
-      "business_hours": "11:00〜17:00",
-      "note": ""
-    }
-  ],
+  "kitchen_cars": [],
   "sources": [
     {
       "name": "2026_06.pdf",
