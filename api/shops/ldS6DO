@@ -8,20 +8,6 @@
   "category": "キッチンカー",
   "schedules": [
     {
-      "date": "2026-06-05",
-      "location": "大学内指定場所",
-      "start_time": "11:00",
-      "end_time": "17:00",
-      "note": ""
-    },
-    {
-      "date": "2026-06-10",
-      "location": "大学内指定場所",
-      "start_time": "11:00",
-      "end_time": "17:00",
-      "note": ""
-    },
-    {
       "date": "2026-06-17",
       "location": "大学内指定場所",
       "start_time": "11:00",

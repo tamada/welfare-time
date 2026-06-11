@@ -2,12 +2,12 @@
   "week_index": 0,
   "start_date": "2026-06-08",
   "end_date": "2026-06-14",
-  "last_updated": "2026-06-11T09:33:25.602483+09:00",
+  "last_updated": "2026-06-12T08:17:48.101888+09:00",
   "timezone": "JST",
   "daily_schedules": [
     {
       "date": "2026-06-08",
-      "last_updated": "2026-06-11T09:33:25.602483+09:00",
+      "last_updated": "2026-06-12T08:17:48.101888+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -299,34 +299,7 @@
           "note": ""
         }
       ],
-      "kitchen_cars": [
-        {
-          "id": "pMSXgz",
-          "name": "SKY KITCHEN",
-          "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
-          "image_url": "",
-          "headline": "照り焼きチキン",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        },
-        {
-          "id": "dqSe1b",
-          "name": "メロンパンみのり",
-          "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
-          "image_url": "",
-          "headline": "メロンパンみのり",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        }
-      ],
+      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_06.pdf",
@@ -336,7 +309,7 @@
     },
     {
       "date": "2026-06-09",
-      "last_updated": "2026-06-11T09:33:25.602483+09:00",
+      "last_updated": "2026-06-12T08:17:48.101888+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -628,34 +601,7 @@
           "note": ""
         }
       ],
-      "kitchen_cars": [
-        {
-          "id": "Z7S1R",
-          "name": "もんきち",
-          "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
-          "image_url": "",
-          "headline": "デミグラスオムライス",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        },
-        {
-          "id": "DlSmRP",
-          "name": "TeraCinquecento",
-          "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
-          "image_url": "",
-          "headline": "ビビンバ",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        }
-      ],
+      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_06.pdf",
@@ -665,7 +611,7 @@
     },
     {
       "date": "2026-06-10",
-      "last_updated": "2026-06-11T09:33:25.602483+09:00",
+      "last_updated": "2026-06-12T08:17:48.101888+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -943,34 +889,7 @@
           "note": ""
         }
       ],
-      "kitchen_cars": [
-        {
-          "id": "mYSqy",
-          "name": "ヨギチョギ",
-          "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
-          "image_url": "",
-          "headline": "やみつきバーガー",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        },
-        {
-          "id": "ldS6DO",
-          "name": "BOULANGERIE le RASE",
-          "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
-          "image_url": "",
-          "headline": "フランクドック",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        }
-      ],
+      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_06.pdf",
@@ -980,7 +899,7 @@
     },
     {
       "date": "2026-06-11",
-      "last_updated": "2026-06-11T09:33:25.602483+09:00",
+      "last_updated": "2026-06-12T08:17:48.101888+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -1272,34 +1191,7 @@
           "note": ""
         }
       ],
-      "kitchen_cars": [
-        {
-          "id": "EpSrJN",
-          "name": "Lo Splendore",
-          "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
-          "image_url": "",
-          "headline": "生パスタ ペペロンチーノ",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        },
-        {
-          "id": "Z7SXr3",
-          "name": "Charubo",
-          "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
-          "image_url": "",
-          "headline": "アサイーボウル ミニ",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        }
-      ],
+      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_06.pdf",
@@ -1309,7 +1201,7 @@
     },
     {
       "date": "2026-06-12",
-      "last_updated": "2026-06-11T09:33:25.602483+09:00",
+      "last_updated": "2026-06-12T08:17:48.101888+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -1638,7 +1530,7 @@
     },
     {
       "date": "2026-06-13",
-      "last_updated": "2026-06-11T09:33:25.602483+09:00",
+      "last_updated": "2026-06-12T08:17:48.101888+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -1758,7 +1650,7 @@
     },
     {
       "date": "2026-06-14",
-      "last_updated": "2026-06-11T09:33:25.602483+09:00",
+      "last_updated": "2026-06-12T08:17:48.101888+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
