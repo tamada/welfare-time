@@ -83,21 +83,8 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
             seen_kc.add(key)
     kitchen_car_schedules = unique_kc
 
-    # 3. Initialize Schedule Map with a range of dates
+    # 3. Initialize Schedule Map
     schedule_map = {}
-    
-    # Initialize from 7 days ago to 30 days ahead to ensure static shops appear
-    start_init = now_jst - timedelta(days=7)
-    for i in range(40):
-        d_str = (start_init + timedelta(days=i)).strftime("%Y-%m-%d")
-        schedule_map[d_str] = {
-            "date": d_str, 
-            "last_updated": last_updated, 
-            "timezone": "JST",
-            "cafeterias": [], 
-            "kitchen_cars": [],
-            "sources": []
-        }
     
     def get_or_create_date(date_str):
         if date_str not in schedule_map:
@@ -110,6 +97,12 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
                 "sources": []
             }
         return schedule_map[date_str]
+
+    # Ensure a minimum window around today (7 days ago to 32 days ahead)
+    # This ensures static shops appear for the current period even if no other data exists.
+    start_init = now_jst - timedelta(days=7)
+    for i in range(40):
+        get_or_create_date((start_init + timedelta(days=i)).strftime("%Y-%m-%d"))
 
     for p in Path(cafeteria_dir).glob("*.json"):
         # Match {YYYY_MM}.json to daily/{YYYY_MM}.pdf
@@ -164,6 +157,16 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
             "note": ""
         })
 
+    # Fill gaps between the first and last dates to ensure continuity
+    if schedule_map:
+        all_dates = sorted(schedule_map.keys())
+        first_dt = datetime.strptime(all_dates[0], "%Y-%m-%d")
+        last_dt = datetime.strptime(all_dates[-1], "%Y-%m-%d")
+        curr_dt = first_dt
+        while curr_dt <= last_dt:
+            get_or_create_date(curr_dt.strftime("%Y-%m-%d"))
+            curr_dt += timedelta(days=1)
+
     # 5. Inject Static Schedules (e.g. ATMs)
     for date_str, day_data in schedule_map.items():
         dt = datetime.strptime(date_str, "%Y-%m-%d")
@@ -211,7 +214,14 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
 
     # 6. Weekly API
     current_monday = now_jst - timedelta(days=now_jst.weekday())
-    for w in range(3):
+    all_dates = sorted(schedule_map.keys())
+    max_date_str = all_dates[-1] if all_dates else today_str
+    max_dt = datetime.strptime(max_date_str, "%Y-%m-%d").replace(tzinfo=JST)
+    
+    delta_days = (max_dt - current_monday).days
+    total_weeks = (delta_days // 7) + 1 if delta_days >= 0 else 1
+
+    for w in range(total_weeks):
         week_start = current_monday + timedelta(weeks=w)
         daily_schedules = [schedule_map.get((week_start + timedelta(days=i)).strftime("%Y-%m-%d"), {"date": (week_start + timedelta(days=i)).strftime("%Y-%m-%d"), "cafeterias": [], "kitchen_cars": [], "sources": []}) for i in range(7)]
         week_data = {
