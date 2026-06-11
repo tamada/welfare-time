@@ -366,14 +366,36 @@ document.querySelectorAll('nav a').forEach(a => {
 });
 
 const dateSelector = document.getElementById('date-selector');
-if (dateSelector && typeof flatpickr === 'function') {
-    flatpickr(dateSelector, {
+const dateInput = document.getElementById('datepicker-input');
+
+if (dateSelector && dateInput && typeof flatpickr === 'function') {
+    const fp = flatpickr(dateInput, {
         locale: 'ja',
         dateFormat: 'Y-m-d',
         defaultDate: targetDateStr,
-        onChange: (selectedDates, dateStr) => { if (dateStr) window.location.search = "date=" + dateStr; }
+        disableMobile: true, // iPhoneのキーボードや標準入力を出さない
+        positionElement: dateSelector, // カレンダーを div の位置に出す
+        onChange: (selectedDates, dateStr) => {
+            if (dateStr) window.location.search = "date=" + dateStr;
+        }
     });
+
+    // 日付の div 全体のどこをクリックしてもカレンダーを開く
+    dateSelector.addEventListener('click', (e) => {
+        e.preventDefault();
+        fp.open();
+    });    
 }
+
+// const dateSelector = document.getElementById('date-selector');
+// if (dateSelector && typeof flatpickr === 'function') {
+//     flatpickr(dateSelector, {
+//         locale: 'ja',
+//         dateFormat: 'Y-m-d',
+//         defaultDate: targetDateStr,
+//         onChange: (selectedDates, dateStr) => { if (dateStr) window.location.search = "date=" + dateStr; }
+//     });
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
     const isDataPage = ['index.html', 'list.html', 'map.html', '', '/'].some(page => window.location.pathname.endsWith(page));
