@@ -60,6 +60,7 @@ $(KITCHEN_CARS_JSON): $(KITCHEN_CARS_RAW)
 generate: parse_pdf parse_kitchencar
 	@mkdir -p $(PDFS_DEST_DIR)
 	@cp -n $(PDF_SRC_DIR)/*.pdf $(PDFS_DEST_DIR)/ 2>/dev/null || true
+	@cp $(MASTER_JSON) $(DEST_DIR)/assets
 	@cp $(PDF_SRC_DIR)/.metadata.json $(PDFS_DEST_DIR)/ 2>/dev/null || true
 	$(PYTHON) $(SCRIPTS_DIR)/generator.py \
 		--cafeteria-dir $(DATA_DIR)/cafeterias \

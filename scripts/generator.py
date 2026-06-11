@@ -23,6 +23,21 @@ def save_json(data, path):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
+def squash_name(x):
+    if not isinstance(x, str): return ""
+    x = unicodedata.normalize("NFKC", x)
+    x = x.replace("(", "（").replace(")", "）")
+    x = re.sub(r"\s+", " ", x).strip()
+    return x
+
+def squash_field(x):
+    if not isinstance(x, str): return ""
+    x = unicodedata.normalize("NFKC", x)
+    x = re.sub(r"\s+", "", x)
+    x = x.replace("(", "（").replace(")", "）")
+    x = x.replace("~", "～")
+    return x
+
 def slugify(text):
     return re.sub(r"[^\w\s-]", "", text).strip().lower().replace(" ", "-")
 
@@ -42,16 +57,18 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
     # 1. Load Master Data
     master_raw = load_json(master_path)
     if not master_raw:
-        master_raw = {"cafeterias": [], "kitchen_cars": []}
+        master_raw = {"facilities": [], "kitchen_cars": []}
         
     cafeteria_master_map = {}
-    for c in master_raw.get("cafeterias", []):
-        key = (c["name"], c["location"])
+    facilities = master_raw.get("facilities", []) + master_raw.get("cafeterias", [])
+    for c in facilities:
+        key = (squash_name(c["name"]), squash_field(c["location"]))
         cafeteria_master_map[key] = c
         
     kitchen_car_master_map = {}
-    for k in master_raw.get("kitchen_cars", []):
-        key = k["name"]
+    kc_list = master_raw.get("kitchen_cars", []) + [f for f in facilities if f.get("category") == "キッチンカー"]
+    for k in kc_list:
+        key = squash_name(k["name"])
         kitchen_car_master_map[key] = k
 
     # Load metadata for PDF URLs from the new public/daily location
@@ -118,8 +135,19 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
                 if source_entry not in day_data["sources"]:
                     day_data["sources"].append(source_entry)
 
-                m_info = cafeteria_master_map.get((s["id"], s["location"]))
-                shop_id = m_info["id"] if m_info else slugify(f"{s['id']}-{s['location']}")
+                norm_name = squash_name(s["id"])
+                norm_loc = squash_field(s["location"])
+                m_info = cafeteria_master_map.get((norm_name, norm_loc))
+                
+                if not m_info:
+                    print(f"!!! MAJOR ERROR: Shop not found in master data: Name='{norm_name}', Location='{norm_loc}' (Source: {source_filename}, Date: {s['date']})")
+                    # Provide hints for potential matches
+                    hints = [m["id"] for k, m in cafeteria_master_map.items() if norm_name in k[0] or k[0] in norm_name]
+                    if hints:
+                        print(f"    Hint: Found similar names in master data: {', '.join(set(hints))}")
+                    shop_id = slugify(f"MISSING-{norm_name}-{norm_loc}")
+                else:
+                    shop_id = m_info["id"]
                 
                 day_data["cafeterias"].append({
                     "id": shop_id,
@@ -139,9 +167,18 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
     # 4. Merge Kitchen Cars
     for s in kitchen_car_schedules:
         day_data = get_or_create_date(s["date"])
-        m_info = kitchen_car_master_map.get(s["id"])
+        norm_name = squash_name(s["id"])
+        m_info = kitchen_car_master_map.get(norm_name)
         target_url = s.get("url", "") or (m_info.get("url", "") if m_info else "")
-        shop_id = m_info["id"] if m_info and "id" in m_info else get_id_from_url(target_url, s["id"])
+
+        # For kitchen cars, missing from master is NOT an error.
+        # Priority: Master ID > URL Hash > Slugified Name
+        if m_info and "id" in m_info:
+            shop_id = m_info["id"]
+        elif target_url:
+            shop_id = get_id_from_url(target_url, s["id"])
+        else:
+            shop_id = slugify(norm_name)
         
         day_data["kitchen_cars"].append({
             "id": shop_id,
@@ -172,7 +209,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
         dt = datetime.strptime(date_str, "%Y-%m-%d")
         weekday = dt.weekday() # 0=Mon, 5=Sat, 6=Sun
 
-        for m_shop in master_raw.get("cafeterias", []):
+        for m_shop in facilities:
             if "static-hours" in m_shop:
                 hours_str = ""
                 if weekday < 5: # Mon-Fri
