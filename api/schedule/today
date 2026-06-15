@@ -1,6 +1,6 @@
 {
-  "date": "2026-06-15",
-  "last_updated": "2026-06-15T08:02:36.637159+09:00",
+  "date": "2026-06-16",
+  "last_updated": "2026-06-16T08:30:04.000314+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -294,11 +294,11 @@
   ],
   "kitchen_cars": [
     {
-      "id": "dqSeq3",
-      "name": "旨夢路本舗",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
+      "id": "Z7S1R",
+      "name": "もんきち",
+      "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
       "image_url": "",
-      "headline": "旨夢路式☆創作塩からあげ",
+      "headline": "デミグラスオムライス",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -307,11 +307,11 @@
       "note": ""
     },
     {
-      "id": "dqSe1b",
-      "name": "メロンパンみのり",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
+      "id": "DlSmRP",
+      "name": "TeraCinquecento",
+      "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
       "image_url": "",
-      "headline": "メロンパンみのり",
+      "headline": "ビビンバ",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
