@@ -223,24 +223,6 @@
       "category": "キッチンカー"
     },
     {
-      "id": "mYSqy",
-      "name": "ヨギチョギ",
-      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
-      "image_url": "",
-      "headline": "やみつきバーガー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "ldS6DO",
-      "name": "BOULANGERIE le RASE",
-      "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
-      "image_url": "",
-      "headline": "フランクドック",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "EpSrJN",
       "name": "Lo Splendore",
       "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
@@ -304,6 +286,15 @@
       "category": "キッチンカー"
     },
     {
+      "id": "mYSqy",
+      "name": "ヨギチョギ",
+      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
+      "image_url": "",
+      "headline": "やみつきバーガー",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "2ZSgWW",
       "name": "Y・Sキッチン",
       "url": "https://schedule.mellow.jp/ss_web/shops/2ZSgWW",
@@ -363,6 +354,15 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
       "image_url": "",
       "headline": "カルツォーネ（包み焼きピザ）",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "ldS6DO",
+      "name": "BOULANGERIE le RASE",
+      "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
+      "image_url": "",
+      "headline": "フランクドック",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
