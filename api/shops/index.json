@@ -223,29 +223,20 @@
       "category": "キッチンカー"
     },
     {
-      "id": "EpSrJN",
-      "name": "Lo Splendore",
-      "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
-      "image_url": "",
-      "headline": "生パスタ ペペロンチーノ",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "q8Sk2",
-      "name": "喫茶フラノン",
-      "url": "https://schedule.mellow.jp/ss_web/shops/q8Sk2",
-      "image_url": "",
-      "headline": "フルーツ飴",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "BdSYoz",
       "name": "MAHALO",
       "url": "https://schedule.mellow.jp/ss_web/shops/BdSYoz",
       "image_url": "",
       "headline": "特製ロコモコ丼",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "dqSe3a",
+      "name": "COLORSkitchen",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
+      "image_url": "",
+      "headline": "カルツォーネ（包み焼きピザ）",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -304,6 +295,24 @@
       "category": "キッチンカー"
     },
     {
+      "id": "EpSrJN",
+      "name": "Lo Splendore",
+      "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
+      "image_url": "",
+      "headline": "生パスタ ペペロンチーノ",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "q8Sk2",
+      "name": "喫茶フラノン",
+      "url": "https://schedule.mellow.jp/ss_web/shops/q8Sk2",
+      "image_url": "",
+      "headline": "フルーツ飴",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "mYSJlz",
       "name": "クレープラッキー",
       "url": "https://schedule.mellow.jp/ss_web/shops/mYSJlz",
@@ -349,11 +358,11 @@
       "category": "キッチンカー"
     },
     {
-      "id": "dqSe3a",
-      "name": "COLORSkitchen",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
+      "id": "evSkPV",
+      "name": "こむくろキッチン",
+      "url": "https://schedule.mellow.jp/ss_web/shops/evSkPV",
       "image_url": "",
-      "headline": "カルツォーネ（包み焼きピザ）",
+      "headline": "ハニーマスタード弁当",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
