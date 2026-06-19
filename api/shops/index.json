@@ -223,24 +223,6 @@
       "category": "キッチンカー"
     },
     {
-      "id": "BdSYoz",
-      "name": "MAHALO",
-      "url": "https://schedule.mellow.jp/ss_web/shops/BdSYoz",
-      "image_url": "",
-      "headline": "特製ロコモコ丼",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "dqSe3a",
-      "name": "COLORSkitchen",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
-      "image_url": "",
-      "headline": "カルツォーネ（包み焼きピザ）",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "pMSXgz",
       "name": "SKY KITCHEN",
       "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
@@ -363,6 +345,15 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/evSkPV",
       "image_url": "",
       "headline": "ハニーマスタード弁当",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "dqSe3a",
+      "name": "COLORSkitchen",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
+      "image_url": "",
+      "headline": "カルツォーネ（包み焼きピザ）",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
