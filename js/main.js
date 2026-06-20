@@ -24,6 +24,16 @@ function getTargetDateStr() {
     return dateStr;
 }
 
+function reloadPage() {
+    const targetDateStr = getTargetDateStr();
+    const realWorldToday = new Date().toLocaleDateString('sv-SE');
+    if (targetDateStr === realWorldToday) {
+        window.location.search = '';
+    } else {
+        window.location.reload();
+    }
+}
+
 function getShopStatus(startTime, endTime, targetDateStr) {
     const closedStatus = { label: '休業', class: 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400' };
     if (!startTime || !endTime || startTime === '00:00') return closedStatus;
@@ -84,7 +94,7 @@ async function fetchData() {
         const [scheduleRes, statusRes, masterRes] = await Promise.all([
             fetch(`${API_BASE}/${targetDateStr}`),
             fetch(`${STATUS_API}`),
-            fetch(`${BASE_PATH}/assets/master.json`)
+            fetch(`${BASE_PATH}/assets/facilities.json`)
         ]);
 
         if (masterRes.ok) master = await masterRes.json();
@@ -366,14 +376,36 @@ document.querySelectorAll('nav a').forEach(a => {
 });
 
 const dateSelector = document.getElementById('date-selector');
-if (dateSelector && typeof flatpickr === 'function') {
-    flatpickr(dateSelector, {
+const dateInput = document.getElementById('datepicker-input');
+
+if (dateSelector && dateInput && typeof flatpickr === 'function') {
+    const fp = flatpickr(dateInput, {
         locale: 'ja',
         dateFormat: 'Y-m-d',
         defaultDate: targetDateStr,
-        onChange: (selectedDates, dateStr) => { if (dateStr) window.location.search = "date=" + dateStr; }
+        disableMobile: true, // iPhoneのキーボードや標準入力を出さない
+        positionElement: dateSelector, // カレンダーを div の位置に出す
+        onChange: (selectedDates, dateStr) => {
+            if (dateStr) window.location.search = "date=" + dateStr;
+        }
     });
+
+    // 日付の div 全体のどこをクリックしてもカレンダーを開く
+    dateSelector.addEventListener('click', (e) => {
+        e.preventDefault();
+        fp.open();
+    });    
 }
+
+// const dateSelector = document.getElementById('date-selector');
+// if (dateSelector && typeof flatpickr === 'function') {
+//     flatpickr(dateSelector, {
+//         locale: 'ja',
+//         dateFormat: 'Y-m-d',
+//         defaultDate: targetDateStr,
+//         onChange: (selectedDates, dateStr) => { if (dateStr) window.location.search = "date=" + dateStr; }
+//     });
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
     const isDataPage = ['index.html', 'list.html', 'map.html', '', '/'].some(page => window.location.pathname.endsWith(page));
