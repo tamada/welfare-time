@@ -24,16 +24,6 @@ function getTargetDateStr() {
     return dateStr;
 }
 
-function reloadPage() {
-    const targetDateStr = getTargetDateStr();
-    const realWorldToday = new Date().toLocaleDateString('sv-SE');
-    if (targetDateStr === realWorldToday) {
-        window.location.search = '';
-    } else {
-        window.location.reload();
-    }
-}
-
 function getShopStatus(startTime, endTime, targetDateStr) {
     const closedStatus = { label: '休業', class: 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400' };
     if (!startTime || !endTime || startTime === '00:00') return closedStatus;
@@ -94,7 +84,7 @@ async function fetchData() {
         const [scheduleRes, statusRes, masterRes] = await Promise.all([
             fetch(`${API_BASE}/${targetDateStr}`),
             fetch(`${STATUS_API}`),
-            fetch(`${BASE_PATH}/assets/facilities.json`)
+            fetch(`${BASE_PATH}/assets/master.json`)
         ]);
 
         if (masterRes.ok) master = await masterRes.json();

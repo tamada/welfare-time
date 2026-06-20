@@ -223,20 +223,20 @@
       "category": "キッチンカー"
     },
     {
-      "id": "pMSXgz",
-      "name": "SKY KITCHEN",
-      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
+      "id": "dqSe1b",
+      "name": "メロンパンみのり",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
       "image_url": "",
-      "headline": "照り焼きチキン",
+      "headline": "メロンパンみのり",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
     {
-      "id": "JmS6yB",
-      "name": "inosen cafe",
-      "url": "https://schedule.mellow.jp/ss_web/shops/JmS6yB",
+      "id": "5gSVjO",
+      "name": "喜珈琲",
+      "url": "https://schedule.mellow.jp/ss_web/shops/5gSVjO",
       "image_url": "",
-      "headline": "マルゲリータ",
+      "headline": "レタスホットドッグ",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -268,11 +268,11 @@
       "category": "キッチンカー"
     },
     {
-      "id": "2ZSgWW",
-      "name": "Y・Sキッチン",
-      "url": "https://schedule.mellow.jp/ss_web/shops/2ZSgWW",
+      "id": "wwS21",
+      "name": "ホットドッグcafe defi",
+      "url": "https://schedule.mellow.jp/ss_web/shops/wwS21",
       "image_url": "",
-      "headline": "ほろほろ鶏肉のバターチキンカレー",
+      "headline": "ホットドッグ4種類（カレーキャベツ、オニオンピクルス、チーズサルサ、ソーセージドッグ）",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -286,38 +286,11 @@
       "category": "キッチンカー"
     },
     {
-      "id": "q8Sk2",
-      "name": "喫茶フラノン",
-      "url": "https://schedule.mellow.jp/ss_web/shops/q8Sk2",
+      "id": "JmS6yB",
+      "name": "inosen cafe",
+      "url": "https://schedule.mellow.jp/ss_web/shops/JmS6yB",
       "image_url": "",
-      "headline": "フルーツ飴",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "mYSJlz",
-      "name": "クレープラッキー",
-      "url": "https://schedule.mellow.jp/ss_web/shops/mYSJlz",
-      "image_url": "",
-      "headline": "クレープ",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "wwS21",
-      "name": "ホットドッグcafe defi",
-      "url": "https://schedule.mellow.jp/ss_web/shops/wwS21",
-      "image_url": "",
-      "headline": "ホットドッグ4種類（カレーキャベツ、オニオンピクルス、チーズサルサ、ソーセージドッグ）",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "dqSe1b",
-      "name": "メロンパンみのり",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
-      "image_url": "",
-      "headline": "メロンパンみのり",
+      "headline": "マルゲリータ",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -331,20 +304,83 @@
       "category": "キッチンカー"
     },
     {
+      "id": "ldS6DO",
+      "name": "BOULANGERIE le RASE",
+      "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
+      "image_url": "",
+      "headline": "フランクドック",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "pMSXgz",
+      "name": "SKY KITCHEN",
+      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
+      "image_url": "",
+      "headline": "照り焼きチキン",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "Z7SXr3",
+      "name": "Charubo",
+      "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
+      "image_url": "",
+      "headline": "アサイーボウル ミニ",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "BdSYoz",
+      "name": "MAHALO",
+      "url": "https://schedule.mellow.jp/ss_web/shops/BdSYoz",
+      "image_url": "",
+      "headline": "特製ロコモコ丼",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "dqSeq3",
+      "name": "旨夢路本舗",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
+      "image_url": "",
+      "headline": "旨夢路式☆創作塩からあげ",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "q8Sk2",
+      "name": "喫茶フラノン",
+      "url": "https://schedule.mellow.jp/ss_web/shops/q8Sk2",
+      "image_url": "",
+      "headline": "フルーツ飴",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "2ZSgWW",
+      "name": "Y・Sキッチン",
+      "url": "https://schedule.mellow.jp/ss_web/shops/2ZSgWW",
+      "image_url": "",
+      "headline": "ほろほろ鶏肉のバターチキンカレー",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "mYSJlz",
+      "name": "クレープラッキー",
+      "url": "https://schedule.mellow.jp/ss_web/shops/mYSJlz",
+      "image_url": "",
+      "headline": "クレープ",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "XESDOr",
       "name": "雨ノチ晴レ",
       "url": "https://schedule.mellow.jp/ss_web/shops/XESDOr",
       "image_url": "",
       "headline": "チキンオーバーライス",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "evSkPV",
-      "name": "こむくろキッチン",
-      "url": "https://schedule.mellow.jp/ss_web/shops/evSkPV",
-      "image_url": "",
-      "headline": "ハニーマスタード弁当",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -358,29 +394,11 @@
       "category": "キッチンカー"
     },
     {
-      "id": "ldS6DO",
-      "name": "BOULANGERIE le RASE",
-      "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
-      "image_url": "",
-      "headline": "フランクドック",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "5gSVA6",
       "name": "銀座六丁目、フライの家。京都店",
       "url": "https://schedule.mellow.jp/ss_web/shops/5gSVA6",
       "image_url": "",
       "headline": "チキンチーズカツライスバーガー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "dqSeq3",
-      "name": "旨夢路本舗",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
-      "image_url": "",
-      "headline": "旨夢路式☆創作塩からあげ",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
