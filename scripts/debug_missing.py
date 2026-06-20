@@ -61,6 +61,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("pdf", help="Path to input PDF")
     parser.add_argument("json", help="Path to extracted JSON")
-    parser.add_argument("--master", default="scripts/master.json", help="Path to master.json")
+    parser.add_argument("--master", default="scripts/facilities.json", help="Path to facilities.json")
     args = parser.parse_args()
     analyze_missing(args.pdf, args.json, args.master)

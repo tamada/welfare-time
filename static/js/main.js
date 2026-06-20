@@ -94,7 +94,7 @@ async function fetchData() {
         const [scheduleRes, statusRes, masterRes] = await Promise.all([
             fetch(`${API_BASE}/${targetDateStr}`),
             fetch(`${STATUS_API}`),
-            fetch(`${BASE_PATH}/assets/master.json`)
+            fetch(`${BASE_PATH}/assets/facilities.json`)
         ]);
 
         if (masterRes.ok) master = await masterRes.json();

@@ -6,7 +6,7 @@ PDF_SRC_DIR = $(DATA_DIR)/pdfs
 KITCHEN_CARS_SRC = $(DATA_DIR)/kitchencars
 DEST_DIR = static
 PDFS_DEST_DIR = $(DEST_DIR)/daily
-MASTER_JSON = $(SCRIPTS_DIR)/master.json
+FACILITIES_JSON = $(SCRIPTS_DIR)/facilities.json
 
 # Output files
 KITCHEN_CARS_RAW = $(KITCHEN_CARS_SRC)/raw.html
@@ -60,12 +60,13 @@ $(KITCHEN_CARS_JSON): $(KITCHEN_CARS_RAW)
 generate: parse_pdf parse_kitchencar
 	@mkdir -p $(PDFS_DEST_DIR)
 	@cp -n $(PDF_SRC_DIR)/*.pdf $(PDFS_DEST_DIR)/ 2>/dev/null || true
+	@cp $(FACILITIES_JSON) $(DEST_DIR)/assets
 	@cp $(PDF_SRC_DIR)/.metadata.json $(PDFS_DEST_DIR)/ 2>/dev/null || true
 	$(PYTHON) $(SCRIPTS_DIR)/generator.py \
 		--cafeteria-dir $(DATA_DIR)/cafeterias \
 		--kitchen-cars $(KITCHEN_CARS_JSON) \
 		--kitchen-cars-archive $(DATA_DIR)/kitchen_cars_past.json \
-		--master $(MASTER_JSON) \
+		--master $(FACILITIES_JSON) \
 		-o $(DEST_DIR)
 
 css:
