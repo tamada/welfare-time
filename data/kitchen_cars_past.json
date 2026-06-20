@@ -19,5 +19,165 @@
     "location": "並木道",
     "start_time": "11:30",
     "end_time": "15:00"
+  },
+  {
+    "id": "メロンパンみのり",
+    "location": "",
+    "date": "2026-06-01",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "メロンパンみのり",
+    "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b"
+  },
+  {
+    "id": "喜珈琲",
+    "location": "",
+    "date": "2026-06-01",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "レタスホットドッグ",
+    "url": "https://schedule.mellow.jp/ss_web/shops/5gSVjO"
+  },
+  {
+    "id": "もんきち",
+    "location": "",
+    "date": "2026-06-02",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "デミグラスオムライス",
+    "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R"
+  },
+  {
+    "id": "TeraCinquecento",
+    "location": "",
+    "date": "2026-06-02",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "ビビンバ",
+    "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP"
+  },
+  {
+    "id": "ヨギチョギ",
+    "location": "",
+    "date": "2026-06-03",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "やみつきバーガー",
+    "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy"
+  },
+  {
+    "id": "ホットドッグcafe defi",
+    "location": "",
+    "date": "2026-06-03",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "ホットドッグ4種類（カレーキャベツ、オニオンピクルス、チーズサルサ、ソーセージドッグ）",
+    "url": "https://schedule.mellow.jp/ss_web/shops/wwS21"
+  },
+  {
+    "id": "Lo Splendore",
+    "location": "",
+    "date": "2026-06-04",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "生パスタ ペペロンチーノ",
+    "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN"
+  },
+  {
+    "id": "inosen cafe",
+    "location": "",
+    "date": "2026-06-04",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "マルゲリータ",
+    "url": "https://schedule.mellow.jp/ss_web/shops/JmS6yB"
+  },
+  {
+    "id": "Panda Kitchen",
+    "location": "",
+    "date": "2026-06-05",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "クロッフル",
+    "url": "https://schedule.mellow.jp/ss_web/shops/vmSb9R"
+  },
+  {
+    "id": "BOULANGERIE le RASE",
+    "location": "",
+    "date": "2026-06-05",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "フランクドック",
+    "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO"
+  },
+  {
+    "id": "SKY KITCHEN",
+    "location": "",
+    "date": "2026-06-08",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "照り焼きチキン",
+    "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz"
+  },
+  {
+    "id": "メロンパンみのり",
+    "location": "",
+    "date": "2026-06-08",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "メロンパンみのり",
+    "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b"
+  },
+  {
+    "id": "もんきち",
+    "location": "",
+    "date": "2026-06-09",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "デミグラスオムライス",
+    "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R"
+  },
+  {
+    "id": "TeraCinquecento",
+    "location": "",
+    "date": "2026-06-09",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "ビビンバ",
+    "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP"
+  },
+  {
+    "id": "ヨギチョギ",
+    "location": "",
+    "date": "2026-06-10",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "やみつきバーガー",
+    "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy"
+  },
+  {
+    "id": "BOULANGERIE le RASE",
+    "location": "",
+    "date": "2026-06-10",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "フランクドック",
+    "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO"
   }
 ]
