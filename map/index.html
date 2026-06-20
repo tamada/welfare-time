@@ -1,278 +1,43 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welfare-Time | マップ</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="/welfare-time/css/compiled.css">
-    
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-16KW5F4YZC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-16KW5F4YZC');
-</script>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/welfare-time/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/welfare-time/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/welfare-time/favicons/favicon-16x16.png">
-<link rel="manifest" href="/welfare-time/favicons/site.webmanifest">
-<link rel="shortcut icon" href="/welfare-time/favicons/favicon.ico">
-
-    <link rel="stylesheet" href="/welfare-time/assets/style.css">
-</head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 min-h-screen transition-colors duration-200">
-    <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-        <nav class="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
-    
-    <a href="/welfare-time/" class="flex items-center gap-2 group shrink-0">
-        
-        <img src="/welfare-time/assets/icon.svg" alt="Logo" class="w-8 h-8 transition-transform group-hover:scale-110">
-        
-        <span class="font-black text-xl tracking-tighter text-ksu dark:text-blue-400">Welfare-Time</span>
-    </a>
-    
-    
-    <div class="flex items-center gap-1 md:gap-2 overflow-x-auto no-scrollbar py-2">
-        
-        <div class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-full p-1 mr-2 shrink-0">
-            <button onclick="reloadPage()" class="p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400" title="更新">
-                <i class="bi bi-arrow-clockwise"></i>
-            </button>
-            <button onclick="openModal('filterModal')" class="p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400" title="表示フィルタ">
-                <i class="bi bi-funnel"></i>
-            </button>
-            <button onclick="openModal('sortModal')" class="p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400" title="並び替え">
-                <i class="bi bi-sort-down"></i>
-            </button>
-            <button onclick="openModal('statusModal')" class="p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400" title="情報">
-                <i class="bi bi-info-circle"></i>
-            </button>
-        </div>
-        
-        <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 md:mx-2 shrink-0"></div>
-
-        
-        <div class="flex items-center gap-1 md:gap-2 shrink-0">
-            
-            <a href="/welfare-time/" class="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400 whitespace-nowrap">
-                <i class="bi bi-grid-fill"></i>
-                <span class="hidden sm:inline">カード</span>
-            </a>
-            
-            <a href="/welfare-time/map/" class="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400 whitespace-nowrap">
-                <i class="bi bi-map"></i>
-                <span class="hidden sm:inline">マップ</span>
-            </a>
-            
-            <a href="https://github.com/tamada/welfare-time" class="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400 whitespace-nowrap">
-                <i class="bi bi-github"></i>
-                <span class="hidden sm:inline">GitHub</span>
-            </a>
-            
-            <a href="/welfare-time/help/" class="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400 whitespace-nowrap">
-                <i class="bi bi-question-circle"></i>
-                <span class="hidden sm:inline">ヘルプ</span>
-            </a>
-            
-        </div>
-
-        <button id="btn-theme" class="p-2 ml-1 md:ml-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-all shrink-0" title="テーマ切り替え">
-            <i class="bi bi-moon-fill"></i>
-        </button>
-    </div>
-</nav>
-
-        
-    <div class="bg-white/50 dark:bg-slate-900/50 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 py-3 shadow-sm">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-4 relative">
-        
-        
-        <div class="flex items-center gap-3">
-            
-            <div id="date-selector" class="flex items-center gap-3 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-ksu dark:hover:border-blue-500 transition-all cursor-pointer shadow-sm group">
-                <i class="bi bi-calendar3 text-ksu dark:text-blue-400 group-hover:scale-110 transition-transform"></i>
-                <span id="current-date-display" class="font-bold text-sm md:text-base">----年--月--日 (ー)</span>
-                <input type="text" id="datepicker-input" style="position: absolute !important; width: 0 !important; height: 0 !important; padding: 0 !important; margin: 0 !important; border: none !important; opacity: 0 !important; pointer-events: none !important;">
-            </div>
-
-            
-            <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-lg shadow-inner">
-                <button id="prev-day" class="px-3 py-1.5 hover:bg-white dark:hover:bg-slate-700 rounded-md transition-all text-xs font-bold text-slate-600 dark:text-slate-300">
-                    <i class="bi bi-chevron-left"></i> 前日
-                </button>
-                <button id="today-btn" class="px-4 py-1.5 bg-ksu text-white rounded-md shadow-md text-xs font-black mx-1 transition-transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:scale-100">
-                    今日
-                </button>
-                <button id="next-day" class="px-3 py-1.5 hover:bg-white dark:hover:bg-slate-700 rounded-md transition-all text-xs font-bold text-slate-600 dark:text-slate-300">
-                    翌日 <i class="bi bi-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-
-        
-        <div class="text-right flex flex-col items-end gap-1">
-            <div id="header-data-range" class="text-[10px] md:text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded"></div>
-            <div id="status-info" class="text-[10px] text-slate-400 dark:text-slate-500 italic"></div>
-        </div>
-    </div>
-</div>
-
-
-    </header>
-
-    <main class="max-w-7xl mx-auto px-4 py-6">
-        
-<div class="grid grid-cols-1 md:grid-cols-12 gap-1">
-    
-    <div class="md:col-span-7 lg:col-span-7">
-        <div id="map-wrapper" class="relative bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden">
-            <img src="/welfare-time/assets/campus_map.jpg" alt="Campus Map" class="w-full h-auto block">
-            <div id="overlay" class="absolute inset-0 z-20"></div>
-            
-            
-            <div id="map-feedback-overlay" class="absolute inset-0 z-30 bg-slate-900/60 backdrop-blur-[2px] hidden items-center justify-center transition-all duration-300">
-                <span class="bg-white/90 dark:bg-slate-800/90 px-4 py-2 rounded-full text-sm font-bold shadow-xl border border-slate-200 dark:border-slate-700">
-                    この店舗はマップ外です
-                </span>
-            </div>
-        </div>
-        
-        
-        <div class="mt-4 flex justify-center lg:justify-start">
-            <a href="https://www.kyoto-su.ac.jp/campus/cam_map/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400 rounded-lg text-xs font-bold transition-colors">
-                <i class="bi bi-map-fill text-ksu dark:text-blue-400"></i>
-                京都産業大学 キャンパスマップ (公式サイト)
-                <i class="bi bi-box-arrow-up-right text-[10px]"></i>
-            </a>
-        </div>
-    </div>
-
-    
-    <div class="md:col-span-5 lg:col-span-5">
-        <div id="shop-grid" class="flex flex-col gap-1">
-            
-            <div class="animate-pulse space-y-3">
-                <div class="h-24 bg-slate-200 dark:bg-slate-800 rounded-xl"></div>
-                <div class="h-24 bg-slate-200 dark:bg-slate-800 rounded-xl"></div>
-                <div class="h-24 bg-slate-200 dark:bg-slate-800 rounded-xl"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="tooltip" class="fixed pointer-events-none z-50 bg-slate-900/90 text-white px-2 py-1 rounded text-xs hidden"></div>
-
-    </main>
-
-    <footer class="mt-auto py-8 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-center text-[10px] md:text-xs text-slate-400 dark:text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4">
-        <span>&copy; 2026 <a href="https://tamadalab.github.io/" class="text-ksu dark:text-blue-400 hover:underline" target="_blank">Tamada Lab.</a></span>
-        <span class="hidden md:inline text-slate-200 dark:text-slate-700">|</span>
-        <a href="https://github.com/tamada/welfare-time" class="font-bold text-ksu dark:text-blue-400 hover:underline" target="_blank">
-            <i class="bi bi-github"></i> GitHub
-        </a>
-    </div>
-</footer>
-
-
-    
-    <div id="modal-backdrop" class="fixed inset-0 z-[60] hidden bg-slate-900/50 backdrop-blur-sm items-center justify-center p-4">
-        
-        <div id="filterModal" class="hidden w-full max-w-md bg-white dark:bg-slate-800 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
-            <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
-                <h5 class="text-lg font-bold">表示フィルタ</h5>
-                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-                    <i class="bi bi-x-lg text-xl"></i>
-                </button>
-            </div>
-            <div id="filter-options-body" class="px-6 py-4 max-h-[60vh] overflow-y-auto"></div>
-            <div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-700 flex gap-3">
-                <button id="reset-filter" class="flex-1 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors">リセット</button>
-                <button onclick="closeModal()" class="flex-1 px-4 py-2 text-sm font-medium bg-ksu text-white hover:bg-ksu/90 rounded-lg transition-colors">閉じる</button>
-            </div>
-        </div>
-
-        
-        <div id="sortModal" class="hidden w-full max-w-md bg-white dark:bg-slate-800 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
-            <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
-                <h5 class="text-lg font-bold">並び替え</h5>
-                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-                    <i class="bi bi-x-lg text-xl"></i>
-                </button>
-            </div>
-            <div class="px-6 py-4 space-y-3">
-                <label class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors group">
-                    <input type="radio" name="sortOption" value="status" class="sort-radio w-4 h-4 text-ksu border-slate-300 focus:ring-ksu dark:border-slate-600 dark:bg-slate-700">
-                    <span class="text-slate-700 dark:text-slate-200 group-hover:text-ksu dark:group-hover:text-white transition-colors">営業状況順（営業中を優先）</span>
-                </label>
-                <label class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors group">
-                    <input type="radio" name="sortOption" value="name" class="sort-radio w-4 h-4 text-ksu border-slate-300 focus:ring-ksu dark:border-slate-600 dark:bg-slate-700">
-                    <span class="text-slate-700 dark:text-slate-200 group-hover:text-ksu dark:group-hover:text-white transition-colors">名称順</span>
-                </label>
-                <label class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors group">
-                    <input type="radio" name="sortOption" value="location" class="sort-radio w-4 h-4 text-ksu border-slate-300 focus:ring-ksu dark:border-slate-600 dark:bg-slate-700">
-                    <span class="text-slate-700 dark:text-slate-200 group-hover:text-ksu dark:group-hover:text-white transition-colors">場所順</span>
-                </label>
-            </div>
-            <div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-700">
-                <button onclick="closeModal()" class="w-full px-4 py-2 text-sm font-medium bg-ksu text-white hover:bg-ksu/90 rounded-lg transition-colors">閉じる</button>
-            </div>
-        </div>
-
-        
-        <div id="statusModal" class="hidden w-full max-w-md bg-white dark:bg-slate-800 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
-            <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
-                <h5 class="text-lg font-bold">情報元</h5>
-                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-                    <i class="bi bi-x-lg text-xl"></i>
-                </button>
-            </div>
-            <div class="px-6 py-4">
-                <div id="source-links" class="space-y-2"></div>
-            </div>
-            <div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-700">
-                <button onclick="closeModal()" class="w-full px-4 py-2 text-sm font-medium bg-ksu text-white hover:bg-ksu/90 rounded-lg transition-colors">閉じる</button>
-            </div>
-        </div>
-    </div>
-
-    
-    <div id="loading-overlay" class="fixed inset-0 z-[100] hidden bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm items-center justify-center">
-        <div class="flex flex-col items-center gap-4">
-            <div class="w-12 h-12 border-4 border-ksu border-t-transparent rounded-full animate-spin"></div>
-            <p class="text-sm font-medium text-slate-600 dark:text-slate-400">読み込み中...</p>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
-    <script src="/welfare-time/js/filter.js"></script>
-    <script src="/welfare-time/js/sort.js"></script>
-    <script src="/welfare-time/js/main.js"></script>
-    <script>
-        function openModal(id) {
-            const backdrop = document.getElementById('modal-backdrop');
-            const modal = document.getElementById(id);
-            backdrop.classList.remove('hidden');
-            backdrop.classList.add('flex');
-            modal.classList.remove('hidden');
-        }
-        function closeModal() {
-            const backdrop = document.getElementById('modal-backdrop');
-            backdrop.classList.add('hidden');
-            backdrop.classList.remove('flex');
-            const modals = ['filterModal', 'sortModal', 'statusModal'];
-            modals.forEach(m => document.getElementById(m).classList.add('hidden'));
-        }
-        
-        document.getElementById('modal-backdrop').onclick = function(e) {
-            if (e.target === this) closeModal();
-        };
-    </script>
-</body>
-</html>
+<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Welfare-Time | マップ</title><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css><link rel=stylesheet href=/welfare-time/css/compiled.css><script async src="https://www.googletagmanager.com/gtag/js?id=G-16KW5F4YZC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-16KW5F4YZC")</script><link rel=apple-touch-icon sizes=180x180 href=/welfare-time/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/welfare-time/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/welfare-time/favicons/favicon-16x16.png><link rel=manifest href=/welfare-time/favicons/site.webmanifest><link rel="shortcut icon" href=/welfare-time/favicons/favicon.ico><link rel=stylesheet href=/welfare-time/assets/style.css></head><body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 min-h-screen transition-colors duration-200"><header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800"><nav class="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between gap-4"><a href=/welfare-time/ class="flex items-center gap-2 group shrink-0"><img src=/welfare-time/assets/icon.svg alt=Logo class="w-8 h-8 transition-transform group-hover:scale-110">
+<span class="font-black text-xl tracking-tighter text-ksu dark:text-blue-400">Welfare-Time</span></a><div class="flex items-center gap-1 md:gap-2 overflow-x-auto no-scrollbar py-2"><div class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-full p-1 mr-2 shrink-0"><button onclick=reloadPage() class="p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400" title=更新>
+<i class="bi bi-arrow-clockwise"></i></button>
+<button onclick='openModal("filterModal")' class="p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400" title=表示フィルタ>
+<i class="bi bi-funnel"></i></button>
+<button onclick='openModal("sortModal")' class="p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400" title=並び替え>
+<i class="bi bi-sort-down"></i></button>
+<button onclick='openModal("statusModal")' class="p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400" title=情報>
+<i class="bi bi-info-circle"></i></button></div><div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 md:mx-2 shrink-0"></div><div class="flex items-center gap-1 md:gap-2 shrink-0"><a href=/welfare-time/ class="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400 whitespace-nowrap"><i class="bi bi-grid-fill"></i>
+<span class="hidden sm:inline">カード</span></a>
+<a href=/welfare-time/map/ class="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400 whitespace-nowrap"><i class="bi bi-map"></i>
+<span class="hidden sm:inline">マップ</span></a>
+<a href=https://github.com/tamada/welfare-time class="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400 whitespace-nowrap"><i class="bi bi-github"></i>
+<span class="hidden sm:inline">GitHub</span></a>
+<a href=/welfare-time/help/ class="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400 whitespace-nowrap"><i class="bi bi-question-circle"></i>
+<span class="hidden sm:inline">ヘルプ</span></a></div><button id=btn-theme class="p-2 ml-1 md:ml-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-all shrink-0" title=テーマ切り替え>
+<i class="bi bi-moon-fill"></i></button></div></nav><div class="bg-white/50 dark:bg-slate-900/50 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 py-3 shadow-sm"><div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-4 relative"><div class="flex items-center gap-3"><div id=date-selector class="flex items-center gap-3 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-ksu dark:hover:border-blue-500 transition-all cursor-pointer shadow-sm group"><i class="bi bi-calendar3 text-ksu dark:text-blue-400 group-hover:scale-110 transition-transform"></i>
+<span id=current-date-display class="font-bold text-sm md:text-base">----年--月--日 (ー)</span>
+<input type=text id=datepicker-input style=position:absolute!important;width:0!important;height:0!important;padding:0!important;margin:0!important;border:none!important;opacity:0!important;pointer-events:none!important></div><div class="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-lg shadow-inner"><button id=prev-day class="px-3 py-1.5 hover:bg-white dark:hover:bg-slate-700 rounded-md transition-all text-xs font-bold text-slate-600 dark:text-slate-300">
+<i class="bi bi-chevron-left"></i> 前日</button>
+<button id=today-btn class="px-4 py-1.5 bg-ksu text-white rounded-md shadow-md text-xs font-black mx-1 transition-transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:scale-100">
+今日</button>
+<button id=next-day class="px-3 py-1.5 hover:bg-white dark:hover:bg-slate-700 rounded-md transition-all text-xs font-bold text-slate-600 dark:text-slate-300">
+翌日 <i class="bi bi-chevron-right"></i></button></div></div><div class="text-right flex flex-col items-end gap-1"><div id=header-data-range class="text-[10px] md:text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded"></div><div id=status-info class="text-[10px] text-slate-400 dark:text-slate-500 italic"></div></div></div></div></header><main class="max-w-7xl mx-auto px-4 py-6"><div class="grid grid-cols-1 md:grid-cols-12 gap-1"><div class="md:col-span-7 lg:col-span-7"><div id=map-wrapper class="relative bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden"><img src=/welfare-time/assets/campus_map.jpg alt="Campus Map" class="w-full h-auto block"><div id=overlay class="absolute inset-0 z-20"></div><div id=map-feedback-overlay class="absolute inset-0 z-30 bg-slate-900/60 backdrop-blur-[2px] hidden items-center justify-center transition-all duration-300"><span class="bg-white/90 dark:bg-slate-800/90 px-4 py-2 rounded-full text-sm font-bold shadow-xl border border-slate-200 dark:border-slate-700">この店舗はマップ外です</span></div></div><div class="mt-4 flex justify-center lg:justify-start"><a href=https://www.kyoto-su.ac.jp/campus/cam_map/ target=_blank class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400 rounded-lg text-xs font-bold transition-colors"><i class="bi bi-map-fill text-ksu dark:text-blue-400"></i>
+京都産業大学 キャンパスマップ (公式サイト)
+<i class="bi bi-box-arrow-up-right text-[10px]"></i></a></div></div><div class="md:col-span-5 lg:col-span-5"><div id=shop-grid class="flex flex-col gap-1"><div class="animate-pulse space-y-3"><div class="h-24 bg-slate-200 dark:bg-slate-800 rounded-xl"></div><div class="h-24 bg-slate-200 dark:bg-slate-800 rounded-xl"></div><div class="h-24 bg-slate-200 dark:bg-slate-800 rounded-xl"></div></div></div></div></div><div id=tooltip class="fixed pointer-events-none z-50 bg-slate-900/90 text-white px-2 py-1 rounded text-xs hidden"></div></main><footer class="mt-auto py-8 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-center text-[10px] md:text-xs text-slate-400 dark:text-slate-500"><div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4"><span>&copy; 2026 <a href=https://tamadalab.github.io/ class="text-ksu dark:text-blue-400 hover:underline" target=_blank>Tamada Lab.</a></span>
+<span class="hidden md:inline text-slate-200 dark:text-slate-700">|</span>
+<a href=https://github.com/tamada/welfare-time class="font-bold text-ksu dark:text-blue-400 hover:underline" target=_blank><i class="bi bi-github"></i> GitHub</a></div></footer><div id=modal-backdrop class="fixed inset-0 z-[60] hidden bg-slate-900/50 backdrop-blur-sm items-center justify-center p-4"><div id=filterModal class="hidden w-full max-w-md bg-white dark:bg-slate-800 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200"><div class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center"><h5 class="text-lg font-bold">表示フィルタ</h5><button onclick=closeModal() class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+<i class="bi bi-x-lg text-xl"></i></button></div><div id=filter-options-body class="px-6 py-4 max-h-[60vh] overflow-y-auto"></div><div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-700 flex gap-3"><button id=reset-filter class="flex-1 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors">リセット</button>
+<button onclick=closeModal() class="flex-1 px-4 py-2 text-sm font-medium bg-ksu text-white hover:bg-ksu/90 rounded-lg transition-colors">閉じる</button></div></div><div id=sortModal class="hidden w-full max-w-md bg-white dark:bg-slate-800 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200"><div class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center"><h5 class="text-lg font-bold">並び替え</h5><button onclick=closeModal() class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+<i class="bi bi-x-lg text-xl"></i></button></div><div class="px-6 py-4 space-y-3"><label class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors group"><input type=radio name=sortOption value=status class="sort-radio w-4 h-4 text-ksu border-slate-300 focus:ring-ksu dark:border-slate-600 dark:bg-slate-700">
+<span class="text-slate-700 dark:text-slate-200 group-hover:text-ksu dark:group-hover:text-white transition-colors">営業状況順（営業中を優先）</span></label>
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors group"><input type=radio name=sortOption value=name class="sort-radio w-4 h-4 text-ksu border-slate-300 focus:ring-ksu dark:border-slate-600 dark:bg-slate-700">
+<span class="text-slate-700 dark:text-slate-200 group-hover:text-ksu dark:group-hover:text-white transition-colors">名称順</span></label>
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors group"><input type=radio name=sortOption value=location class="sort-radio w-4 h-4 text-ksu border-slate-300 focus:ring-ksu dark:border-slate-600 dark:bg-slate-700">
+<span class="text-slate-700 dark:text-slate-200 group-hover:text-ksu dark:group-hover:text-white transition-colors">場所順</span></label></div><div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-700"><button onclick=closeModal() class="w-full px-4 py-2 text-sm font-medium bg-ksu text-white hover:bg-ksu/90 rounded-lg transition-colors">閉じる</button></div></div><div id=statusModal class="hidden w-full max-w-md bg-white dark:bg-slate-800 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200"><div class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center"><h5 class="text-lg font-bold">情報元</h5><button onclick=closeModal() class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+<i class="bi bi-x-lg text-xl"></i></button></div><div class="px-6 py-4"><div id=source-links class=space-y-2></div></div><div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-700"><button onclick=closeModal() class="w-full px-4 py-2 text-sm font-medium bg-ksu text-white hover:bg-ksu/90 rounded-lg transition-colors">閉じる</button></div></div></div><div id=loading-overlay class="fixed inset-0 z-[100] hidden bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm items-center justify-center"><div class="flex flex-col items-center gap-4"><div class="w-12 h-12 border-4 border-ksu border-t-transparent rounded-full animate-spin"></div><p class="text-sm font-medium text-slate-600 dark:text-slate-400">読み込み中...</p></div></div><script src=https://cdn.jsdelivr.net/npm/flatpickr></script>
+<script src=https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js></script>
+<script src=/welfare-time/js/filter.js></script>
+<script src=/welfare-time/js/sort.js></script>
+<script src=/welfare-time/js/main.js></script>
+<script>function openModal(e){const t=document.getElementById("modal-backdrop"),n=document.getElementById(e);t.classList.remove("hidden"),t.classList.add("flex"),n.classList.remove("hidden")}function closeModal(){const e=document.getElementById("modal-backdrop");e.classList.add("hidden"),e.classList.remove("flex");const t=["filterModal","sortModal","statusModal"];t.forEach(e=>document.getElementById(e).classList.add("hidden"))}document.getElementById("modal-backdrop").onclick=function(e){e.target===this&&closeModal()}</script></body></html>

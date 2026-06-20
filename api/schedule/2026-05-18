@@ -1,6 +1,6 @@
 {
   "date": "2026-05-18",
-  "last_updated": "2026-05-31T13:29:24.225659+09:00",
+  "last_updated": "2026-06-20T16:07:07.683947+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -292,21 +292,7 @@
       "note": ""
     }
   ],
-  "kitchen_cars": [
-    {
-      "id": "mellow-shop-001",
-      "name": "mellow-shop-001",
-      "url": "",
-      "image_url": "",
-      "headline": "",
-      "location": "並木道",
-      "category": "キッチンカー",
-      "start_time": "11:30",
-      "end_time": "15:00",
-      "business_hours": "",
-      "note": ""
-    }
-  ],
+  "kitchen_cars": [],
   "sources": [
     {
       "name": "2026_05.pdf",

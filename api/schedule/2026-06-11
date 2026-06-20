@@ -1,6 +1,6 @@
 {
   "date": "2026-06-11",
-  "last_updated": "2026-05-31T13:29:24.225659+09:00",
+  "last_updated": "2026-06-20T16:07:07.683947+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -292,34 +292,7 @@
       "note": ""
     }
   ],
-  "kitchen_cars": [
-    {
-      "id": "EpSrJN",
-      "name": "Lo Splendore",
-      "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
-      "image_url": "",
-      "headline": "生パスタ ペペロンチーノ",
-      "location": "大学内指定場所",
-      "category": "キッチンカー",
-      "start_time": "11:00",
-      "end_time": "17:00",
-      "business_hours": "11:00〜17:00",
-      "note": ""
-    },
-    {
-      "id": "Z7SXr3",
-      "name": "Charubo",
-      "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
-      "image_url": "",
-      "headline": "アサイーボウル ミニ",
-      "location": "大学内指定場所",
-      "category": "キッチンカー",
-      "start_time": "11:00",
-      "end_time": "17:00",
-      "business_hours": "11:00〜17:00",
-      "note": ""
-    }
-  ],
+  "kitchen_cars": [],
   "sources": [
     {
       "name": "2026_06.pdf",

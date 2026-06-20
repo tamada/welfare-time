@@ -1,6 +1,6 @@
 {
   "date": "2026-07-03",
-  "last_updated": "2026-05-31T13:29:24.225659+09:00",
+  "last_updated": "2026-06-20T16:07:07.683947+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -55,11 +55,11 @@
       "note": ""
     },
     {
-      "id": "ldS6DO",
-      "name": "BOULANGERIE le RASE",
-      "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
+      "id": "evSkPV",
+      "name": "こむくろキッチン",
+      "url": "https://schedule.mellow.jp/ss_web/shops/evSkPV",
       "image_url": "",
-      "headline": "フランクドック",
+      "headline": "ハニーマスタード弁当",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",

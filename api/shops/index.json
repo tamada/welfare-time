@@ -205,24 +205,6 @@
       "headline": ""
     },
     {
-      "id": "mellow-shop-001",
-      "name": "mellow-shop-001",
-      "url": "",
-      "image_url": "",
-      "headline": "",
-      "location": "並木道",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "mellow-shop-002",
-      "name": "mellow-shop-002",
-      "url": "",
-      "image_url": "",
-      "headline": "",
-      "location": "中央広場",
-      "category": "キッチンカー"
-    },
-    {
       "id": "dqSe1b",
       "name": "メロンパンみのり",
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSe1b",
@@ -322,29 +304,11 @@
       "category": "キッチンカー"
     },
     {
-      "id": "Z7SXr3",
-      "name": "Charubo",
-      "url": "https://schedule.mellow.jp/ss_web/shops/Z7SXr3",
+      "id": "2ZSgWW",
+      "name": "Y・Sキッチン",
+      "url": "https://schedule.mellow.jp/ss_web/shops/2ZSgWW",
       "image_url": "",
-      "headline": "アサイーボウル ミニ",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "BdSYoz",
-      "name": "MAHALO",
-      "url": "https://schedule.mellow.jp/ss_web/shops/BdSYoz",
-      "image_url": "",
-      "headline": "特製ロコモコ丼",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "dqSeq3",
-      "name": "旨夢路本舗",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
-      "image_url": "",
-      "headline": "旨夢路式☆創作塩からあげ",
+      "headline": "ほろほろ鶏肉のバターチキンカレー",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -354,15 +318,6 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/q8Sk2",
       "image_url": "",
       "headline": "フルーツ飴",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "2ZSgWW",
-      "name": "Y・Sキッチン",
-      "url": "https://schedule.mellow.jp/ss_web/shops/2ZSgWW",
-      "image_url": "",
-      "headline": "ほろほろ鶏肉のバターチキンカレー",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
@@ -385,6 +340,15 @@
       "category": "キッチンカー"
     },
     {
+      "id": "evSkPV",
+      "name": "こむくろキッチン",
+      "url": "https://schedule.mellow.jp/ss_web/shops/evSkPV",
+      "image_url": "",
+      "headline": "ハニーマスタード弁当",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
       "id": "dqSe3a",
       "name": "COLORSkitchen",
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
@@ -399,6 +363,15 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/5gSVA6",
       "image_url": "",
       "headline": "チキンチーズカツライスバーガー",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "dqSeq3",
+      "name": "旨夢路本舗",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
+      "image_url": "",
+      "headline": "旨夢路式☆創作塩からあげ",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
