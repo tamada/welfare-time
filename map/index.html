@@ -41,6 +41,9 @@
     <div class="flex items-center gap-1 md:gap-2 overflow-x-auto no-scrollbar py-2">
         
         <div class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-full p-1 mr-2 shrink-0">
+            <button onclick="reloadPage()" class="p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400" title="更新">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
             <button onclick="openModal('filterModal')" class="p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all text-slate-600 dark:text-slate-400 hover:text-ksu dark:hover:text-blue-400" title="表示フィルタ">
                 <i class="bi bi-funnel"></i>
             </button>
@@ -95,7 +98,7 @@
             <div id="date-selector" class="flex items-center gap-3 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-ksu dark:hover:border-blue-500 transition-all cursor-pointer shadow-sm group">
                 <i class="bi bi-calendar3 text-ksu dark:text-blue-400 group-hover:scale-110 transition-transform"></i>
                 <span id="current-date-display" class="font-bold text-sm md:text-base">----年--月--日 (ー)</span>
-                <input type="hidden" id="datepicker-input">
+                <input type="text" id="datepicker-input" class="absolute invisible w-px h-px overflow-hidden pointer-events-none appearance-none border-none outline-none" style="position: absolute; left: -10000px; top: -10000px;">
             </div>
 
             
