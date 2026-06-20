@@ -103,10 +103,23 @@ async function fetchData() {
         if (scheduleRes.ok) {
             currentData = await scheduleRes.json();
             
+            // Extract categories dynamically from facilities data
+            const categories = [];
+            if (master && master.cafeterias) {
+                master.cafeterias.forEach(c => {
+                    if (c.category && !categories.includes(c.category)) {
+                        categories.push(c.category);
+                    }
+                });
+            }
+            if (!categories.includes('キッチンカー')) {
+                categories.push('キッチンカー');
+            }
+
             // Initialize Filter and Sort Modules
             Filter.load();
             Sort.load();
-            Filter.initUI(master.categories || [], render);
+            Filter.initUI(categories, render);
             Sort.initUI(render);
             
             render();
