@@ -1,6 +1,6 @@
 {
-  "date": "2026-06-22",
-  "last_updated": "2026-06-21T08:01:27.305042+09:00",
+  "date": "2026-06-23",
+  "last_updated": "2026-06-22T08:06:02.268056+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -294,11 +294,11 @@
   ],
   "kitchen_cars": [
     {
-      "id": "pMSXgz",
-      "name": "SKY KITCHEN",
-      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
+      "id": "Z7S1R",
+      "name": "もんきち",
+      "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
       "image_url": "",
-      "headline": "照り焼きチキン",
+      "headline": "デミグラスオムライス",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -307,11 +307,11 @@
       "note": ""
     },
     {
-      "id": "JmS6yB",
-      "name": "inosen cafe",
-      "url": "https://schedule.mellow.jp/ss_web/shops/JmS6yB",
+      "id": "DlSmRP",
+      "name": "TeraCinquecento",
+      "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
       "image_url": "",
-      "headline": "マルゲリータ",
+      "headline": "ビビンバ",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
