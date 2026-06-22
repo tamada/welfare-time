@@ -1,6 +1,6 @@
 {
-  "date": "2026-06-22",
-  "last_updated": "2026-06-22T08:06:02.268056+09:00",
+  "date": "2026-06-23",
+  "last_updated": "2026-06-23T08:18:17.024114+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -294,11 +294,24 @@
   ],
   "kitchen_cars": [
     {
-      "id": "pMSXgz",
-      "name": "SKY KITCHEN",
-      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
+      "id": "Z7S1R",
+      "name": "もんきち",
+      "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
       "image_url": "",
-      "headline": "照り焼きチキン",
+      "headline": "デミグラスオムライス",
+      "location": "大学内指定場所",
+      "category": "キッチンカー",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "business_hours": "11:00〜17:00",
+      "note": ""
+    },
+    {
+      "id": "DlSmRP",
+      "name": "TeraCinquecento",
+      "url": "https://schedule.mellow.jp/ss_web/shops/DlSmRP",
+      "image_url": "",
+      "headline": "ビビンバ",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",

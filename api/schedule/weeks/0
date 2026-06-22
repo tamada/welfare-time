@@ -2,12 +2,12 @@
   "week_index": 0,
   "start_date": "2026-06-22",
   "end_date": "2026-06-28",
-  "last_updated": "2026-06-22T08:06:02.268056+09:00",
+  "last_updated": "2026-06-23T08:18:17.024114+09:00",
   "timezone": "JST",
   "daily_schedules": [
     {
       "date": "2026-06-22",
-      "last_updated": "2026-06-22T08:06:02.268056+09:00",
+      "last_updated": "2026-06-23T08:18:17.024114+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -299,21 +299,7 @@
           "note": ""
         }
       ],
-      "kitchen_cars": [
-        {
-          "id": "pMSXgz",
-          "name": "SKY KITCHEN",
-          "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
-          "image_url": "",
-          "headline": "照り焼きチキン",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        }
-      ],
+      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_06.pdf",
@@ -323,7 +309,7 @@
     },
     {
       "date": "2026-06-23",
-      "last_updated": "2026-06-22T08:06:02.268056+09:00",
+      "last_updated": "2026-06-23T08:18:17.024114+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -652,7 +638,7 @@
     },
     {
       "date": "2026-06-24",
-      "last_updated": "2026-06-22T08:06:02.268056+09:00",
+      "last_updated": "2026-06-23T08:18:17.024114+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -967,7 +953,7 @@
     },
     {
       "date": "2026-06-25",
-      "last_updated": "2026-06-22T08:06:02.268056+09:00",
+      "last_updated": "2026-06-23T08:18:17.024114+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -1296,7 +1282,7 @@
     },
     {
       "date": "2026-06-26",
-      "last_updated": "2026-06-22T08:06:02.268056+09:00",
+      "last_updated": "2026-06-23T08:18:17.024114+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -1625,7 +1611,7 @@
     },
     {
       "date": "2026-06-27",
-      "last_updated": "2026-06-22T08:06:02.268056+09:00",
+      "last_updated": "2026-06-23T08:18:17.024114+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -1745,7 +1731,7 @@
     },
     {
       "date": "2026-06-28",
-      "last_updated": "2026-06-22T08:06:02.268056+09:00",
+      "last_updated": "2026-06-23T08:18:17.024114+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
