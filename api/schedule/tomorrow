@@ -1,6 +1,6 @@
 {
-  "date": "2026-06-25",
-  "last_updated": "2026-06-24T08:03:17.594650+09:00",
+  "date": "2026-06-26",
+  "last_updated": "2026-06-25T08:01:14.681880+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -294,11 +294,11 @@
   ],
   "kitchen_cars": [
     {
-      "id": "EpSrJN",
-      "name": "Lo Splendore",
-      "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
+      "id": "mYSJlz",
+      "name": "クレープラッキー",
+      "url": "https://schedule.mellow.jp/ss_web/shops/mYSJlz",
       "image_url": "",
-      "headline": "生パスタ ペペロンチーノ",
+      "headline": "クレープ",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -307,11 +307,11 @@
       "note": ""
     },
     {
-      "id": "q8Sk2",
-      "name": "喫茶フラノン",
-      "url": "https://schedule.mellow.jp/ss_web/shops/q8Sk2",
+      "id": "wwS21",
+      "name": "ホットドッグcafe defi",
+      "url": "https://schedule.mellow.jp/ss_web/shops/wwS21",
       "image_url": "",
-      "headline": "フルーツ飴",
+      "headline": "ホットドッグ4種類（カレーキャベツ、オニオンピクルス、チーズサルサ、ソーセージドッグ）",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",

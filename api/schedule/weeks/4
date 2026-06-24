@@ -2,12 +2,12 @@
   "week_index": 4,
   "start_date": "2026-07-20",
   "end_date": "2026-07-26",
-  "last_updated": "2026-06-24T08:03:17.594650+09:00",
+  "last_updated": "2026-06-25T08:01:14.681880+09:00",
   "timezone": "JST",
   "daily_schedules": [
     {
       "date": "2026-07-20",
-      "last_updated": "2026-06-24T08:03:17.594650+09:00",
+      "last_updated": "2026-06-25T08:01:14.681880+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -52,7 +52,7 @@
     },
     {
       "date": "2026-07-21",
-      "last_updated": "2026-06-24T08:03:17.594650+09:00",
+      "last_updated": "2026-06-25T08:01:14.681880+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -97,7 +97,7 @@
     },
     {
       "date": "2026-07-22",
-      "last_updated": "2026-06-24T08:03:17.594650+09:00",
+      "last_updated": "2026-06-25T08:01:14.681880+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -142,7 +142,7 @@
     },
     {
       "date": "2026-07-23",
-      "last_updated": "2026-06-24T08:03:17.594650+09:00",
+      "last_updated": "2026-06-25T08:01:14.681880+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -187,7 +187,7 @@
     },
     {
       "date": "2026-07-24",
-      "last_updated": "2026-06-24T08:03:17.594650+09:00",
+      "last_updated": "2026-06-25T08:01:14.681880+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -232,7 +232,7 @@
     },
     {
       "date": "2026-07-25",
-      "last_updated": "2026-06-24T08:03:17.594650+09:00",
+      "last_updated": "2026-06-25T08:01:14.681880+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -277,7 +277,7 @@
     },
     {
       "date": "2026-07-26",
-      "last_updated": "2026-06-24T08:03:17.594650+09:00",
+      "last_updated": "2026-06-25T08:01:14.681880+09:00",
       "timezone": "JST",
       "cafeterias": [],
       "kitchen_cars": [],
