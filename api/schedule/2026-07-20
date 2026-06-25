@@ -1,8 +1,22 @@
 {
   "date": "2026-07-20",
-  "last_updated": "2026-06-25T08:01:14.681880+09:00",
+  "last_updated": "2026-06-26T08:12:01.202947+09:00",
   "timezone": "JST",
   "cafeterias": [
+    {
+      "id": "family-mart-motoyama",
+      "name": "ファミリーマート",
+      "location": "本山寮",
+      "category": "コンビニ",
+      "url": "",
+      "google_map": "",
+      "image_url": "",
+      "headline": "",
+      "start_time": "6:00",
+      "end_time": "22:00",
+      "business_hours": "日~月 6:00~22:00",
+      "note": ""
+    },
     {
       "id": "chushin-atm",
       "name": "京都中央信用金庫ATM",
@@ -41,5 +55,10 @@
     }
   ],
   "kitchen_cars": [],
-  "sources": []
+  "sources": [
+    {
+      "name": "2026_07.pdf",
+      "url": "daily/2026_07.pdf"
+    }
+  ]
 }
