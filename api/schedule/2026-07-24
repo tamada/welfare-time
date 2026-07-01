@@ -1,6 +1,6 @@
 {
   "date": "2026-07-24",
-  "last_updated": "2026-07-01T08:05:21.269953+09:00",
+  "last_updated": "2026-07-02T08:07:23.349765+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -71,20 +71,6 @@
       "start_time": "10:00",
       "end_time": "19:00",
       "business_hours": "平日 10:00~19:00 土 10:00~15:00",
-      "note": ""
-    },
-    {
-      "id": "kamukura",
-      "name": "どうとんぼり神座",
-      "location": "真理館1F",
-      "category": "食堂",
-      "url": "https://www.kyoto-su.ac.jp/campus/welfare/kamukura/kamukura.html",
-      "google_map": "",
-      "image_url": "",
-      "headline": "白菜たっぷり、最後の一滴までおいしいラーメン",
-      "start_time": "11:00",
-      "end_time": "17:00",
-      "business_hours": "平日 11:00~17:00",
       "note": ""
     },
     {
