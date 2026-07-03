@@ -304,24 +304,6 @@
       "category": "キッチンカー"
     },
     {
-      "id": "XESDOr",
-      "name": "雨ノチ晴レ",
-      "url": "https://schedule.mellow.jp/ss_web/shops/XESDOr",
-      "image_url": "",
-      "headline": "チキンオーバーライス",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "evSkPV",
-      "name": "こむくろキッチン",
-      "url": "https://schedule.mellow.jp/ss_web/shops/evSkPV",
-      "image_url": "",
-      "headline": "ハニーマスタード弁当",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "dqSe3a",
       "name": "COLORSkitchen",
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
@@ -336,6 +318,15 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/5gSVA6",
       "image_url": "",
       "headline": "チキンチーズカツライスバーガー",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "XESDOr",
+      "name": "雨ノチ晴レ",
+      "url": "https://schedule.mellow.jp/ss_web/shops/XESDOr",
+      "image_url": "",
+      "headline": "チキンオーバーライス",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
