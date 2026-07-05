@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-06",
-  "last_updated": "2026-07-05T07:52:20.453527+09:00",
+  "date": "2026-07-07",
+  "last_updated": "2026-07-06T07:56:32.137619+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -280,11 +280,24 @@
   ],
   "kitchen_cars": [
     {
-      "id": "pMSXgz",
-      "name": "SKY KITCHEN",
-      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
+      "id": "Z7S1R",
+      "name": "もんきち",
+      "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
       "image_url": "",
-      "headline": "照り焼きチキン",
+      "headline": "デミグラスオムライス",
+      "location": "大学内指定場所",
+      "category": "キッチンカー",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "business_hours": "11:00〜17:00",
+      "note": ""
+    },
+    {
+      "id": "dqSe3a",
+      "name": "COLORSkitchen",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
+      "image_url": "",
+      "headline": "カルツォーネ（包み焼きピザ）",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
