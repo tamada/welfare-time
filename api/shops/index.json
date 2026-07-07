@@ -304,15 +304,6 @@
       "category": "キッチンカー"
     },
     {
-      "id": "dqSe3a",
-      "name": "COLORSkitchen",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
-      "image_url": "",
-      "headline": "カルツォーネ（包み焼きピザ）",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "5gSVA6",
       "name": "銀座六丁目、フライの家。京都店",
       "url": "https://schedule.mellow.jp/ss_web/shops/5gSVA6",
@@ -363,6 +354,24 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSeXG",
       "image_url": "",
       "headline": "本日のブリトー",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "dqSe3a",
+      "name": "COLORSkitchen",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
+      "image_url": "",
+      "headline": "カルツォーネ（包み焼きピザ）",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "q8Sk2",
+      "name": "喫茶フラノン",
+      "url": "https://schedule.mellow.jp/ss_web/shops/q8Sk2",
+      "image_url": "",
+      "headline": "フルーツ飴",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     }
