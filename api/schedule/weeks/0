@@ -2,12 +2,12 @@
   "week_index": 0,
   "start_date": "2026-07-06",
   "end_date": "2026-07-12",
-  "last_updated": "2026-07-09T07:58:25.680545+09:00",
+  "last_updated": "2026-07-10T08:05:43.296488+09:00",
   "timezone": "JST",
   "daily_schedules": [
     {
       "date": "2026-07-06",
-      "last_updated": "2026-07-09T07:58:25.680545+09:00",
+      "last_updated": "2026-07-10T08:05:43.296488+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -295,7 +295,7 @@
     },
     {
       "date": "2026-07-07",
-      "last_updated": "2026-07-09T07:58:25.680545+09:00",
+      "last_updated": "2026-07-10T08:05:43.296488+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -583,7 +583,7 @@
     },
     {
       "date": "2026-07-08",
-      "last_updated": "2026-07-09T07:58:25.680545+09:00",
+      "last_updated": "2026-07-10T08:05:43.296488+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -857,7 +857,7 @@
     },
     {
       "date": "2026-07-09",
-      "last_updated": "2026-07-09T07:58:25.680545+09:00",
+      "last_updated": "2026-07-10T08:05:43.296488+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -1135,34 +1135,7 @@
           "note": ""
         }
       ],
-      "kitchen_cars": [
-        {
-          "id": "EpSrJN",
-          "name": "Lo Splendore",
-          "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
-          "image_url": "",
-          "headline": "生パスタ ペペロンチーノ",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        },
-        {
-          "id": "5gSVA6",
-          "name": "銀座六丁目、フライの家。京都店",
-          "url": "https://schedule.mellow.jp/ss_web/shops/5gSVA6",
-          "image_url": "",
-          "headline": "チキンチーズカツライスバーガー",
-          "location": "大学内指定場所",
-          "category": "キッチンカー",
-          "start_time": "11:00",
-          "end_time": "17:00",
-          "business_hours": "11:00〜17:00",
-          "note": ""
-        }
-      ],
+      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_07.pdf",
@@ -1172,7 +1145,7 @@
     },
     {
       "date": "2026-07-10",
-      "last_updated": "2026-07-09T07:58:25.680545+09:00",
+      "last_updated": "2026-07-10T08:05:43.296488+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -1487,7 +1460,7 @@
     },
     {
       "date": "2026-07-11",
-      "last_updated": "2026-07-09T07:58:25.680545+09:00",
+      "last_updated": "2026-07-10T08:05:43.296488+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
@@ -1607,7 +1580,7 @@
     },
     {
       "date": "2026-07-12",
-      "last_updated": "2026-07-09T07:58:25.680545+09:00",
+      "last_updated": "2026-07-10T08:05:43.296488+09:00",
       "timezone": "JST",
       "cafeterias": [
         {
