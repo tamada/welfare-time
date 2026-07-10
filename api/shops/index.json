@@ -304,24 +304,6 @@
       "category": "キッチンカー"
     },
     {
-      "id": "XESDOr",
-      "name": "雨ノチ晴レ",
-      "url": "https://schedule.mellow.jp/ss_web/shops/XESDOr",
-      "image_url": "",
-      "headline": "チキンオーバーライス",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "2ZSgWW",
-      "name": "Y・Sキッチン",
-      "url": "https://schedule.mellow.jp/ss_web/shops/2ZSgWW",
-      "image_url": "",
-      "headline": "ほろほろ鶏肉のバターチキンカレー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
       "id": "dqSeq3",
       "name": "旨夢路本舗",
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
@@ -354,6 +336,15 @@
       "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
       "image_url": "",
       "headline": "カルツォーネ（包み焼きピザ）",
+      "location": "大学内指定場所",
+      "category": "キッチンカー"
+    },
+    {
+      "id": "2ZSgWW",
+      "name": "Y・Sキッチン",
+      "url": "https://schedule.mellow.jp/ss_web/shops/2ZSgWW",
+      "image_url": "",
+      "headline": "ほろほろ鶏肉のバターチキンカレー",
       "location": "大学内指定場所",
       "category": "キッチンカー"
     },
