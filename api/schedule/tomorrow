@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-13",
-  "last_updated": "2026-07-12T07:40:43.391959+09:00",
+  "date": "2026-07-14",
+  "last_updated": "2026-07-13T07:40:41.762800+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -280,11 +280,11 @@
   ],
   "kitchen_cars": [
     {
-      "id": "dqSeq3",
-      "name": "旨夢路本舗",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeq3",
+      "id": "Z7S1R",
+      "name": "もんきち",
+      "url": "https://schedule.mellow.jp/ss_web/shops/Z7S1R",
       "image_url": "",
-      "headline": "旨夢路式☆創作塩からあげ",
+      "headline": "デミグラスオムライス",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -293,11 +293,11 @@
       "note": ""
     },
     {
-      "id": "PVSjPy",
-      "name": "こちとら",
-      "url": "https://schedule.mellow.jp/ss_web/shops/PVSjPy",
+      "id": "dqSeXG",
+      "name": "京タコス",
+      "url": "https://schedule.mellow.jp/ss_web/shops/dqSeXG",
       "image_url": "",
-      "headline": "漬け卵黄",
+      "headline": "本日のブリトー",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
