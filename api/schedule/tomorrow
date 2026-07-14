@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-15",
-  "last_updated": "2026-07-14T07:50:37.761780+09:00",
+  "date": "2026-07-16",
+  "last_updated": "2026-07-15T07:52:09.731112+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -43,6 +43,20 @@
       "start_time": "11:00",
       "end_time": "17:00",
       "business_hours": "平日 11:00~19:00 土 11:00~14:00",
+      "note": ""
+    },
+    {
+      "id": "cosmic-bakery-cafe",
+      "name": "cosmic bakery cafe",
+      "location": "並楽館2F",
+      "category": "食堂",
+      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/bakery.html",
+      "google_map": "",
+      "image_url": "",
+      "headline": "テイクアウト弁当をメインにホットスナックなどを販売",
+      "start_time": "11:30",
+      "end_time": "13:30",
+      "business_hours": "平日 11:30~13:30",
       "note": ""
     },
     {
@@ -153,7 +167,7 @@
       "image_url": "",
       "headline": "",
       "start_time": "8:00",
-      "end_time": "18:00",
+      "end_time": "19:00",
       "business_hours": "平日 8:00~19:00 水 8:00~18:00 土 8:00~17:00",
       "note": ""
     },
@@ -209,7 +223,7 @@
       "image_url": "",
       "headline": "",
       "start_time": "8:00",
-      "end_time": "18:00",
+      "end_time": "19:00",
       "business_hours": "平日 8:00~19:00 水 8:00~18:00 土 8:00~17:00",
       "note": ""
     },
@@ -266,11 +280,11 @@
   ],
   "kitchen_cars": [
     {
-      "id": "vmSb9R",
-      "name": "Panda Kitchen",
-      "url": "https://schedule.mellow.jp/ss_web/shops/vmSb9R",
+      "id": "EpSrJN",
+      "name": "Lo Splendore",
+      "url": "https://schedule.mellow.jp/ss_web/shops/EpSrJN",
       "image_url": "",
-      "headline": "クロッフル",
+      "headline": "生パスタ ペペロンチーノ",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -279,11 +293,11 @@
       "note": ""
     },
     {
-      "id": "dqSe3a",
-      "name": "COLORSkitchen",
-      "url": "https://schedule.mellow.jp/ss_web/shops/dqSe3a",
+      "id": "pMSXgz",
+      "name": "SKY KITCHEN",
+      "url": "https://schedule.mellow.jp/ss_web/shops/pMSXgz",
       "image_url": "",
-      "headline": "カルツォーネ（包み焼きピザ）",
+      "headline": "照り焼きチキン",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
