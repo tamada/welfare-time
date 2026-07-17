@@ -302,24 +302,6 @@
       "headline": "照り焼きチキン",
       "location": "大学内指定場所",
       "category": "キッチンカー"
-    },
-    {
-      "id": "2ZSgWW",
-      "name": "Y・Sキッチン",
-      "url": "https://schedule.mellow.jp/ss_web/shops/2ZSgWW",
-      "image_url": "",
-      "headline": "ほろほろ鶏肉のバターチキンカレー",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
-    },
-    {
-      "id": "q8Sk2",
-      "name": "喫茶フラノン",
-      "url": "https://schedule.mellow.jp/ss_web/shops/q8Sk2",
-      "image_url": "",
-      "headline": "フルーツ飴",
-      "location": "大学内指定場所",
-      "category": "キッチンカー"
     }
   ]
 }
