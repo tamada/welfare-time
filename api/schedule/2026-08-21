@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-15",
+  "date": "2026-08-21",
   "last_updated": "2026-07-20T07:43:54.826629+09:00",
   "timezone": "JST",
   "cafeterias": [
@@ -11,8 +11,8 @@
       "category": "ATM",
       "headline": "",
       "start_time": "08:45",
-      "end_time": "17:00",
-      "business_hours": "08:45-17:00",
+      "end_time": "19:00",
+      "business_hours": "08:45-19:00",
       "note": ""
     },
     {
@@ -23,8 +23,8 @@
       "category": "ATM",
       "headline": "",
       "start_time": "08:45",
-      "end_time": "17:00",
-      "business_hours": "08:45-17:00",
+      "end_time": "19:00",
+      "business_hours": "08:45-19:00",
       "note": ""
     },
     {
@@ -35,8 +35,8 @@
       "category": "ATM",
       "headline": "",
       "start_time": "08:45",
-      "end_time": "17:00",
-      "business_hours": "08:45-17:00",
+      "end_time": "19:00",
+      "business_hours": "08:45-19:00",
       "note": ""
     }
   ],
