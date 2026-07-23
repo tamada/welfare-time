@@ -280,6 +280,34 @@
       "start_time": "12:00",
       "end_time": "13:00",
       "note": "パンのみ"
+    },
+    {
+      "date": "2026-08-26",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-27",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-28",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-31",
+      "location": "むすびわざ館1F",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "note": ""
     }
   ]
 }

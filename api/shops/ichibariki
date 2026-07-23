@@ -546,6 +546,111 @@
       "start_time": "11:00",
       "end_time": "17:00",
       "note": ""
+    },
+    {
+      "date": "2026-08-01",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:30",
+      "note": ""
+    },
+    {
+      "date": "2026-08-02",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:30",
+      "note": ""
+    },
+    {
+      "date": "2026-08-03",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-04",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-05",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-06",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-07",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-20",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-21",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-24",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-25",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-26",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-27",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-28",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-31",
+      "location": "並楽館1F",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "note": ""
     }
   ]
 }

@@ -392,6 +392,20 @@
       "start_time": "11:00",
       "end_time": "14:00",
       "note": ""
+    },
+    {
+      "date": "2026-08-01",
+      "location": "雄飛館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-02",
+      "location": "雄飛館2F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
     }
   ]
 }

@@ -532,6 +532,69 @@
       "start_time": "11:00",
       "end_time": "14:00",
       "note": ""
+    },
+    {
+      "date": "2026-08-05",
+      "location": "真理館1F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-06",
+      "location": "真理館1F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-07",
+      "location": "真理館1F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-20",
+      "location": "真理館1F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-21",
+      "location": "真理館1F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-24",
+      "location": "真理館1F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-25",
+      "location": "真理館1F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-26",
+      "location": "真理館1F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
+    },
+    {
+      "date": "2026-08-27",
+      "location": "真理館1F",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "note": ""
     }
   ]
 }
