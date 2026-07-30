@@ -1,8 +1,22 @@
 {
-  "date": "2026-07-31",
-  "last_updated": "2026-07-30T07:19:41.534774+09:00",
+  "date": "2026-08-01",
+  "last_updated": "2026-07-31T07:23:21.752238+09:00",
   "timezone": "JST",
   "cafeterias": [
+    {
+      "id": "fujikatsu",
+      "name": "ふじカツ",
+      "location": "並楽館1F",
+      "category": "食堂",
+      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/fujikatu.html",
+      "google_map": "",
+      "image_url": "",
+      "headline": "ボリューム満点！あげたてカツの専門店",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "business_hours": "平日 11:30~14:00",
+      "note": ""
+    },
     {
       "id": "ichibariki",
       "name": "らーめん壱馬力",
@@ -13,36 +27,64 @@
       "image_url": "",
       "headline": "京都の有名ラーメン店「麺屋しゃかりき」の2号店",
       "start_time": "11:00",
-      "end_time": "17:00",
+      "end_time": "15:30",
       "business_hours": "平日 11:00~19:00 土 11:00~14:00",
       "note": ""
     },
     {
-      "id": "sukiya",
-      "name": "すき家",
-      "location": "真理館1F",
+      "id": "miyako",
+      "name": "MIYAKO製麺",
+      "location": "並楽館2F",
       "category": "食堂",
-      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/sukiya.html",
+      "url": "https://www.kyoto-su.ac.jp/campus/welfare/miyako/",
       "google_map": "",
       "image_url": "",
-      "headline": "真理館１階に本学初のフードコートが誕生",
+      "headline": "店内で製麺する本格的なうどん専門店",
       "start_time": "11:00",
-      "end_time": "14:00",
-      "business_hours": "平日 10:00~19:00 土 10:00~15:00",
+      "end_time": "15:00",
+      "business_hours": "平日 11:00~14:00",
       "note": ""
     },
     {
-      "id": "ascella",
-      "name": "ブックセンター Ascella（アスケラ）",
-      "location": "雄飛館1F",
-      "category": "ショップ",
+      "id": "libre",
+      "name": "LIBRE（リブレ）",
+      "location": "並楽館3F",
+      "category": "食堂",
+      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/libre.html",
+      "google_map": "",
+      "image_url": "",
+      "headline": "なんでも揃う学内最大のカフェテリアレストラン",
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "business_hours": "平日 11:30~14:00",
+      "note": ""
+    },
+    {
+      "id": "musubi",
+      "name": "むすびキッチン",
+      "location": "雄飛館2F",
+      "category": "食堂",
+      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/nagomi.html",
+      "google_map": "",
+      "image_url": "",
+      "headline": "ラーニングコモンズ内に誕生した新たな洋食レストラン",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "business_hours": "平日 11:30~14:00",
+      "note": ""
+    },
+    {
+      "id": "family-mart-heiraku",
+      "name": "ファミリーマート",
+      "location": "並楽館1F",
+      "category": "コンビニ",
       "url": "",
       "google_map": "",
       "image_url": "",
       "headline": "",
-      "start_time": "8:45",
-      "end_time": "17:00",
-      "business_hours": "平日 8:45~17:00",
+      "start_time": "8:00",
+      "end_time": "15:30",
+      "business_hours": "平日 8:00~19:00 水 8:00~18:00 土 8:00~17:00",
       "note": ""
     },
     {
@@ -55,22 +97,8 @@
       "image_url": "",
       "headline": "",
       "start_time": "10:00",
-      "end_time": "15:00",
-      "business_hours": "平日 10:00~17:00",
-      "note": ""
-    },
-    {
-      "id": "maruzen-pc",
-      "name": "丸善 パソコンプロショップ",
-      "location": "天地館1F",
-      "category": "ショップ",
-      "url": "",
-      "google_map": "",
-      "image_url": "",
-      "headline": "",
-      "start_time": "10:00",
       "end_time": "16:00",
-      "business_hours": "平日 10:00~18:00",
+      "business_hours": "平日 10:00~17:00",
       "note": ""
     },
     {
@@ -97,7 +125,7 @@
       "image_url": "",
       "headline": "",
       "start_time": "8:00",
-      "end_time": "15:00",
+      "end_time": "15:30",
       "business_hours": "平日 8:00~19:00 水 8:00~18:00 土 8:00~17:00",
       "note": ""
     },
@@ -123,8 +151,8 @@
       "category": "ATM",
       "headline": "",
       "start_time": "08:45",
-      "end_time": "19:00",
-      "business_hours": "08:45-19:00",
+      "end_time": "17:00",
+      "business_hours": "08:45-17:00",
       "note": ""
     },
     {
@@ -135,8 +163,8 @@
       "category": "ATM",
       "headline": "",
       "start_time": "08:45",
-      "end_time": "19:00",
-      "business_hours": "08:45-19:00",
+      "end_time": "17:00",
+      "business_hours": "08:45-17:00",
       "note": ""
     },
     {
@@ -147,16 +175,16 @@
       "category": "ATM",
       "headline": "",
       "start_time": "08:45",
-      "end_time": "19:00",
-      "business_hours": "08:45-19:00",
+      "end_time": "17:00",
+      "business_hours": "08:45-17:00",
       "note": ""
     }
   ],
   "kitchen_cars": [],
   "sources": [
     {
-      "name": "2026_07.pdf",
-      "url": "daily/2026_07.pdf"
+      "name": "2026_08.pdf",
+      "url": "daily/2026_08.pdf"
     }
   ]
 }
