@@ -1,6 +1,5 @@
 {
   "date": "2026-06-05",
-  "last_updated": "2026-07-31T07:23:21.752238+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -294,11 +293,11 @@
   ],
   "kitchen_cars": [
     {
-      "id": "vmSb9R",
-      "name": "Panda Kitchen",
-      "url": "https://schedule.mellow.jp/ss_web/shops/vmSb9R",
+      "id": "ldS6DO",
+      "name": "BOULANGERIE le RASE",
+      "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
       "image_url": "",
-      "headline": "クロッフル",
+      "headline": "フランクドック",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -307,11 +306,11 @@
       "note": ""
     },
     {
-      "id": "ldS6DO",
-      "name": "BOULANGERIE le RASE",
-      "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
+      "id": "vmSb9R",
+      "name": "Panda Kitchen",
+      "url": "https://schedule.mellow.jp/ss_web/shops/vmSb9R",
       "image_url": "",
-      "headline": "フランクドック",
+      "headline": "クロッフル",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",

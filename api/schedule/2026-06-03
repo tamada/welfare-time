@@ -1,6 +1,5 @@
 {
   "date": "2026-06-03",
-  "last_updated": "2026-07-31T07:23:21.752238+09:00",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -280,11 +279,11 @@
   ],
   "kitchen_cars": [
     {
-      "id": "mYSqy",
-      "name": "ヨギチョギ",
-      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
+      "id": "wwS21",
+      "name": "ホットドッグcafe defi",
+      "url": "https://schedule.mellow.jp/ss_web/shops/wwS21",
       "image_url": "",
-      "headline": "やみつきバーガー",
+      "headline": "ホットドッグ4種類（カレーキャベツ、オニオンピクルス、チーズサルサ、ソーセージドッグ）",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
@@ -293,11 +292,11 @@
       "note": ""
     },
     {
-      "id": "wwS21",
-      "name": "ホットドッグcafe defi",
-      "url": "https://schedule.mellow.jp/ss_web/shops/wwS21",
+      "id": "mYSqy",
+      "name": "ヨギチョギ",
+      "url": "https://schedule.mellow.jp/ss_web/shops/mYSqy",
       "image_url": "",
-      "headline": "ホットドッグ4種類（カレーキャベツ、オニオンピクルス、チーズサルサ、ソーセージドッグ）",
+      "headline": "やみつきバーガー",
       "location": "大学内指定場所",
       "category": "キッチンカー",
       "start_time": "11:00",
