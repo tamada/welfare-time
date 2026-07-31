@@ -12,7 +12,7 @@ Welfare-Time のデータを活用するためのAPIエンドポイントです�
 ```json
 {
   "date": "2026-05-18",
-  "last_updated": "2026-05-18T07:00:00",
+  "timezone": "JST",
   "cafeterias": [
     {
       "id": "shop-id",
@@ -34,6 +34,7 @@ Welfare-Time のデータを活用するためのAPIエンドポイントです�
 
 - `/api/schedule/YYYY-MM-DD` の GET リクエストにより当該日時の営業店舗の情報を取得できます。
 - `/api/schedule/tomorrow`, `/api/schedule/yesterday` で翌日、昨日の営業店舗の情報を取得できます。
+- データ全体の更新時刻は `/api/status` の `last_updated` で取得できます。
 
 ## 2. 店舗一覧 (`/api/shops`)
 
