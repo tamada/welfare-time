@@ -81,6 +81,10 @@ jobs:
           git fetch origin gh-pages
           git worktree add public gh-pages
 
+          # api配下は完全な生成物なので、毎回作り直して古いIDのファイルが
+          # 残り続けないようにする。daily配下のPDFは累積するため消さない。
+          rm -rf public/api
+
           make build_html
 
       - name: commit and push changes
