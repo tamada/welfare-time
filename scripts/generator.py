@@ -83,22 +83,30 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
     if isinstance(past_archive, dict):
         past_archive = []
     
-    seen_past = {(d["id"], d["date"]) for d in past_archive}
-    for d in all_scraped_kitchen_cars:
-        if d["date"] < today_str and (d["id"], d["date"]) not in seen_past:
-            past_archive.append(d)
-            seen_past.add((d["id"], d["date"]))
-    save_json(past_archive, kitchen_cars_archive)
-    
-    kitchen_car_schedules = past_archive + [d for d in all_scraped_kitchen_cars if d["date"] >= today_str]
-    unique_kc = []
-    seen_kc = set()
-    for d in kitchen_car_schedules:
+    # Entries before today are frozen: the source site drops past data quickly,
+    # so the archive is the only record of what actually happened.
+    # Entries from today on are replaced by the scraped data, so that cancellations
+    # and time changes are reflected. Today's entries become frozen tomorrow.
+    frozen_past = [d for d in past_archive if d["date"] < today_str]
+    # A scrape may still contain past entries (e.g. recovering after skipped runs);
+    # archive them too instead of dropping them. Archived entries take precedence.
+    frozen_past += [d for d in all_scraped_kitchen_cars if d["date"] < today_str]
+    if all_scraped_kitchen_cars:
+        upcoming = [d for d in all_scraped_kitchen_cars if d["date"] >= today_str]
+    else:
+        # An empty scrape most likely means a fetch failure; keep the archive as is.
+        upcoming = [d for d in past_archive if d["date"] >= today_str]
+
+    past_archive = []
+    seen_past = set()
+    for d in frozen_past + upcoming:
         key = (d["id"], d["date"])
-        if key not in seen_kc:
-            unique_kc.append(d)
-            seen_kc.add(key)
-    kitchen_car_schedules = unique_kc
+        if key not in seen_past:
+            past_archive.append(d)
+            seen_past.add(key)
+    save_json(past_archive, kitchen_cars_archive)
+
+    kitchen_car_schedules = past_archive
 
     # 3. Initialize Schedule Map
     schedule_map = {}
