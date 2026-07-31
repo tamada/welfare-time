@@ -114,8 +114,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
     def get_or_create_date(date_str):
         if date_str not in schedule_map:
             schedule_map[date_str] = {
-                "date": date_str, 
-                "last_updated": last_updated, 
+                "date": date_str,
                 "timezone": "JST",
                 "cafeterias": [], 
                 "kitchen_cars": [],
@@ -273,7 +272,6 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
             "week_index": w,
             "start_date": week_start.strftime("%Y-%m-%d"),
             "end_date": (week_start + timedelta(days=6)).strftime("%Y-%m-%d"),
-            "last_updated": last_updated,
             "timezone": "JST",
             "daily_schedules": daily_schedules
         }
