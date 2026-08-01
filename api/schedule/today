@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-01",
+  "date": "2026-08-02",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -140,42 +140,6 @@
       "start_time": "6:00",
       "end_time": "22:00",
       "business_hours": "日~月 6:00~22:00",
-      "note": ""
-    },
-    {
-      "id": "chushin-atm",
-      "name": "京都中央信用金庫ATM",
-      "url": "",
-      "location": "並楽館陸橋下",
-      "category": "ATM",
-      "headline": "",
-      "start_time": "08:45",
-      "end_time": "17:00",
-      "business_hours": "08:45-17:00",
-      "note": ""
-    },
-    {
-      "id": "yucho-atm",
-      "name": "ゆうちょ銀行ATM",
-      "url": "",
-      "location": "並楽館陸橋下",
-      "category": "ATM",
-      "headline": "",
-      "start_time": "08:45",
-      "end_time": "17:00",
-      "business_hours": "08:45-17:00",
-      "note": ""
-    },
-    {
-      "id": "smbc-atm",
-      "name": "三井住友銀行ATM",
-      "url": "",
-      "location": "並楽館1F",
-      "category": "ATM",
-      "headline": "",
-      "start_time": "08:45",
-      "end_time": "17:00",
-      "business_hours": "08:45-17:00",
       "note": ""
     }
   ],
