@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-04",
+  "date": "2026-08-05",
   "timezone": "JST",
   "cafeterias": [
     {
@@ -14,6 +14,20 @@
       "start_time": "11:00",
       "end_time": "15:00",
       "business_hours": "平日 11:00~19:00 土 11:00~14:00",
+      "note": ""
+    },
+    {
+      "id": "sukiya",
+      "name": "すき家",
+      "location": "真理館1F",
+      "category": "食堂",
+      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/sukiya.html",
+      "google_map": "",
+      "image_url": "",
+      "headline": "真理館１階に本学初のフードコートが誕生",
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "business_hours": "平日 10:00~19:00 土 10:00~15:00",
       "note": ""
     },
     {
