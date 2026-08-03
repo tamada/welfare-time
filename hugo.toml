@@ -1,4 +1,4 @@
-baseURL = 'https://tamada.github.io/welfare-time/'
+baseURL = 'https://tamadalab.github.io/welfare-time/'
 locale = 'ja'
 title = 'Welfare-Time'
 
@@ -21,7 +21,7 @@ unsafe = true
   weight = 30
 [[menus.main]]
   name = "GitHub"
-  url = "https://github.com/tamada/welfare-time"
+  url = "https://github.com/tamadalab/welfare-time"
   params = { icon = "bi-github" }
   weight = 40
 [[menus.main]]

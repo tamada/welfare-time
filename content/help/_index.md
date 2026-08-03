@@ -50,4 +50,4 @@ type: "help"
 
 不具合の報告や改善の提案は、GitHubのリポジトリまでお寄せください。
 
-- [tamada/welfare-time](https://github.com/tamada/welfare-time)
+- [tamadalab/welfare-time](https://github.com/tamadalab/welfare-time)
