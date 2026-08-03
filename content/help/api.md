@@ -3,7 +3,7 @@ title: "💻 API 利用ガイド"
 type: "help"
 ---
 
-Welfare-Time のデータを活用するためのAPIエンドポイントです。すべてGETリクエストでアクセス可能です。
+Welfare TIME のデータを活用するためのAPIエンドポイントです。すべてGETリクエストでアクセス可能です。
 
 ## 1. 今日の予定 (`/api/schedule/today`)
 

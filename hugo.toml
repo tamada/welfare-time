@@ -1,6 +1,6 @@
 baseURL = 'https://tamadalab.github.io/welfare-time/'
 locale = 'ja'
-title = 'Welfare-Time'
+title = 'Welfare TIME'
 
 [params]
   brand_icon = "assets/icon.svg"
