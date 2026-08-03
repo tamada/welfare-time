@@ -1,4 +1,4 @@
-# W-TIME
+# Welfare TIME
 
 現代の大学生活のための、福利厚生の時間と情報ナビ（Welfare Time & Information for Modern Education）です。
 
