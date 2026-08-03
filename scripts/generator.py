@@ -48,11 +48,12 @@ def get_id_from_url(url, fallback_name):
             return match.group(1)
     return slugify(fallback_name)
 
-def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen_cars_archive):
+def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen_cars_archive, base_url):
     # Use JST for all time-based logic and timestamps
     now_jst = datetime.now(JST)
     today_str = now_jst.strftime("%Y-%m-%d")
     last_updated = now_jst.isoformat()
+    base_url = base_url.rstrip("/")
     
     # 1. Load Master Data
     master_raw = load_json(master_path)
@@ -137,8 +138,8 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
             for s in entries:
                 day_data = get_or_create_date(s["date"])
                 
-                # Add source to day as a relative path for the frontend
-                source_entry = {"name": source_filename, "url": f"daily/{source_filename}"}
+                # Add source to day as an absolute path for the frontend
+                source_entry = {"name": source_filename, "url": f"{base_url}/daily/{source_filename}"}
                 if source_entry not in day_data["sources"]:
                     day_data["sources"].append(source_entry)
 
@@ -306,7 +307,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
     global_sources = []
     if isinstance(metadata, dict):
         for filename, info in metadata.items():
-            global_sources.append({"name": filename, "url": f"daily/{filename}"})
+            global_sources.append({"name": filename, "url": f"{base_url}/daily/{filename}"})
 
     save_json({
         "last_updated": last_updated,
@@ -323,5 +324,6 @@ if __name__ == "__main__":
     parser.add_argument("--kitchen-cars-archive", required=True)
     parser.add_argument("--master", required=True)
     parser.add_argument("-o", "--output-dir", required=True)
+    parser.add_argument("--base-url", required=True)
     args = parser.parse_args()
-    generator(args.cafeteria_dir, args.kitchen_cars, args.master, args.output_dir, args.kitchen_cars_archive)
+    generator(args.cafeteria_dir, args.kitchen_cars, args.master, args.output_dir, args.kitchen_cars_archive, args.base_url)
