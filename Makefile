@@ -1,6 +1,5 @@
 PYTHON = python3
 SCRIPTS_DIR = scripts
-PUBLIC_DIR = public
 DATA_DIR = data
 PDF_SRC_DIR = $(DATA_DIR)/pdfs
 KITCHEN_CARS_SRC = $(DATA_DIR)/kitchencars
@@ -29,7 +28,7 @@ help:
 	@echo "  make parse_pdf         Parse all PDFs in $(PDF_SRC_DIR) to JSON"
 	@echo "  make parse_kitchencar  Scrape kitchen car HTML to JSON"
 	@echo "  make generate          Run the full pipeline (parse and generate API)"
-	@echo "  make serve             Start a local development server on port 8000"
+	@echo "  make serve             Start the Hugo development server (http://localhost:1313/welfare-time/)"
 	@echo "  make test              Run cafeteria parser and kitchen car scraper tests"
 	@echo "  make stale_api         List deployed API files that are no longer generated"
 	@echo "  make clean             Remove temporary files"
@@ -79,7 +78,6 @@ build_html: css
 	hugo --minify
 
 serve:
-# 	$(PYTHON) -m http.server 8000 -d $(PUBLIC_DIR)
 	hugo server
 
 # Utilities
