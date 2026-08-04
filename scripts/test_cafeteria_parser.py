@@ -16,7 +16,7 @@ def test_cafeteria_parser(input_pdf, output_json):
         raise AssertionError(f"Expected {expected_count} entries, but got {len(data)}")
     
     # 2. 特定データの確認 (CAFE KSUKSUのパンのみ)
-    ksuksu_notes = [d for d in data if d["id"] == "CAFE KSUKSU" and d["note"] == "パンのみ"]
+    ksuksu_notes = [d for d in data if d["name"] == "CAFE KSUKSU" and d["note"] == "パンのみ"]
     if len(ksuksu_notes) < 2:
         raise AssertionError("CAFE KSUKSU should have entries with 'パンのみ' note")
 

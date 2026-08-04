@@ -19,6 +19,16 @@ def squash_field(x):
     x = x.replace("~", "～")
     return x
 
+def slugify(text):
+    return re.sub(r"[^\w\s-]", "", text).strip().lower().replace(" ", "-")
+
+def get_id_from_url(url, fallback_name):
+    if url:
+        match = re.search(r"/([^/]+)$", url.strip("/"))
+        if match:
+            return match.group(1)
+    return slugify(fallback_name)
+
 def scrape_kitchen_cars(input_path, output_path):
     with open(input_path, "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f, "html.parser")
@@ -55,9 +65,11 @@ def scrape_kitchen_cars(input_path, output_path):
         
         time_match = re.search(r"(\d{1,2}:\d{2})\s*[〜~～]\s*(\d{1,2}:\d{2})", time_text)
         start, end = time_match.groups() if time_match else ("00:00", "00:00")
+        shop_name = squash_name(name)
 
         results.append({
-            "id": squash_name(name),
+            "id": get_id_from_url(url, shop_name),
+            "name": shop_name,
             "location": "",
             "date": f"{date_match.group(1)}-{date_match.group(2)}-{date_match.group(3)}",
             "start_time": squash_field(start),

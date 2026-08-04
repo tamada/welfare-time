@@ -106,7 +106,7 @@ def parse_pdf_to_json(input_path, output_path=None):
                             note = re.sub(r"\d{1,2}[:：]\d{2}", "", note).strip()
                             
                             results.append({
-                                "id": pdf_name,
+                                "name": pdf_name,
                                 "location": pdf_loc,
                                 "date": date_val.strftime("%Y-%m-%d"),
                                 "start_time": squash_field(start),
