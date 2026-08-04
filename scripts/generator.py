@@ -48,132 +48,119 @@ def get_id_from_url(url, fallback_name):
             return match.group(1)
     return slugify(fallback_name)
 
-def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen_cars_archive, base_url):
-    # Use JST for all time-based logic and timestamps
-    now_jst = datetime.now(JST)
-    today_str = now_jst.strftime("%Y-%m-%d")
-    last_updated = now_jst.isoformat()
-    base_url = base_url.rstrip("/")
-    
-    # 1. Load Master Data
+def load_master(master_path):
+    """Load the master data and build the lookup maps.
+
+    Cafeterias are looked up by (name, location) because the source PDF has no
+    identifier. Kitchen cars are looked up by name only.
+    """
     master_raw = load_json(master_path)
     if not master_raw:
         master_raw = {"facilities": [], "kitchen_cars": []}
-        
-    cafeteria_master_map = {}
+
     facilities = master_raw.get("facilities", [])
+
+    cafeteria_master_map = {}
     for c in facilities:
         key = (squash_name(c["name"]), squash_field(c["location"]))
         cafeteria_master_map[key] = c
-        
+
     kitchen_car_master_map = {}
     kc_list = master_raw.get("kitchen_cars", []) + [f for f in facilities if f.get("category") == "キッチンカー"]
     for k in kc_list:
         key = squash_name(k["name"])
         kitchen_car_master_map[key] = k
 
-    # Load metadata for PDF URLs from the new public/daily location
-    metadata = load_json(os.path.join(output_dir, "daily/.metadata.json"))
-    
-    # 2. Load and Archive Kitchen Car Data
-    all_scraped_kitchen_cars = load_json(kitchen_cars_path)
-    if isinstance(all_scraped_kitchen_cars, dict):
-        all_scraped_kitchen_cars = []
-    
-    past_archive = load_json(kitchen_cars_archive)
-    if isinstance(past_archive, dict):
-        past_archive = []
-    
-    # Entries before today are frozen: the source site drops past data quickly,
-    # so the archive is the only record of what actually happened.
-    # Entries from today on are replaced by the scraped data, so that cancellations
-    # and time changes are reflected. Today's entries become frozen tomorrow.
+    return cafeteria_master_map, kitchen_car_master_map, facilities
+
+def merge_kitchen_car_archive(past_archive, scraped, today_str):
+    """Merge the archive with a fresh scrape. No side effects.
+
+    Entries before today are frozen: the source site drops past data quickly,
+    so the archive is the only record of what actually happened.
+    Entries from today on are replaced by the scraped data, so that cancellations
+    and time changes are reflected. Today's entries become frozen tomorrow.
+    """
     frozen_past = [d for d in past_archive if d["date"] < today_str]
     # A scrape may still contain past entries (e.g. recovering after skipped runs);
     # archive them too instead of dropping them. Archived entries take precedence.
-    frozen_past += [d for d in all_scraped_kitchen_cars if d["date"] < today_str]
-    if all_scraped_kitchen_cars:
-        upcoming = [d for d in all_scraped_kitchen_cars if d["date"] >= today_str]
+    frozen_past += [d for d in scraped if d["date"] < today_str]
+    if scraped:
+        upcoming = [d for d in scraped if d["date"] >= today_str]
     else:
         # An empty scrape most likely means a fetch failure; keep the archive as is.
         upcoming = [d for d in past_archive if d["date"] >= today_str]
 
-    past_archive = []
-    seen_past = set()
+    merged = []
+    seen = set()
     for d in frozen_past + upcoming:
         key = (d["id"], d["date"])
-        if key not in seen_past:
-            past_archive.append(d)
-            seen_past.add(key)
-    save_json(past_archive, kitchen_cars_archive)
+        if key not in seen:
+            merged.append(d)
+            seen.add(key)
+    return merged
 
-    kitchen_car_schedules = past_archive
+def get_or_create_date(schedule_map, date_str):
+    if date_str not in schedule_map:
+        schedule_map[date_str] = {
+            "date": date_str,
+            "timezone": "JST",
+            "facilities": [],
+            "sources": []
+        }
+    return schedule_map[date_str]
 
-    # 3. Initialize Schedule Map
-    schedule_map = {}
-    
-    def get_or_create_date(date_str):
-        if date_str not in schedule_map:
-            schedule_map[date_str] = {
-                "date": date_str,
-                "timezone": "JST",
-                "facilities": [],
-                "sources": []
-            }
-        return schedule_map[date_str]
-
-    # Ensure a minimum window around today (7 days ago to 32 days ahead)
-    # This ensures static shops appear for the current period even if no other data exists.
-    start_init = now_jst - timedelta(days=7)
-    for i in range(40):
-        get_or_create_date((start_init + timedelta(days=i)).strftime("%Y-%m-%d"))
-
+def add_cafeteria_schedules(schedule_map, cafeteria_dir, cafeteria_master_map, base_url):
+    """Add the parsed cafeteria entries, resolving the shop id from the master."""
     for p in Path(cafeteria_dir).glob("*.json"):
         # Match {YYYY_MM}.json to daily/{YYYY_MM}.pdf
         source_filename = p.name.replace(".json", ".pdf")
-        
+
         entries = load_json(str(p))
-        if isinstance(entries, list):
-            for s in entries:
-                day_data = get_or_create_date(s["date"])
-                
-                # Add source to day as an absolute path for the frontend
-                source_entry = {"name": source_filename, "url": f"{base_url}/daily/{source_filename}"}
-                if source_entry not in day_data["sources"]:
-                    day_data["sources"].append(source_entry)
+        if not isinstance(entries, list):
+            continue
 
-                norm_name = squash_name(s["name"])
-                norm_loc = squash_field(s["location"])
-                m_info = cafeteria_master_map.get((norm_name, norm_loc))
-                
-                if not m_info:
-                    print(f"!!! MAJOR ERROR: Shop not found in master data: Name='{norm_name}', Location='{norm_loc}' (Source: {source_filename}, Date: {s['date']})")
-                    # Provide hints for potential matches
-                    hints = [m["id"] for k, m in cafeteria_master_map.items() if norm_name in k[0] or k[0] in norm_name]
-                    if hints:
-                        print(f"    Hint: Found similar names in master data: {', '.join(set(hints))}")
-                    shop_id = slugify(f"MISSING-{norm_name}-{norm_loc}")
-                else:
-                    shop_id = m_info["id"]
+        for s in entries:
+            day_data = get_or_create_date(schedule_map, s["date"])
 
-                day_data["facilities"].append({
-                    "id": shop_id,
-                    "name": s["name"],
-                    "location": s["location"],
-                    "category": m_info.get("category", "食堂") if m_info else "食堂",
-                    "url": m_info.get("url", "") if m_info else "",
-                    "google_map": m_info.get("google_map", "") if m_info else "",
-                    "image_url": m_info.get("image_url", "") if m_info else "",
-                    "headline": m_info.get("headline", "") if m_info else "",
-                    "start_time": s["start_time"],
-                    "end_time": s["end_time"],
-                    "business_hours": s["business_hours"],
-                    "note": s["note"]
-                })
+            # Add source to day as an absolute path for the frontend
+            source_entry = {"name": source_filename, "url": f"{base_url}/daily/{source_filename}"}
+            if source_entry not in day_data["sources"]:
+                day_data["sources"].append(source_entry)
 
-    # 4. Merge Kitchen Cars
+            norm_name = squash_name(s["name"])
+            norm_loc = squash_field(s["location"])
+            m_info = cafeteria_master_map.get((norm_name, norm_loc))
+
+            if not m_info:
+                print(f"!!! MAJOR ERROR: Shop not found in master data: Name='{norm_name}', Location='{norm_loc}' (Source: {source_filename}, Date: {s['date']})")
+                # Provide hints for potential matches
+                hints = [m["id"] for k, m in cafeteria_master_map.items() if norm_name in k[0] or k[0] in norm_name]
+                if hints:
+                    print(f"    Hint: Found similar names in master data: {', '.join(set(hints))}")
+                shop_id = slugify(f"MISSING-{norm_name}-{norm_loc}")
+            else:
+                shop_id = m_info["id"]
+
+            day_data["facilities"].append({
+                "id": shop_id,
+                "name": s["name"],
+                "location": s["location"],
+                "category": m_info.get("category", "食堂") if m_info else "食堂",
+                "url": m_info.get("url", "") if m_info else "",
+                "google_map": m_info.get("google_map", "") if m_info else "",
+                "image_url": m_info.get("image_url", "") if m_info else "",
+                "headline": m_info.get("headline", "") if m_info else "",
+                "start_time": s["start_time"],
+                "end_time": s["end_time"],
+                "business_hours": s["business_hours"],
+                "note": s["note"]
+            })
+
+def add_kitchen_car_schedules(schedule_map, kitchen_car_schedules, kitchen_car_master_map):
+    """Add the archived kitchen car entries."""
     for s in kitchen_car_schedules:
-        day_data = get_or_create_date(s["date"])
+        day_data = get_or_create_date(schedule_map, s["date"])
         norm_name = squash_name(s["name"])
         m_info = kitchen_car_master_map.get(norm_name)
         target_url = s.get("url", "") or (m_info.get("url", "") if m_info else "")
@@ -186,7 +173,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
             shop_id = get_id_from_url(target_url, s["name"])
         else:
             shop_id = slugify(norm_name)
-        
+
         day_data["facilities"].append({
             "id": shop_id,
             "name": s["name"],
@@ -202,56 +189,82 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
             "note": ""
         })
 
-    # Fill gaps between the first and last dates to ensure continuity
-    if schedule_map:
-        all_dates = sorted(schedule_map.keys())
-        first_dt = datetime.strptime(all_dates[0], "%Y-%m-%d")
-        last_dt = datetime.strptime(all_dates[-1], "%Y-%m-%d")
-        curr_dt = first_dt
-        while curr_dt <= last_dt:
-            get_or_create_date(curr_dt.strftime("%Y-%m-%d"))
-            curr_dt += timedelta(days=1)
+def fill_date_gaps(schedule_map):
+    """Fill gaps between the first and last dates to ensure continuity."""
+    if not schedule_map:
+        return
+    all_dates = sorted(schedule_map.keys())
+    curr_dt = datetime.strptime(all_dates[0], "%Y-%m-%d")
+    last_dt = datetime.strptime(all_dates[-1], "%Y-%m-%d")
+    while curr_dt <= last_dt:
+        get_or_create_date(schedule_map, curr_dt.strftime("%Y-%m-%d"))
+        curr_dt += timedelta(days=1)
 
-    # 5. Inject Static Schedules (e.g. ATMs)
+def inject_static_schedules(schedule_map, facilities):
+    """Add shops that keep fixed hours (ATMs, convenience stores) to every day."""
     for date_str, day_data in schedule_map.items():
         dt = datetime.strptime(date_str, "%Y-%m-%d")
         weekday = dt.weekday() # 0=Mon, 5=Sat, 6=Sun
 
         for m_shop in facilities:
-            if "static-hours" in m_shop:
-                hours_str = ""
-                if weekday < 5: # Mon-Fri
-                    hours_str = m_shop["static-hours"].get("ordinary", "")
-                elif weekday == 5: # Sat
-                    hours_str = m_shop["static-hours"].get("saturday", "")
+            if "static-hours" not in m_shop:
+                continue
 
-                if hours_str and hours_str != "closed":
-                    start_time, end_time = "00:00", "00:00"
-                    if "-" in hours_str:
-                        start_time, end_time = hours_str.split("-")
+            hours_str = ""
+            if weekday < 5: # Mon-Fri
+                hours_str = m_shop["static-hours"].get("ordinary", "")
+            elif weekday == 5: # Sat
+                hours_str = m_shop["static-hours"].get("saturday", "")
 
-                    day_data["facilities"].append({
-                        "id": m_shop["id"],
-                        "name": m_shop["name"],
-                        "url": m_shop.get("url", ""),
-                        "location": m_shop["location"],
-                        "category": m_shop.get("category", "サービス"),
-                        "headline": m_shop.get("headline", ""),
-                        "google_map": "",
-                        "image_url": "",
-                        "start_time": start_time,
-                        "end_time": end_time,
-                        "business_hours": hours_str,
-                        "note": ""
-                    })
+            if hours_str and hours_str != "closed":
+                start_time, end_time = "00:00", "00:00"
+                if "-" in hours_str:
+                    start_time, end_time = hours_str.split("-")
 
-    # 6. Generate Daily API Files
-    api_schedule_dir = os.path.join(output_dir, "api/schedule")
+                day_data["facilities"].append({
+                    "id": m_shop["id"],
+                    "name": m_shop["name"],
+                    "url": m_shop.get("url", ""),
+                    "location": m_shop["location"],
+                    "category": m_shop.get("category", "サービス"),
+                    "headline": m_shop.get("headline", ""),
+                    "google_map": "",
+                    "image_url": "",
+                    "start_time": start_time,
+                    "end_time": end_time,
+                    "business_hours": hours_str,
+                    "note": ""
+                })
+
+def build_schedule_map(cafeteria_dir, kitchen_car_schedules, cafeteria_master_map,
+                       kitchen_car_master_map, facilities, base_url, now_jst):
+    """Build the date-keyed schedule from every source.
+
+    The order matters: cafeterias, kitchen cars, then static shops, so that the
+    facilities of a day keep that order. Gaps are filled before injecting the
+    static shops so that the filled days get them too.
+    """
+    schedule_map = {}
+
+    # Ensure a minimum window around today (7 days ago to 32 days ahead)
+    # This ensures static shops appear for the current period even if no other data exists.
+    start_init = now_jst - timedelta(days=7)
+    for i in range(40):
+        get_or_create_date(schedule_map, (start_init + timedelta(days=i)).strftime("%Y-%m-%d"))
+
+    add_cafeteria_schedules(schedule_map, cafeteria_dir, cafeteria_master_map, base_url)
+    add_kitchen_car_schedules(schedule_map, kitchen_car_schedules, kitchen_car_master_map)
+    fill_date_gaps(schedule_map)
+    inject_static_schedules(schedule_map, facilities)
+    return schedule_map
+
+def write_daily_api(schedule_map, api_schedule_dir, now_jst):
+    """Write api/schedule/{date} and the today/yesterday/tomorrow shortcuts."""
     for date_str, data in schedule_map.items():
         save_json(data, os.path.join(api_schedule_dir, f"{date_str}"))
-    
+
     shortcuts = {
-        "today": today_str,
+        "today": now_jst.strftime("%Y-%m-%d"),
         "yesterday": (now_jst - timedelta(days=1)).strftime("%Y-%m-%d"),
         "tomorrow": (now_jst + timedelta(days=1)).strftime("%Y-%m-%d")
     }
@@ -259,12 +272,13 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
         if d_str in schedule_map:
             save_json(schedule_map[d_str], os.path.join(api_schedule_dir, f"{label}"))
 
-    # 6. Weekly API
+def write_weekly_api(schedule_map, api_schedule_dir, now_jst):
+    """Write api/schedule/weeks/{n}, covering this week and the following ones."""
     current_monday = now_jst - timedelta(days=now_jst.weekday())
     all_dates = sorted(schedule_map.keys())
-    max_date_str = all_dates[-1] if all_dates else today_str
+    max_date_str = all_dates[-1] if all_dates else now_jst.strftime("%Y-%m-%d")
     max_dt = datetime.strptime(max_date_str, "%Y-%m-%d").replace(tzinfo=JST)
-    
+
     delta_days = (max_dt - current_monday).days
     total_weeks = (delta_days // 7) + 1 if delta_days >= 0 else 1
 
@@ -283,7 +297,8 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
         save_json(week_data, os.path.join(api_schedule_dir, f"weeks/{w}"))
         if w == 0: save_json(week_data, os.path.join(api_schedule_dir, "week"))
 
-    # 7. Shops API
+def write_shops_api(schedule_map, output_dir):
+    """Write api/shops/{id} and the index. Returns the shops keyed by id."""
     all_shops = {}
     for date_str, data in sorted(schedule_map.items()):
         for c in data["facilities"]:
@@ -298,8 +313,10 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
         save_json(sdata, os.path.join(api_shops_dir, f"{sid}"))
         shops_index["shops"].append({k: v for k, v in sdata.items() if k != "schedules"})
     save_json(shops_index, os.path.join(api_shops_dir, "index.json"))
+    return all_shops
 
-    # 8. Status API
+def write_status_api(schedule_map, shop_count, metadata, base_url, output_dir, last_updated):
+    """Write api/status, the only place that carries the build timestamp."""
     dates = sorted(schedule_map.keys())
     global_sources = []
     if isinstance(metadata, dict):
@@ -310,9 +327,42 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
         "last_updated": last_updated,
         "timezone": "JST",
         "data_range": {"start": dates[0] if dates else "", "end": dates[-1] if dates else ""},
-        "shop_count": len(all_shops),
+        "shop_count": shop_count,
         "sources": global_sources
     }, os.path.join(output_dir, "api/status"))
+
+def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen_cars_archive, base_url):
+    # Use JST for all time-based logic and timestamps
+    now_jst = datetime.now(JST)
+    today_str = now_jst.strftime("%Y-%m-%d")
+    last_updated = now_jst.isoformat()
+    base_url = base_url.rstrip("/")
+
+    cafeteria_master_map, kitchen_car_master_map, facilities = load_master(master_path)
+
+    # Load metadata for PDF URLs from the new public/daily location
+    metadata = load_json(os.path.join(output_dir, "daily/.metadata.json"))
+
+    scraped = load_json(kitchen_cars_path)
+    if isinstance(scraped, dict):
+        scraped = []
+    past_archive = load_json(kitchen_cars_archive)
+    if isinstance(past_archive, dict):
+        past_archive = []
+
+    # The archive is the only record of what actually happened, so it is written
+    # back here and committed to main by the daily workflow.
+    kitchen_car_schedules = merge_kitchen_car_archive(past_archive, scraped, today_str)
+    save_json(kitchen_car_schedules, kitchen_cars_archive)
+
+    schedule_map = build_schedule_map(cafeteria_dir, kitchen_car_schedules, cafeteria_master_map,
+                                      kitchen_car_master_map, facilities, base_url, now_jst)
+
+    api_schedule_dir = os.path.join(output_dir, "api/schedule")
+    write_daily_api(schedule_map, api_schedule_dir, now_jst)
+    write_weekly_api(schedule_map, api_schedule_dir, now_jst)
+    all_shops = write_shops_api(schedule_map, output_dir)
+    write_status_api(schedule_map, len(all_shops), metadata, base_url, output_dir, last_updated)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
