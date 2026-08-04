@@ -41,7 +41,7 @@ def analyze_missing(input_pdf, extracted_json, master_path):
                 name_text = squash(str(row[2] or ""))
                 
                 matched_cafeteria = None
-                for cafeteria in master_data["cafeterias"]:
+                for cafeteria in master_data["facilities"]:
                     if squash(cafeteria["name"]) in name_text or name_text in squash(cafeteria["name"]):
                         matched_cafeteria = cafeteria
                         break
