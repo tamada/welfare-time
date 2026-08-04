@@ -347,6 +347,7 @@
     },
     {
       "date": "2026-09-06",
+      "timezone": "JST",
       "facilities": [],
       "sources": []
     }
