@@ -88,7 +88,7 @@ clean:
 # 各行を独立したコマンドにすると、先頭が落ちた時点で後続に到達しない。
 test:
 	@fail=0; \
-	for t in test_cafeteria_parser test_kitchen_car_scraper; do \
+	for t in test_cafeteria_parser test_kitchen_car_scraper test_generator; do \
 		echo "--- $$t ---"; \
 		$(PYTHON) $(SCRIPTS_DIR)/$$t.py || fail=1; \
 	done; \
