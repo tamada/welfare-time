@@ -3,7 +3,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from generator import merge_kitchen_car_archive
+from generator import merge_kitchen_car_archive, add_cafeteria_schedules
 
 TODAY = "2026-08-04"
 
@@ -86,9 +86,56 @@ def test_merge_kitchen_car_archive():
 
     print("Regression test passed: kitchen car archive invariants.")
 
+def test_unresolved_shops(tmp_dir):
+    """マスターに引き当てられない店舗が、集計されつつ公開もされることを検証する。
+
+    データ更新を止めないため、引き当て失敗は例外にせず報告に留める。
+    """
+    import json
+    failures = []
+
+    os.makedirs(tmp_dir, exist_ok=True)
+    entries = [
+        {"name": "登録済みの店", "location": "1F", "date": "2026-06-01",
+         "start_time": "11:00", "end_time": "14:00", "business_hours": "11:00～14:00", "note": ""},
+        {"name": "未登録の店", "location": "2F", "date": "2026-06-01",
+         "start_time": "11:00", "end_time": "14:00", "business_hours": "11:00～14:00", "note": ""},
+        {"name": "未登録の店", "location": "2F", "date": "2026-06-02",
+         "start_time": "11:00", "end_time": "14:00", "business_hours": "11:00～14:00", "note": ""},
+    ]
+    path = os.path.join(tmp_dir, "2026_06.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(entries, f, ensure_ascii=False)
+
+    master_map = {("登録済みの店", "1F"): {"id": "known", "name": "登録済みの店", "location": "1F"}}
+    schedule_map = {}
+    unresolved = add_cafeteria_schedules(schedule_map, tmp_dir, master_map, "https://example.com")
+
+    check(failures, list(unresolved) == [("未登録の店", "2F")],
+          f"Only the unknown shop must be reported, but got {list(unresolved)}")
+    if unresolved:
+        record = unresolved[("未登録の店", "2F")]
+        check(failures, sorted(record["dates"]) == ["2026-06-01", "2026-06-02"],
+              f"Every date must be collected, but got {record['dates']}")
+        check(failures, record["sources"] == {"2026_06.pdf"},
+              f"The source file must be recorded, but got {record['sources']}")
+
+    # 引き当てできなくてもその日のデータは失われない
+    day = schedule_map.get("2026-06-01", {})
+    ids = [f["id"] for f in day.get("facilities", [])]
+    check(failures, "known" in ids, f"The resolved shop must keep its master id, but got {ids}")
+    check(failures, any(i.startswith("missing-") for i in ids),
+          f"The unresolved shop must still be published with a generated id, but got {ids}")
+
+    if failures:
+        raise AssertionError("\n  - " + "\n  - ".join(failures))
+
+    print("Regression test passed: unresolved shops are reported without dropping data.")
+
 if __name__ == "__main__":
     try:
         test_merge_kitchen_car_archive()
+        test_unresolved_shops(os.path.join("tmp", "test_generator_cafeterias"))
     except Exception as e:
         print(f"Test failed: {e}")
         exit(1)
