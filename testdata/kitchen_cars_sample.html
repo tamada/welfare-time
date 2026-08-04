@@ -1,0 +1,69 @@
+<!--
+  scrape_kitchen_cars.py の回帰テスト用フィクスチャ。
+  schedule.mellow.jp の出店一覧ページから、スクレイパーが依存する構造だけを抜き出したもの。
+
+  夏期休暇中は実ページの出店が0件になり、出店をループする本体を一度も通らない。
+  実データでは検出できない不具合を捕まえるため、出店ありの状態を固定しておく。
+-->
+<html>
+<body>
+  <!-- 通常の出店。相対hrefがmellowのドメインで補完される -->
+  <a class="a-link text-body text-decoration-none d-block" href="/ss_web/shops/dqSe1b">
+    <span class="badge">2026/10/01</span>
+    <div class="card-title">メロンパンみのり</div>
+    <div class="card-text">メロンパン</div>
+    <div class="card-text">11:00〜17:00</div>
+  </a>
+
+  <!-- 同一店舗・同一日の重複。重複排除されること -->
+  <a class="a-link text-body text-decoration-none d-block" href="/ss_web/shops/dqSe1b">
+    <span class="badge">2026/10/01</span>
+    <div class="card-title">メロンパンみのり</div>
+    <div class="card-text">メロンパン</div>
+    <div class="card-text">11:00〜17:00</div>
+  </a>
+
+  <!-- 絶対URL。二重にドメインが付かないこと。半角チルダの営業時間 -->
+  <a class="a-link text-body text-decoration-none d-block" href="https://schedule.mellow.jp/ss_web/shops/5gSVjO">
+    <span class="badge">2026/10/01</span>
+    <div class="card-title">喜珈琲</div>
+    <div class="card-text">レタスホットドッグ</div>
+    <div class="card-text">11:00 ~ 16:00</div>
+  </a>
+
+  <!-- 全角英数・全角空白・半角括弧を含む店名。正規化されること -->
+  <a class="a-link text-body text-decoration-none d-block" href="/ss_web/shops/q8S8od">
+    <span class="badge">2026/10/02</span>
+    <div class="card-title">ＴＥＳＴ　カフェ(京都)</div>
+    <div class="card-text">日替わり弁当</div>
+    <div class="card-text">11:00〜17:00</div>
+  </a>
+
+  <!-- URLなし。店名のスラッグにフォールバックし、互いに別店舗として残ること -->
+  <a class="a-link text-body text-decoration-none d-block">
+    <span class="badge">2026/10/02</span>
+    <div class="card-title">URLなしの店A</div>
+    <div class="card-text">メニューA</div>
+    <div class="card-text">11:00〜17:00</div>
+  </a>
+  <a class="a-link text-body text-decoration-none d-block">
+    <span class="badge">2026/10/02</span>
+    <div class="card-title">URLなしの店B</div>
+    <div class="card-text">メニューB</div>
+    <div class="card-text">11:00〜17:00</div>
+  </a>
+
+  <!-- 日付バッジなし。スキップされること -->
+  <a class="a-link text-body text-decoration-none d-block" href="/ss_web/shops/XXXXXX">
+    <div class="card-title">日付のない店</div>
+    <div class="card-text">メニュー</div>
+    <div class="card-text">11:00〜17:00</div>
+  </a>
+
+  <!-- 出店情報ではないリンク。拾われないこと -->
+  <a class="nav-link" href="/ss_web/markets/KqTl8N">
+    <span class="badge">2026/10/03</span>
+    <div class="card-title">ナビゲーション</div>
+  </a>
+</body>
+</html>

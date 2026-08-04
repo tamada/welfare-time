@@ -30,7 +30,7 @@ help:
 	@echo "  make parse_kitchencar  Scrape kitchen car HTML to JSON"
 	@echo "  make generate          Run the full pipeline (parse and generate API)"
 	@echo "  make serve             Start a local development server on port 8000"
-	@echo "  make test              Run cafeteria parser tests"
+	@echo "  make test              Run cafeteria parser and kitchen car scraper tests"
 	@echo "  make stale_api         List deployed API files that are no longer generated"
 	@echo "  make clean             Remove temporary files"
 
@@ -88,6 +88,7 @@ clean:
 
 test:
 	$(PYTHON) $(SCRIPTS_DIR)/test_cafeteria_parser.py
+	$(PYTHON) $(SCRIPTS_DIR)/test_kitchen_car_scraper.py
 
 # Compare the deployed API against what `make generate` produces.
 stale_api:
