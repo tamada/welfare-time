@@ -8,7 +8,7 @@
       "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/yasai.html",
       "google_map": "",
       "image_url": "",
-      "headline": "野菜を中心としたメニューが特徴の食堂です。"
+      "headline": "コンセプトは、「やさいたっぷり・ワシワシ・まいにち」新しい学食誕生。"
     },
     {
       "id": "fujikatsu",
@@ -38,7 +38,7 @@
       "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/bakery.html",
       "google_map": "",
       "image_url": "",
-      "headline": "テイクアウト弁当をメインにホットスナックなどを販売"
+      "headline": "約20種類のテイクアウト弁当と種類豊富なパンが揃う"
     },
     {
       "id": "miyako",
@@ -108,7 +108,7 @@
       "url": "",
       "google_map": "",
       "image_url": "",
-      "headline": ""
+      "headline": "いて座の星の名を冠したアカデミックな書店"
     },
     {
       "id": "family-mart-heiraku",
@@ -128,7 +128,7 @@
       "url": "",
       "google_map": "",
       "image_url": "",
-      "headline": ""
+      "headline": "なんでもそろうキャンパスショップ"
     },
     {
       "id": "maruzen-pc",
@@ -176,7 +176,9 @@
       "url": "",
       "location": "並楽館陸橋下",
       "category": "ATM",
-      "headline": ""
+      "headline": "",
+      "google_map": "",
+      "image_url": ""
     },
     {
       "id": "yucho-atm",
@@ -184,7 +186,9 @@
       "url": "",
       "location": "並楽館陸橋下",
       "category": "ATM",
-      "headline": ""
+      "headline": "",
+      "google_map": "",
+      "image_url": ""
     },
     {
       "id": "smbc-atm",
@@ -192,7 +196,9 @@
       "url": "",
       "location": "並楽館1F",
       "category": "ATM",
-      "headline": ""
+      "headline": "",
+      "google_map": "",
+      "image_url": ""
     },
     {
       "id": "nasic",
@@ -202,7 +208,7 @@
       "url": "",
       "google_map": "",
       "image_url": "",
-      "headline": ""
+      "headline": "キャンパス内にあるとても便利な不動産紹介"
     },
     {
       "id": "pMSXgz",
@@ -211,6 +217,7 @@
       "image_url": "",
       "headline": "照り焼きチキン",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -220,6 +227,7 @@
       "image_url": "",
       "headline": "メロンパンみのり",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -229,6 +237,7 @@
       "image_url": "",
       "headline": "クレープ各種",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -238,6 +247,7 @@
       "image_url": "",
       "headline": "本日のブリトー",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -247,6 +257,7 @@
       "image_url": "",
       "headline": "やみつきバーガー",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -256,6 +267,7 @@
       "image_url": "",
       "headline": "チキンチーズカツライスバーガー",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -265,6 +277,7 @@
       "image_url": "",
       "headline": "豚丼",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -274,6 +287,7 @@
       "image_url": "",
       "headline": "ロングチュロス",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -283,6 +297,7 @@
       "image_url": "",
       "headline": "生パスタ ペペロンチーノ",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -292,6 +307,7 @@
       "image_url": "",
       "headline": "レタスホットドッグ",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -301,6 +317,7 @@
       "image_url": "",
       "headline": "ビビンバ",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -310,6 +327,7 @@
       "image_url": "",
       "headline": "デミグラスオムライス",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -319,6 +337,7 @@
       "image_url": "",
       "headline": "ホットドッグ4種類（カレーキャベツ、オニオンピクルス、チーズサルサ、ソーセージドッグ）",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -328,6 +347,7 @@
       "image_url": "",
       "headline": "マルゲリータ",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -337,6 +357,7 @@
       "image_url": "",
       "headline": "フランクドック",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -346,6 +367,7 @@
       "image_url": "",
       "headline": "クロッフル",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -355,6 +377,7 @@
       "image_url": "",
       "headline": "アサイーボウル ミニ",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -364,6 +387,7 @@
       "image_url": "",
       "headline": "特製ロコモコ丼",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -373,6 +397,7 @@
       "image_url": "",
       "headline": "旨夢路式☆創作塩からあげ",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -382,6 +407,7 @@
       "image_url": "",
       "headline": "フルーツ飴",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -391,6 +417,7 @@
       "image_url": "",
       "headline": "カルツォーネ（包み焼きピザ）",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -400,6 +427,7 @@
       "image_url": "",
       "headline": "ほろほろ鶏肉のバターチキンカレー",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -409,6 +437,7 @@
       "image_url": "",
       "headline": "クレープ",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -418,6 +447,7 @@
       "image_url": "",
       "headline": "ハニーマスタード弁当",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -427,6 +457,7 @@
       "image_url": "",
       "headline": "チキンオーバーライス",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     },
     {
@@ -436,6 +467,7 @@
       "image_url": "",
       "headline": "漬け卵黄",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー"
     }
   ]

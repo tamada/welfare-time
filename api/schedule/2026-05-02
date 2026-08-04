@@ -1,7 +1,7 @@
 {
   "date": "2026-05-02",
   "timezone": "JST",
-  "cafeterias": [
+  "facilities": [
     {
       "id": "ichibariki",
       "name": "らーめん壱馬力",
@@ -65,6 +65,8 @@
       "location": "並楽館陸橋下",
       "category": "ATM",
       "headline": "",
+      "google_map": "",
+      "image_url": "",
       "start_time": "08:45",
       "end_time": "17:00",
       "business_hours": "08:45-17:00",
@@ -77,6 +79,8 @@
       "location": "並楽館陸橋下",
       "category": "ATM",
       "headline": "",
+      "google_map": "",
+      "image_url": "",
       "start_time": "08:45",
       "end_time": "17:00",
       "business_hours": "08:45-17:00",
@@ -89,17 +93,18 @@
       "location": "並楽館1F",
       "category": "ATM",
       "headline": "",
+      "google_map": "",
+      "image_url": "",
       "start_time": "08:45",
       "end_time": "17:00",
       "business_hours": "08:45-17:00",
       "note": ""
     }
   ],
-  "kitchen_cars": [],
   "sources": [
     {
       "name": "2026_05.pdf",
-      "url": "daily/2026_05.pdf"
+      "url": "https://tamadalab.github.io/welfare-time/daily/2026_05.pdf"
     }
   ]
 }

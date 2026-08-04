@@ -1,4 +1,4 @@
-const BASE_PATH = '/welfare-time';
+const BASE_PATH = window.BASE_PATH;
 const API_BASE = `${BASE_PATH}/api/schedule`;
 const STATUS_API = `${BASE_PATH}/api/status`;
 const LABE_NOW_OPEN = '🟢 営業中';
@@ -105,8 +105,8 @@ async function fetchData() {
             
             // Extract categories dynamically from facilities data
             const categories = [];
-            if (master && master.cafeterias) {
-                master.cafeterias.forEach(c => {
+            if (master && master.facilities) {
+                master.facilities.forEach(c => {
                     if (c.category && !categories.includes(c.category)) {
                         categories.push(c.category);
                     }
@@ -148,7 +148,7 @@ function render() {
     if (!grid) return;
     grid.innerHTML = '';
     
-    let allShops = [...currentData.cafeterias, ...currentData.kitchen_cars];
+    let allShops = currentData.facilities;
     const targetDateStr = getTargetDateStr();
 
     // Helper to get status label for filter and sort

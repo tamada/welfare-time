@@ -1,11 +1,11 @@
 {
-  "cafeterias": [
+  "facilities": [
     {
       "id": "101",
       "name": "やさい食堂 イチマルイチ",
       "location": "10号館1F",
       "category": "食堂",
-      "headline": "野菜を中心としたメニューが特徴の食堂です。",
+      "headline": "コンセプトは、「やさいたっぷり・ワシワシ・まいにち」新しい学食誕生。",
       "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/yasai.html"
     },
     {
@@ -29,7 +29,7 @@
       "name": "cosmic bakery cafe",
       "location": "並楽館2F",
       "category": "食堂",
-      "headline": "テイクアウト弁当をメインにホットスナックなどを販売",
+      "headline": "約20種類のテイクアウト弁当と種類豊富なパンが揃う",
       "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/bakery.html"
     },
     {
@@ -84,6 +84,7 @@
       "id": "ascella",
       "name": "ブックセンター Ascella（アスケラ）",
       "location": "雄飛館1F",
+      "headline": "いて座の星の名を冠したアカデミックな書店",
       "category": "ショップ"
     },
     {
@@ -108,6 +109,7 @@
       "id": "maruzen-ms",
       "name": "丸善 M's style",
       "location": "天地館1F",
+      "headline": "なんでもそろうキャンパスショップ",
       "category": "ショップ"
     },
     {
@@ -120,6 +122,7 @@
       "id": "nasic",
       "name": "学生情報センター （ナジック）",
       "location": "天地館1F",
+      "headline": "キャンパス内にあるとても便利な不動産紹介",
       "category": "サービス"
     },
     {

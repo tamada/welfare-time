@@ -7,7 +7,7 @@
     {
       "date": "2026-08-10",
       "timezone": "JST",
-      "cafeterias": [
+      "facilities": [
         {
           "id": "chushin-atm",
           "name": "京都中央信用金庫ATM",
@@ -15,6 +15,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -27,6 +29,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -39,19 +43,20 @@
           "location": "並楽館1F",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
           "note": ""
         }
       ],
-      "kitchen_cars": [],
       "sources": []
     },
     {
       "date": "2026-08-11",
       "timezone": "JST",
-      "cafeterias": [
+      "facilities": [
         {
           "id": "chushin-atm",
           "name": "京都中央信用金庫ATM",
@@ -59,6 +64,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -71,6 +78,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -83,19 +92,20 @@
           "location": "並楽館1F",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
           "note": ""
         }
       ],
-      "kitchen_cars": [],
       "sources": []
     },
     {
       "date": "2026-08-12",
       "timezone": "JST",
-      "cafeterias": [
+      "facilities": [
         {
           "id": "chushin-atm",
           "name": "京都中央信用金庫ATM",
@@ -103,6 +113,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -115,6 +127,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -127,19 +141,20 @@
           "location": "並楽館1F",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
           "note": ""
         }
       ],
-      "kitchen_cars": [],
       "sources": []
     },
     {
       "date": "2026-08-13",
       "timezone": "JST",
-      "cafeterias": [
+      "facilities": [
         {
           "id": "chushin-atm",
           "name": "京都中央信用金庫ATM",
@@ -147,6 +162,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -159,6 +176,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -171,19 +190,20 @@
           "location": "並楽館1F",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
           "note": ""
         }
       ],
-      "kitchen_cars": [],
       "sources": []
     },
     {
       "date": "2026-08-14",
       "timezone": "JST",
-      "cafeterias": [
+      "facilities": [
         {
           "id": "chushin-atm",
           "name": "京都中央信用金庫ATM",
@@ -191,6 +211,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -203,6 +225,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -215,19 +239,20 @@
           "location": "並楽館1F",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
           "note": ""
         }
       ],
-      "kitchen_cars": [],
       "sources": []
     },
     {
       "date": "2026-08-15",
       "timezone": "JST",
-      "cafeterias": [
+      "facilities": [
         {
           "id": "chushin-atm",
           "name": "京都中央信用金庫ATM",
@@ -235,6 +260,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "17:00",
           "business_hours": "08:45-17:00",
@@ -247,6 +274,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "17:00",
           "business_hours": "08:45-17:00",
@@ -259,20 +288,20 @@
           "location": "並楽館1F",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "17:00",
           "business_hours": "08:45-17:00",
           "note": ""
         }
       ],
-      "kitchen_cars": [],
       "sources": []
     },
     {
       "date": "2026-08-16",
       "timezone": "JST",
-      "cafeterias": [],
-      "kitchen_cars": [],
+      "facilities": [],
       "sources": []
     }
   ]

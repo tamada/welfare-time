@@ -7,7 +7,7 @@
     {
       "date": "2026-08-03",
       "timezone": "JST",
-      "cafeterias": [
+      "facilities": [
         {
           "id": "ichibariki",
           "name": "らーめん壱馬力",
@@ -30,7 +30,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "いて座の星の名を冠したアカデミックな書店",
           "start_time": "8:45",
           "end_time": "15:00",
           "business_hours": "平日 8:45~17:00",
@@ -44,7 +44,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "なんでもそろうキャンパスショップ",
           "start_time": "10:00",
           "end_time": "15:00",
           "business_hours": "平日 10:00~17:00",
@@ -72,7 +72,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "キャンパス内にあるとても便利な不動産紹介",
           "start_time": "10:00",
           "end_time": "17:00",
           "business_hours": "月~土 10:00~17:00",
@@ -113,6 +113,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -125,6 +127,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -137,24 +141,25 @@
           "location": "並楽館1F",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
           "note": ""
         }
       ],
-      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_08.pdf",
-          "url": "daily/2026_08.pdf"
+          "url": "https://tamadalab.github.io/welfare-time/daily/2026_08.pdf"
         }
       ]
     },
     {
       "date": "2026-08-04",
       "timezone": "JST",
-      "cafeterias": [
+      "facilities": [
         {
           "id": "ichibariki",
           "name": "らーめん壱馬力",
@@ -177,7 +182,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "いて座の星の名を冠したアカデミックな書店",
           "start_time": "8:45",
           "end_time": "15:00",
           "business_hours": "平日 8:45~17:00",
@@ -191,7 +196,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "なんでもそろうキャンパスショップ",
           "start_time": "10:00",
           "end_time": "15:00",
           "business_hours": "平日 10:00~17:00",
@@ -219,7 +224,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "キャンパス内にあるとても便利な不動産紹介",
           "start_time": "10:00",
           "end_time": "17:00",
           "business_hours": "月~土 10:00~17:00",
@@ -260,6 +265,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -272,6 +279,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -284,24 +293,25 @@
           "location": "並楽館1F",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
           "note": ""
         }
       ],
-      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_08.pdf",
-          "url": "daily/2026_08.pdf"
+          "url": "https://tamadalab.github.io/welfare-time/daily/2026_08.pdf"
         }
       ]
     },
     {
       "date": "2026-08-05",
       "timezone": "JST",
-      "cafeterias": [
+      "facilities": [
         {
           "id": "ichibariki",
           "name": "らーめん壱馬力",
@@ -338,7 +348,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "いて座の星の名を冠したアカデミックな書店",
           "start_time": "8:45",
           "end_time": "15:00",
           "business_hours": "平日 8:45~17:00",
@@ -352,7 +362,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "なんでもそろうキャンパスショップ",
           "start_time": "10:00",
           "end_time": "15:00",
           "business_hours": "平日 10:00~17:00",
@@ -380,7 +390,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "キャンパス内にあるとても便利な不動産紹介",
           "start_time": "10:00",
           "end_time": "17:00",
           "business_hours": "月~土 10:00~17:00",
@@ -421,6 +431,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -433,6 +445,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -445,24 +459,25 @@
           "location": "並楽館1F",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
           "note": ""
         }
       ],
-      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_08.pdf",
-          "url": "daily/2026_08.pdf"
+          "url": "https://tamadalab.github.io/welfare-time/daily/2026_08.pdf"
         }
       ]
     },
     {
       "date": "2026-08-06",
       "timezone": "JST",
-      "cafeterias": [
+      "facilities": [
         {
           "id": "ichibariki",
           "name": "らーめん壱馬力",
@@ -499,7 +514,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "いて座の星の名を冠したアカデミックな書店",
           "start_time": "8:45",
           "end_time": "15:00",
           "business_hours": "平日 8:45~17:00",
@@ -513,7 +528,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "なんでもそろうキャンパスショップ",
           "start_time": "10:00",
           "end_time": "15:00",
           "business_hours": "平日 10:00~17:00",
@@ -541,7 +556,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "キャンパス内にあるとても便利な不動産紹介",
           "start_time": "10:00",
           "end_time": "17:00",
           "business_hours": "月~土 10:00~17:00",
@@ -582,6 +597,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -594,6 +611,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -606,24 +625,25 @@
           "location": "並楽館1F",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
           "note": ""
         }
       ],
-      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_08.pdf",
-          "url": "daily/2026_08.pdf"
+          "url": "https://tamadalab.github.io/welfare-time/daily/2026_08.pdf"
         }
       ]
     },
     {
       "date": "2026-08-07",
       "timezone": "JST",
-      "cafeterias": [
+      "facilities": [
         {
           "id": "ichibariki",
           "name": "らーめん壱馬力",
@@ -660,7 +680,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "いて座の星の名を冠したアカデミックな書店",
           "start_time": "8:45",
           "end_time": "15:00",
           "business_hours": "平日 8:45~17:00",
@@ -674,7 +694,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "なんでもそろうキャンパスショップ",
           "start_time": "10:00",
           "end_time": "15:00",
           "business_hours": "平日 10:00~17:00",
@@ -702,7 +722,7 @@
           "url": "",
           "google_map": "",
           "image_url": "",
-          "headline": "",
+          "headline": "キャンパス内にあるとても便利な不動産紹介",
           "start_time": "10:00",
           "end_time": "17:00",
           "business_hours": "月~土 10:00~17:00",
@@ -743,6 +763,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -755,6 +777,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
@@ -767,24 +791,25 @@
           "location": "並楽館1F",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "19:00",
           "business_hours": "08:45-19:00",
           "note": ""
         }
       ],
-      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_08.pdf",
-          "url": "daily/2026_08.pdf"
+          "url": "https://tamadalab.github.io/welfare-time/daily/2026_08.pdf"
         }
       ]
     },
     {
       "date": "2026-08-08",
       "timezone": "JST",
-      "cafeterias": [
+      "facilities": [
         {
           "id": "family-mart-motoyama",
           "name": "ファミリーマート",
@@ -806,6 +831,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "17:00",
           "business_hours": "08:45-17:00",
@@ -818,6 +845,8 @@
           "location": "並楽館陸橋下",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "17:00",
           "business_hours": "08:45-17:00",
@@ -830,24 +859,25 @@
           "location": "並楽館1F",
           "category": "ATM",
           "headline": "",
+          "google_map": "",
+          "image_url": "",
           "start_time": "08:45",
           "end_time": "17:00",
           "business_hours": "08:45-17:00",
           "note": ""
         }
       ],
-      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_08.pdf",
-          "url": "daily/2026_08.pdf"
+          "url": "https://tamadalab.github.io/welfare-time/daily/2026_08.pdf"
         }
       ]
     },
     {
       "date": "2026-08-09",
       "timezone": "JST",
-      "cafeterias": [
+      "facilities": [
         {
           "id": "family-mart-motoyama",
           "name": "ファミリーマート",
@@ -863,11 +893,10 @@
           "note": "1"
         }
       ],
-      "kitchen_cars": [],
       "sources": [
         {
           "name": "2026_08.pdf",
-          "url": "daily/2026_08.pdf"
+          "url": "https://tamadalab.github.io/welfare-time/daily/2026_08.pdf"
         }
       ]
     }

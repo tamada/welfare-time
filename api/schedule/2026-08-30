@@ -1,7 +1,6 @@
 {
   "date": "2026-08-30",
   "timezone": "JST",
-  "cafeterias": [],
-  "kitchen_cars": [],
+  "facilities": [],
   "sources": []
 }

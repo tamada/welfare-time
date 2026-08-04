@@ -1,7 +1,7 @@
 {
   "date": "2026-05-27",
   "timezone": "JST",
-  "cafeterias": [
+  "facilities": [
     {
       "id": "101",
       "name": "やさい食堂 イチマルイチ",
@@ -10,7 +10,7 @@
       "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/yasai.html",
       "google_map": "",
       "image_url": "",
-      "headline": "野菜を中心としたメニューが特徴の食堂です。",
+      "headline": "コンセプトは、「やさいたっぷり・ワシワシ・まいにち」新しい学食誕生。",
       "start_time": "11:00",
       "end_time": "14:00",
       "business_hours": "平日 11:00~15:00",
@@ -136,7 +136,7 @@
       "url": "",
       "google_map": "",
       "image_url": "",
-      "headline": "",
+      "headline": "いて座の星の名を冠したアカデミックな書店",
       "start_time": "8:45",
       "end_time": "17:00",
       "business_hours": "平日 8:45~17:00",
@@ -164,7 +164,7 @@
       "url": "",
       "google_map": "",
       "image_url": "",
-      "headline": "",
+      "headline": "なんでもそろうキャンパスショップ",
       "start_time": "10:00",
       "end_time": "17:00",
       "business_hours": "平日 10:00~17:00",
@@ -192,7 +192,7 @@
       "url": "",
       "google_map": "",
       "image_url": "",
-      "headline": "",
+      "headline": "キャンパス内にあるとても便利な不動産紹介",
       "start_time": "10:00",
       "end_time": "17:00",
       "business_hours": "月~土 10:00~17:00",
@@ -241,50 +241,13 @@
       "note": ""
     },
     {
-      "id": "chushin-atm",
-      "name": "京都中央信用金庫ATM",
-      "url": "",
-      "location": "並楽館陸橋下",
-      "category": "ATM",
-      "headline": "",
-      "start_time": "08:45",
-      "end_time": "19:00",
-      "business_hours": "08:45-19:00",
-      "note": ""
-    },
-    {
-      "id": "yucho-atm",
-      "name": "ゆうちょ銀行ATM",
-      "url": "",
-      "location": "並楽館陸橋下",
-      "category": "ATM",
-      "headline": "",
-      "start_time": "08:45",
-      "end_time": "19:00",
-      "business_hours": "08:45-19:00",
-      "note": ""
-    },
-    {
-      "id": "smbc-atm",
-      "name": "三井住友銀行ATM",
-      "url": "",
-      "location": "並楽館1F",
-      "category": "ATM",
-      "headline": "",
-      "start_time": "08:45",
-      "end_time": "19:00",
-      "business_hours": "08:45-19:00",
-      "note": ""
-    }
-  ],
-  "kitchen_cars": [
-    {
       "id": "q8S8od",
       "name": "NICEキッチンカー",
       "url": "https://schedule.mellow.jp/ss_web/shops/q8S8od",
       "image_url": "",
       "headline": "豚丼",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー",
       "start_time": "11:00",
       "end_time": "17:00",
@@ -298,17 +261,60 @@
       "image_url": "",
       "headline": "ロングチュロス",
       "location": "大学内指定場所",
+      "google_map": "",
       "category": "キッチンカー",
       "start_time": "11:00",
       "end_time": "17:00",
       "business_hours": "11:00〜17:00",
+      "note": ""
+    },
+    {
+      "id": "chushin-atm",
+      "name": "京都中央信用金庫ATM",
+      "url": "",
+      "location": "並楽館陸橋下",
+      "category": "ATM",
+      "headline": "",
+      "google_map": "",
+      "image_url": "",
+      "start_time": "08:45",
+      "end_time": "19:00",
+      "business_hours": "08:45-19:00",
+      "note": ""
+    },
+    {
+      "id": "yucho-atm",
+      "name": "ゆうちょ銀行ATM",
+      "url": "",
+      "location": "並楽館陸橋下",
+      "category": "ATM",
+      "headline": "",
+      "google_map": "",
+      "image_url": "",
+      "start_time": "08:45",
+      "end_time": "19:00",
+      "business_hours": "08:45-19:00",
+      "note": ""
+    },
+    {
+      "id": "smbc-atm",
+      "name": "三井住友銀行ATM",
+      "url": "",
+      "location": "並楽館1F",
+      "category": "ATM",
+      "headline": "",
+      "google_map": "",
+      "image_url": "",
+      "start_time": "08:45",
+      "end_time": "19:00",
+      "business_hours": "08:45-19:00",
       "note": ""
     }
   ],
   "sources": [
     {
       "name": "2026_05.pdf",
-      "url": "daily/2026_05.pdf"
+      "url": "https://tamadalab.github.io/welfare-time/daily/2026_05.pdf"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "date": "2026-08-09",
   "timezone": "JST",
-  "cafeterias": [
+  "facilities": [
     {
       "id": "family-mart-motoyama",
       "name": "ファミリーマート",
@@ -17,11 +17,10 @@
       "note": "1"
     }
   ],
-  "kitchen_cars": [],
   "sources": [
     {
       "name": "2026_08.pdf",
-      "url": "daily/2026_08.pdf"
+      "url": "https://tamadalab.github.io/welfare-time/daily/2026_08.pdf"
     }
   ]
 }
