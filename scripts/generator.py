@@ -142,7 +142,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
                 if source_entry not in day_data["sources"]:
                     day_data["sources"].append(source_entry)
 
-                norm_name = squash_name(s["id"])
+                norm_name = squash_name(s["name"])
                 norm_loc = squash_field(s["location"])
                 m_info = cafeteria_master_map.get((norm_name, norm_loc))
                 
@@ -158,7 +158,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
 
                 day_data["facilities"].append({
                     "id": shop_id,
-                    "name": s["id"],
+                    "name": s["name"],
                     "location": s["location"],
                     "category": m_info.get("category", "食堂") if m_info else "食堂",
                     "url": m_info.get("url", "") if m_info else "",
@@ -174,7 +174,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
     # 4. Merge Kitchen Cars
     for s in kitchen_car_schedules:
         day_data = get_or_create_date(s["date"])
-        norm_name = squash_name(s["id"])
+        norm_name = squash_name(s["name"])
         m_info = kitchen_car_master_map.get(norm_name)
         target_url = s.get("url", "") or (m_info.get("url", "") if m_info else "")
 
@@ -183,13 +183,13 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
         if m_info and "id" in m_info:
             shop_id = m_info["id"]
         elif target_url:
-            shop_id = get_id_from_url(target_url, s["id"])
+            shop_id = get_id_from_url(target_url, s["name"])
         else:
             shop_id = slugify(norm_name)
         
         day_data["facilities"].append({
             "id": shop_id,
-            "name": s["id"],
+            "name": s["name"],
             "url": target_url,
             "image_url": m_info.get("image_url", "") if m_info else "",
             "headline": s.get("headline", "") or (m_info.get("headline", "") if m_info else ""),
