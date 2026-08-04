@@ -1,4 +1,4 @@
-const BASE_PATH = '/welfare-time';
+const BASE_PATH = window.BASE_PATH;
 const API_BASE = `${BASE_PATH}/api/schedule`;
 const STATUS_API = `${BASE_PATH}/api/status`;
 const LABE_NOW_OPEN = '🟢 営業中';
