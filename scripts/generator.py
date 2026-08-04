@@ -117,8 +117,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
             schedule_map[date_str] = {
                 "date": date_str,
                 "timezone": "JST",
-                "cafeterias": [], 
-                "kitchen_cars": [],
+                "facilities": [],
                 "sources": []
             }
         return schedule_map[date_str]
@@ -156,8 +155,8 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
                     shop_id = slugify(f"MISSING-{norm_name}-{norm_loc}")
                 else:
                     shop_id = m_info["id"]
-                
-                day_data["cafeterias"].append({
+
+                day_data["facilities"].append({
                     "id": shop_id,
                     "name": s["id"],
                     "location": s["location"],
@@ -188,13 +187,14 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
         else:
             shop_id = slugify(norm_name)
         
-        day_data["kitchen_cars"].append({
+        day_data["facilities"].append({
             "id": shop_id,
             "name": s["id"],
             "url": target_url,
             "image_url": m_info.get("image_url", "") if m_info else "",
             "headline": s.get("headline", "") or (m_info.get("headline", "") if m_info else ""),
             "location": s.get("location") or "大学内指定場所",
+            "google_map": "",
             "category": "キッチンカー",
             "start_time": s.get("start_time", "00:00"),
             "end_time": s.get("end_time", "00:00"),
@@ -230,13 +230,15 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
                     if "-" in hours_str:
                         start_time, end_time = hours_str.split("-")
 
-                    day_data["cafeterias"].append({
+                    day_data["facilities"].append({
                         "id": m_shop["id"],
                         "name": m_shop["name"],
                         "url": m_shop.get("url", ""),
                         "location": m_shop["location"],
                         "category": m_shop.get("category", "サービス"),
                         "headline": m_shop.get("headline", ""),
+                        "google_map": "",
+                        "image_url": "",
                         "start_time": start_time,
                         "end_time": end_time,
                         "business_hours": hours_str,
@@ -268,7 +270,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
 
     for w in range(total_weeks):
         week_start = current_monday + timedelta(weeks=w)
-        daily_schedules = [schedule_map.get((week_start + timedelta(days=i)).strftime("%Y-%m-%d"), {"date": (week_start + timedelta(days=i)).strftime("%Y-%m-%d"), "cafeterias": [], "kitchen_cars": [], "sources": []}) for i in range(7)]
+        daily_schedules = [schedule_map.get((week_start + timedelta(days=i)).strftime("%Y-%m-%d"), {"date": (week_start + timedelta(days=i)).strftime("%Y-%m-%d"), "facilities": [], "sources": []}) for i in range(7)]
         week_data = {
             "week_index": w,
             "start_date": week_start.strftime("%Y-%m-%d"),
@@ -284,16 +286,11 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
     # 7. Shops API
     all_shops = {}
     for date_str, data in sorted(schedule_map.items()):
-        for c in data["cafeterias"]:
+        for c in data["facilities"]:
             sid = c["id"]
             if sid not in all_shops:
                 all_shops[sid] = {**{k: v for k, v in c.items() if k not in ["start_time", "end_time", "business_hours", "note", "date"]}, "schedules": []}
             all_shops[sid]["schedules"].append({"date": date_str, "location": c["location"], "start_time": c["start_time"], "end_time": c["end_time"], "note": c["note"]})
-        for k in data["kitchen_cars"]:
-            sid = k["id"]
-            if sid not in all_shops:
-                all_shops[sid] = {**{k2: v for k2, v in k.items() if k2 not in ["start_time", "end_time", "business_hours", "note", "date"]}, "schedules": []}
-            all_shops[sid]["schedules"].append({"date": date_str, "location": k["location"], "start_time": k["start_time"], "end_time": k["end_time"], "note": k["note"]})
 
     api_shops_dir = os.path.join(output_dir, "api/shops")
     shops_index = {"shops": []}

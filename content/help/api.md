@@ -13,7 +13,7 @@ Welfare TIME のデータを活用するためのAPIエンドポイントです�
 {
   "date": "2026-05-18",
   "timezone": "JST",
-  "cafeterias": [
+  "facilities": [
     {
       "id": "shop-id",
       "name": "食堂名",
@@ -25,8 +25,7 @@ Welfare TIME のデータを活用するためのAPIエンドポイントです�
       "business_hours": "11:00～14:00",
       "note": "備考"
     }
-  ],
-  "kitchen_cars": ["..."]
+  ]
 }
 ```
 
