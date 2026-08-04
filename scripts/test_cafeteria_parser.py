@@ -1,11 +1,13 @@
 import json
 import subprocess
 import os
+import sys
 import argparse
 
 def test_cafeteria_parser(input_pdf, output_json):
-    # スクリプトの実行
-    subprocess.run(["python3", "scripts/parse_cafeteria_pdf.py", input_pdf, "-o", output_json], check=True)
+    # スクリプトの実行。テストを起動したインタプリタを使う。python3 を直に
+    # 指定すると、仮想環境から実行したときに pdfplumber が見つからず落ちる。
+    subprocess.run([sys.executable, "scripts/parse_cafeteria_pdf.py", input_pdf, "-o", output_json], check=True)
     
     with open(output_json, "r", encoding="utf-8") as f:
         data = json.load(f)

@@ -30,7 +30,7 @@ help:
 	@echo "  make parse_kitchencar  Scrape kitchen car HTML to JSON"
 	@echo "  make generate          Run the full pipeline (parse and generate API)"
 	@echo "  make serve             Start a local development server on port 8000"
-	@echo "  make test              Run cafeteria parser tests"
+	@echo "  make test              Run cafeteria parser and kitchen car scraper tests"
 	@echo "  make stale_api         List deployed API files that are no longer generated"
 	@echo "  make clean             Remove temporary files"
 
@@ -86,8 +86,16 @@ serve:
 clean:
 	rm -rf $(DATA_DIR)
 
+# 1つ落ちても残りを実行し、最後にまとめて失敗を返す。
+# 各行を独立したコマンドにすると、先頭が落ちた時点で後続に到達しない。
 test:
-	$(PYTHON) $(SCRIPTS_DIR)/test_cafeteria_parser.py
+	@fail=0; \
+	for t in test_cafeteria_parser test_kitchen_car_scraper; do \
+		echo "--- $$t ---"; \
+		$(PYTHON) $(SCRIPTS_DIR)/$$t.py || fail=1; \
+	done; \
+	if [ $$fail -ne 0 ]; then echo "Some tests failed."; fi; \
+	exit $$fail
 
 # Compare the deployed API against what `make generate` produces.
 stale_api:
