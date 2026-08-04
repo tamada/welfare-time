@@ -111,7 +111,13 @@ def get_or_create_date(schedule_map, date_str):
     return schedule_map[date_str]
 
 def add_cafeteria_schedules(schedule_map, cafeteria_dir, cafeteria_master_map, base_url):
-    """Add the parsed cafeteria entries, resolving the shop id from the master."""
+    """Add the parsed cafeteria entries, resolving the shop id from the master.
+
+    Returns the shops that could not be resolved, keyed by (name, location).
+    They still get an entry with a generated id so that the day is not lost;
+    the caller reports them instead of failing the whole run.
+    """
+    unresolved = {}
     for p in Path(cafeteria_dir).glob("*.json"):
         # Match {YYYY_MM}.json to daily/{YYYY_MM}.pdf
         source_filename = p.name.replace(".json", ".pdf")
@@ -133,11 +139,12 @@ def add_cafeteria_schedules(schedule_map, cafeteria_dir, cafeteria_master_map, b
             m_info = cafeteria_master_map.get((norm_name, norm_loc))
 
             if not m_info:
-                print(f"!!! MAJOR ERROR: Shop not found in master data: Name='{norm_name}', Location='{norm_loc}' (Source: {source_filename}, Date: {s['date']})")
+                record = unresolved.setdefault((norm_name, norm_loc), {"dates": [], "sources": set(), "hints": set()})
+                record["dates"].append(s["date"])
+                record["sources"].add(source_filename)
                 # Provide hints for potential matches
-                hints = [m["id"] for k, m in cafeteria_master_map.items() if norm_name in k[0] or k[0] in norm_name]
-                if hints:
-                    print(f"    Hint: Found similar names in master data: {', '.join(set(hints))}")
+                record["hints"].update(m["id"] for k, m in cafeteria_master_map.items()
+                                       if norm_name in k[0] or k[0] in norm_name)
                 shop_id = slugify(f"MISSING-{norm_name}-{norm_loc}")
             else:
                 shop_id = m_info["id"]
@@ -156,6 +163,31 @@ def add_cafeteria_schedules(schedule_map, cafeteria_dir, cafeteria_master_map, b
                 "business_hours": s["business_hours"],
                 "note": s["note"]
             })
+
+    return unresolved
+
+def report_unresolved_shops(unresolved):
+    """Report shops missing from the master. Notifies, never fails the run.
+
+    Failing here would stop the whole daily update over a single renamed shop,
+    so the data keeps flowing and the operator is told what to fix.
+    """
+    if not unresolved:
+        return
+
+    print(f"\n!!! MAJOR ERROR: {len(unresolved)} shop(s) not found in master data:")
+    for (name, location), record in sorted(unresolved.items()):
+        dates = sorted(record["dates"])
+        print(f"  - Name='{name}', Location='{location}'"
+              f" ({len(dates)} entries, {dates[0]} - {dates[-1]}, source: {', '.join(sorted(record['sources']))})")
+        if record["hints"]:
+            print(f"    Hint: Found similar names in master data: {', '.join(sorted(record['hints']))}")
+
+    # GitHub Actions では注釈として表示する。ジョブは失敗させない。
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        shops = ", ".join(f"{name}（{location}）" for name, location in sorted(unresolved))
+        print(f"::warning title=マスターに未登録の店舗::{len(unresolved)}件: {shops}"
+              f" / scripts/facilities.json に追加してください。未登録のままだと missing- で始まるIDで公開されます。")
 
 def add_kitchen_car_schedules(schedule_map, kitchen_car_schedules, kitchen_car_master_map):
     """Add the archived kitchen car entries."""
@@ -243,6 +275,8 @@ def build_schedule_map(cafeteria_dir, kitchen_car_schedules, cafeteria_master_ma
     The order matters: cafeterias, kitchen cars, then static shops, so that the
     facilities of a day keep that order. Gaps are filled before injecting the
     static shops so that the filled days get them too.
+
+    Returns the schedule and the shops that could not be resolved in the master.
     """
     schedule_map = {}
 
@@ -252,11 +286,11 @@ def build_schedule_map(cafeteria_dir, kitchen_car_schedules, cafeteria_master_ma
     for i in range(40):
         get_or_create_date(schedule_map, (start_init + timedelta(days=i)).strftime("%Y-%m-%d"))
 
-    add_cafeteria_schedules(schedule_map, cafeteria_dir, cafeteria_master_map, base_url)
+    unresolved = add_cafeteria_schedules(schedule_map, cafeteria_dir, cafeteria_master_map, base_url)
     add_kitchen_car_schedules(schedule_map, kitchen_car_schedules, kitchen_car_master_map)
     fill_date_gaps(schedule_map)
     inject_static_schedules(schedule_map, facilities)
-    return schedule_map
+    return schedule_map, unresolved
 
 def write_daily_api(schedule_map, api_schedule_dir, now_jst):
     """Write api/schedule/{date} and the today/yesterday/tomorrow shortcuts."""
@@ -355,8 +389,9 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
     kitchen_car_schedules = merge_kitchen_car_archive(past_archive, scraped, today_str)
     save_json(kitchen_car_schedules, kitchen_cars_archive)
 
-    schedule_map = build_schedule_map(cafeteria_dir, kitchen_car_schedules, cafeteria_master_map,
-                                      kitchen_car_master_map, facilities, base_url, now_jst)
+    schedule_map, unresolved = build_schedule_map(cafeteria_dir, kitchen_car_schedules, cafeteria_master_map,
+                                                  kitchen_car_master_map, facilities, base_url, now_jst)
+    report_unresolved_shops(unresolved)
 
     api_schedule_dir = os.path.join(output_dir, "api/schedule")
     write_daily_api(schedule_map, api_schedule_dir, now_jst)
