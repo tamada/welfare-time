@@ -105,8 +105,8 @@ async function fetchData() {
             
             // Extract categories dynamically from facilities data
             const categories = [];
-            if (master && master.cafeterias) {
-                master.cafeterias.forEach(c => {
+            if (master && master.facilities) {
+                master.facilities.forEach(c => {
                     if (c.category && !categories.includes(c.category)) {
                         categories.push(c.category);
                     }

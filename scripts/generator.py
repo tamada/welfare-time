@@ -61,7 +61,7 @@ def generator(cafeteria_dir, kitchen_cars_path, master_path, output_dir, kitchen
         master_raw = {"facilities": [], "kitchen_cars": []}
         
     cafeteria_master_map = {}
-    facilities = master_raw.get("facilities", []) + master_raw.get("cafeterias", [])
+    facilities = master_raw.get("facilities", [])
     for c in facilities:
         key = (squash_name(c["name"]), squash_field(c["location"]))
         cafeteria_master_map[key] = c
