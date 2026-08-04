@@ -86,9 +86,16 @@ serve:
 clean:
 	rm -rf $(DATA_DIR)
 
+# 1つ落ちても残りを実行し、最後にまとめて失敗を返す。
+# 各行を独立したコマンドにすると、先頭が落ちた時点で後続に到達しない。
 test:
-	$(PYTHON) $(SCRIPTS_DIR)/test_cafeteria_parser.py
-	$(PYTHON) $(SCRIPTS_DIR)/test_kitchen_car_scraper.py
+	@fail=0; \
+	for t in test_cafeteria_parser test_kitchen_car_scraper; do \
+		echo "--- $$t ---"; \
+		$(PYTHON) $(SCRIPTS_DIR)/$$t.py || fail=1; \
+	done; \
+	if [ $$fail -ne 0 ]; then echo "Some tests failed."; fi; \
+	exit $$fail
 
 # Compare the deployed API against what `make generate` produces.
 stale_api:
