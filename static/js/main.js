@@ -148,7 +148,7 @@ function render() {
     if (!grid) return;
     grid.innerHTML = '';
     
-    let allShops = [...currentData.cafeterias, ...currentData.kitchen_cars];
+    let allShops = currentData.facilities;
     const targetDateStr = getTargetDateStr();
 
     // Helper to get status label for filter and sort
