@@ -6,7 +6,7 @@ KITCHEN_CARS_SRC = $(DATA_DIR)/kitchencars
 DEST_DIR = static
 PDFS_DEST_DIR = $(DEST_DIR)/daily
 FACILITIES_JSON = $(SCRIPTS_DIR)/facilities.json
-BASE_URL := $(shell hugo config | grep -i "^baseurl" | awk '{print $$3}' | tr -d "'" | sed 's|/$$||')
+BASE_URL = $(shell hugo config | grep -i "^baseurl" | awk '{print $$3}' | tr -d "'" | sed 's|/$$||')
 
 # Output files
 KITCHEN_CARS_RAW = $(KITCHEN_CARS_SRC)/raw.html

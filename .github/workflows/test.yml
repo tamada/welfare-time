@@ -1,0 +1,29 @@
+name: テスト
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリをチェックアウトする
+        uses: actions/checkout@v6
+
+      - name: Python をセットアップする
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 依存パッケージをインストールする
+        # テストは pdfplumber と beautifulsoup4 だけを使うが、requirements.txt が
+        # そのまま通ることも確認したいので全部入れる。
+        # playwright のブラウザ本体は fetch にしか必要ないため入れない。
+        run: pip install -r requirements.txt
+
+      - name: テストを実行する
+        run: make test PYTHON=python
