@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-11",
+  "date": "2026-09-12",
   "timezone": "JST",
   "facilities": [
     {
@@ -12,8 +12,8 @@
       "google_map": "",
       "image_url": "",
       "start_time": "08:45",
-      "end_time": "19:00",
-      "business_hours": "08:45-19:00",
+      "end_time": "17:00",
+      "business_hours": "08:45-17:00",
       "note": ""
     },
     {
@@ -26,8 +26,8 @@
       "google_map": "",
       "image_url": "",
       "start_time": "08:45",
-      "end_time": "19:00",
-      "business_hours": "08:45-19:00",
+      "end_time": "17:00",
+      "business_hours": "08:45-17:00",
       "note": ""
     },
     {
@@ -40,8 +40,8 @@
       "google_map": "",
       "image_url": "",
       "start_time": "08:45",
-      "end_time": "19:00",
-      "business_hours": "08:45-19:00",
+      "end_time": "17:00",
+      "business_hours": "08:45-17:00",
       "note": ""
     }
   ],
