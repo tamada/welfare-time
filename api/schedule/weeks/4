@@ -1,11 +1,11 @@
 {
   "week_index": 4,
-  "start_date": "2026-09-07",
-  "end_date": "2026-09-13",
+  "start_date": "2026-09-14",
+  "end_date": "2026-09-20",
   "timezone": "JST",
   "daily_schedules": [
     {
-      "date": "2026-09-07",
+      "date": "2026-09-14",
       "timezone": "JST",
       "facilities": [
         {
@@ -54,7 +54,7 @@
       "sources": []
     },
     {
-      "date": "2026-09-08",
+      "date": "2026-09-15",
       "timezone": "JST",
       "facilities": [
         {
@@ -103,7 +103,7 @@
       "sources": []
     },
     {
-      "date": "2026-09-09",
+      "date": "2026-09-16",
       "timezone": "JST",
       "facilities": [
         {
@@ -152,7 +152,7 @@
       "sources": []
     },
     {
-      "date": "2026-09-10",
+      "date": "2026-09-17",
       "timezone": "JST",
       "facilities": [
         {
@@ -201,7 +201,7 @@
       "sources": []
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-18",
       "timezone": "JST",
       "facilities": [
         {
@@ -250,57 +250,12 @@
       "sources": []
     },
     {
-      "date": "2026-09-12",
-      "timezone": "JST",
-      "facilities": [
-        {
-          "id": "chushin-atm",
-          "name": "京都中央信用金庫ATM",
-          "url": "",
-          "location": "並楽館陸橋下",
-          "category": "ATM",
-          "headline": "",
-          "google_map": "",
-          "image_url": "",
-          "start_time": "08:45",
-          "end_time": "17:00",
-          "business_hours": "08:45-17:00",
-          "note": ""
-        },
-        {
-          "id": "yucho-atm",
-          "name": "ゆうちょ銀行ATM",
-          "url": "",
-          "location": "並楽館陸橋下",
-          "category": "ATM",
-          "headline": "",
-          "google_map": "",
-          "image_url": "",
-          "start_time": "08:45",
-          "end_time": "17:00",
-          "business_hours": "08:45-17:00",
-          "note": ""
-        },
-        {
-          "id": "smbc-atm",
-          "name": "三井住友銀行ATM",
-          "url": "",
-          "location": "並楽館1F",
-          "category": "ATM",
-          "headline": "",
-          "google_map": "",
-          "image_url": "",
-          "start_time": "08:45",
-          "end_time": "17:00",
-          "business_hours": "08:45-17:00",
-          "note": ""
-        }
-      ],
+      "date": "2026-09-19",
+      "facilities": [],
       "sources": []
     },
     {
-      "date": "2026-09-13",
-      "timezone": "JST",
+      "date": "2026-09-20",
       "facilities": [],
       "sources": []
     }
