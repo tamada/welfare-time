@@ -944,5 +944,27 @@
     "business_hours": "11:00〜17:00",
     "headline": "フルーツ飴",
     "url": "https://schedule.mellow.jp/ss_web/shops/q8Sk2"
+  },
+  {
+    "id": "WkSdar",
+    "name": "リトルフィート カフェ キョウト",
+    "location": "",
+    "date": "2026-10-07",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "リトルフィートの夏が来た!",
+    "url": "https://schedule.mellow.jp/ss_web/shops/WkSdar"
+  },
+  {
+    "id": "WkSdar",
+    "name": "リトルフィート カフェ キョウト",
+    "location": "",
+    "date": "2026-10-21",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "リトルフィートの夏が来た!",
+    "url": "https://schedule.mellow.jp/ss_web/shops/WkSdar"
   }
 ]
