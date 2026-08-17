@@ -1,0 +1,26 @@
+{
+  "id": "WkSdar",
+  "name": "リトルフィート カフェ キョウト",
+  "url": "https://schedule.mellow.jp/ss_web/shops/WkSdar",
+  "image_url": "",
+  "headline": "リトルフィートの夏が来た!",
+  "location": "大学内指定場所",
+  "google_map": "",
+  "category": "キッチンカー",
+  "schedules": [
+    {
+      "date": "2026-10-07",
+      "location": "大学内指定場所",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "note": ""
+    },
+    {
+      "date": "2026-10-21",
+      "location": "大学内指定場所",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "note": ""
+    }
+  ]
+}

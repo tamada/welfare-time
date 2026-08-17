@@ -469,6 +469,16 @@
       "location": "大学内指定場所",
       "google_map": "",
       "category": "キッチンカー"
+    },
+    {
+      "id": "WkSdar",
+      "name": "リトルフィート カフェ キョウト",
+      "url": "https://schedule.mellow.jp/ss_web/shops/WkSdar",
+      "image_url": "",
+      "headline": "リトルフィートの夏が来た!",
+      "location": "大学内指定場所",
+      "google_map": "",
+      "category": "キッチンカー"
     }
   ]
 }
