@@ -1,107 +1,11 @@
 {
   "week_index": 2,
-  "start_date": "2026-08-31",
-  "end_date": "2026-09-06",
+  "start_date": "2026-09-07",
+  "end_date": "2026-09-13",
   "timezone": "JST",
   "daily_schedules": [
     {
-      "date": "2026-08-31",
-      "timezone": "JST",
-      "facilities": [
-        {
-          "id": "ichibariki",
-          "name": "らーめん壱馬力",
-          "location": "並楽館1F",
-          "category": "食堂",
-          "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/ichibariki.html",
-          "google_map": "",
-          "image_url": "",
-          "headline": "京都の有名ラーメン店「麺屋しゃかりき」の2号店",
-          "start_time": "11:00",
-          "end_time": "15:00",
-          "business_hours": "平日 11:00~19:00 土 11:00~14:00",
-          "note": ""
-        },
-        {
-          "id": "nasic",
-          "name": "学生情報センター （ナジック）",
-          "location": "天地館1F",
-          "category": "サービス",
-          "url": "",
-          "google_map": "",
-          "image_url": "",
-          "headline": "キャンパス内にあるとても便利な不動産紹介",
-          "start_time": "10:00",
-          "end_time": "17:00",
-          "business_hours": "月~土 10:00~17:00",
-          "note": ""
-        },
-        {
-          "id": "ksuksu",
-          "name": "CAFE KSUKSU",
-          "location": "むすびわざ館1F",
-          "category": "食堂",
-          "url": "",
-          "google_map": "",
-          "image_url": "",
-          "headline": "",
-          "start_time": "12:00",
-          "end_time": "13:00",
-          "business_hours": "平日 12:00~13:00",
-          "note": ""
-        },
-        {
-          "id": "chushin-atm",
-          "name": "京都中央信用金庫ATM",
-          "url": "",
-          "location": "並楽館陸橋下",
-          "category": "ATM",
-          "headline": "",
-          "google_map": "",
-          "image_url": "",
-          "start_time": "08:45",
-          "end_time": "19:00",
-          "business_hours": "08:45-19:00",
-          "note": ""
-        },
-        {
-          "id": "yucho-atm",
-          "name": "ゆうちょ銀行ATM",
-          "url": "",
-          "location": "並楽館陸橋下",
-          "category": "ATM",
-          "headline": "",
-          "google_map": "",
-          "image_url": "",
-          "start_time": "08:45",
-          "end_time": "19:00",
-          "business_hours": "08:45-19:00",
-          "note": ""
-        },
-        {
-          "id": "smbc-atm",
-          "name": "三井住友銀行ATM",
-          "url": "",
-          "location": "並楽館1F",
-          "category": "ATM",
-          "headline": "",
-          "google_map": "",
-          "image_url": "",
-          "start_time": "08:45",
-          "end_time": "19:00",
-          "business_hours": "08:45-19:00",
-          "note": ""
-        }
-      ],
-      "sources": [
-        {
-          "name": "2026_08.pdf",
-          "url": "https://tamadalab.github.io/welfare-time/daily/2026_08.pdf"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-01",
+      "date": "2026-09-07",
       "timezone": "JST",
       "facilities": [
         {
@@ -150,7 +54,7 @@
       "sources": []
     },
     {
-      "date": "2026-09-02",
+      "date": "2026-09-08",
       "timezone": "JST",
       "facilities": [
         {
@@ -199,7 +103,7 @@
       "sources": []
     },
     {
-      "date": "2026-09-03",
+      "date": "2026-09-09",
       "timezone": "JST",
       "facilities": [
         {
@@ -248,7 +152,7 @@
       "sources": []
     },
     {
-      "date": "2026-09-04",
+      "date": "2026-09-10",
       "timezone": "JST",
       "facilities": [
         {
@@ -297,7 +201,56 @@
       "sources": []
     },
     {
-      "date": "2026-09-05",
+      "date": "2026-09-11",
+      "timezone": "JST",
+      "facilities": [
+        {
+          "id": "chushin-atm",
+          "name": "京都中央信用金庫ATM",
+          "url": "",
+          "location": "並楽館陸橋下",
+          "category": "ATM",
+          "headline": "",
+          "google_map": "",
+          "image_url": "",
+          "start_time": "08:45",
+          "end_time": "19:00",
+          "business_hours": "08:45-19:00",
+          "note": ""
+        },
+        {
+          "id": "yucho-atm",
+          "name": "ゆうちょ銀行ATM",
+          "url": "",
+          "location": "並楽館陸橋下",
+          "category": "ATM",
+          "headline": "",
+          "google_map": "",
+          "image_url": "",
+          "start_time": "08:45",
+          "end_time": "19:00",
+          "business_hours": "08:45-19:00",
+          "note": ""
+        },
+        {
+          "id": "smbc-atm",
+          "name": "三井住友銀行ATM",
+          "url": "",
+          "location": "並楽館1F",
+          "category": "ATM",
+          "headline": "",
+          "google_map": "",
+          "image_url": "",
+          "start_time": "08:45",
+          "end_time": "19:00",
+          "business_hours": "08:45-19:00",
+          "note": ""
+        }
+      ],
+      "sources": []
+    },
+    {
+      "date": "2026-09-12",
       "timezone": "JST",
       "facilities": [
         {
@@ -346,7 +299,7 @@
       "sources": []
     },
     {
-      "date": "2026-09-06",
+      "date": "2026-09-13",
       "timezone": "JST",
       "facilities": [],
       "sources": []
