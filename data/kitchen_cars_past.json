@@ -957,6 +957,17 @@
     "url": "https://schedule.mellow.jp/ss_web/shops/WkSdar"
   },
   {
+    "id": "ldS6DO",
+    "name": "BOULANGERIE le RASE",
+    "location": "",
+    "date": "2026-10-14",
+    "start_time": "11:00",
+    "end_time": "17:00",
+    "business_hours": "11:00〜17:00",
+    "headline": "フランクドック",
+    "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO"
+  },
+  {
     "id": "WkSdar",
     "name": "リトルフィート カフェ キョウト",
     "location": "",
