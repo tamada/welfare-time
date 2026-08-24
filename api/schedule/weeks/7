@@ -107,6 +107,20 @@
       "timezone": "JST",
       "facilities": [
         {
+          "id": "ldS6DO",
+          "name": "BOULANGERIE le RASE",
+          "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
+          "image_url": "",
+          "headline": "フランクドック",
+          "location": "大学内指定場所",
+          "google_map": "",
+          "category": "キッチンカー",
+          "start_time": "11:00",
+          "end_time": "17:00",
+          "business_hours": "11:00〜17:00",
+          "note": ""
+        },
+        {
           "id": "chushin-atm",
           "name": "京都中央信用金庫ATM",
           "url": "",
