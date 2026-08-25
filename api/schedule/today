@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-25",
+  "date": "2026-08-26",
   "timezone": "JST",
   "facilities": [
     {
@@ -28,20 +28,6 @@
       "start_time": "11:00",
       "end_time": "14:00",
       "business_hours": "平日 10:00~19:00 土 10:00~15:00",
-      "note": ""
-    },
-    {
-      "id": "ascella",
-      "name": "ブックセンター Ascella（アスケラ）",
-      "location": "雄飛館1F",
-      "category": "ショップ",
-      "url": "",
-      "google_map": "",
-      "image_url": "",
-      "headline": "いて座の星の名を冠したアカデミックな書店",
-      "start_time": "8:45",
-      "end_time": "15:00",
-      "business_hours": "平日 8:45~17:00",
       "note": ""
     },
     {
@@ -98,6 +84,20 @@
       "start_time": "8:00",
       "end_time": "15:00",
       "business_hours": "平日 8:00~19:00 水 8:00~18:00 土 8:00~17:00",
+      "note": ""
+    },
+    {
+      "id": "ksuksu",
+      "name": "CAFE KSUKSU",
+      "location": "むすびわざ館1F",
+      "category": "食堂",
+      "url": "",
+      "google_map": "",
+      "image_url": "",
+      "headline": "",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "business_hours": "平日 12:00~13:00",
       "note": ""
     },
     {
