@@ -238,6 +238,20 @@
       "start_time": "11:30",
       "end_time": "13:30",
       "note": ""
+    },
+    {
+      "date": "2026-09-28",
+      "location": "並楽館2F",
+      "start_time": "11:30",
+      "end_time": "13:30",
+      "note": ""
+    },
+    {
+      "date": "2026-09-29",
+      "location": "並楽館2F",
+      "start_time": "11:30",
+      "end_time": "13:30",
+      "note": ""
     }
   ]
 }

@@ -287,6 +287,27 @@
       "start_time": "11:00",
       "end_time": "17:00",
       "note": ""
+    },
+    {
+      "date": "2026-09-28",
+      "location": "真理館1F",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "note": ""
+    },
+    {
+      "date": "2026-09-29",
+      "location": "真理館1F",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "note": ""
+    },
+    {
+      "date": "2026-09-30",
+      "location": "真理館1F",
+      "start_time": "11:00",
+      "end_time": "17:00",
+      "note": ""
     }
   ]
 }

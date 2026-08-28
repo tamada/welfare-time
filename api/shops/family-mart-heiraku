@@ -371,6 +371,41 @@
       "start_time": "8:00",
       "end_time": "15:30",
       "note": ""
+    },
+    {
+      "date": "2026-09-21",
+      "location": "並楽館1F",
+      "start_time": "8:00",
+      "end_time": "16:00",
+      "note": ""
+    },
+    {
+      "date": "2026-09-26",
+      "location": "並楽館1F",
+      "start_time": "8:00",
+      "end_time": "16:00",
+      "note": ""
+    },
+    {
+      "date": "2026-09-28",
+      "location": "並楽館1F",
+      "start_time": "8:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-09-29",
+      "location": "並楽館1F",
+      "start_time": "8:00",
+      "end_time": "19:00",
+      "note": ""
+    },
+    {
+      "date": "2026-09-30",
+      "location": "並楽館1F",
+      "start_time": "8:00",
+      "end_time": "18:00",
+      "note": ""
     }
   ]
 }
