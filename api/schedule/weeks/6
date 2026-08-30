@@ -1,11 +1,11 @@
 {
   "week_index": 6,
-  "start_date": "2026-10-05",
-  "end_date": "2026-10-11",
+  "start_date": "2026-10-12",
+  "end_date": "2026-10-18",
   "timezone": "JST",
   "daily_schedules": [
     {
-      "date": "2026-10-05",
+      "date": "2026-10-12",
       "timezone": "JST",
       "facilities": [
         {
@@ -54,7 +54,7 @@
       "sources": []
     },
     {
-      "date": "2026-10-06",
+      "date": "2026-10-13",
       "timezone": "JST",
       "facilities": [
         {
@@ -103,15 +103,15 @@
       "sources": []
     },
     {
-      "date": "2026-10-07",
+      "date": "2026-10-14",
       "timezone": "JST",
       "facilities": [
         {
-          "id": "WkSdar",
-          "name": "リトルフィート カフェ キョウト",
-          "url": "https://schedule.mellow.jp/ss_web/shops/WkSdar",
+          "id": "ldS6DO",
+          "name": "BOULANGERIE le RASE",
+          "url": "https://schedule.mellow.jp/ss_web/shops/ldS6DO",
           "image_url": "",
-          "headline": "リトルフィートの夏が来た!",
+          "headline": "フランクドック",
           "location": "大学内指定場所",
           "google_map": "",
           "category": "キッチンカー",
@@ -166,7 +166,7 @@
       "sources": []
     },
     {
-      "date": "2026-10-08",
+      "date": "2026-10-15",
       "timezone": "JST",
       "facilities": [
         {
@@ -215,7 +215,7 @@
       "sources": []
     },
     {
-      "date": "2026-10-09",
+      "date": "2026-10-16",
       "timezone": "JST",
       "facilities": [
         {
@@ -264,7 +264,7 @@
       "sources": []
     },
     {
-      "date": "2026-10-10",
+      "date": "2026-10-17",
       "timezone": "JST",
       "facilities": [
         {
@@ -313,7 +313,7 @@
       "sources": []
     },
     {
-      "date": "2026-10-11",
+      "date": "2026-10-18",
       "timezone": "JST",
       "facilities": [],
       "sources": []
