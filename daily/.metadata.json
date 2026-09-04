@@ -11,16 +11,10 @@
     "url": "https://www.kyoto-su.ac.jp/campuslife/welfare/pdf/jun_2026.pdf",
     "fetched_at": "2026-05-31T02:49:38.835588Z"
   },
-  "2026_08.pdf": {
-    "last-modified": "Wed, 26 Aug 2026 07:06:19 GMT",
-    "etag": "\"c162-659eddb3238dc\"",
-    "url": "https://www.kyoto-su.ac.jp/campuslife/welfare/pdf/august.pdf",
-    "fetched_at": "2026-09-04T07:06:24.825335+09:00"
-  },
   "2026_09.pdf": {
     "last-modified": "Thu, 27 Aug 2026 08:14:40 GMT",
     "etag": "\"c1ba-65a02ed7a386b\"",
     "url": "https://www.kyoto-su.ac.jp/campuslife/welfare/pdf/september.pdf",
-    "fetched_at": "2026-09-04T07:06:26.828889+09:00"
+    "fetched_at": "2026-09-05T07:06:04.280666+09:00"
   }
 }

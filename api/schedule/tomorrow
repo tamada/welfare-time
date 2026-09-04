@@ -1,35 +1,7 @@
 {
-  "date": "2026-09-05",
+  "date": "2026-09-06",
   "timezone": "JST",
   "facilities": [
-    {
-      "id": "sukiya",
-      "name": "すき家",
-      "location": "真理館1F",
-      "category": "食堂",
-      "url": "https://www.kyoto-su.ac.jp/wr-campuslife/welfare/sukiya.html",
-      "google_map": "",
-      "image_url": "",
-      "headline": "真理館１階に本学初のフードコートが誕生",
-      "start_time": "11:00",
-      "end_time": "14:00",
-      "business_hours": "平日 10:00~19:00 土 10:00~15:00",
-      "note": ""
-    },
-    {
-      "id": "nasic",
-      "name": "学生情報センター （ナジック）",
-      "location": "天地館1F",
-      "category": "サービス",
-      "url": "",
-      "google_map": "",
-      "image_url": "",
-      "headline": "キャンパス内にあるとても便利な不動産紹介",
-      "start_time": "10:00",
-      "end_time": "17:00",
-      "business_hours": "月~土 10:00~17:00",
-      "note": ""
-    },
     {
       "id": "family-mart-motoyama",
       "name": "ファミリーマート",
@@ -42,48 +14,6 @@
       "start_time": "6:00",
       "end_time": "22:00",
       "business_hours": "日~月 6:00~22:00",
-      "note": ""
-    },
-    {
-      "id": "chushin-atm",
-      "name": "京都中央信用金庫ATM",
-      "url": "",
-      "location": "並楽館陸橋下",
-      "category": "ATM",
-      "headline": "",
-      "google_map": "",
-      "image_url": "",
-      "start_time": "08:45",
-      "end_time": "17:00",
-      "business_hours": "08:45-17:00",
-      "note": ""
-    },
-    {
-      "id": "yucho-atm",
-      "name": "ゆうちょ銀行ATM",
-      "url": "",
-      "location": "並楽館陸橋下",
-      "category": "ATM",
-      "headline": "",
-      "google_map": "",
-      "image_url": "",
-      "start_time": "08:45",
-      "end_time": "17:00",
-      "business_hours": "08:45-17:00",
-      "note": ""
-    },
-    {
-      "id": "smbc-atm",
-      "name": "三井住友銀行ATM",
-      "url": "",
-      "location": "並楽館1F",
-      "category": "ATM",
-      "headline": "",
-      "google_map": "",
-      "image_url": "",
-      "start_time": "08:45",
-      "end_time": "17:00",
-      "business_hours": "08:45-17:00",
       "note": ""
     }
   ],
